@@ -21,7 +21,7 @@ public class LoginController extends HttpServlet {
 
         try {
             String username = request.getParameter("username");
-            String password = request.getParameter("passowrd");
+            String password = request.getParameter("password");
             UserDAO dao = new UserDAO();
             dao.login(username, password);
         } catch (Exception e) {
