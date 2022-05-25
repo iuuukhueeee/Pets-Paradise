@@ -1,6 +1,3 @@
-
-
-<%@page import="java.util.List"%>
 <%@page import="com.user.UserDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
