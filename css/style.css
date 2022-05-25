@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Raleway";
@@ -23,7 +25,7 @@ html {
 }
 
 .header .navbar {
-  font-weight: 700;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,7 +214,7 @@ html {
   font-family: FontAwesome;
   content: "\f138";
   position: absolute;
-  left: 1em;
+  left: 8rem;
   color: #68A7AD;
 }
 
@@ -222,7 +224,6 @@ html {
 }
 
 .welcome .angle .button {
-  --color: #6a5af9;
   font-family: "Poppins", sans-serif;
   color: #1d365e;
   padding: 15px 30px;
@@ -304,7 +305,7 @@ html {
   opacity: 1;
 }
 
-.our-team .container .row.expert .col .item:hover .chef-info h1 {
+.our-team .container .row.expert .col .item:hover .expert-info h1 {
   color: #e2ebfc;
 }
 
@@ -368,5 +369,186 @@ html {
 .testimonials .carousel .carousel-inner .carousel-item .carousel-caption .top i {
   color: #68A7AD;
   font-size: 2rem;
+}
+
+.pricing-plan header {
+  text-align: center;
+  font-weight: 700;
+}
+
+.pricing-plan .row {
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+  gap: 30px;
+}
+
+.pricing-plan .row .col-md {
+  background: #EFEFEF;
+}
+
+.pricing-plan .row .col-md .item {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.pricing-plan .row .col-md .item ul {
+  list-style-type: none;
+}
+
+.pricing-plan .row .col-md .item ul li {
+  margin: 2rem;
+}
+
+.pricing-plan .row .col-md .item hr {
+  border-bottom: 2px dashed #68A7AD;
+  width: 50%;
+  margin: auto;
+}
+
+.pricing-plan .row .shield {
+  text-align: center;
+  font-size: 50px;
+}
+
+.pricing-plan .button {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  padding: 15px 30px;
+  width: 200px;
+  border-radius: 4px;
+  background-color: #68A7AD;
+  cursor: pointer;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.pricing-plan .button:hover {
+  -webkit-transform: rotateY(-15deg);
+          transform: rotateY(-15deg);
+}
+
+@media screen and (max-width: 860px) {
+  .pricing-plan .shield {
+    text-align: center;
+  }
+}
+
+.map {
+  padding: 8px;
+  height: 100%;
+  background-color: #EFEFEF;
+}
+
+.map .row .left .contact-info i {
+  color: #68A7AD;
+  margin-right: 8px;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.map .row .left .contact-info a {
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.map .row .left .contact-info a:hover {
+  text-decoration: underline;
+}
+
+.map .row .left .contact-info ul {
+  gap: 8px;
+}
+
+.map .row .left .social-share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.map .row .left .social-share .social-item {
+  height: 3rem;
+  width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.map .row .left .social-share .social-item--facebook {
+  background-color: #3b5999;
+}
+
+.map .row .left .social-share .social-item--twitter {
+  background-color: #55acee;
+}
+
+.map .row .left .social-share .social-item--telegram {
+  background-color: #0077b5;
+}
+
+.map .row .left .social-share .social-item--linkedin {
+  background-color: #007ee5;
+}
+
+footer .row {
+  padding: 8px;
+}
+
+footer .row .col-sm-4 {
+  padding: 32px;
+}
+
+footer .row .col-sm-4 .item img {
+  height: auto;
+  width: 100%;
+}
+
+footer .row .col-sm-4 .item li {
+  margin-bottom: 16px;
+  list-style-type: none;
+}
+
+footer .row .col-sm-4 .item li i {
+  margin-right: 8px;
+}
+
+footer .row .col-sm-4 .item h4 {
+  z-index: 0;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+footer .row .col-sm-4 .item h4::after {
+  content: "";
+  width: 0;
+  display: block;
+  height: 2px;
+  background-color: #4c5baf;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+footer .row .col-sm-4 .item h4:hover {
+  color: #68A7AD;
+}
+
+footer .row .col-sm-4 .item h4:hover::after {
+  width: 10%;
 }
 /*# sourceMappingURL=style.css.map */
