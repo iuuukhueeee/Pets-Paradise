@@ -1,6 +1,5 @@
 package com.user;
 
-
 import com.utils.DButils;
 
 import java.sql.*;
@@ -71,29 +70,44 @@ public class UserDAO {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
-        try{
+        try {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(CREATE);
-                ptm.setString(1,users.getUsername());
-                ptm.setString(2,users.getName());
-                ptm.setString(3,users.getPassword());
-                ptm.setString(4,users.getEmail());
-                ptm.setString(5,users.getPhoneNumber());
-                ptm.setString(6,users.getRoleID());
+                ptm.setString(1, users.getUsername());
+                ptm.setString(2, users.getName());
+                ptm.setString(3, users.getPassword());
+                ptm.setString(4, users.getEmail());
+                ptm.setString(5, users.getPhoneNumber());
+                ptm.setString(6, users.getRoleID());
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(ptm != null){
+            if (ptm != null) {
                 ptm.close();
             }
-            if (conn != null){
+            if (conn != null) {
                 ptm.close();
             }
         }
-        return  check;
+        return check;
     }
 
+
+    public boolean login(String username, String password) {
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+
+            conn = DButils.getConnection();
+            System.out.println(conn != null);
+        } catch (Exception e) {
+
+        }
+        return true;
+    }
 }
