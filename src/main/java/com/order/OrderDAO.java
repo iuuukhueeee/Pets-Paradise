@@ -1,19 +1,18 @@
-package com.user;
-
+package com.order;
 
 import com.utils.DButils;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-public class UserDAO {
-    private static final String CREATE = "INSERT INTO Users(Username, Name, Password, Email, PhoneNumber, RoleID, Status) VALUES(?,?,?,?,?,?,1)";
-    private static final String UPDATE = "UPDATE Users SET  Username=?, Password=?, Email=?, PhoneNumber=? where Name=?";
-    private static final String DELETE = "UPDATE Users SET Status=0 WHERE Name=?";
+public class OrderDAO {
+    private static final String CREATE= "INSERT INTO Orders(OrderID, OrderDate, Username, FeedbackOrder, Status) VALUES(?,?,?,?,1)";
+    private static final String UPDATE= "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
+    private static final String DELETE= "UPDATE Orders SET Status=0 WHERE OrderID=?";
 
-
-    public boolean DeleteUser(String Name) throws SQLException{
+    public boolean DeleteOrder(String OrderID) throws SQLException{
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -22,7 +21,7 @@ public class UserDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(DELETE);
-                ptm.setString(1, Name);
+                ptm.setString(1, OrderID);
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e){
@@ -38,8 +37,7 @@ public class UserDAO {
         return check;
     }
 
-
-    public boolean UpdateUser(UserDTO users) throws SQLException {
+    public boolean UpdateOrder(OrderDTO order) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -47,11 +45,10 @@ public class UserDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(UPDATE);
-                ptm.setString(1,users.getUsername());
-                ptm.setString(2,users.getName());
-                ptm.setString(3,users.getPassword());
-                ptm.setString(4,users.getEmail());
-                ptm.setString(5,users.getPhoneNumber());
+                ptm.setString(1,order.getOrderID());
+                ptm.setDate(2, (Date) order.getOrderDate());
+                ptm.setString(3,order.getUsername());
+                ptm.setString(4,order.getFeedbackOrder());
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
@@ -67,7 +64,8 @@ public class UserDAO {
         return  check;
     }
 
-    public boolean CreateUser(UserDTO users) throws SQLException {
+
+    public boolean CreateOrder(OrderDTO order) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -75,12 +73,10 @@ public class UserDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(CREATE);
-                ptm.setString(1,users.getUsername());
-                ptm.setString(2,users.getName());
-                ptm.setString(3,users.getPassword());
-                ptm.setString(4,users.getEmail());
-                ptm.setString(5,users.getPhoneNumber());
-                ptm.setString(6,users.getRoleID());
+                ptm.setString(1,order.getOrderID());
+                ptm.setDate(2, (Date) order.getOrderDate());
+                ptm.setString(3,order.getUsername());
+                ptm.setString(4,order.getFeedbackOrder());
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
@@ -95,5 +91,4 @@ public class UserDAO {
         }
         return  check;
     }
-
 }
