@@ -1,25 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.user;
 
-/**
- *
- * @author Nguyen Dang Khoa
- */
-
 public class UserDTO {
-
 
     private String Name = null;
     private String Username = null;
     private String RoleID = null;
     private String Password = null;
-
     private String Email = null;
-
     private String PhoneNumber = null;
 
     public UserDTO() {
@@ -31,7 +18,7 @@ public class UserDTO {
         this.PhoneNumber = "";
     }
 
-    public UserDTO(String Username, String Name, String password ,String email, String phoneNumber, String roleID) {
+    public UserDTO(String Username, String Name, String password, String email, String phoneNumber, String roleID) {
         this.Name = Name;
         this.Username = Username;
         this.RoleID = roleID;
@@ -40,35 +27,36 @@ public class UserDTO {
         this.PhoneNumber = phoneNumber;
     }
 
+    public String getName() {
+        return Name;
+    }
+
     public void setName(String name) {
         this.Name = name;
     }
 
-    public void setUsername(String username) {
-        this.Username = username;
+    public String getRoleID() {
+        return RoleID;
     }
 
     public void setRoleID(String roleID) {
         this.RoleID = roleID;
     }
 
-    public void setPassword(String password) {
-        this.Password = password;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
     public String getUsername() {
         return Username;
     }
 
-    public String getRoleID() {
-        return RoleID;
+    public void setUsername(String username) {
+        this.Username = username;
     }
+
     public String getPassword() {
         return Password;
+    }
+
+    public void setPassword(String password) {
+        this.Password = password;
     }
 
     public String getEmail() {
