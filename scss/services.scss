@@ -162,6 +162,21 @@ html {
             margin: 0;
           }
         }
+		.price{
+			
+			margin-top: 8px;
+			display: flex;
+			justify-content:space-between;
+			span{
+				a,i{
+					color: black;
+					text-decoration: none;			
+					&:hover{
+						color:$c2-800;
+					}
+				}
+			}
+		}
       }
     }
   }
