@@ -19,10 +19,9 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;700&family=Raleway:wght@100&family=Roboto+Mono:wght@300&display=swap"
-            rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg" />
     <title>Pet Paradise</title>
 </head>
@@ -157,7 +156,7 @@
             <div class="col col-12 col-md-6 col-lg-4 mb-3">
                 <div class="item">
                     <div class="top">
-                        <img class="ramsay" src="/img/vett.jpeg" alt=" " />
+                        <img class="ramsay" src="./img/vett.jpeg" alt=" " />
                         <div class="social-icon w-100 text-center">
                             <i class="fa-brands fa-facebook-f"></i>
                             <i class="fa-brands fa-twitter"></i>
@@ -174,7 +173,7 @@
             <div class="col col-12 col-md-6 col-lg-4">
                 <div class="item">
                     <div class="top">
-                        <img src="/img/vetdog.jpeg" alt=" " />
+                        <img src="./img/vetdog.jpeg" alt=" " />
                         <div class="social-icon w-100 text-center">
                             <i class="fa-brands fa-facebook-f"></i>
                             <i class="fa-brands fa-twitter"></i>
@@ -190,7 +189,7 @@
         </div>
     </div>
 </section>
-<section class="testimonials animate__animated animate__backInDown">
+<section class="testimonials animate__animated animate__backInDown" style="animation-iteration-count: 3; animation-duration: 4s;">
     <div class="container">
         <div class="title animation-item-1 wow">
             <span>Testimonials</span>
@@ -206,12 +205,12 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active text-center">
                         <div class="image-wrap">
-                            <img src="/img/cus1.webp" class="animation-item-2 wow" alt="...">
+                            <img src="./img/cus1.webp" class="animation-item-2 wow" alt="...">
                         </div>
                         <div class="carousel-caption d-md-block">
                             <div class="top animation-item-3 wow">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <h1>OMG! I cannot believe. It's Awesome "</h5>
+                                <h1>OMG! I cannot believe. It's Awesome "</h1>
                                     <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
@@ -223,12 +222,12 @@
                     </div>
                     <div class="carousel-item text-center">
                         <div class="image-wrap">
-                            <img src="/img/cus2.jpeg" class="" alt="...">
+                            <img src="./img/cus2.jpeg" class="" alt="...">
                         </div>
                         <div class="carousel-caption d-md-block">
                             <div class="top">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <h1>OMG! I cannot believe. It's Awesome "</h5>
+                                <h1>OMG! I cannot believe. It's Awesome "</h1>
                                     <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
@@ -240,12 +239,12 @@
                     </div>
                     <div class="carousel-item text-center">
                         <div class="image-wrap">
-                            <img src="/img/cus3.webp" class="" alt="...">
+                            <img src="./img/cus3.webp" class="" alt="...">
                         </div>
                         <div class="carousel-caption d-md-block">
                             <div class="top">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <h1>OMG! I cannot believe. It's Awesome "</h5>
+                                <h1>OMG! I cannot believe. It's Awesome "</h1>
                                     <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
@@ -261,29 +260,189 @@
 
     </div>
 </section>
+<section class="pricing-plan animate__animated animate__fadeIn" style="animation-iteration-count: infinite; animation-duration: 6s;">
+    <header>
+        <h1>Pricing Plan</h1>
+        <P>Lorem ipsum dolor sit amet consectetetur accusantium sint ad laboriosam, voluptatibus autem ullam voluptate molestias placeat! Nisi excepturi consequuntur modi unde.</P>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <div class="item">
+                    <div class="shield">
+                        <i class="fa-solid fa-shield-cat"></i>
+                        <h4>We care for pet</h4>
+                    </div>
 
-<!-- <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div class="item">
-          <img src="./img/footer.png" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
-            laborum tempore uscipit, laborum.
-          </p>
+                    <ul>
+                        <li>Walking</li>
+                        <hr>
+                        <li>Grooming & Spa</li>
+                        <hr>
+                        <li>Vet</li>
+                        <hr>
+                        <li>Hotel</li>
+                        <hr>
+                        <li>Accessories & Food</li>
+                        <button class="button">Book now</button>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="item">
+                    <div class="shield">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h4>We care for pet</h4>
+                    <ul>
+                        <li>Walking</li>
+                        <hr>
+                        <li>Grooming & Spa</li>
+                        <hr>
+                        <li>Vet</li>
+                        <hr>
+                        <li>Hotel</li>
+                        <hr>
+                        <li>Accessories & Food</li>
+                        <button class="button">Book now</button>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="item">
+                    <div class="shield">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h4>We care for pet</h4>
+                    <ul>
+                        <li>Walking</li>
+                        <hr>
+                        <li>Grooming & Spa</li>
+                        <hr>
+                        <li>Vet</li>
+                        <hr>
+                        <li>Hotel</li>
+                        <hr>
+                        <li>Accessories & Food</li>
+                        <button class="button">Book now</button>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-      </div>
-      <div class="col-sm">
-        <div class="item">
-          <h4>Explore</h4>
-        </div>
-      </div>
-      <div class="col-sm">col-sm</div>
-      <div class="col-sm">col-sm</div>
     </div>
-  </div>
-</footer> -->
+</section>
+<section class="map my-5">
+    <div class="container">
+        <div class="row">
+            <div class="left col-lg-4">
+                <div class="title">
+                    <span>Find Us
+                    </span>
+                    <h1>Additional Info
+                    </h1>
+                </div>
+                <div class="contact-info">
+                    <div class="phone  d-flex align-self-baseline">
+                        <i class="fa fa-phone me-3 mt-1"></i>
+                        <div class="detail">
+                            <p class="m-0">Phone number</p>
+                            <a href="tel:">+(21) 255 088 4943</a>
+                        </div>
+                    </div>
+                    <div class="email d-flex align-self-baseline">
+                        <i class="fa fa-envelope me-3  mt-1"></i>
+                        <div class="detail">
+                            <p class="m-0">Send Email</p>
+                            <a href="mailto:">da@mail.com</a>
+                        </div>
+                    </div>
+                    <div class="address d-flex align-self-baseline">
+                        <i class="fa fa-map-marker-alt me-3 mt-1"></i>
+                        <div class="detail">
+                            <p class="m-0">Office Address</p>
+                            <p>Address here, 434 Food Honey street, London, UK - 62617.</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="social-share">
+                    <li class="social-item social-item--facebook">
+                        <i class="fab fa-facebook-square"></i>
+                    </li>
+                    <li class="social-item social-item--twitter">
+                        <i class="fab fa-twitter"></i>
+                    </li>
+                    <li class="social-item social-item--telegram">
+                        <i class="fab fa-telegram"></i>
+                    </li>
+                    <li class="social-item social-item--linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right col-lg-6">
+                <iframe class="map w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4747517025585!2d106.70192131411643!3d10.774904262169763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46f39fc6c3%3A0xfeb722bd332ca79e!2sDinner!5e0!3m2!1svi!2s!4v1650438098203!5m2!1svi!2s"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="item">
+                    <img src="./img/footer.png" />
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
+                        laborum tempore uscipit, laborum.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-paw"></i>About us</li>
+                        <li><i class="fa-solid fa-paw"></i>
+                            Services</li>
+                        <li><i class="fa-solid fa-paw"></i>
+                            More</li>
+                        <li>
+                            <i class="fa-solid fa-paw"></i>Contact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item">
+                    <h4>Help</h4>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-paw"></i>
+                            Terms & Conditions</li>
+                        <li>
+                            <i class="fa-solid fa-paw"></i>
+                            Privacy Policy</li>
+                        <li><i class="fa-solid fa-paw"></i>
+                            Reporting</li>
+                        <li><i class="fa-solid fa-paw"></i>
+                            FAQ</li>
+                        <li><i class="fa-solid fa-paw"></i>
+                            Support</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
