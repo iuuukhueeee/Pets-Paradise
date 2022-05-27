@@ -2,27 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-/>
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
+          rel="stylesheet">
+    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg"/>
     <title>Pet Paradise</title>
 </head>
 <body>
@@ -30,7 +32,7 @@
     <div class="container">
         <a href="#" class="logo">
             <!-- <i class="fab fa-atlassian"></i> -->
-            <img src="./img/paw-solid.svg" style="height: 40px" />
+            <img src="./img/paw-solid.svg" style="height: 40px"/>
             <span>Pet Paradise</span>
         </a>
         <nav class="navbar">
@@ -46,7 +48,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="active" href="#">HOME </a>
-            <a href="#">SERVICES</a>
+            <a href="services.jsp">SERVICES</a>
             <a href="#">SHOWCASE</a>
             <a href="#">BLOG</a>
             <a href="#">ABOUT</a>
@@ -70,28 +72,28 @@
     <div class="container">
         <div class="row">
             <div class="col-md">
-                <img src="./img/kit.png" />
+                <img src="./img/kit.png"/>
                 <div class="item">
                     <h4>Vaccinate</h4>
                     <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
                 </div>
             </div>
             <div class="col-md">
-                <img src="./img/plus.png" />
+                <img src="./img/plus.png"/>
                 <div class="item">
                     <h4>Special Care</h4>
                     <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
                 </div>
             </div>
             <div class="col-md">
-                <img src="./img/support.png" />
+                <img src="./img/support.png"/>
                 <div class="item">
                     <h4>Support 24/7</h4>
                     <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
                 </div>
             </div>
             <div class="col-md">
-                <img src="./img/expert.png" />
+                <img src="./img/expert.png"/>
                 <div class="item">
                     <h4>Expert</h4>
                     <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
@@ -104,7 +106,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md">
-                <img src="./img/vet2.jpeg" />
+                <img src="./img/vet2.jpeg"/>
             </div>
             <div class="col-md">
                 <div class="content">
@@ -139,7 +141,7 @@
             <div class="col col-12 col-md-6 col-lg-4 mb-3">
                 <div class="item">
                     <div class="top">
-                        <img src="./img/vet.jpeg" />
+                        <img src="./img/vet.jpeg"/>
                         <div class="social-icon w-100 text-center">
                             <i class="fa-brands fa-facebook-f"></i>
                             <i class="fa-brands fa-twitter"></i>
@@ -156,7 +158,7 @@
             <div class="col col-12 col-md-6 col-lg-4 mb-3">
                 <div class="item">
                     <div class="top">
-                        <img class="ramsay" src="./img/vett.jpeg" alt=" " />
+                        <img class="ramsay" src="./img/vett.jpeg" alt=" "/>
                         <div class="social-icon w-100 text-center">
                             <i class="fa-brands fa-facebook-f"></i>
                             <i class="fa-brands fa-twitter"></i>
@@ -173,7 +175,7 @@
             <div class="col col-12 col-md-6 col-lg-4">
                 <div class="item">
                     <div class="top">
-                        <img src="./img/vetdog.jpeg" alt=" " />
+                        <img src="./img/vetdog.jpeg" alt=" "/>
                         <div class="social-icon w-100 text-center">
                             <i class="fa-brands fa-facebook-f"></i>
                             <i class="fa-brands fa-twitter"></i>
@@ -189,7 +191,8 @@
         </div>
     </div>
 </section>
-<section class="testimonials animate__animated animate__backInDown" style="animation-iteration-count: 3; animation-duration: 4s;">
+<section class="testimonials animate__animated animate__backInDown"
+         style="animation-iteration-count: 3; animation-duration: 4s;">
     <div class="container">
         <div class="title animation-item-1 wow">
             <span>Testimonials</span>
@@ -198,9 +201,12 @@
         <div class="carousel">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active text-center">
@@ -211,8 +217,10 @@
                             <div class="top animation-item-3 wow">
                                 <i class="fa-solid fa-quote-left"></i>
                                 <h1>OMG! I cannot believe. It's Awesome "</h1>
-                                    <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
-                                        in ligula.</p>
+                                <p>My new site is so much faster and easier to work with than my old site. They are here
+                                    to help the customers to get their success. Nemo sit eos, quod minus eius illo
+                                    labore. Pellen tesque libero ut justo, ultrices
+                                    in ligula.</p>
                             </div>
                             <div class="bottom animation-item-4 wow">
                                 <h1>Johnson william</h1>
@@ -228,7 +236,9 @@
                             <div class="top">
                                 <i class="fa-solid fa-quote-left"></i>
                                 <h1>OMG! I cannot believe. It's Awesome "</h1>
-                                    <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
+                                    <p>My new site is so much faster and easier to work with than my old site. They are
+                                        here to help the customers to get their success. Nemo sit eos, quod minus eius
+                                        illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
                             <div class="bottom">
@@ -245,7 +255,9 @@
                             <div class="top">
                                 <i class="fa-solid fa-quote-left"></i>
                                 <h1>OMG! I cannot believe. It's Awesome "</h1>
-                                    <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
+                                    <p>My new site is so much faster and easier to work with than my old site. They are
+                                        here to help the customers to get their success. Nemo sit eos, quod minus eius
+                                        illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
                             <div class="bottom">
@@ -260,10 +272,12 @@
 
     </div>
 </section>
-<section class="pricing-plan animate__animated animate__fadeIn" style="animation-iteration-count: infinite; animation-duration: 6s;">
+<section class="pricing-plan animate__animated animate__fadeIn"
+         style="animation-iteration-count: infinite; animation-duration: 6s;">
     <header>
         <h1>Pricing Plan</h1>
-        <P>Lorem ipsum dolor sit amet consectetetur accusantium sint ad laboriosam, voluptatibus autem ullam voluptate molestias placeat! Nisi excepturi consequuntur modi unde.</P>
+        <P>Lorem ipsum dolor sit amet consectetetur accusantium sint ad laboriosam, voluptatibus autem ullam voluptate
+            molestias placeat! Nisi excepturi consequuntur modi unde.</P>
     </header>
     <div class="container">
         <div class="row">
@@ -395,55 +409,82 @@
 
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
+        <div class="row w-100">
+            <div class="col col-12 col-md-6 col-lg-4 ">
                 <div class="item">
-                    <img src="./img/footer.png" />
+                    <img src="./img/footer.png"/>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
                         laborum tempore uscipit, laborum.
                     </p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col col-12 col-md-6 col-lg-2">
                 <div class="item">
                     <h4>Explore</h4>
                     <ul>
                         <li>
-                            <i class="fa-solid fa-paw"></i>About us</li>
+                            <i class="fa-solid fa-paw"></i>About us
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            Services</li>
+                            Services
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            More</li>
+                            More
+                        </li>
                         <li>
-                            <i class="fa-solid fa-paw"></i>Contact</li>
+                            <i class="fa-solid fa-paw"></i>Contact
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-4">
+
+            <div class="col col-12 col-md-6 col-lg-2 ">
                 <div class="item">
                     <h4>Help</h4>
                     <ul>
                         <li>
                             <i class="fa-solid fa-paw"></i>
-                            Terms & Conditions</li>
+                            Terms & Conditions
+                        </li>
                         <li>
                             <i class="fa-solid fa-paw"></i>
-                            Privacy Policy</li>
+                            Privacy Policy
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            Reporting</li>
+                            Reporting
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            FAQ</li>
+                            FAQ
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            Support</li>
+                            Support
+                        </li>
                     </ul>
                 </div>
             </div>
-
+            <div class="col col-12 col-md-6 col-lg-4 animation-item-4 wow">
+                <div class="item">
+                    <div class="submit">
+                        <h4>Subscribe to our Newsletter</h4>
+                        <p>Enter your email and receive the latest news, updates and special offers from us.
+                        </p>
+                        <div>
+                            <input type="text" id="lname" name="lastname" placeholder="Your email...">
+                            <input type="submit" value="Subscribe now">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<section class="backToTop">
+    <a href="#header"><i class="fa fa-arrow-down"></i></a>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
