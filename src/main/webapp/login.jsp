@@ -1,29 +1,4 @@
-<%--
-<<<<<<< HEAD
-  Created by IntelliJ IDEA.
-  User: iuuukhueeee
-  Date: 5/24/2022
-  Time: 2:38 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
-    <form method="POST" action="MainController">
-        Username: <input type="text" name="username">
-        Password: <input type="password" name="password">
-        <input type="submit" name="action" value="Login"/>
-    </form>
-=======
-    Document   : login
-    Created on : Mar 11, 2022, 9:02:11 PM
-    Author     : hd
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,10 +33,10 @@
                 error = "";
             }
         %>
-        <p><%=error%></p>
+        <p><%=error%>
+        </p>
 
     </fieldset>
 </form>
->>>>>>> Login/out
 </body>
 </html>
