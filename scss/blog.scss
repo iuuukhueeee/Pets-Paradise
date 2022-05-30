@@ -223,36 +223,106 @@
 	background-color: #e2ebfc29;
 	border-radius: 1%;
 }
-.footer-body {
-	.footer-back {
-		i {
-			background-color: #68a7ad00 !important;
-			color: rgb(255, 255, 255);
-		}
-		display: inline-block;
-		font-size: 16px;
-		text-align: center;
-		justify-items: center;
-		color: #ffffff;
-		background: #68a7ad;
-		height: 40px;
-		line-height: 40px;
-		width: 170px;
-		border-radius: 3px;
-		&:hover {
-			display: inline-block;
-			font-size: 16px;
-			text-align: center;
-			justify-items: center;
-			color: #ffffff;
-			background: #68a7ad73;
-			height: 40px;
-			line-height: 40px;
-			width: 170px;
-			border-radius: 3px;
-			text-decoration-line: none !important;
-		}
-	}
+// .footer-body {
+// 	.footer-back {
+// 		i {
+// 			background-color: #68a7ad00 !important;
+// 			color: rgb(255, 255, 255);
+// 		}
+// 		display: inline-block;
+// 		font-size: 16px;
+// 		text-align: center;
+// 		justify-items: center;
+// 		color: #ffffff;
+// 		background: #68a7ad;
+// 		height: 40px;
+// 		line-height: 40px;
+// 		width: 170px;
+// 		border-radius: 3px;
+// 		&:hover {
+// 			display: inline-block;
+// 			font-size: 16px;
+// 			text-align: center;
+// 			justify-items: center;
+// 			color: #ffffff;
+// 			background: #68a7ad73;
+// 			height: 40px;
+// 			line-height: 40px;
+// 			width: 170px;
+// 			border-radius: 3px;
+// 			text-decoration-line: none !important;
+// 		}
+// 	}
+// }
+footer {
+  .row {
+   
+    .col {
+      padding: 32px;
+      .item {
+        img {
+          height: auto;
+          width: 100%;
+        }
+        li {
+          margin-bottom: 16px;
+          list-style-type: none;
+          i{
+            margin-right: 8px;
+          }
+        }
+        h4 {
+          z-index: 0;
+          &::after {
+            content: "";
+            width: 0;
+            display: block;
+            height: 2px;
+            background-color: #4c5baf;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+          }
+          &:hover {
+            &::after {
+              width: 10%;
+            }
+            color: $c2-800;
+          }
+          text-decoration: none;
+          font-size: 32px;
+        }
+        .submit {
+          margin-bottom: 1rem;
+          div {
+              input[type="text"] {
+                  width: 100%;
+                  padding: 12px 20px;
+                  margin: 8px 0;
+                  display: inline-block;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  box-sizing: border-box;
+                  margin-top: 16px;
+              }
+              input[type="submit"] {
+                  width: 100%;
+                  background-color: $c2-800;
+                  color: white;
+                  padding: 14px 20px;
+                  margin: 8px 0;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  transition: all 0.5s;
+                  &:hover {
+                      opacity: 0.7;
+                  }
+              }
+          }
+      }
+      }
+    }
+  }
 }
 .cmt-title {
 	display: flex;
