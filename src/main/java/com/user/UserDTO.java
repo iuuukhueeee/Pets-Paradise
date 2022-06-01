@@ -1,39 +1,30 @@
 package com.user;
 
-import javax.management.relation.Role;
-
 public class UserDTO {
-    private String Username;
-    private String Name;
-    private String Password;
-    private String Email;
-    private String PhoneNumber;
-    private String RoleID;
 
-    public UserDTO(){
-        this.Username = "";
+    private String Name = null;
+    private String Username = null;
+    private String RoleID = null;
+    private String Password = null;
+    private String Email = null;
+    private String PhoneNumber = null;
+
+    public UserDTO() {
         this.Name = "";
+        this.Username = "";
+        this.RoleID = "";
         this.Password = "";
         this.Email = "";
         this.PhoneNumber = "";
-        this.RoleID = "";
     }
 
-    public UserDTO(String Username, String Name, String Password, String Email, String PhoneNumber, String RoleID){
-        this.Username = Username;
+    public UserDTO(String Username, String Name, String password, String email, String phoneNumber, String roleID) {
         this.Name = Name;
-        this.Password = Password;
-        this.Email = Email;
-        this.PhoneNumber = PhoneNumber;
-        this.RoleID = RoleID;
-    }
-
-    public String getUsername() {
-        return Username;
-    }
-
-    public void setUsername(String username) {
-        Username = username;
+        this.Username = Username;
+        this.RoleID = roleID;
+        this.Password = password;
+        this.Email = email;
+        this.PhoneNumber = phoneNumber;
     }
 
     public String getName() {
@@ -41,31 +32,7 @@ public class UserDTO {
     }
 
     public void setName(String name) {
-        Name = name;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        this.Name = name;
     }
 
     public String getRoleID() {
@@ -73,8 +40,38 @@ public class UserDTO {
     }
 
     public void setRoleID(String roleID) {
-        RoleID = roleID;
+        this.RoleID = roleID;
     }
 
+    public String getUsername() {
+        return Username;
+    }
 
+    public void setUsername(String username) {
+        this.Username = username;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        this.Password = password;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        this.Email = email;
+    }
+
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.PhoneNumber = phoneNumber;
+    }
 }

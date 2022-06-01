@@ -1,33 +1,75 @@
 package com.user;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.utils.DButils;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-
 public class UserDAO {
     private static final String CREATE = "INSERT INTO Users(Username, Name, Password, Email, PhoneNumber, RoleID, Status) VALUES(?,?,?,?,?,?,1)";
-    private static final String UPDATE = "UPDATE Users SET  Username=?, Password=?, Email=?, PhoneNumber=? where Name=?";
-    private static final String DELETE = "UPDATE Users SET Status=0 WHERE Name=?";
+    private static final String LOGIN = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Username=? AND Password=? AND Status=1";
+    private static final String CHECK_DUPLICATE = "SELECT Name FROM Users WHERE Username=?";
 
-
-    public boolean DeleteUser(String Name) throws SQLException{
+    public boolean createUser(UserDTO users) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
-
-        try{
+        try {
             conn = DButils.getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(DELETE);
-                ptm.setString(1, Name);
+                ptm = conn.prepareStatement(CREATE);
+                ptm.setString(1, users.getUsername());
+                ptm.setString(2, users.getName());
+                ptm.setString(3, users.getPassword());
+                ptm.setString(4, users.getEmail());
+                ptm.setString(5, users.getPhoneNumber());
+                ptm.setString(6, users.getRoleID());
                 check = ptm.executeUpdate() > 0;
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                ptm.close();
+            }
+        }
+        return check;
+    }
+
+    public UserDTO checkLogin(String Username, String Password) throws SQLException {
+        UserDTO user = null;
+
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(LOGIN);
+                ptm.setString(1, Username);
+                ptm.setString(2, Password);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    String username = rs.getString("Username");
+                    String Name = rs.getString("Name");
+                    String Email = rs.getString("Email");
+                    String PhoneNumber = rs.getString("PhoneNumber");
+                    String RoleID = rs.getString("RoleID");
+                    user = new UserDTO(username, Name, "", Email, PhoneNumber, RoleID);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
             if (ptm != null) {
                 ptm.close();
             }
@@ -35,65 +77,40 @@ public class UserDAO {
                 conn.close();
             }
         }
+        return user;
+    }
+
+    public boolean checkDuplicate(String userID) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(CHECK_DUPLICATE);
+                ptm.setString(1, userID);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    check = true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+        }
         return check;
     }
 
-
-    public boolean UpdateUser(UserDTO users) throws SQLException {
-        boolean check = false;
-        Connection conn = null;
-        PreparedStatement ptm = null;
-        try{
-            conn = DButils.getConnection();
-            if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE);
-                ptm.setString(1,users.getUsername());
-                ptm.setString(2,users.getName());
-                ptm.setString(3,users.getPassword());
-                ptm.setString(4,users.getEmail());
-                ptm.setString(5,users.getPhoneNumber());
-                check = ptm.executeUpdate() > 0;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if(ptm != null){
-                ptm.close();
-            }
-            if (conn != null){
-                ptm.close();
-            }
-        }
-        return  check;
-    }
-
-    public boolean CreateUser(UserDTO users) throws SQLException {
-        boolean check = false;
-        Connection conn = null;
-        PreparedStatement ptm = null;
-        try{
-            conn = DButils.getConnection();
-            if (conn != null) {
-                ptm = conn.prepareStatement(CREATE);
-                ptm.setString(1,users.getUsername());
-                ptm.setString(2,users.getName());
-                ptm.setString(3,users.getPassword());
-                ptm.setString(4,users.getEmail());
-                ptm.setString(5,users.getPhoneNumber());
-                ptm.setString(6,users.getRoleID());
-                check = ptm.executeUpdate() > 0;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if(ptm != null){
-                ptm.close();
-            }
-            if (conn != null){
-                ptm.close();
-            }
-        }
-        return  check;
-    }
 
 }
