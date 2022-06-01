@@ -7,26 +7,28 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "BlogController", value = "/BlogController")
-public class BlogController extends HttpServlet {
+@WebServlet(name = "BlogContentController", value = "/BlogContentController")
+public class BlogContentController extends HttpServlet {
 
-    private static final String ERROR = "blog.jsp";
-    private static final String SUCCESS = "blog.jsp";
+    private static final String ERROR = "blogID.jsp";
+    private static final String SUCCESS = "blogID.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
+        BlogDTO blog = null;
 
         try {
+            String blogID = request.getParameter("blogID");
             BlogDAO blogDAO = new BlogDAO();
-            List<BlogDTO> listBlog;
-            listBlog = blogDAO.loadListBlog();
+            blog = blogDAO.loadByID(blogID);
 
-            if (listBlog.size() > 0) {
-                request.setAttribute("LIST_BLOG", listBlog);
+            if (blog != null) {
+                request.setAttribute("BLOG_CONTENT", blog);
                 url = SUCCESS;
             }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

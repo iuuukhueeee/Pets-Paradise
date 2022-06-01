@@ -7,9 +7,17 @@
         <servlet-name>blogController</servlet-name>
         <servlet-class>com.controllers.BlogController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BlogContentController</servlet-name>
+        <servlet-class>com.controllers.BlogContentController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>blogController</servlet-name>
         <url-pattern>/blog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogContentController</servlet-name>
+        <url-pattern>/BlogContentController</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
