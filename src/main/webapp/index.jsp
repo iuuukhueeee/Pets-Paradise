@@ -211,7 +211,7 @@
                         <div class="carousel-caption d-md-block">
                             <div class="top animation-item-3 wow">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <h1>OMG! I cannot believe. It's Awesome "</h5>
+                                <h1>OMG! I cannot believe. It's Awesome "</h1>
                                     <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
@@ -228,7 +228,7 @@
                         <div class="carousel-caption d-md-block">
                             <div class="top">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <h1>OMG! I cannot believe. It's Awesome "</h5>
+                                <h1>OMG! I cannot believe. It's Awesome "</h1>
                                     <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
@@ -245,7 +245,7 @@
                         <div class="carousel-caption d-md-block">
                             <div class="top">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <h1>OMG! I cannot believe. It's Awesome "</h5>
+                                <h1>OMG! I cannot believe. It's Awesome "</h1>
                                     <p>My new site is so much faster and easier to work with than my old site. They are here to help the customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut justo, ultrices
                                         in ligula.</p>
                             </div>
