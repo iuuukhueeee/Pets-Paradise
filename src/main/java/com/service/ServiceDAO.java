@@ -1,14 +1,11 @@
-package service;
+package com.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import com.utils.*;
-import com.utils.DButils;
 
-import javax.xml.ws.Service;
+import com.utils.DButils;
 
 
 public class ServiceDAO {

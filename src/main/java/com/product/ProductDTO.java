@@ -11,8 +11,6 @@ public class ProductDTO {
     private Date ImportDate;
     private Date ExpireDate;
 
-    private boolean Status;
-
     public ProductDTO(){
         this.ProductID = "";
         this.Name = "";

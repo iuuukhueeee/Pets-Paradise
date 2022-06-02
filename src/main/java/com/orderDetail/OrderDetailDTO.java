@@ -8,7 +8,6 @@ public class OrderDetailDTO {
     private float OrderDetailPrice;
     private String OrderID;
     private String ServiceID;
-
     private String ProductID;
     private Date BookingTime;
 

@@ -20,6 +20,9 @@ public class BookingController extends HttpServlet {
 
         try {
 
+            String serviceID = request.getParameter("serviceID");
+
+
 
 
         } catch (Exception e) {
