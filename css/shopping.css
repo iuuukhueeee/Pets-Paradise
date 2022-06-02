@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Raleway";
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  background: #f5f9fe;
+}
+
+.header li a:hover {
+  color: #68A7AD;
+}
+
+.menu {
+  padding-top: 2rem;
+}
+
+.menu .dropdown button {
+  background-color: #68A7AD;
+}
+
+.menu .dropdown .active {
+  color: black;
+  background-color: #C3DBD9;
+}
+
+.menu .dropdown li {
+  margin: 16px;
+}
+
+.menu .relative #search-dropdown {
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.product {
+  margin-top: 2rem;
+}
+
+.product .grid {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.product .grid .col-span-4 {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media screen and (max-width: 640px) {
+  .product .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.backToTop a {
+  text-decoration: none;
+  color: #68A7AD;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 100;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 187, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.backToTop a i {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.backToTop a:hover {
+  background-color: #1773bdcc;
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+  -webkit-box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
+          box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
+}
+
+.backToTop a:hover i {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/*# sourceMappingURL=shopping.css.map */
