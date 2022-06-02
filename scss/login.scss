@@ -1,0 +1,65 @@
+@import "./_variable.scss";
+
+
+.divider:after,
+    .divider:before {
+        content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+                    }
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+.h-custom {
+    height: 100%;
+}
+}
+
+.logo-text {
+      @include text(35px, 900, #68a7ad);
+      position: relative;
+      top: 3px;
+    }
+
+.icon  {
+    button{
+        border-color: #68a7ad;
+        background-color: #68a7ad;
+    }
+    }
+
+    .icon  {
+        button:hover{
+            border-color: #68a7ad00;
+            background-color: #5bbcc5ab;
+        }
+        }
+        .button {
+            --color: #68a7ad;
+            font-family: "Poppins", sans-serif;
+            color: white;
+            padding: 15px 30px;
+            width: 200px;
+            border-radius: 4px;
+            background-color: var(--color);
+            cursor: pointer;
+            font-weight: 500;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            transition: all 0.2s linear;
+            &:hover {
+                transform: rotateY(-15deg);
+            }
+        }
+        body{
+            background-image: url('/img/back-log.jpg') !important;
+            background-size: cover;
+            }
