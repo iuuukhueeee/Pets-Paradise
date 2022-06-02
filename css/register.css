@@ -26,4 +26,20 @@ body {
   background-image: url("/img/back-log.jpg") !important;
   background-size: cover;
 }
+
+.custom-box::-webkit-input-placeholder {
+  font-size: 15px !important;
+}
+
+.custom-box:-ms-input-placeholder {
+  font-size: 15px !important;
+}
+
+.custom-box::-ms-input-placeholder {
+  font-size: 15px !important;
+}
+
+.custom-box::placeholder {
+  font-size: 15px !important;
+}
 /*# sourceMappingURL=register.css.map */
