@@ -1,117 +1,97 @@
 @import "./variable";
 
-
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Raleway";
-  }
-  
-  html {
-	scroll-behavior: smooth;
-	font-size: 20px;
-  }
-  
-  .container {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 0 15px;
-  }
-  
-  .header {
-	background: rgba(0, 0, 0, 0.5);
-	width: 100%;
-	top: 0;
-	left: 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-	.navbar {
-	  font-weight: bold;
-	  display: flex;
-	  a {
-		z-index: 0;
-		&::after {
-		  content: "";
-		  width: 0;
-		  display: block;
-		  height: 2px;
-		  background-color: #4c5baf;
-		  transition-duration: 0.5s;
-		  transition-timing-function: ease-in-out;
-		}
-		&:hover {
-		  &::after {
-			width: 100%;
-		  }
-		  color: red;
-		}
-		color: $c1-100;
-		text-decoration: none;
-		font-size: 14px;
-		margin-left: 20px;
-	  }
-	  .active {
-		color: #68a7ad;
-	  }
-	}
-	.logo {
-	  font-size: 25px;
-	  text-decoration: none;
-	  font-weight: 700;
-	  display: block;
-	  span {
-		@include text(35px, 900, #68a7ad);
-		position: relative;
-		top: 3px;
-	  }
-	}
-	.navbar-toggler {
-	  background-color: transparent;
-	  border: none;
-	  display: none;
-	  i {
-		font-size: 25px;
-		color: $c1-100;
-	  }
-	}
-	.container {
-	  display: flex;
-	  height: 100px;
-	  align-items: center;
-	  justify-content: space-between;
-	}
-  }
-
-
-.overflow-y-auto{
-	background: $c2-800;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
 }
-.backToTop {
-	a {
-		text-decoration: none;
-		color: $c2-800;
-		position: fixed;
-		bottom: 5%;
-		right: 5%;
-		z-index: 100;
-		height: 3rem;
-		width: 3rem;
-		border-radius: 50%;
-		background-color: rgba(0, 187, 255, 0.2);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: all 0.5s;
-		i {
-			transition: all 0.5s;
-		}
-		&:hover {
-			background-color: #1773bdcc;
-			transform: translateY(-5%);
-			box-shadow: 0.125rem 0.125rem 1rem $c2-800;
-			i {
-				transform: rotate(180deg);
-			}
-		}
-	}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.header {
+  background: #f5f9fe;
+  li {
+    a {
+      &:hover {
+        color: $c2-800;
+      }
+    }
   }
+}
+.menu {
+  padding-top: 2rem;
+  .dropdown {
+    button {
+      background-color: $c2-800;
+    }
+    .active {
+      color: black;
+      background-color: $c2-900;
+    }
+    li {
+      margin: 16px;
+    }
+  }
+  .relative {
+    #search-dropdown {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+  }
+}
+.product {
+  margin-top: 2rem;
+  .grid {
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    .col-span-4{
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ .item{
+ }
+  }
+  @media screen and (max-width:640px){
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+}
+
+.backToTop {
+  a {
+    text-decoration: none;
+    color: $c2-800;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 100;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: rgba(0, 187, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    i {
+      transition: all 0.5s;
+    }
+    &:hover {
+      background-color: #1773bdcc;
+      transform: translateY(-5%);
+      box-shadow: 0.125rem 0.125rem 1rem $c2-800;
+      i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+// rgb(180, 180, 180)
