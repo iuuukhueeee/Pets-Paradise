@@ -53,7 +53,11 @@ html {
 }
 
 .header .navbar a:hover {
+<<<<<<< HEAD
   color: #FDFFBC;
+=======
+  color: #68a7ada9;
+>>>>>>> website
 }
 
 .header .navbar a:hover::after {
@@ -503,6 +507,11 @@ html {
 
 .map .row .left .social-share .social-item--linkedin {
   background-color: #007ee5;
+}
+
+footer {
+  border-top-right-radius: 300px;
+  background-color: #dbe3e5;
 }
 
 footer .row .col {
