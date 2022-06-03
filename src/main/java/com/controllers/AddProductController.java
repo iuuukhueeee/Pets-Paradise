@@ -44,8 +44,8 @@ public class AddProductController extends HttpServlet {
                 productError.setNameError("Name must be in [3, 20]");
                 check = false;
             }
-            if(category.length()<2 || category.length()>10){
-                productError.setProductCategoryIDError("Category must be in [5, 10]");
+            if(category.length()<2 || category.length()>15){
+                productError.setProductCategoryIDError("Category must be in [2, 15]");
                 check = false;
             }
             if (check) {

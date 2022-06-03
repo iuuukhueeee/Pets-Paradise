@@ -1,11 +1,5 @@
 package com.user;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,8 +12,8 @@ public class UserDAO {
 
     private static final String LOGIN = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Username=? AND Password=? AND Status=1";
     private static final String CHECK_DUPLICATE = "SELECT Name FROM Users WHERE Username=?";
-    private static final String SEARCH = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Name LIKE ?";
-    private static final String CREATE = "INSERT INTO Users(Username, Name, Password, Email, PhoneNumber, RoleID, Status) VALUES(?, ?, ?, ?, ?, ?, 1)";
+    private static final String SEARCH = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Name LIKE ? AND Status=1";
+    private static final String CREATE = "INSERT INTO Users(Username, Name, Password, Email, PhoneNumber, RoleID, Status) VALUES(?, ?, ?, ?, ?, 'US', 1)";
     private static final String DELETE = "UPDATE Users SET Status=0 WHERE Username=?";
     private static final String UPDATE = "UPDATE Users SET Name = ?, Password = ? , Email = ? , PhoneNumber = ? WHERE Username = ?";
 
@@ -146,8 +140,7 @@ public class UserDAO {
                 ptm.setString(3, user.getPassword());
                 ptm.setString(4, user.getEmail());
                 ptm.setString(5, user.getPhoneNumber());
-                ptm.setString(6, user.getRoleID());
-                check = ptm.executeUpdate() > 0;
+                check = ptm.executeUpdate() > 0 ? true : false;
 
             }
         } catch (Exception e) {

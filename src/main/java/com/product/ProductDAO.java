@@ -26,11 +26,11 @@ public class ProductDAO {
     private static final String UPDATE_QUANTITY = "UPDATE Product SET Quantity=? WHERE ProductID=?";
 
     private static final String CHECK_DUPLICATE = "SELECT Name FROM Product WHERE ProductID=?";
-    private static final String ADD = "INSERT INTO Product(ProductID, ProductCategory, Name, Quantity, Image, Price, ImportDate, ExpiredDate, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)";
-    private static final String SEARCH_PRODUCT = "SELECT ProductID, ProductCategory, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Name LIKE ? AND Status=1";
-    private static final String GET_ALL = "SELECT ProductID, ProductCategory, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Status=1";
-    private static final String UPDATE = "UPDATE Product SET ProductCategory=?, Name=?, Quantity=?, Image=?, Price=?, ImportDate=?, ExpiredDate=? WHERE ProductID=?";
-    private static final String GET_ID = "SELECT ProductID, ProductCategory, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
+    private static final String ADD = "INSERT INTO Product(ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)";
+    private static final String SEARCH_PRODUCT = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Name LIKE ? AND Status=1";
+    private static final String GET_ALL = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Status=1";
+    private static final String UPDATE = "UPDATE Product SET ProductCategoryID=?, Name=?, Quantity=?, Image=?, Price=?, ImportDate=?, ExpiredDate=? WHERE ProductID=?";
+    private static final String GET_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
     private static final String DELETE = "UPDATE Product SET Status=0 WHERE ProductID=?";
 
     public boolean updateQuantity(String id, int quantity) throws SQLException {
@@ -99,14 +99,14 @@ public class ProductDAO {
             connection = DButils.getConnection();
             if (connection != null) {
                 pst = connection.prepareStatement(UPDATE);
-                pst.setString(1, product.getProductID());
-                pst.setString(2, product.getCategoryID());
-                pst.setString(3, product.getName());
-                pst.setInt(4, product.getQuantity());
-                pst.setString(5, product.getImage());
-                pst.setFloat(6, product.getPrice());
-                pst.setDate(7, product.getImportDate());
-                pst.setDate(8, product.getExpiredDate());
+                pst.setString(1, product.getCategoryID());
+                pst.setString(2, product.getName());
+                pst.setInt(3, product.getQuantity());
+                pst.setString(4, product.getImage());
+                pst.setFloat(5, product.getPrice());
+                pst.setDate(6, product.getImportDate());
+                pst.setDate(7, product.getExpiredDate());
+                pst.setString(8, product.getProductID());
                 check = pst.executeUpdate() > 0 ? true : false;
             }
         } catch (Exception e) {
@@ -258,14 +258,13 @@ public class ProductDAO {
     public boolean create(ProductDTO product) throws SQLException {
         Connection connection = null;
         PreparedStatement pst = null;
-        ResultSet rs = null;
 
         boolean success = false;
 
         try {
             connection = DButils.getConnection();
             if (connection != null) {
-                pst = connection.prepareStatement(UPDATE);
+                pst = connection.prepareStatement(ADD);
                 pst.setString(1, product.getProductID());
                 pst.setString(2, product.getCategoryID());
                 pst.setString(3, product.getName());
@@ -274,14 +273,11 @@ public class ProductDAO {
                 pst.setFloat(6, product.getPrice());
                 pst.setDate(7, product.getImportDate());
                 pst.setDate(8, product.getExpiredDate());
-                success = pst.executeUpdate() > 1 ? true : false;
+                success = pst.executeUpdate() > 0 ? true : false;
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (rs != null) {
-                rs.close();
-            }
             if (pst != null) {
                 pst.close();
             }

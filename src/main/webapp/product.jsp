@@ -70,7 +70,7 @@
     </form>
 </section>
 
-    <form action="MainController">
+    <form action="MainController" method="POST">
         <input name="SearchProduct" placeholder="Product title" type="text"/>
         <input type="submit" name="action" value="SearchProduct" aria-label="submit form"/>
 

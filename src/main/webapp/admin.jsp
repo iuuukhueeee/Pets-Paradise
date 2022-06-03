@@ -23,6 +23,12 @@
     }
 %>
 <h1>Welcome Manager: <%=user.getName()%>!</h1>
+<form action="MainController" method="POST">
+    <input name="SearchUser" placeholder="User title" type="text"/>
+    <input type="submit" name="action" value="SearchUser" aria-label="submit form"/>
+
+</form>
+</br>
 <%
     List<UserDTO> listUser = (List<UserDTO>) request.getAttribute("LIST_USER");
     if (listUser != null) {
@@ -32,7 +38,7 @@
     <thead>
     <tr>
         <th>No</th>
-        <th>Username</th>
+        <th>UserName</th>
         <th>Name</th>
         <th>Password</th>
         <th>Email</th>
@@ -48,23 +54,28 @@
     %>
     <form action="MainController" method="POST">
         <tr>
-            <td scope="row"><%= count++%>
+            <td scope="row"><%= count++%></td>
+            <td>
+            <input type="text" name="userName" value="<%= User.getUsername()%>" required="" />
             </td>
-            <td><%= User.getUsername()%>
+            <td>
+                <input type="text" name="name" value="<%= User.getName()%>" required="" size="8" />
             </td>
-            <td><%= User.getName()%>
+            <td>
+                <input type="password" name="password" value="<%= User.getPassword()%>" required="" size="8" />
             </td>
-            <td>***
+            <td>
+                <input type="text" name="email" value="<%= User.getEmail()%>" required="" size="8" />
             </td>
-            <td><%= User.getEmail()%>
+            <td>
+                <input type="text" name="phoneNumber" value="<%= User.getPhoneNumber()%>" required="" size="10"/>
             </td>
-            <td><%= User.getPhoneNumber()%>
-            </td>
-            <td><%= User.getRoleID()%>
+            <td>
+                <input type="text" name="roleID" value="<%= User.getRoleID()%>" required="" size="5"/>
             </td>
             <!--delete-->
             <td>
-                <a href="MainController?action=DeleteUser&userName=<%= User.getUsername()%>&search=<%= search%>">Delete</a>
+                <a href="MainController?action=DeleteUser&userName=<%= User.getUsername()%>&SearchUser=<%= request.getParameter("SearchUser")%>">Delete</a>
             </td>
             <td>
                 <input type="submit" name="action" value="UpdateUser"/>

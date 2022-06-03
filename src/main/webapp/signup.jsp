@@ -35,7 +35,6 @@
       <input type="password" name="password" required="" placeholder="Password"/>
       <input type="text" name="email" required="" placeholder="email"/>
       <input type="text" name="phoneNumber" required="" placeholder="Your phone number"/>
-      <input type="text" name="roleID" value="US" readonly="" placeholder="RoleID"/>
 
       <input class="button btn btn-success p-3" type="submit" name="action" value="AddUser"/>
       <div class="rounded">

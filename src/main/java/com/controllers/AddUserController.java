@@ -40,7 +40,7 @@ public class AddUserController extends HttpServlet {
             }
 
             if (userName.length() < 5 || userName.length() > 10) {
-                userError.setUserNameError("userID must be in [5, 10]");
+                userError.setUserNameError("User Name must be in [5, 10]");
                 validation = false;
             }
 
