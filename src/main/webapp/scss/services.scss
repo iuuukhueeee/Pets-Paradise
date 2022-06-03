@@ -33,7 +33,7 @@ html {
         width: 0;
         display: block;
         height: 2px;
-        background-color: #4c5baf;
+        background-color: #FDFFBC;
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
@@ -41,7 +41,7 @@ html {
         &::after {
           width: 100%;
         }
-        color: red;
+        color: #FDFFBC;
       }
       color: $c1-100;
       text-decoration: none;
