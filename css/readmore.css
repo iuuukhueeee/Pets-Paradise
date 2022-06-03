@@ -951,4 +951,40 @@ footer .row .col .item .submit div input[type="submit"] {
 footer .row .col .item .submit div input[type="submit"]:hover {
   opacity: 0.7;
 }
-/*# sourceMappingURL=blog.css.map */
+
+.cmt-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn-default {
+  background-color: #68a7ad !important;
+  color: white;
+  font-weight: bold !important;
+  font-size: 16px !important;
+}
+
+.badge {
+  padding: 7px;
+  padding-right: 9px;
+  padding-left: 16px;
+  -webkit-box-shadow: 5px 6px 6px 2px #e9ecef;
+          box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+
+.user-img {
+  margin-top: 4px;
+}
+
+.form-check-input {
+  margin-top: 6px;
+  margin-left: -24px !important;
+  cursor: pointer;
+}
+
+.reply small:hover {
+  color: #68a7ad73;
+  cursor: pointer;
+}
+/*# sourceMappingURL=readmore.css.map */
