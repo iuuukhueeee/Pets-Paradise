@@ -45,7 +45,11 @@ html {
   width: 0;
   display: block;
   height: 2px;
+<<<<<<< HEAD
+  background-color: #FDFFBC;
+=======
   background-color: #4c5baf;
+>>>>>>> website
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-transition-timing-function: ease-in-out;
@@ -53,7 +57,11 @@ html {
 }
 
 .header .navbar a:hover {
+<<<<<<< HEAD
+  color: #FDFFBC;
+=======
   color: red;
+>>>>>>> website
 }
 
 .header .navbar a:hover::after {
@@ -180,7 +188,11 @@ html {
 }
 
 .services .row .col .item {
+<<<<<<< HEAD
+  border: 1px solid #68a7ad;
+=======
   border: 1px solid #68A7AD;
+>>>>>>> website
   border-radius: 10px;
 }
 
@@ -227,7 +239,11 @@ html {
 }
 
 .services .row .col .item .price span a:hover, .services .row .col .item .price span i:hover {
+<<<<<<< HEAD
+  color: #68a7ad;
+=======
   color: #68A7AD;
+>>>>>>> website
 }
 
 footer {
@@ -272,7 +288,11 @@ footer .row .col .item h4::after {
 }
 
 footer .row .col .item h4:hover {
+<<<<<<< HEAD
+  color: #68a7ad;
+=======
   color: #68A7AD;
+>>>>>>> website
 }
 
 footer .row .col .item h4:hover::after {
@@ -297,7 +317,11 @@ footer .row .col .item .submit div input[type="text"] {
 
 footer .row .col .item .submit div input[type="submit"] {
   width: 100%;
+<<<<<<< HEAD
+  background-color: #68a7ad;
+=======
   background-color: #68A7AD;
+>>>>>>> website
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -314,7 +338,11 @@ footer .row .col .item .submit div input[type="submit"]:hover {
 
 .backToTop a {
   text-decoration: none;
+<<<<<<< HEAD
+  color: #68a7ad;
+=======
   color: #68A7AD;
+>>>>>>> website
   position: fixed;
   bottom: 5%;
   right: 5%;
@@ -345,8 +373,13 @@ footer .row .col .item .submit div input[type="submit"]:hover {
   background-color: #1773bdcc;
   -webkit-transform: translateY(-5%);
           transform: translateY(-5%);
+<<<<<<< HEAD
+  -webkit-box-shadow: 0.125rem 0.125rem 1rem #68a7ad;
+          box-shadow: 0.125rem 0.125rem 1rem #68a7ad;
+=======
   -webkit-box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
           box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
+>>>>>>> website
 }
 
 .backToTop a:hover i {
