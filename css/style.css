@@ -505,6 +505,11 @@ html {
   background-color: #007ee5;
 }
 
+footer {
+  border-top-right-radius: 300px;
+  background-color: #dbe3e5;
+}
+
 footer .row .col {
   padding: 32px;
 }
