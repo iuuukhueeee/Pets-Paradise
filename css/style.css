@@ -53,7 +53,7 @@ html {
 }
 
 .header .navbar a:hover {
-  color: red;
+  color: #68a7ada9;
 }
 
 .header .navbar a:hover::after {
