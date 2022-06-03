@@ -53,11 +53,7 @@ html {
 }
 
 .header .navbar a:hover {
-<<<<<<< HEAD
   color: #FDFFBC;
-=======
-  color: #68a7ada9;
->>>>>>> website
 }
 
 .header .navbar a:hover::after {
