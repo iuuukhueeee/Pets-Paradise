@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "LogoutController", urlPatterns = {"/LogoutController"})
+@WebServlet(name = "LogoutController", value = {"/LogoutController"})
 public class LogoutController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";

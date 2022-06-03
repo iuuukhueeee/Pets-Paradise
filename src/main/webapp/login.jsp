@@ -33,6 +33,7 @@
             <input type="submit" name="action" value="Login"/>
             <input type="reset" value="Reset"/>
         </p>
+        <a href="signup.jsp">Don't have account ?</a>
         <%
             String error = (String) request.getAttribute("ERROR");
             if (error == null) {

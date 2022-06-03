@@ -1,4 +1,4 @@
-package service;
+package com.service;
 
 public class ServiceDTO {
 
@@ -8,14 +8,14 @@ public class ServiceDTO {
     private String serviceDescription;
 
 
-    public ServiveDTO(String serviceID, String serviceName, float servicePrice, String serviceDescription, boolean status) {
+    public ServiceDTO(String serviceID, String serviceName, float servicePrice, String serviceDescription) {
         this.serviceID = serviceID;
         this.serviceName = serviceName;
         this.servicePrice = servicePrice;
         this.serviceDescription = serviceDescription;
     }
 
-    public ServiveDTO() {
+    public ServiceDTO() {
         this.serviceID = "";
         this.serviceName = "";
         this.servicePrice = 0;
