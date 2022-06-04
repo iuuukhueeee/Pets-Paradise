@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "BlogContentController", value = "/BlogContentController")
 public class BlogContentController extends HttpServlet {
@@ -22,9 +23,11 @@ public class BlogContentController extends HttpServlet {
             String blogID = request.getParameter("blogID");
             BlogDAO blogDAO = new BlogDAO();
             blog = blogDAO.loadByID(blogID);
+            List<BlogDTO> listBlog = blogDAO.loadListBlogTemplate();
 
             if (blog != null) {
                 request.setAttribute("BLOG_CONTENT", blog);
+                request.setAttribute("BLOG_TEMPLATE", listBlog);
                 url = SUCCESS;
             }
 

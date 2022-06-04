@@ -4,21 +4,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/blog.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./css/blog.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
             rel="stylesheet">
-    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg" />
+    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg"/>
     <title>Pet Paradise</title>
 </head>
 
@@ -26,7 +26,7 @@
 <header class="header " id="header">
     <div class="container">
         <a href="./index.html" class="logo">
-            <img src="./img/paw-solid.svg" style="height: 40px" />
+            <img src="./img/paw-solid.svg" style="height: 40px"/>
             <span>Pet Paradise</span>
         </a>
         <nav class="navbar">
@@ -56,6 +56,12 @@
 
 <!-- body blog -->
 <div class="container mt-100 mt-60">
+    <%
+        List<BlogDTO> listBlog = (List<BlogDTO>) request.getAttribute("LIST_BLOG");
+        if (listBlog != null && listBlog.size() > 0) {
+            BlogDTO blog = listBlog.get(0);
+    %>
+
     <div class="row">
         <div class="col-12 text-center">
             <div class="section-title mb-4 pb-2">
@@ -77,12 +83,14 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <div class="blog-details">
-                            <h4 class="mt-4"><a href="javascript:void(0)" class="text-dark title">CONCAT LIFE.</a></h4>
+                            <h4 class="mt-4"><a href="BlogContent?blogID=<%=blog.getBlogID()%>"
+                                                class="text-dark title"><%=blog.getBlogTitle()%>
+                            </a></h4>
                             <p class="text-muted">
-                                fuong là một cậu bé trẻ với đam mê đầy khác vọng. Với khả năng code nhanh như chớp và yêu màu lgbt thì
-                                ngoài ra fuong còn thích chơi với concat...
+                                <%=blog.getBlogDescription()%>
                             </p>
-                            <small class="text-muted float-right">dd/mm/yyyy</small>
+                            <small class="text-muted float-right"><%=blog.getWrittenDate()%>
+                            </small>
                         </div>
 
                     </div>
@@ -97,7 +105,20 @@
             </div>
         </div>
     </div>
+
+    <%
+        }
+    %>
+
+    <%
+        if (listBlog != null && listBlog.size() > 0) {
+    %>
     <div class="row">
+        <%
+            for (int i = 1; i < listBlog.size(); i++) {
+                BlogDTO blog = listBlog.get(i);
+        %>
+
         <div class="col-lg-4 col-md-6 mt-4 pt-2">
             <div class="blog-post rounded border">
                 <div class="blog-img d-block overflow-hidden position-relative">
@@ -109,71 +130,86 @@
                     </div>
                 </div>
                 <div class="content p-3">
-                    <small class="text-muted p float-right">dd/mm/yyyy</small>
-                    <h4 class="mt-4"><a href="javascript:void(0)" class="text-dark title">M-TP CÓ BỒ.</a></h4>
-                    <p class="text-muted mt-2">Vào một ngày đẹp trời, một cậu bé mê code tên MTP đã vô tình bị phải lòng anh
-                        chàng zutuper callmeCow.</p>
+                    <small class="text-muted p float-right"><%=blog.getWrittenDate()%></small>
+                    <h4 class="mt-4"><a href="BlogContent?blogID=<%=blog.getBlogID()%>" class="text-dark title"><%=blog.getBlogTitle()%></a></h4>
+                    <p class="text-muted mt-2">
+                        <%=blog.getBlogDescription()%>
+                    </p>
                     <div class="pt-3 mt-3 border-top d-flex">
                         <img src="./img/suuf.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
                         <div class="author mt-2">
-                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Mai Thanh Fuong</a></h6>
+                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name"><%=blog.getAuthor()%></a>
+                            </h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 mt-4 pt-2">
-            <div class="blog-post rounded border">
-                <div class="blog-img d-block overflow-hidden position-relative">
-                    <img src="./img/ảnh mèo.jpg" class="img-fluid rounded-top img-responsive" alt="">
-                    <div class="overlay rounded-top bg-dark"></div>
-                    <div class="post-meta">
-                        <a href="javascript:void(0)" class="text-light read-more">Read More <i
-                                class="mdi mdi-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="content p-3">
-                    <small class="text-muted p float-right">dd/mm/yyyy</small>
-                    <h4 class="mt-4"><a href="javascript:void(0)" class="text-dark title">ZUTUPER BỎ NGHỀ.</a></h4>
-                    <p class="text-muted mt-2">Trong cuộc sống, chắc hẳn ai cũng từng bị cắm sừng, tôi cũng vậy...nhưng là 7 cái
-                        sừng. Nó khiến tôi buồn lắm.</p>
-                    <div class="pt-3 mt-3 border-top d-flex">
-                        <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
-                        <div class="author mt-2">
-                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa Nguên</a></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 mt-4 pt-2">
-            <div class="blog-post rounded border">
-                <div class="blog-img d-block overflow-hidden position-relative">
-                    <img src="./img/ảnh mèo.jpg" class="img-fluid rounded-top" alt="">
-                    <div class="overlay rounded-top bg-dark"></div>
-                    <div class="post-meta">
-                        <a href="javascript:void(0)" class="text-light read-more">Read More <i
-                                class="mdi mdi-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="content p-3">
-                    <small class="text-muted p float-right">dd/mm/yyyy</small>
-                    <h4 class="mt-4"><a href="javascript:void(0)" class="text-dark title">MÈO CON BỎ TRỐN.</a></h4>
-                    <p class="text-muted mt-2">Bài này chỉ muốn nói với mấy bạn là tìm giúp mình con mèo với. Nó láo cá mà biết
-                        bay. Đặc điểm nhận diện: Biết nói gâu gâu.</p>
-                    <div class="pt-3 mt-3 border-top d-flex">
-                        <img src="./img/dqa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
-                        <div class="author mt-2">
-                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Quang Trần</a></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <%
+                }
+            }
+        %>
     </div>
-</div>
+
+<%--    <div class="row">--%>
+
+
+<%--        <div class="col-lg-4 col-md-6 mt-4 pt-2">--%>
+<%--            <div class="blog-post rounded border">--%>
+<%--                <div class="blog-img d-block overflow-hidden position-relative">--%>
+<%--                    <img src="./img/ảnh mèo.jpg" class="img-fluid rounded-top img-responsive" alt="">--%>
+<%--                    <div class="overlay rounded-top bg-dark"></div>--%>
+<%--                    <div class="post-meta">--%>
+<%--                        <a href="javascript:void(0)" class="text-light read-more">Read More <i--%>
+<%--                                class="mdi mdi-chevron-right"></i></a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="content p-3">--%>
+<%--                    <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
+<%--                    <h4 class="mt-4"><a href="javascript:void(0)" class="text-dark title">ZUTUPER BỎ NGHỀ.</a></h4>--%>
+<%--                    <p class="text-muted mt-2">Trong cuộc sống, chắc hẳn ai cũng từng bị cắm sừng, tôi cũng vậy...nhưng--%>
+<%--                        là 7 cái--%>
+<%--                        sừng. Nó khiến tôi buồn lắm.</p>--%>
+<%--                    <div class="pt-3 mt-3 border-top d-flex">--%>
+<%--                        <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">--%>
+<%--                        <div class="author mt-2">--%>
+<%--                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa Nguên</a>--%>
+<%--                            </h6>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+
+<%--        <div class="col-lg-4 col-md-6 mt-4 pt-2">--%>
+<%--            <div class="blog-post rounded border">--%>
+<%--                <div class="blog-img d-block overflow-hidden position-relative">--%>
+<%--                    <img src="./img/ảnh mèo.jpg" class="img-fluid rounded-top" alt="">--%>
+<%--                    <div class="overlay rounded-top bg-dark"></div>--%>
+<%--                    <div class="post-meta">--%>
+<%--                        <a href="javascript:void(0)" class="text-light read-more">Read More <i--%>
+<%--                                class="mdi mdi-chevron-right"></i></a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="content p-3">--%>
+<%--                    <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
+<%--                    <h4 class="mt-4"><a href="javascript:void(0)" class="text-dark title">MÈO CON BỎ TRỐN.</a></h4>--%>
+<%--                    <p class="text-muted mt-2">Bài này chỉ muốn nói với mấy bạn là tìm giúp mình con mèo với. Nó láo cá--%>
+<%--                        mà biết--%>
+<%--                        bay. Đặc điểm nhận diện: Biết nói gâu gâu.</p>--%>
+<%--                    <div class="pt-3 mt-3 border-top d-flex">--%>
+<%--                        <img src="./img/dqa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">--%>
+<%--                        <div class="author mt-2">--%>
+<%--                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Quang Trần</a></h6>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
 <!-- body blog -->
 
@@ -229,7 +265,8 @@
             <div class="right col-lg-6">
                 <iframe class="map w-100 h-100"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4747517025585!2d106.70192131411643!3d10.774904262169763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46f39fc6c3%3A0xfeb722bd332ca79e!2sDinner!5e0!3m2!1svi!2s!4v1650438098203!5m2!1svi!2s"
-                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
@@ -240,7 +277,7 @@
         <div class="row w-100">
             <div class="col col-12 col-md-6 col-lg-4 ">
                 <div class="item">
-                    <img src="./img/footer.png" />
+                    <img src="./img/footer.png"/>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
                         laborum tempore uscipit, laborum.
@@ -255,9 +292,11 @@
                             <i class="fa-solid fa-paw"></i>About us
                         </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            Services</li>
+                            Services
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            More</li>
+                            More
+                        </li>
                         <li>
                             <i class="fa-solid fa-paw"></i>Contact
                         </li>
@@ -278,11 +317,14 @@
                             Privacy Policy
                         </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            Reporting</li>
+                            Reporting
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            FAQ</li>
+                            FAQ
+                        </li>
                         <li><i class="fa-solid fa-paw"></i>
-                            Support</li>
+                            Support
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -308,5 +350,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script>
+        function getURL() {
+            return window.location.href;
+        }
+    </script>
 </body>
 </html>
