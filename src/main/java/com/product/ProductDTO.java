@@ -97,5 +97,4 @@ public class ProductDTO {
     public void setExpiredDate(Date expiredDate) {
         this.expiredDate = expiredDate;
     }
-
 }

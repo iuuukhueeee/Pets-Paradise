@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.user.*;
 
-@WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
+@WebServlet(name = "LoginController", value = {"/LoginController"})
 public class LoginController extends HttpServlet {
 
     private static final String ERROR = "login.jsp";

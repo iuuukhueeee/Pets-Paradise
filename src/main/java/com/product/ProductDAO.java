@@ -11,7 +11,6 @@ import com.product.*;
 import com.utils.*;
 import com.shopping.*;
 
-
 public class ProductDAO {
 
     private static final String UPDATE_QUANTITY = "UPDATE Product SET Quantity=? WHERE ProductID=?";
@@ -118,7 +117,6 @@ public class ProductDAO {
         Connection connection = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
-
         ProductDTO product = null;
 
         try {
@@ -137,7 +135,7 @@ public class ProductDAO {
                     float price = Float.parseFloat(rs.getString("Price"));
                     Date importDate = ValidUtils.isValidDate(rs.getString("ImportDate"));
                     Date expiredDate = ValidUtils.isValidDate(rs.getString("ExpiredDate"));
-                    product = new Product(productID, productName, image, quantity, price);
+                    product = new ProductDTO(productID, productCategoryID, productName, quantity, image, price, importDate, expiredDate);
                 }
             }
         } catch (Exception e) {
