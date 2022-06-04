@@ -1,13 +1,6 @@
 <%@ page import="com.blog.BlogDTO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Random" %><%--
-  Created by IntelliJ IDEA.
-  User: iuuukhueeee
-  Date: 5/31/2022
-  Time: 11:19 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.Random" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +34,7 @@
 <body>
 <header class="header" id="header">
     <div class="container">
-        <a href="../../../index.html" class="logo">
+        <a href="./index.jsp" class="logo">
             <img src="./img/paw-solid.svg" style="height: 40px"/>
             <span>Pet Paradise</span>
         </a>

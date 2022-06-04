@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" href="../../../css/register.css" />
+    <link rel="stylesheet" href="./css/register.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -110,7 +110,7 @@
                     <button class="button">Sign up</button>
                   </div>
   
-                  <p class="text-center text-muted mt-3 mb-0">Have already an account? <a href="login.html"
+                  <p class="text-center text-muted mt-3 mb-0">Have already an account? <a href="./login.jsp"
                       class="link-danger">Login here</a></p>
                 </div>
               </form>

@@ -25,7 +25,7 @@
 <body>
 <header class="header " id="header">
     <div class="container">
-        <a href="./index.html" class="logo">
+        <a href="./index.jsp" class="logo">
             <img src="./img/paw-solid.svg" style="height: 40px"/>
             <span>Pet Paradise</span>
         </a>
@@ -76,7 +76,7 @@
                         <div class="image blog-img d-block overflow-hidden position-relative">
                             <img src="./img/mèo dt.jpg" class="img-fluid rounded-top img-responsive" alt="">
                             <div class="post-meta">
-                                <a href="./readmore.html" class="text-light read-more main-title">Read More <i
+                                <a href="blog" class="text-light read-more main-title">Read More <i
                                         class="mdi mdi-chevron-right"></i></a>
                             </div>
                         </div>
