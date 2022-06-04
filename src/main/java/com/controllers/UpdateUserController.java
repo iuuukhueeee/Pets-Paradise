@@ -27,7 +27,7 @@ public class UpdateUserController extends HttpServlet {
 
             UserDAO dao = new UserDAO();
             UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US");
-            boolean checkUpdate = dao.update(user);
+            boolean checkUpdate = dao.updateUser(user);
             if (checkUpdate) {
                 url = SUCCESS;
             }

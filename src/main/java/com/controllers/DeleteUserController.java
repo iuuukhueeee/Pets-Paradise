@@ -18,7 +18,7 @@ public class DeleteUserController extends HttpServlet {
         try {
             String userName = request.getParameter("userName");
             UserDAO dao = new UserDAO();
-            boolean check = dao.delete(userName);
+            boolean check = dao.deleteUser(userName);
             if (check) {
                 url = SUCCESS;
             }

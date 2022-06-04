@@ -62,7 +62,7 @@ public class AddUserController extends HttpServlet {
 
             if (validation) {
                 UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US");
-                boolean checkCreate = dao.create(user);
+                boolean checkCreate = dao.createUser(user);
                 if (checkCreate) url = SUCCESS;
             } else {
                 request.setAttribute("USER_ERROR", userError);
