@@ -14,6 +14,8 @@ import com.user.UserDTO;
 @WebServlet(name = "SearchProductController", value = "/SearchProductController")
 public class SearchProductController extends HttpServlet {
 
+//            KHOA: what "SEARCH_PRODUCT" is used for
+
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS_US = "index.jsp";
     private static final String SUCCESS_AD = "product.jsp";

@@ -22,7 +22,7 @@
         search = "";
     }
 %>
-<h1>Welcome Manager: <%=user.getName()%>!</h1>
+<h1>Welcome Manager: <%=user.getFirstName()%>!</h1>
 <form action="MainController" method="POST">
     <input name="SearchUser" placeholder="User title" type="text"/>
     <input type="submit" name="action" value="SearchUser" aria-label="submit form"/>
@@ -38,8 +38,9 @@
     <thead>
     <tr>
         <th>No</th>
-        <th>UserName</th>
-        <th>Name</th>
+        <th>Username</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
         <th>Password</th>
         <th>Email</th>
         <th>Phone</th>
@@ -59,7 +60,10 @@
             <input type="text" name="userName" value="<%= User.getUsername()%>" required="" />
             </td>
             <td>
-                <input type="text" name="name" value="<%= User.getName()%>" required="" size="8" />
+                <input type="text" name="firstName" value="<%= User.getFirstName()%>" required="" size="8" />
+            </td>
+            <td>
+                <input type="text" name="lastName" value="<%= User.getLastName()%>" required="" size="8" />
             </td>
             <td>
                 <input type="password" name="password" value="<%= User.getPassword()%>" required="" size="8" />
@@ -74,6 +78,9 @@
                 <input type="text" name="roleID" value="<%= User.getRoleID()%>" required="" size="5"/>
             </td>
             <!--delete-->
+
+<%--            KHOA: fix--%>
+
             <td>
                 <a href="MainController?action=DeleteUser&userName=<%= User.getUsername()%>&SearchUser=<%= request.getParameter("SearchUser")%>">Delete</a>
             </td>

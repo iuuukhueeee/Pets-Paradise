@@ -8,6 +8,9 @@ import com.user.*;
 
 @WebServlet(name = "DeleteUserController", value = "/DeleteUserController")
 public class DeleteUserController extends HttpServlet {
+
+//    KHOA: Why not "Error at DeleteUserController"
+
     private static final String SUCCESS = "SearchUserController";
     private static final String ERROR = "SearchUserController";
 

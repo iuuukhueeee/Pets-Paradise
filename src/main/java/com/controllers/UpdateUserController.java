@@ -11,6 +11,9 @@ import com.user.*;
 
 @WebServlet(name = "UpdateUserController", value = "/UpdateUserController")
 public class UpdateUserController extends HttpServlet {
+
+//    KHOA: why not "Error at UpdateUserController"
+
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "admin.jsp";
 

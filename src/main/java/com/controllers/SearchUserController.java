@@ -12,6 +12,8 @@ import com.user.*;
 @WebServlet(name = "SearchUserController", value = "/SearchUserController")
 public class SearchUserController extends HttpServlet {
 
+//    KHOA: why not "Error at SearchUserController"
+
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "admin.jsp";
 
@@ -20,7 +22,7 @@ public class SearchUserController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = ERROR;
         try {
-            String search = request.getParameter("search");
+            String search = request.getParameter("SearchUser");
             if (search == null) search = "";
             UserDAO dao = new UserDAO();
             List<UserDTO> listUser = dao.getListUser(search);

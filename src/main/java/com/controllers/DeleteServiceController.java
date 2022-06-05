@@ -8,6 +8,9 @@ import com.service.*;
 
 @WebServlet(name = "DeleteServiceController", value = "/DeleteServiceController")
 public class DeleteServiceController extends HttpServlet {
+
+//    KHOA: Why not "Error at DeleteServiceController"
+
     private static final String SUCCESS = "SearchServiceController";
     private static final String ERROR = "SearchServiceController";
 

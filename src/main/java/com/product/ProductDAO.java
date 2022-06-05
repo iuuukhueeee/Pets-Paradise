@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.product.*;
 import com.utils.*;
-import com.shopping.*;
 
 public class ProductDAO {
 

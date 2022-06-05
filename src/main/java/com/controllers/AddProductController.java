@@ -21,6 +21,10 @@ public class AddProductController extends HttpServlet {
         ProductError productError = new ProductError();
         try {
 
+//            KHOA: hotfix -- productID will be auto regenerated
+//            name length 3 - 50
+//            no need for check category
+
             String productID = request.getParameter("productID");
             String productName = request.getParameter("productName");
             String productImage = request.getParameter("productImage");

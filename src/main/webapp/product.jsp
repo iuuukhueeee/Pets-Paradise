@@ -104,7 +104,8 @@
             </tr>
             </thead>
             <tbody>
-            <%                                int count = 1;
+            <%
+                int count = 1;
                 for (ProductDTO product : productList) {
             %>
             <form action="MainController" method="POST">

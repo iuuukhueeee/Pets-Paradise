@@ -19,26 +19,15 @@ public class AddServiceController extends HttpServlet {
         String url = ERROR;
         ServiceError serviceError = new ServiceError();
         try {
-            String serviceID = request.getParameter("serviceID");
             String serviceName = request.getParameter("serviceName");
-
             Float servicePrice = Float.parseFloat(request.getParameter("servicePrice"));
-
             String serviceDescription = request.getParameter("serviceDescription");
-
             ServiceDAO dao = new ServiceDAO();
+            String serviceID = dao.createID();
             boolean check = true;
-            boolean check_dup = dao.checkDuplicate(serviceID);
-            if(check_dup){
-                serviceError.setServiceIDError("Duplicate Service ID");
-            }
-            if (serviceID.length() < 2 || serviceID.length() > 10) {
-                serviceError.setServiceIDError("ServiceID must be in [5, 10]");
-                check = false;
-            }
 
-            if (serviceName.length() < 3 || serviceName.length() > 20) {
-                serviceError.setServiceNameError("Name must be in [3, 20]");
+            if (serviceName.length() < 3 || serviceName.length() > 50) {
+                serviceError.setServiceNameError("Name must be in [3, 50]");
                 check = false;
             }
             if (check) {

@@ -12,6 +12,8 @@ import java.util.List;
 @WebServlet(name = "BlogController", value = "/BlogController")
 public class BlogController extends HttpServlet {
 
+    //KHOA: USE ONE TYPE OF CATCH
+
     private static final String ERROR = "blog.jsp";
     private static final String SUCCESS = "blog.jsp";
 

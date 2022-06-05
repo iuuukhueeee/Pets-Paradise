@@ -91,7 +91,7 @@
                                         <a href="#!" class="text-body">Forgot password?</a>
                                     </div>
                                     <div class="text-center text-lg-start mt-4 pt-2">
-                                        <button class="button" name="action" value="Login">Login</button>
+                                        <button class="button" type="submit" name="action" value="Login">Login</button>
                                         <p class="small fw-bold mt-2 pt-1 mb-0">
                                             Don't have an account?
                                             <a href="./register.jsp" class="link-danger"

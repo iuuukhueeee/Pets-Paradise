@@ -11,7 +11,7 @@ import com.utils.DButils;
 
 public class ServiceDAO {
 
-
+    private static final String GET_SIZE_SERVICE = "SELECT COUNT(ServiceID) AS SIZE FROM Service";
     private static final String CHECK_DUPLICATE = "SELECT ServiceName FROM Service WHERE ServiceID=?";
     private static final String ADD = "INSERT INTO Service(ServiceID, ServiceName, ServicePrice, ServiceDescription, Status) VALUES (?, ?, ?, ?, 1)";
     private static final String SEARCH_SERVICE = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription, Status FROM Service WHERE ServiceName LIKE ? AND status=1";
@@ -181,5 +181,37 @@ public class ServiceDAO {
         }
 
         return list;
+    }
+
+    public String createID() throws SQLException {
+        String service = "SERVICE-";
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_SIZE_SERVICE);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    int size = Integer.parseInt(rs.getString("SIZE")) + 1;
+                    service += String.format("%03d", size);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return service;
     }
 }

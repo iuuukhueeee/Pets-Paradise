@@ -19,10 +19,6 @@
         <div class="h5 font-weight-bold text-center mb-3">Adding Service</div>
         </br>
         <div class="">
-            <input autocomplete="off" type="text" class="form-control" placeholder="Service ID" name="serviceID">
-        </div>
-        </br>
-        <div class="">
             <input autocomplete="off" type="text" class="form-control" placeholder="Service Name" name="serviceName">
         </div>
         </br>

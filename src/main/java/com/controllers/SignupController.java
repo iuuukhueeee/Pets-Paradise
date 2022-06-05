@@ -12,6 +12,8 @@ import com.user.*;
 @WebServlet(name = "SignupController", value = "/SignupController")
 public class SignupController extends HttpServlet {
 
+//    KHOA: why not "Error at SignupController"
+
     private static final String ERROR = "signup.jsp";
     private static final String SUCCESS = "login.jsp";
 
