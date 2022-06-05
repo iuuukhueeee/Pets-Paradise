@@ -20,13 +20,14 @@ public class UpdateUserController extends HttpServlet {
         String url = ERROR;
         try {
             String userName = request.getParameter("userName");
-            String name = request.getParameter("name");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
             String password = request.getParameter("password");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phoneNumber");
 
             UserDAO dao = new UserDAO();
-            UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US");
+            UserDTO user = new UserDTO(userName, firstName, lastName, password, email, phoneNumber, "US");
             boolean checkUpdate = dao.updateUser(user);
             if (checkUpdate) {
                 url = SUCCESS;

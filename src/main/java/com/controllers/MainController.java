@@ -11,12 +11,12 @@ public class MainController extends HttpServlet {
 
 
     private static final String ERROR = "error.jsp";
-
-    //         ============= LOGIN / LOGOUT ==============
     private static final String LOGIN = "Login";
     private static final String LOGIN_CONTROLLER = "LoginController";
     private static final String LOGOUT = "Logout";
     private static final String LOGOUT_CONTROLLER = "LogoutController";
+    private static final String SIGNUP = "Signup";
+    private static final String SIGNUP_CONTROLLER = "SignupController";
 
 
     //            ============= SERVICE ==============
@@ -31,8 +31,6 @@ public class MainController extends HttpServlet {
 
 
     //           ============= USER ==============
-    private static final String ADD_USER = "AddUser";
-    private static final String ADD_USER_CONTROLLER = "AddUserController";
     private static final String SEARCH_USER = "SearchUser";
     private static final String SEARCH_USER_CONTROLLER = "SearchUserController";
     private static final String DELETE_USER = "DeleteUser";
@@ -82,8 +80,8 @@ public class MainController extends HttpServlet {
             }else if (ADD_SERVICE.equals(action)) {
                 url = ADD_SERVICE_CONTROLLER;
 
-            }else if (ADD_USER.equals(action)) {
-                url = ADD_USER_CONTROLLER;
+            }else if (SIGNUP.equals(action)) {
+                url = SIGNUP_CONTROLLER;
 
             }else if (ADD_PRODUCT.equals(action)) {
                 url = ADD_PRODUCT_CONTROLLER;

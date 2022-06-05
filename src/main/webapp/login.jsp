@@ -43,7 +43,7 @@
                             <div class="card-body p-4">
                                 <h2 class="text-uppercase text-center mb-4">LOGIN</h2>
 
-                                <form>
+                                <form action="MainController" method="POST">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form3Example4"
                                         >Username
@@ -54,6 +54,7 @@
                                                 id="form3Example1cg"
                                                 class="custom-box form-control form-control-lg pt-1"
                                                 placeholder="Your Username"
+                                                name="Username"
                                         />
                                     </div>
 
@@ -67,6 +68,7 @@
                                                 id="form3Example4cg"
                                                 class="custom-box form-control form-control-lg pt-1"
                                                 placeholder="Password"
+                                                name="Password"
                                         />
                                     </div>
 
@@ -89,7 +91,7 @@
                                         <a href="#!" class="text-body">Forgot password?</a>
                                     </div>
                                     <div class="text-center text-lg-start mt-4 pt-2">
-                                        <button class="button">Login</button>
+                                        <button class="button" name="action" value="Login">Login</button>
                                         <p class="small fw-bold mt-2 pt-1 mb-0">
                                             Don't have an account?
                                             <a href="./register.jsp" class="link-danger"

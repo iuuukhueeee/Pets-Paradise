@@ -13,9 +13,9 @@ public class UserDAO {
     private static final String LOGIN = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Username=? AND Password=? AND Status=1";
     private static final String CHECK_DUPLICATE = "SELECT Name FROM Users WHERE Username=?";
     private static final String SEARCH = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Name LIKE ? AND Status=1";
-    private static final String CREATE = "INSERT INTO Users(Username, Name, Password, Email, PhoneNumber, RoleID, Status) VALUES(?, ?, ?, ?, ?, 'US', 1)";
+    private static final String CREATE = "INSERT INTO Users(Username, FirstName, LastName, Password, Email, PhoneNumber, RoleID, Status) VALUES(?, ?, ?, ?, ?, ?, 'US', 1)";
     private static final String DELETE = "UPDATE Users SET Status=0 WHERE Username=?";
-    private static final String UPDATE = "UPDATE Users SET Name = ?, Password = ? , Email = ? , PhoneNumber = ? WHERE Username = ?";
+    private static final String UPDATE = "UPDATE Users SET firstName = ?, lastName = ?, Password = ? , Email = ? , PhoneNumber = ? WHERE Username = ?";
 
 
     public UserDTO checkLogin(String Username, String Password) throws SQLException {
@@ -34,11 +34,12 @@ public class UserDAO {
                 rs = ptm.executeQuery();
                 if (rs.next()) {
                     String username = rs.getString("Username");
-                    String Name = rs.getString("Name");
+                    String firstName = rs.getString("FirstName");
+                    String lastName = rs.getString("LastName");
                     String Email = rs.getString("Email");
                     String PhoneNumber = rs.getString("PhoneNumber");
                     String RoleID = rs.getString("RoleID");
-                    user = new UserDTO(username, Name, "", Email, PhoneNumber, RoleID);
+                    user = new UserDTO(username, firstName, lastName, "", Email, PhoneNumber, RoleID);
                 }
             }
         } catch (Exception e) {
@@ -102,13 +103,13 @@ public class UserDAO {
                 ptm.setString(1, "%" + search + "%");
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    String Username = rs.getString("Username");
-                    String Name = rs.getString("Name");
+                    String username = rs.getString("Username");
+                    String firstName = rs.getString("firstName");
+                    String lastName = rs.getString("lastName");
                     String PhoneNumber = rs.getString("PhoneNumber");
                     String Email = rs.getString("Email");
                     String RoleID = rs.getString("RoleID");
-                    String Password = "***";
-                    list.add(new UserDTO(Username, Name, Password, Email, PhoneNumber, RoleID));
+                    list.add(new UserDTO(username, firstName, lastName, "", Email, PhoneNumber, RoleID));
                 }
             }
         } catch (Exception e) {
@@ -136,14 +137,16 @@ public class UserDAO {
             if (conn != null) {
                 ptm = conn.prepareStatement(CREATE);
                 ptm.setString(1, user.getUsername());
-                ptm.setString(2, user.getName());
-                ptm.setString(3, user.getPassword());
-                ptm.setString(4, user.getEmail());
-                ptm.setString(5, user.getPhoneNumber());
+                ptm.setString(2, user.getFirstName());
+                ptm.setString(3, user.getLastName());
+                ptm.setString(4, user.getPassword());
+                ptm.setString(5, user.getEmail());
+                ptm.setString(6, user.getPhoneNumber());
                 check = ptm.executeUpdate() > 0 ? true : false;
 
             }
         } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             if (ptm != null) {
                 ptm.close();
@@ -188,15 +191,17 @@ public class UserDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(UPDATE);
-                ptm.setString(1, user.getName());
-                ptm.setString(2, user.getPassword());
-                ptm.setString(3, user.getEmail());
-                ptm.setString(4, user.getPhoneNumber());
-                ptm.setString(5, user.getUsername());
+                ptm.setString(1, user.getFirstName());
+                ptm.setString(2, user.getLastName());
+                ptm.setString(3, user.getPassword());
+                ptm.setString(4, user.getEmail());
+                ptm.setString(5, user.getPhoneNumber());
+                ptm.setString(6, user.getUsername());
                 check = ptm.executeUpdate() > 0;
 
             }
         } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             if (ptm != null) {
                 ptm.close();

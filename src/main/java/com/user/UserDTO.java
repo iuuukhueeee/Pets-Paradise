@@ -2,7 +2,8 @@ package com.user;
 
 public class UserDTO {
 
-    private String Name = null;
+    private String firstName = null;
+    private String lastName = null;
     private String Username = null;
     private String RoleID = null;
     private String Password = null;
@@ -10,7 +11,8 @@ public class UserDTO {
     private String PhoneNumber = null;
 
     public UserDTO() {
-        this.Name = "";
+        this.firstName = "";
+        this.lastName = "";
         this.Username = "";
         this.RoleID = "";
         this.Password = "";
@@ -18,21 +20,30 @@ public class UserDTO {
         this.PhoneNumber = "";
     }
 
-    public UserDTO(String Username, String Name, String password, String email, String phoneNumber, String roleID) {
-        this.Name = Name;
+    public UserDTO(String Username, String firstName, String lastName, String password, String email, String phoneNumber, String roleID) {
         this.Username = Username;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.RoleID = roleID;
         this.Password = password;
         this.Email = email;
         this.PhoneNumber = phoneNumber;
     }
 
-    public String getName() {
-        return Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.Name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getRoleID() {

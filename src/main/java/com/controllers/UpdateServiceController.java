@@ -16,6 +16,7 @@ public class UpdateServiceController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = ERROR;
         try {
+            String search = request.getParameter("SearchService");
             String ServiceID = request.getParameter("ServiceID");
             String ServiceName = request.getParameter("ServiceName");
             float ServicePrice = Float.parseFloat(request.getParameter("ServicePrice"));
@@ -24,6 +25,7 @@ public class UpdateServiceController extends HttpServlet {
             ServiceDTO service = new ServiceDTO(ServiceID, ServiceName, ServicePrice, ServiceDescription);
             boolean checkUpdate = dao.update(service);
             if (checkUpdate) {
+                request.setAttribute("SEARCH_SERVICE", search);
                 url = SUCCESS;
             }
 

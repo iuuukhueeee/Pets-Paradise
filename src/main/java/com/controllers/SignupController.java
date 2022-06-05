@@ -9,9 +9,8 @@ import java.util.regex.Pattern;
 
 import com.user.*;
 
-@WebServlet(name = "AddUserController", value = "/AddUserController")
-public class AddUserController extends HttpServlet {
-
+@WebServlet(name = "SignupController", value = "/SignupController")
+public class SignupController extends HttpServlet {
 
     private static final String ERROR = "signup.jsp";
     private static final String SUCCESS = "login.jsp";
@@ -21,8 +20,9 @@ public class AddUserController extends HttpServlet {
         String url = ERROR;
         UserError userError = new UserError();
         try {
-            String userName = request.getParameter("userName");
-            String name = request.getParameter("name");
+            String username = request.getParameter("username");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
             String password = request.getParameter("password");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phoneNumber");
@@ -33,18 +33,23 @@ public class AddUserController extends HttpServlet {
             boolean matchFound = matcher.find();
 
             boolean validation = true;
-            boolean checkDuplicate = dao.checkDuplicate(userName);
+            boolean checkDuplicate = dao.checkDuplicate(username);
             if (checkDuplicate) {
                 userError.setUserNameError("Duplicate User Name");
                 validation = false;
             }
 
-            if (userName.length() < 5 || userName.length() > 10) {
-                userError.setUserNameError("User Name must be in [5, 10]");
+            if (username.length() < 4 || username.length() > 20) {
+                userError.setUserNameError("User Name must be in [4, 20]");
                 validation = false;
             }
 
-            if (name.length() < 3 || name.length() > 20) {
+            if (firstName.length() < 3 || firstName.length() > 20) {
+                userError.setNameError("Name must be in [3, 20]");
+                validation = false;
+            }
+
+            if (lastName.length() < 3 || lastName.length() > 20) {
                 userError.setNameError("Name must be in [3, 20]");
                 validation = false;
             }
@@ -61,7 +66,7 @@ public class AddUserController extends HttpServlet {
 
 
             if (validation) {
-                UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US");
+                UserDTO user = new UserDTO(username, firstName, lastName, password, email, phoneNumber, "US");
                 boolean checkCreate = dao.createUser(user);
                 if (checkCreate) url = SUCCESS;
             } else {

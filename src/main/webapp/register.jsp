@@ -30,7 +30,7 @@
             <div class="card-body pt-4 pb-4">
               <h2 class="text-uppercase text-center mb-4">Create an account</h2>
 
-              <form>
+              <form action="MainController" method="POST">
 
                 <div class="body">
                   
@@ -40,12 +40,12 @@
                     </div>
                     <div class="col-md-5">
                       <div class="form-outline">
-                        <input type="text" id="form3Example1cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="First Name"/>
+                        <input type="text" id="form3Example1cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="First Name" name="firstName"/>
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="form-outline">
-                        <input type="text" id="form3Example1cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Last Name"/>
+                        <input type="text" id="form3Example1cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Last Name" name="lastName"/>
                       </div>
                     </div>
                   </div>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-md-10">
                       <div class="form-outline">
-                        <input type="text" id="form3Example1cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Your Username"/>
+                        <input type="text" id="form3Example1cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Your Username" name="username"/>
                       </div>
                     </div>
                   </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-md-10">
                       <div class="form-outline">
-                        <input type="email" id="form3Example3cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Your Email"/>
+                        <input type="email" id="form3Example3cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Your Email" name="email"/>
                       </div>
                     </div>
                   </div>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-md-10">
                       <div class="form-outline">
-                        <input type="text" id="form3Example3cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Your Username"/>
+                        <input type="text" id="form3Example3cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="Your phonenumer" name="phoneNumber"/>
                       </div>
                     </div>
                   </div>
@@ -88,13 +88,13 @@
                     <div class="col-md-5">
                       <div class="mb-1">Password</div>
                       <div class="form-outline">
-                        <input type="password" id="form3Example4cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder=""/>
+                        <input type="password" id="form3Example4cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="" name="password"/>
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="mb-1">Repeat password</div>
                       <div class="form-outline">
-                        <input type="password" id="form3Example4cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder=""/>
+                        <input type="password" id="form3Example4cg" required="" class="custom-box form-control form-control-lg pt-1" placeholder="" name="confirmPassword"/>
                       </div>
                     </div>
                   </div>
@@ -107,7 +107,7 @@
                   </div>
   
                   <div class="re-button d-flex justify-content-center">
-                    <button class="button">Sign up</button>
+                    <button class="button" type="submit" name="action" value="Signup">Sign up</button>
                   </div>
   
                   <p class="text-center text-muted mt-3 mb-0">Have already an account? <a href="./login.jsp"
