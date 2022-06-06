@@ -71,6 +71,7 @@ html {
 
 .deal {
   margin-bottom: 2rem;
+  border: 1px solid red;
   width: 100%;
 }
 
