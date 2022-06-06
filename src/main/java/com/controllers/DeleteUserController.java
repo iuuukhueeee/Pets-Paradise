@@ -9,8 +9,6 @@ import com.user.*;
 @WebServlet(name = "DeleteUserController", value = "/DeleteUserController")
 public class DeleteUserController extends HttpServlet {
 
-//    KHOA: Why not "Error at DeleteUserController"
-
     private static final String SUCCESS = "SearchUserController";
     private static final String ERROR = "SearchUserController";
 
@@ -26,7 +24,7 @@ public class DeleteUserController extends HttpServlet {
                 url = SUCCESS;
             }
         }catch(Exception e){
-            log("Error at DeleteController" +toString());
+            log("Error at DeleteUserController" +toString());
         }finally{
             request.getRequestDispatcher(url).forward(request, response);
         }

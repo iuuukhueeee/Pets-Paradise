@@ -9,8 +9,6 @@ import com.product.*;
 @WebServlet(name = "DeleteProductController", value = "/DeleteProductController")
 public class DeleteProductController extends HttpServlet {
 
-//    KHOA: Why not "Error at DeleteProductController"
-
     private static final String SUCCESS = "SearchProductController";
     private static final String ERROR = "SearchProductController";
 
@@ -26,7 +24,7 @@ public class DeleteProductController extends HttpServlet {
                 url = SUCCESS;
             }
         }catch(Exception e){
-            log("Error at DeleteController" +toString());
+            log("Error at DeleteProductController" +toString());
         }finally{
             request.getRequestDispatcher(url).forward(request, response);
         }

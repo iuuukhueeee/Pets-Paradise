@@ -22,8 +22,6 @@ public class AddProductController extends HttpServlet {
         try {
 
 //            KHOA: hotfix -- productID will be auto regenerated
-//            name length 3 - 50
-//            no need for check category
 
             String productID = request.getParameter("productID");
             String productName = request.getParameter("productName");
@@ -44,12 +42,8 @@ public class AddProductController extends HttpServlet {
                 check = false;
             }
 
-            if (productName.length() < 3 || productName.length() > 20) {
-                productError.setNameError("Name must be in [3, 20]");
-                check = false;
-            }
-            if(category.length()<2 || category.length()>15){
-                productError.setProductCategoryIDError("Category must be in [2, 15]");
+            if (productName.length() < 3 || productName.length() > 50) {
+                productError.setNameError("Name must be in [3, 50]");
                 check = false;
             }
             if (check) {

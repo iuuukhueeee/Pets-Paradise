@@ -9,8 +9,6 @@ import com.service.*;
 @WebServlet(name = "UpdateServiceController", value = "/UpdateServiceController")
 public class UpdateServiceController extends HttpServlet {
 
-//    KHOA: why not "Error at UpdateServiceController"
-
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "add_service.jsp";
 
@@ -33,7 +31,7 @@ public class UpdateServiceController extends HttpServlet {
             }
 
         } catch (Exception e) {
-            log("Error at UpdateController: " + e.toString());
+            log("Error at UpdateServiceController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

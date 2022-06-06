@@ -1,7 +1,6 @@
 package com.controllers;
 
 import java.io.IOException;
-import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,9 +10,6 @@ import com.user.*;
 
 @WebServlet(name = "UpdateUserController", value = "/UpdateUserController")
 public class UpdateUserController extends HttpServlet {
-
-//    KHOA: why not "Error at UpdateUserController"
-
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "admin.jsp";
 
@@ -23,21 +19,20 @@ public class UpdateUserController extends HttpServlet {
         String url = ERROR;
         try {
             String userName = request.getParameter("userName");
-            String firstName = request.getParameter("firstName");
-            String lastName = request.getParameter("lastName");
+            String name = request.getParameter("name");
             String password = request.getParameter("password");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phoneNumber");
 
             UserDAO dao = new UserDAO();
-            UserDTO user = new UserDTO(userName, firstName, lastName, password, email, phoneNumber, "US");
+            UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US");
             boolean checkUpdate = dao.updateUser(user);
             if (checkUpdate) {
                 url = SUCCESS;
             }
 
         } catch (Exception e) {
-            log("Error at UpdateController: " + e.toString());
+            log("Error at UpdateUserController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

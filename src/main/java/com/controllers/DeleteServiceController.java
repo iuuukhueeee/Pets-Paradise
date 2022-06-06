@@ -9,8 +9,6 @@ import com.service.*;
 @WebServlet(name = "DeleteServiceController", value = "/DeleteServiceController")
 public class DeleteServiceController extends HttpServlet {
 
-//    KHOA: Why not "Error at DeleteServiceController"
-
     private static final String SUCCESS = "SearchServiceController";
     private static final String ERROR = "SearchServiceController";
 
@@ -26,7 +24,7 @@ public class DeleteServiceController extends HttpServlet {
                 url = SUCCESS;
             }
         }catch(Exception e){
-            log("Error at DeleteController" +toString());
+            log("Error at DeleteServiceController" +toString());
         }finally{
             request.getRequestDispatcher(url).forward(request, response);
         }

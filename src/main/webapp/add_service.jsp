@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="com.service.ServiceDTO" %>
 <%@page import="java.util.List" %>
+<%@page import="com.user.UserDTO" %>
 <html>
 
 <head>
@@ -13,7 +14,16 @@
 </head>
 
 <body>
-
+<%
+    UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
+    if (user == null || !user.getRoleID().equals("AD")) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+    if (user == null) {
+        user = new UserDTO();
+    }
+%>
 <div class="wrapper">
     <form action="MainController" method="post">
         <div class="h5 font-weight-bold text-center mb-3">Adding Service</div>
@@ -104,7 +114,7 @@
                 </td>
                 <td>
                     <input type="submit" name="action" value="UpdateService"/>
-                    <input type="hidden" name="SearchService" value="<%=search%>">
+                    <input type="hidden" name="SearchService" value="<%=request.getParameter("SearchService")%>">
                 </td>
             </tr>
         </form>

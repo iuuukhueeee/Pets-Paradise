@@ -10,8 +10,6 @@ import com.user.*;
 
 @WebServlet(name = "SearchServiceController", value = "/SearchServiceController")
 public class SearchServiceController extends HttpServlet {
-    
-//    KHOA: why not "Error at SearchServiceController"
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS_US = "index.jsp";
@@ -42,7 +40,7 @@ public class SearchServiceController extends HttpServlet {
                 url = SUCCESS_AD;
             }
         } catch (Exception e) {
-            log("Error at SearchProductController: " + e.toString());
+            log("Error at SearchServiceController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

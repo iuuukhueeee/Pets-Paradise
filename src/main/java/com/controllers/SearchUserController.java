@@ -12,8 +12,6 @@ import com.user.*;
 @WebServlet(name = "SearchUserController", value = "/SearchUserController")
 public class SearchUserController extends HttpServlet {
 
-//    KHOA: why not "Error at SearchUserController"
-
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "admin.jsp";
 
@@ -31,7 +29,7 @@ public class SearchUserController extends HttpServlet {
                 url = SUCCESS;
             }
         } catch (Exception e) {
-            log("Error at SearchController: " + e.toString());
+            log("Error at SearchUserController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

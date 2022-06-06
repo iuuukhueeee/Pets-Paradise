@@ -15,8 +15,6 @@ import com.utils.ValidUtils;
 @WebServlet(name = "UpdateProductController", value = "/UpdateProductController")
 public class UpdateProductController extends HttpServlet {
 
-//    KHOA: why not "Error at UpdateProductController"
-
     private static final String ERROR = "product.jsp";
     private static final String SUCCESS = "product.jsp";
 
@@ -41,7 +39,7 @@ public class UpdateProductController extends HttpServlet {
             }
 
         } catch (Exception e) {
-            log("Error at UpdateController: " + e.toString());
+            log("Error at UpdateProductController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

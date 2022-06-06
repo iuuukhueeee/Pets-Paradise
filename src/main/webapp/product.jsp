@@ -1,5 +1,6 @@
 <%@ page import="com.product.ProductDTO" %>
 <%@page import="java.util.List"%>
+<%@page import="com.user.UserDTO"%>
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,16 @@
 </head>
 
 <body>
-
+<%
+    UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
+    if (user == null || !user.getRoleID().equals("AD")) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+    if (user == null) {
+        user = new UserDTO();
+    }
+%>
     <div class="wrapper">
         <form action="MainController" method="post">
             <div class="h5 font-weight-bold text-center mb-3">Adding Product</div>
@@ -138,7 +148,7 @@
 
 
                     <td>
-                        <a href="MainController?action=DeleteProduct&productID=<%= product.getProductID()%>&SearchProduct=<%= request.getParameter("SearchProduct")%>">Delete</a>
+                        <a href="MainController?action=DeleteProduct&productID=<%= product.getProductID()%>&SearchProduct=<%= request.getAttribute("SEARCH_PRODUCT")%>">Delete</a>
                     </td>
                     <td>
                         <input type="submit" name="action" value="UpdateProduct" />

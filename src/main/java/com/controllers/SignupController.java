@@ -12,8 +12,6 @@ import com.user.*;
 @WebServlet(name = "SignupController", value = "/SignupController")
 public class SignupController extends HttpServlet {
 
-//    KHOA: why not "Error at SignupController"
-
     private static final String ERROR = "signup.jsp";
     private static final String SUCCESS = "login.jsp";
 
@@ -23,8 +21,7 @@ public class SignupController extends HttpServlet {
         UserError userError = new UserError();
         try {
             String username = request.getParameter("username");
-            String firstName = request.getParameter("firstName");
-            String lastName = request.getParameter("lastName");
+            String name = request.getParameter("name");
             String password = request.getParameter("password");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phoneNumber");
@@ -46,13 +43,8 @@ public class SignupController extends HttpServlet {
                 validation = false;
             }
 
-            if (firstName.length() < 3 || firstName.length() > 20) {
-                userError.setNameError("Name must be in [3, 20]");
-                validation = false;
-            }
-
-            if (lastName.length() < 3 || lastName.length() > 20) {
-                userError.setNameError("Name must be in [3, 20]");
+            if (name.length() < 2 || name.length() > 20) {
+                userError.setNameError("Name must be in [2, 20]");
                 validation = false;
             }
 
@@ -68,7 +60,7 @@ public class SignupController extends HttpServlet {
 
 
             if (validation) {
-                UserDTO user = new UserDTO(username, firstName, lastName, password, email, phoneNumber, "US");
+                UserDTO user = new UserDTO(username, name, password, email, phoneNumber, "US");
                 boolean checkCreate = dao.createUser(user);
                 if (checkCreate) url = SUCCESS;
             } else {
@@ -76,7 +68,7 @@ public class SignupController extends HttpServlet {
             }
 
         } catch (Exception e) {
-            log("Error at CreateController: " + e.toString());
+            log("Error at SignupController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
