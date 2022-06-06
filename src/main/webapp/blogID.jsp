@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.blog.BlogDTO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Random" %>
@@ -94,7 +95,7 @@
                 </div>
 
                 <img
-                        src="./img/mèo dt.jpg"
+                        src="./img/cat1.jpeg"
                         class="img-fluid rounded img-responsive"
                         alt=""
                 />

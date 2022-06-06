@@ -11,9 +11,6 @@ import java.util.List;
 
 @WebServlet(name = "BlogController", value = "/BlogController")
 public class BlogController extends HttpServlet {
-
-    //KHOA: USE ONE TYPE OF CATCH
-
     private static final String ERROR = "blog.jsp";
     private static final String SUCCESS = "blog.jsp";
 
@@ -30,7 +27,7 @@ public class BlogController extends HttpServlet {
                 url = SUCCESS;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log("Error at BlogController:" + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

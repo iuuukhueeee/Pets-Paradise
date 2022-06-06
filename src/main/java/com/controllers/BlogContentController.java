@@ -30,10 +30,8 @@ public class BlogContentController extends HttpServlet {
                 request.setAttribute("BLOG_TEMPLATE", listBlog);
                 url = SUCCESS;
             }
-
-
         } catch (Exception e) {
-            e.printStackTrace();
+            log("Error at BlogContentController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
