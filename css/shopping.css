@@ -70,25 +70,22 @@ html {
 }
 
 .deal {
-  margin-top: 2rem;
-  background: #a5d0cc;
-  height: 1000px;
+  margin-bottom: 2rem;
   width: 100%;
 }
 
 .deal .deal-img {
-  -o-object-fit: cover;
-     object-fit: cover;
   position: absolute;
-  height: 900px;
+  height: 100%;
+  background-size: cover;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../img//shopping.jpg");
+  background-image: url("../img/calendar1-2.png");
 }
 
 .deal .deal-img .deal-time {
-  padding: 2rem;
+  padding: 3rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,6 +128,13 @@ html {
 
 .deal .deal-img .deal-time .count-down h3 {
   margin-right: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .deal .deal-img .deal-img {
+    background-size: contain;
+    background-position: center;
+  }
 }
 
 .backToTop a {

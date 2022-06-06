@@ -61,46 +61,49 @@ html {
   }
 }
 .deal {
-  margin-top: 2rem;
-  background: $c2-700;
-  height: 1000px;
+  margin-bottom: 2rem;
   width: 100%;
   .deal-img {
-    object-fit: cover;
     position: absolute;
-    height: 900px;
+    height: 100%;
+    background-size: cover;
     width: 100%;
-    background-position: center;
+    background-position: center ;
     background-repeat: no-repeat;
-    background-image: url("../img//shopping.jpg");
-  .deal-time {
-    padding: 2rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    h1 { 
-      @include text(xx-large,900,black);
-      text-align: center;
-    }
-    .count-down {
+    background-image: url("../img/calendar1-2.png");
+    .deal-time {
+      padding: 3rem;
+      position: relative;
       display: flex;
-      justify-content: space-between;
-      .day,
-      .hour,
-      .minute,
-      .second {
-        font-size: 3rem;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        @include text(xx-large, 900, black);
         text-align: center;
       }
-      h3 {
-        margin-right: 20px;
+      .count-down {
+        display: flex;
+        justify-content: space-between;
+        .day,
+        .hour,
+        .minute,
+        .second {
+          font-size: 3rem;
+          text-align: center;
+        }
+        h3 {
+          margin-right: 20px;
+        }
       }
     }
-  
+    @media screen and(max-width:640px){
+      .deal-img{
+        background-size:contain;
+        background-position: center;
+      }
+    }
   }
-}
 }
 .backToTop {
   a {
