@@ -61,12 +61,12 @@ html {
   }
 }
 .deal {
-  margin-top: 5rem;
+  margin-top: 2rem;
   width: 100%;
   .deal-img {
     position: absolute;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     background-position: center ;
     background-repeat: no-repeat;
