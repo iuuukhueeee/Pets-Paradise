@@ -3,98 +3,98 @@ package com.pet;
 import java.util.Date;
 
 public class PetDTO {
-    private String PetID;
-    private String AnimalID;
-    private String OrderDetailID;
-    private String AnimalName;
-    private int AnimalAge;
-    private String AnimalPicture;
-    private String AnimalDescription;
-    private Date BookingTime;
+    private String petID;
+    private String animalID;
+    private String orderDetailID;
+    private String animalName;
+    private int animalAge;
+    private String animalPicture;
+    private String animalDescription;
+    private Date bookingTime;
 
     public PetDTO(){
-        this.PetID = "";
-        this.AnimalID = "";
-        this.OrderDetailID = "";
-        this.AnimalName = "";
-        this.AnimalAge = 0;
-        this.AnimalPicture = "";
-        this.AnimalDescription = "";
-        this.BookingTime = null;
+        this.petID = "";
+        this.animalID = "";
+        this.orderDetailID = "";
+        this.animalName = "";
+        this.animalAge = 0;
+        this.animalPicture = "";
+        this.animalDescription = "";
+        this.bookingTime = null;
     }
 
     public PetDTO(String petID, String animalID, String orderDetailID, String animalName, int animalAge, String animalPicture, String animalDescription, Date bookingTime){
-        this.PetID = petID;
-        this.AnimalID = animalID;
-        this.OrderDetailID = orderDetailID;
-        this.AnimalName = animalName;
-        this.AnimalAge = animalAge;
-        this.AnimalPicture = animalPicture;
-        this.AnimalDescription = animalDescription;
-        this.BookingTime = bookingTime;
+        this.petID = petID;
+        this.animalID = animalID;
+        this.orderDetailID = orderDetailID;
+        this.animalName = animalName;
+        this.animalAge = animalAge;
+        this.animalPicture = animalPicture;
+        this.animalDescription = animalDescription;
+        this.bookingTime = bookingTime;
     }
 
     public String getPetID() {
-        return PetID;
+        return petID;
     }
 
     public void setPetID(String petID) {
-        PetID = petID;
+        this.petID = petID;
     }
 
     public String getAnimalID() {
-        return AnimalID;
+        return animalID;
     }
 
     public void setAnimalID(String animalID) {
-        AnimalID = animalID;
+        this.animalID = animalID;
     }
 
     public String getOrderDetailID() {
-        return OrderDetailID;
+        return orderDetailID;
     }
 
     public void setOrderDetailID(String orderDetailID) {
-        OrderDetailID = orderDetailID;
+        this.orderDetailID = orderDetailID;
     }
 
     public String getAnimalName() {
-        return AnimalName;
+        return animalName;
     }
 
     public void setAnimalName(String animalName) {
-        AnimalName = animalName;
+        this.animalName = animalName;
     }
 
     public int getAnimalAge() {
-        return AnimalAge;
+        return animalAge;
     }
 
     public void setAnimalAge(int animalAge) {
-        AnimalAge = animalAge;
+        this.animalAge = animalAge;
     }
 
     public String getAnimalPicture() {
-        return AnimalPicture;
+        return animalPicture;
     }
 
     public void setAnimalPicture(String animalPicture) {
-        AnimalPicture = animalPicture;
+        this.animalPicture = animalPicture;
     }
 
     public String getAnimalDescription() {
-        return AnimalDescription;
+        return animalDescription;
     }
 
     public void setAnimalDescription(String animalDescription) {
-        AnimalDescription = animalDescription;
+        this.animalDescription = animalDescription;
     }
 
     public Date getBookingTime() {
-        return BookingTime;
+        return bookingTime;
     }
 
     public void setBookingTime(Date bookingTime) {
-        BookingTime = bookingTime;
+        this.bookingTime = bookingTime;
     }
 }

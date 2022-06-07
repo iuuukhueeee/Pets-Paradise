@@ -58,13 +58,13 @@ public class ProductDAO {
 
                 if (rs.next()) {
                     String productID = rs.getString("ProductID");
-                    String Name = rs.getString("Name");
+                    String name = rs.getString("Name");
                     int quantity = Integer.parseInt(rs.getString("Quantity"));
                     String image = rs.getString("Image");
                     float price = Float.parseFloat(rs.getString("Price"));
                     Date importDate = rs.getDate("ImportDate");
                     Date expiredDate = rs.getDate("ExpiredDate");
-                    ProductDTO product = new ProductDTO(productID, Name, quantity, image, price, importDate,
+                    ProductDTO product = new ProductDTO(productID, name, quantity, image, price, importDate,
                             expiredDate);
                     list.add(product);
                 }
@@ -154,7 +154,7 @@ public class ProductDAO {
     }
 
     public List<ProductDTO> getListProduct(String search) throws SQLException {
-        List<ProductDTO> ProductList = new ArrayList<>();
+        List<ProductDTO> productList = new ArrayList<>();
         Connection conn = null;
         PreparedStatement ptm = null;
         ResultSet rs = null;
@@ -165,14 +165,14 @@ public class ProductDAO {
                 ptm.setString(1, "%" + search + "%");
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    String ProductID = rs.getString("ProductID");
-                    String Name = rs.getString("Name");
-                    int Quantity = rs.getInt("Quantity");
-                    String Image = rs.getString("Image");
-                    float Price = rs.getFloat("Price");
-                    Date ImportDate = rs.getDate("ImportDate");
-                    Date ExpiredDate = rs.getDate("ExpiredDate");
-                    ProductList.add(new ProductDTO(ProductID, Name, Quantity, Image, Price, ImportDate, ExpiredDate));
+                    String productID = rs.getString("ProductID");
+                    String name = rs.getString("Name");
+                    int quantity = rs.getInt("Quantity");
+                    String image = rs.getString("Image");
+                    float price = rs.getFloat("Price");
+                    Date importDate = rs.getDate("ImportDate");
+                    Date expiredDate = rs.getDate("ExpiredDate");
+                    productList.add(new ProductDTO(productID, name, quantity, image, price, importDate, expiredDate));
                 }
             }
         } catch (Exception e) {
@@ -188,7 +188,7 @@ public class ProductDAO {
                 conn.close();
             }
         }
-        return ProductList;
+        return productList;
     }
 
 

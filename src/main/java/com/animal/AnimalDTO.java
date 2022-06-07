@@ -1,32 +1,32 @@
 package com.animal;
 
 public class AnimalDTO {
-    private String AnimalID;
-    private String AnimalName;
+    private String animalID;
+    private String animalName;
 
     public AnimalDTO(){
-        this.AnimalID = "";
-        this.AnimalName = "";
+        this.animalID = "";
+        this.animalName = "";
     }
 
     public AnimalDTO(String animalID, String animalName){
-        this.AnimalID = animalID;
-        this.AnimalName = animalName;
+        this.animalID = animalID;
+        this.animalName = animalName;
     }
 
     public String getAnimalID() {
-        return AnimalID;
+        return animalID;
     }
 
     public void setAnimalID(String animalID) {
-        AnimalID = animalID;
+        this.animalID = animalID;
     }
 
     public String getAnimalName() {
-        return AnimalName;
+        return animalName;
     }
 
     public void setAnimalName(String animalName) {
-        AnimalName = animalName;
+        this.animalName = animalName;
     }
 }

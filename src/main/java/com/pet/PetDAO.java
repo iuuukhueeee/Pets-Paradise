@@ -17,17 +17,17 @@ public class PetDAO {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
-        String PetID = "";
+        String petID = "";
         java.util.Date getDate = pet.getBookingTime();
         Date bookingTime = null;
         try{
             UUID uuid = UUID.randomUUID();
             conn = DButils.getConnection();
             if (conn != null) {
-                PetID = "PET"+"-"+uuid.toString();
+                petID = "PET"+"-"+uuid.toString();
                 bookingTime = new Date(getDate.getTime());
                 ptm = conn.prepareStatement(CREATE);
-                ptm.setString(1,PetID);
+                ptm.setString(1,petID);
                 ptm.setString(2,pet.getAnimalID());
                 ptm.setString(3,pet.getOrderDetailID());
                 ptm.setString(4,pet.getAnimalName());

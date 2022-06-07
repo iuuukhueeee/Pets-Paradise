@@ -57,11 +57,11 @@ public class UserDAO {
                 rs = ptm.executeQuery();
                 if (rs.next()) {
                     String username = rs.getString("Username");
-                    String Name = rs.getString("Name");
-                    String Email = rs.getString("Email");
-                    String PhoneNumber = rs.getString("PhoneNumber");
-                    String RoleID = rs.getString("RoleID");
-                    user = new UserDTO(username, Name, "", Email, PhoneNumber, RoleID);
+                    String name = rs.getString("Name");
+                    String email = rs.getString("Email");
+                    String phoneNumber = rs.getString("PhoneNumber");
+                    String roleID = rs.getString("RoleID");
+                    user = new UserDTO(username, name, "", email, phoneNumber, roleID);
                 }
             }
         } catch (Exception e) {

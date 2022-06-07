@@ -51,7 +51,7 @@ public class OrderDAO {
                 ptm.setString(1,order.getOrderID());
                 ptm.setDate(2, (Date) order.getOrderDate());
                 ptm.setString(3,order.getUsername());
-                ptm.setString(4,order.getFeedbackOrder());
+                ptm.setString(4,order.getFeedBackOrder());
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
