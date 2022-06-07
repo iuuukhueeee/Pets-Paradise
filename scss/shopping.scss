@@ -19,10 +19,38 @@ html {
 }
 .header {
   background: #f5f9fe;
+  .cart {
+   
+    .badge {
+      padding-left: 9px;
+      padding-right: 9px;
+      -webkit-border-radius: 9px;
+      -moz-border-radius: 9px;
+      border-radius: 9px;
+    }
+    
+    .label-warning[href],
+    .badge-warning[href] {
+    }
+    #lblCartCount {
+        font-size: 12px;
+        background: #ff0000;
+        color: #fff;
+        margin-left: 4px; 
+    }
+  }
   li {
     a {
       &:hover {
         color: $c2-800;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    li {
+      margin-bottom: 8px;
+      span {
+        display: none;
       }
     }
   }
@@ -47,64 +75,60 @@ html {
     }
   }
 }
-.product {
-  margin-top: 2rem;
-  .grid {
-    @media screen and (max-width: 820px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    @media screen and (max-width: 640px) {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-  }
-}
-.deal {
-  margin-top: 2rem;
-  width: 100%;
-  .deal-img {
-    position: absolute;
-    height: 100%;
-    background-size: contain;
-    width: 100%;
-    background-position: center ;
-    background-repeat: no-repeat;
-    background-image: url("../img/calendar1-2.png");
-    .deal-time {
-      padding: 3rem;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      h1 {
-        @include text(xx-large, 900, black);
-        text-align: center;
-      }
-      .count-down {
-        display: flex;
-        justify-content: space-between;
-        .day,
-        .hour,
-        .minute,
-        .second {
-          font-size: 3rem;
-          text-align: center;
-        }
-        h3 {
-          margin-right: 20px;
-        }
-      }
-    }
-    @media screen and(max-width:640px){
-      .deal-img{
-        background-size:contain;
-        background-position: center;
-      }
-    }
-  }
-}
+// .product {
+//   margin-top: 2rem;
+//   .grid {
+//     @media screen and (max-width: 820px) {
+//       display: grid;
+//       grid-template-columns: 1fr 1fr;
+//     }
+//     @media screen and (max-width: 640px) {
+//       display: grid;
+//       grid-template-columns: 1fr;
+//     }
+//   }
+// }
+// .deal {
+//   margin-top: 4rem;
+//   width: 100%;
+//   .deal-img {
+//     position: absolute;
+//     height: 100%;
+//     background-size: contain;
+//     width: 100%;
+//     object-fit:contain;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-image: url("../img/calendar1-2.png");
+//     .deal-time {
+//       font-size: 16px;
+//       padding: 2rem;
+//       position: relative;
+//       display: flex;
+//       justify-content: center;
+//       flex-direction: column;
+//       align-items: center;
+//     }
+//     h1 {
+//       @include text(xx-large, 900, black);
+//       text-align: center;
+//     }
+//     .count-down {
+//       display: flex;
+//       justify-content: space-between;
+//       .day,
+//       .hour,
+//       .minute,
+//       .second {
+//         font-size: 3rem;
+//         text-align: center;
+//       }
+//       h3 {
+//         margin-right: 20px;
+//       }
+//     }
+//   }
+// }
 .backToTop {
   a {
     text-decoration: none;
