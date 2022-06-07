@@ -1,5 +1,4 @@
 target/
-src/main/webapp/css/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

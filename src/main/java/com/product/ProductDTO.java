@@ -1,34 +1,41 @@
 package com.product;
 
-import java.util.Date;
+import java.sql.Date;
+
+/*
+* categoryID: refactor later
+* */
 
 public class ProductDTO {
     private String productID;
+    private String categoryID;
     private String name;
     private int quantity;
     private String image;
     private float price;
     private Date importDate;
-    private Date expireDate;
+    private Date expiredDate;
 
-    public ProductDTO(){
-        this.productID = "";
-        this.name = "";
-        this.quantity = 0;
-        this.image = "";
-        this.price = 0;
-        this.importDate = null;
-        this.expireDate = null;
-    }
-
-    public ProductDTO(String productID, String name, int quantity, String image, float price, Date importDate, Date expireDate){
+    public ProductDTO(String productID, String categoryID, String name, int quantity, String image, float price, Date importDate, Date expiredDate) {
         this.productID = productID;
+        this.categoryID = categoryID;
         this.name = name;
         this.quantity = quantity;
         this.image = image;
         this.price = price;
         this.importDate = importDate;
-        this.expireDate = expireDate;
+        this.expiredDate = expiredDate;
+    }
+
+    public ProductDTO() {
+        this.productID = "";
+        this.categoryID = "";
+        this.name = "";
+        this.quantity = 0;
+        this.image = "";
+        this.price = 0;
+        this.importDate = null;
+        this.expiredDate = null;
     }
 
     public String getProductID() {
@@ -37,6 +44,14 @@ public class ProductDTO {
 
     public void setProductID(String productID) {
         this.productID = productID;
+    }
+
+    public String getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(String categoryID) {
+        this.categoryID = categoryID;
     }
 
     public String getName() {
@@ -79,12 +94,11 @@ public class ProductDTO {
         this.importDate = importDate;
     }
 
-    public Date getExpireDate() {
-        return expireDate;
+    public Date getExpiredDate() {
+        return expiredDate;
     }
 
-    public void setExpireDate(Date expireDate) {
-        this.expireDate = expireDate;
+    public void setExpiredDate(Date expiredDate) {
+        this.expiredDate = expiredDate;
     }
-
 }

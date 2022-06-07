@@ -44,12 +44,12 @@
 			>
 			  <span class="navbar-toggler-icon"></span>
 			</button>
-			<a  href="./index.html">HOME </a>
-			<a class="active" href="./services.html">SERVICES</a>
-			<a href="#">BOOKING</a>
-			<a href="#">BLOG</a>
-			<a href="#">ABOUT</a>
-			<a href="#">CONTACT</a>
+			<a  href="./index.jsp">HOME </a>
+			<a class="active" href="./services.jsp">SERVICES</a>
+			<a href="./shopping.jsp">SHOPPING</a>
+			<a href="blog">BLOG</a>
+			<a href="./about.jsp">ABOUT</a>
+			<a href="./contact.jsp">CONTACT</a>
 		  </nav>
 		  <button class="navbar-toggler">
 			<i class="fa fa-bars"></i>
@@ -83,7 +83,7 @@
                         <div class="price">
                         <span>$20.18</span>
                         <span>
-                          <a href="./booking.html">Book now</a>
+                          <a href="./booking.jsp">Book now</a>
                           <i class="fa-solid fa-angle-right"></i>
                       </span>
                       </div>
@@ -106,7 +106,7 @@
                          <div class="price">
                         <span>$20.18</span>
                         <span>
-                          <a href="./booking.html">Book now</a>
+                          <a href="./booking.jsp">Book now</a>
                           <i class="fa-solid fa-angle-right"></i>
                       </span>
                       </div>
@@ -131,7 +131,7 @@
                         <div class="price">
                           <span>$20.18</span>
                           <span>
-                            <a href="./booking.html">Book now</a>
+                            <a href="./booking..jsp">Book now</a>
                             <i class="fa-solid fa-angle-right"></i>
                         </span>
                         </div>
@@ -154,7 +154,7 @@
                         <div class="price">
                           <span>$20.18</span>
                           <span>
-                            <a href="./booking.html">Book now</a>
+                            <a href="./booking.jsp">Book now</a>
                             <i class="fa-solid fa-angle-right"></i>
                         </span>
                         </div>
@@ -178,7 +178,7 @@
                         <div class="price">
                           <span>$20.18</span>
                           <span>
-                            <a href="./booking.html">Book now</a>
+                            <a href="./booking.jsp">Book now</a>
                             <i class="fa-solid fa-angle-right"></i>
                         </span>
                         </div>
@@ -202,7 +202,7 @@
                         <div class="price">
                           <span>$20.18</span>
                           <span>
-                            <a href="./booking.html">Book now</a>
+                            <a href="./booking.jsp">Book now</a>
                             <i class="fa-solid fa-angle-right"></i>
                         </span>
                         </div>
