@@ -21,19 +21,6 @@ html {
   background: #f5f9fe;
 }
 
-.header .cart .badge {
-  padding-left: 9px;
-  padding-right: 9px;
-  border-radius: 9px;
-}
-
-.header .cart #lblCartCount {
-  font-size: 12px;
-  background: #ff0000;
-  color: #fff;
-  margin-left: 4px;
-}
-
 .header li a:hover {
   color: #68A7AD;
 }

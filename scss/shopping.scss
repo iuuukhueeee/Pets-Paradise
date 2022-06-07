@@ -19,26 +19,6 @@ html {
 }
 .header {
   background: #f5f9fe;
-  .cart {
-   
-    .badge {
-      padding-left: 9px;
-      padding-right: 9px;
-      -webkit-border-radius: 9px;
-      -moz-border-radius: 9px;
-      border-radius: 9px;
-    }
-    
-    .label-warning[href],
-    .badge-warning[href] {
-    }
-    #lblCartCount {
-        font-size: 12px;
-        background: #ff0000;
-        color: #fff;
-        margin-left: 4px; 
-    }
-  }
   li {
     a {
       &:hover {
