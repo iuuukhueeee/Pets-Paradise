@@ -17,10 +17,48 @@ public class ServiceDAO {
     private static final String SEARCH_SERVICE = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription, Status FROM Service WHERE ServiceName LIKE ? AND status=1";
     private static final String GET_ALL = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE status=1";
     private static final String UPDATE = "UPDATE Service SET  ServiceName=?, ServicePrice=?, ServiceDescription=? WHERE ServiceID=?";
-    private static final String GET_ID = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE ServiceID=?";
+    private static final String GET_BY_ID = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE ServiceID=?";
     private static final String DELETE = "UPDATE Service SET status=0 WHERE ServiceID=?";
 
 
+
+    public ServiceDTO getByID(String ID) throws SQLException {
+        Connection connection = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        ServiceDTO service = null;
+
+        try {
+            connection = DButils.getConnection();
+            if (connection != null) {
+                pst = connection.prepareStatement(GET_BY_ID);
+                pst.setString(1, ID);
+                rs = pst.executeQuery();
+
+                if (rs.next()) {
+                    String serviceID = rs.getString("ServiceID");
+                    String serviceName = rs.getString("ServiceName");
+                    float servicePrice = rs.getFloat("ServicePrice");
+                    String serviceDescription = rs.getString("ServiceDescription");
+                    service = new ServiceDTO(serviceID, serviceName , servicePrice, serviceDescription);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (pst != null) {
+                pst.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        }
+
+        return service;
+    }
 
     public boolean delete(String ID) throws SQLException {
         boolean check = false;

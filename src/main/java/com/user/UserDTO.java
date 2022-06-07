@@ -2,76 +2,76 @@ package com.user;
 
 public class UserDTO {
 
-    private String Username = null;
-    private String Name = null;
-    private String RoleID = null;
-    private String Password = null;
-    private String Email = null;
-    private String PhoneNumber = null;
+    private String name = null;
+    private String username = null;
+    private String roleID = null;
+    private String password = null;
+    private String email = null;
+    private String phoneNumber = null;
 
     public UserDTO() {
-        this.Username = "";
-        this.Name = "";
-        this.RoleID = "";
-        this.Password = "";
-        this.Email = "";
-        this.PhoneNumber = "";
+        this.name = "";
+        this.username = "";
+        this.roleID = "";
+        this.password = "";
+        this.email = "";
+        this.phoneNumber = "";
     }
 
-    public UserDTO(String Username, String Name , String password, String email, String phoneNumber, String roleID) {
-        this.Username = Username;
-        this.Name = Name;
-        this.RoleID = roleID;
-        this.Password = password;
-        this.Email = email;
-        this.PhoneNumber = phoneNumber;
+    public UserDTO(String Username, String Name, String password, String email, String phoneNumber, String roleID) {
+        this.name = Name;
+        this.username = Username;
+        this.roleID = roleID;
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getRoleID() {
-        return RoleID;
+        return roleID;
     }
 
     public void setRoleID(String roleID) {
-        this.RoleID = roleID;
+        this.roleID = roleID;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        this.Username = username;
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        this.Password = password;
+        this.password = password;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        this.Email = email;
+        this.email = email;
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.PhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 }

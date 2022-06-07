@@ -1,5 +1,7 @@
 package com.product;
 
+import com.checkout.Item;
+import com.utils.DButils;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -7,20 +9,72 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.product.*;
+
 import com.utils.*;
 
 public class ProductDAO {
-
+    private static final String UPDATE_QUANTITY_ON_HAND = "UPDATE Product SET Quantity= Quantity - ? where ProductID=?";
+    private static final String SEARCH = "SELECT ProductID, Quantity, Image, Price, ImportDate, ExpiredDate from Product WHERE Name like ? AND Status=1";
+    private static final String DELETE = "UPDATE Product SET Status=0 WHERE ProductID=?";
+    private static final String GET_BY_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE productID=?";
     private static final String UPDATE_QUANTITY = "UPDATE Product SET Quantity=? WHERE ProductID=?";
-
     private static final String CHECK_DUPLICATE = "SELECT Name FROM Product WHERE ProductID=?";
     private static final String ADD = "INSERT INTO Product(ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)";
     private static final String SEARCH_PRODUCT = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Name LIKE ? AND Status=1";
     private static final String GET_ALL = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Status=1";
     private static final String UPDATE = "UPDATE Product SET ProductCategoryID=?, Name=?, Quantity=?, Image=?, Price=?, ImportDate=?, ExpiredDate=? WHERE ProductID=?";
     private static final String GET_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
-    private static final String DELETE = "UPDATE Product SET Status=0 WHERE ProductID=?";
+
+    public boolean updateQuantity(Item item) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(UPDATE_QUANTITY_ON_HAND);
+                ptm.setInt(1, item.getProduct().getQuantity());
+                ptm.setString(2, item.getProduct().getProductID());
+                check = ptm.executeUpdate() > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                ptm.close();
+            }
+        }
+        return check;
+    }
+
+    public boolean deleteProduct(String ProductID) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(DELETE);
+                ptm.setString(1, ProductID);
+                check = ptm.executeUpdate() > 0;
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return check;
+        }
 
     public boolean updateQuantity(String id, int quantity) throws SQLException {
         boolean check = false;
@@ -30,7 +84,7 @@ public class ProductDAO {
         try {
             conn = DButils.getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE_QUANTITY);
+                ptm = conn.prepareStatement(UPDATE_QUANTITY_ON_HAND);
                 ptm.setInt(1, quantity);
                 ptm.setString(2, id);
                 check = ptm.executeUpdate() > 0 ? true : false;
@@ -153,10 +207,8 @@ public class ProductDAO {
 
         return product;
     }
-
-    public List<ProductDTO> searchproduct(String keyword) throws SQLException {
-        List<ProductDTO> list = new ArrayList<>();
-
+    public List<ProductDTO> getListProduct(String search) throws SQLException {
+        List<ProductDTO> productList = new ArrayList<>();
         Connection connection = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
@@ -165,7 +217,7 @@ public class ProductDAO {
             connection = DButils.getConnection();
             if (connection != null) {
                 pst = connection.prepareStatement(SEARCH_PRODUCT);
-                pst.setString(1, "%" + keyword + "%");
+                pst.setString(1, "%" + search + "%");
                 rs = pst.executeQuery();
 
                 while (rs.next()) {
@@ -179,7 +231,7 @@ public class ProductDAO {
                     Date expiredDate = ValidUtils.isValidDate(rs.getString("ExpiredDate"));
                     ProductDTO product = new ProductDTO(productID, productCategoryID, productName, quantity, image, price, importDate,
                             expiredDate);
-                    list.add(product);
+                    productList.add(product);
                 }
             }
         } catch (Exception e) {
@@ -196,7 +248,7 @@ public class ProductDAO {
             }
         }
 
-        return list;
+        return productList;
     }
 
     public List<ProductDTO> getAll() throws SQLException {
@@ -304,7 +356,6 @@ public class ProductDAO {
                 conn.close();
             }
         }
-
         return check;
     }
 }
