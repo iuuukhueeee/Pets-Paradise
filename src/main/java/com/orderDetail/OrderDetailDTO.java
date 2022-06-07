@@ -7,34 +7,26 @@ public class OrderDetailDTO {
     private String OrderDetailID;
     private float OrderDetailPrice;
     private String OrderID;
-    private String ServiceID;
-    private String ProductID;
-    private Date BookingTime;
+    private String itemID;
+    private int quantity;
 
     public OrderDetailDTO(){
         this.OrderDetailID = "";
         this.OrderDetailPrice = 0;
         this.OrderID = "";
-        this.ServiceID = "";
-        this.ProductID= "";
-        this.BookingTime = null;
+        this.itemID = "";
+        this.quantity = 0;
     }
 
-    public String getProductID() {
-        return ProductID;
-    }
 
-    public void setProductID(String productID) {
-        ProductID = productID;
-    }
 
-    public OrderDetailDTO(String orderDetailID, float orderDetailPrice, String orderID, String serviceID, String productID, Date bookingTime){
+    public OrderDetailDTO(String orderDetailID, float orderDetailPrice, String orderID, String itemID,int quantity){
         this.OrderDetailID = orderDetailID;
         this.OrderDetailPrice = orderDetailPrice;
         this.OrderID = orderID;
-        this.ServiceID = serviceID;
-        this.ProductID = productID;
-        this.BookingTime = bookingTime;
+        this.itemID = itemID;
+        this.quantity = quantity;
+
     }
 
     public String getOrderDetailID() {
@@ -61,19 +53,19 @@ public class OrderDetailDTO {
         OrderID = orderID;
     }
 
-    public String getServiceID() {
-        return ServiceID;
+    public String getItemID() {
+        return itemID;
     }
 
-    public void setServiceID(String serviceID) {
-        ServiceID = serviceID;
+    public void setItemID(String itemID) {
+        this.itemID = itemID;
     }
 
-    public Date getBookingTime() {
-        return BookingTime;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setBookingTime(Date bookingTime) {
-        BookingTime = bookingTime;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

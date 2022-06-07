@@ -9,7 +9,7 @@ public class Cart {
     private Map<String,Item> cart;
 
     public Cart(){
-        Map<String,Item> cart = null;
+        Map<String,Item> cart = new HashMap<>();
     }
 
     public Cart(Map<String, Item> cart){
@@ -47,10 +47,6 @@ public class Cart {
 
     public void addProduct(Item item){
         if(this.cart == null) this.cart = new HashMap<>();
-        if(this.cart.containsKey(new Item().product.getProductID())){
-            int currentQuantity = this.cart.get(new Item().product.getProductID()).product.getQuantity();
-            new Item().product.setQuantity(currentQuantity + new Item().product.getQuantity());
-        }
         cart.put(new Item().product.getProductID(),item);
     }
 
@@ -65,7 +61,7 @@ public class Cart {
         return check;
     }
 
-    public boolean removeProduct(String productID){
+    public boolean RemoveProduct(String productID){
         boolean check = false;
         if (this.cart != null){
             if(this.cart.containsKey(productID)){

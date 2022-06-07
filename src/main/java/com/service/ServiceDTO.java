@@ -8,7 +8,7 @@ public class ServiceDTO {
     private String serviceDescription;
 
 
-    public ServiceDTO(String serviceID, String serviceName, float servicePrice, String serviceDescription, boolean status) {
+    public ServiceDTO(String serviceID, String serviceName, float servicePrice, String serviceDescription) {
         this.serviceID = serviceID;
         this.serviceName = serviceName;
         this.servicePrice = servicePrice;

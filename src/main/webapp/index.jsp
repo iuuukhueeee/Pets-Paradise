@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-md">
                 <img src="./img/kit.png"/>
-                <div class="item">
+                private static final String ADD = "Add"<div class="item">
                     <h4>Vaccinate</h4>
                     <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
                 </div>
