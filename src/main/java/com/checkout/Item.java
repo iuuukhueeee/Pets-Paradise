@@ -1,9 +1,7 @@
 package com.checkout;
 
-import com.product.ProductDTO;
-import com.service.ServiceDTO;
-
-import javax.xml.ws.Service;
+import com.DTO.ProductDTO;
+import com.DTO.ServiceDTO;
 
 public class Item {
     ProductDTO product;

@@ -6,7 +6,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-import com.user.*;
+import com.DAO.UserDAO;
+import com.DTO.UserDTO;
 
 
 @WebServlet(name = "SearchUserController", value = "/SearchUserController")

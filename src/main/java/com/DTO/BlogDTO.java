@@ -1,4 +1,4 @@
-package com.blog;
+package com.DTO;
 
 public class BlogDTO {
     private String blogID;

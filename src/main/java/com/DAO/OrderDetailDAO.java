@@ -1,12 +1,11 @@
-package com.orderDetail;
+package com.DAO;
 
 
 import com.checkout.Item;
+import com.DTO.OrderDetailDTO;
 import com.utils.DButils;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 public class OrderDetailDAO {

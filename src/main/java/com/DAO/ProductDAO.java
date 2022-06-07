@@ -1,6 +1,7 @@
-package com.product;
+package com.DAO;
 
 import com.checkout.Item;
+import com.DTO.ProductDTO;
 import com.utils.DButils;
 import java.sql.Connection;
 import java.sql.Date;

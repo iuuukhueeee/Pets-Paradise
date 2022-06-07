@@ -1,4 +1,4 @@
-package com.user;
+package com.DTO;
 
 public class UserDTO {
 

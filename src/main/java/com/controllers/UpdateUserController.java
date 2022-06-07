@@ -6,7 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.user.*;
+
+import com.DAO.UserDAO;
+import com.DTO.UserDTO;
 
 @WebServlet(name = "UpdateUserController", value = "/UpdateUserController")
 public class UpdateUserController extends HttpServlet {

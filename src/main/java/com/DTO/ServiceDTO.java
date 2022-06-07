@@ -1,4 +1,4 @@
-package com.service;
+package com.DTO;
 
 public class ServiceDTO {
 

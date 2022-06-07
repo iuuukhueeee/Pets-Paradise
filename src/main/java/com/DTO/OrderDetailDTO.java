@@ -1,4 +1,4 @@
-package com.orderDetail;
+package com.DTO;
 
 public class OrderDetailDTO {
 

@@ -1,6 +1,7 @@
-package com.pet;
+package com.DAO;
 
 
+import com.DTO.PetDTO;
 import com.utils.DButils;
 
 import java.sql.Connection;

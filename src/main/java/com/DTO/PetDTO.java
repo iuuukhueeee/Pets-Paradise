@@ -1,4 +1,4 @@
-package com.pet;
+package com.DTO;
 
 import java.util.Date;
 

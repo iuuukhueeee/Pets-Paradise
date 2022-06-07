@@ -4,7 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import com.service.*;
+
+import com.DAO.ServiceDAO;
 
 @WebServlet(name = "DeleteServiceController", value = "/DeleteServiceController")
 public class DeleteServiceController extends HttpServlet {

@@ -2,8 +2,8 @@ package com.controllers;
 
 import com.checkout.Cart;
 import com.checkout.Item;
-import com.product.ProductDAO;
-import com.service.ServiceDAO;
+import com.DAO.ProductDAO;
+import com.DAO.ServiceDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

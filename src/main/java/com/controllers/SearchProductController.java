@@ -1,7 +1,10 @@
 package com.controllers;
 
 import java.io.IOException;
-import com.product.*;
+
+import com.DAO.ProductDAO;
+import com.DTO.ProductDTO;
+
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.user.UserDTO;
+import com.DTO.UserDTO;
 
 @WebServlet(name = "SearchProductController", value = "/SearchProductController")
 public class SearchProductController extends HttpServlet {

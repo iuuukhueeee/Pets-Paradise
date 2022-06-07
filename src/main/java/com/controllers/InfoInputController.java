@@ -1,8 +1,8 @@
 package com.controllers;
 
 
-import com.animal.AnimalDAO;
-import com.animal.AnimalDTO;
+import com.DAO.AnimalDAO;
+import com.DTO.AnimalDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

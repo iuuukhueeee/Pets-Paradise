@@ -1,6 +1,7 @@
-package com.animal;
+package com.DAO;
 
 
+import com.DTO.AnimalDTO;
 import com.utils.DButils;
 
 import java.sql.Connection;

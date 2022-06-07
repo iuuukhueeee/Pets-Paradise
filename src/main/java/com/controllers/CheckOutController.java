@@ -2,14 +2,14 @@ package com.controllers;
 
 import com.checkout.Cart;
 import com.checkout.Item;
-import com.order.OrderDAO;
-import com.order.OrderDTO;
-import com.orderDetail.OrderDetailDAO;
-import com.orderDetail.OrderDetailDTO;
-import com.pet.PetDAO;
-import com.pet.PetDTO;
-import com.product.ProductDAO;
-import com.user.UserDTO;
+import com.DAO.OrderDAO;
+import com.DTO.OrderDTO;
+import com.DAO.OrderDetailDAO;
+import com.DTO.OrderDetailDTO;
+import com.DAO.PetDAO;
+import com.DTO.PetDTO;
+import com.DAO.ProductDAO;
+import com.DTO.UserDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

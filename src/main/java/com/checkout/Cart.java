@@ -1,7 +1,5 @@
 package com.checkout;
 
-import com.product.ProductDTO;
-
 import java.util.HashMap;
 import java.util.Map;
 

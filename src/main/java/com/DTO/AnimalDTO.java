@@ -1,4 +1,4 @@
-package com.animal;
+package com.DTO;
 
 public class AnimalDTO {
     private String animalID;

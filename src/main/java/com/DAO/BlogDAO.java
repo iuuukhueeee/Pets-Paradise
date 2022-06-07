@@ -1,5 +1,6 @@
-package com.blog;
+package com.DAO;
 
+import com.DTO.BlogDTO;
 import com.utils.DButils;
 
 import java.sql.Connection;

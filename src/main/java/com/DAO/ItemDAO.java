@@ -1,5 +1,6 @@
-package com.checkout;
+package com.DAO;
 
+import com.checkout.Item;
 import com.utils.DButils;
 
 import java.sql.Connection;

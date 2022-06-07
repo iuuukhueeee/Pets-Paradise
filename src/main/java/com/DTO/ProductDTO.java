@@ -1,4 +1,4 @@
-package com.product;
+package com.DTO;
 
 import java.sql.Date;
 
