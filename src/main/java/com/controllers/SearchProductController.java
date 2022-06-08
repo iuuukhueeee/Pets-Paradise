@@ -31,7 +31,7 @@ public class SearchProductController extends HttpServlet {
             if(searchproduct == null) searchproduct = "";
             ProductDAO dao = new ProductDAO();
 
-            List<ProductDTO> list = dao.searchproduct(searchproduct);
+            List<ProductDTO> list = dao.getListProduct(searchproduct);
 
             request.setAttribute("PRODUCT_LIST", list);
             request.setAttribute("SEARCH_PRODUCT", searchproduct);

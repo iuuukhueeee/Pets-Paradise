@@ -15,18 +15,21 @@ import java.io.IOException;
 
 @WebServlet(name = "AddToCartController", value = "/AddToCartController")
 public class AddToCartController extends HttpServlet {
-
-
     private static final String ERROR = "index.jsp";
-    private static final String SUCCESS = "ViewCart.jsp";
+    private static final String SUCCESS = "index.jsp";
+    private static final String INSERT_PET_INFO = "petinfo.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
 
         try {
             Item item = new Item();
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
             String ID = request.getParameter("ID");
+            if (ID.split("-")[0].equals("SERVICE")) {
+                url = INSERT_PET_INFO;
+                request.getRequestDispatcher(url).include(request, response);
+            }
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
             item.setItemID(ID);
             String[] itemTypeID = ID.split("-");
             ProductDAO product = new ProductDAO();
@@ -49,10 +52,8 @@ public class AddToCartController extends HttpServlet {
             request.setAttribute("MESSAGE","Added Successfully");
             url = SUCCESS;
 
-
-
         } catch (Exception e) {
-
+            log("Error at AddToCartController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
