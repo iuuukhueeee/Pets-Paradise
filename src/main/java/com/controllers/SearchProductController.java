@@ -16,9 +16,10 @@ import com.DTO.UserDTO;
 
 @WebServlet(name = "SearchProductController", value = "/SearchProductController")
 public class SearchProductController extends HttpServlet {
+
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS_US = "index.jsp";
-    private static final String SUCCESS_AD = "product.jsp";
+    private static final String SUCCESS_AD = "admin_product.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -31,10 +32,9 @@ public class SearchProductController extends HttpServlet {
             if(searchproduct == null) searchproduct = "";
             ProductDAO dao = new ProductDAO();
 
-            List<ProductDTO> list = dao.searchproduct(searchproduct);
+            List<ProductDTO> list = dao.getListProduct(searchproduct);
 
             request.setAttribute("PRODUCT_LIST", list);
-            request.setAttribute("SEARCH_PRODUCT", searchproduct);
 
             HttpSession session = request.getSession();
             UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");

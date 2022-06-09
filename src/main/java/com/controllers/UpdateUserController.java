@@ -13,7 +13,7 @@ import com.DTO.UserDTO;
 @WebServlet(name = "UpdateUserController", value = "/UpdateUserController")
 public class UpdateUserController extends HttpServlet {
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "admin.jsp";
+    private static final String SUCCESS = "admin_user.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

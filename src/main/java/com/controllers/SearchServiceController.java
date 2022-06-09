@@ -16,7 +16,7 @@ public class SearchServiceController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS_US = "index.jsp";
-    private static final String SUCCESS_AD = "add_service.jsp";
+    private static final String SUCCESS_AD = "admin_service.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -12,7 +12,7 @@ import com.DTO.ServiceDTO;
 public class UpdateServiceController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "add_service.jsp";
+    private static final String SUCCESS = "admin_service.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

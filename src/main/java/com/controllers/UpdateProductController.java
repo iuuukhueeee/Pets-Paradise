@@ -17,8 +17,8 @@ import com.utils.ValidUtils;
 @WebServlet(name = "UpdateProductController", value = "/UpdateProductController")
 public class UpdateProductController extends HttpServlet {
 
-    private static final String ERROR = "product.jsp";
-    private static final String SUCCESS = "product.jsp";
+    private static final String ERROR = "admin_product.jsp";
+    private static final String SUCCESS = "admin_product.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -7,14 +7,8 @@ public class Cart {
     private Map<String,Item> cart;
 
     public Cart(){
-        Map<String,Item> cart = new HashMap<>();
+        this.cart = new HashMap<>();
     }
-
-    public Cart(Map<String, Item> cart){
-        this.cart = cart;
-    }
-
-
 
     public void addService(Item item){
         if(this.cart == null) this.cart = new HashMap<>();
@@ -59,7 +53,7 @@ public class Cart {
         return check;
     }
 
-    public boolean RemoveProduct(String productID){
+    public boolean removeProduct(String productID){
         boolean check = false;
         if (this.cart != null){
             if(this.cart.containsKey(productID)){

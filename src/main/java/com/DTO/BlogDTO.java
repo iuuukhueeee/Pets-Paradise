@@ -11,6 +11,9 @@ public class BlogDTO {
 
     public BlogDTO() {
         this.blogID = "";
+        this.author = "";
+        this.authorAvatar = "";
+        this.writtenDate = "";
         this.blogTitle = "";
         this.blogContent = "";
         this.blogDescription = "";
