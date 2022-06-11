@@ -71,9 +71,6 @@ public class CheckOutController extends HttpServlet {
                         PetDTO pet = new PetDTO("",animalID,orderDetailID,animalName,animalAge,"",animalDescription,bookingTime);
                         PetDAO petDAO = new PetDAO();
                         petDAO.addPetInfo(pet);
-                        request.setAttribute("ORDER_ID",order.getOrderID());
-                        request.setAttribute("CART",cart);
-                        session.removeAttribute("CART");
                     }
                     request.setAttribute("ORDER_ID",order.getOrderID());
                     request.setAttribute("CART",cart);

@@ -19,23 +19,23 @@ public class ServiceDAO {
     private static final String SEARCH_SERVICE = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription, Status FROM Service WHERE ServiceName LIKE ? AND status=1";
     private static final String GET_ALL = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE status=1";
     private static final String UPDATE = "UPDATE Service SET  ServiceName=?, ServicePrice=?, ServiceDescription=? WHERE ServiceID=?";
-    private static final String GET_BY_ID = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE ServiceID=?";
+    private static final String GET_BY_ID = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE ServiceID=? AND Status=1";
     private static final String DELETE = "UPDATE Service SET status=0 WHERE ServiceID=?";
 
 
 
     public ServiceDTO getByID(String ID) throws SQLException {
-        Connection connection = null;
-        PreparedStatement pst = null;
+        Connection conn = null;
+        PreparedStatement ptm = null;
         ResultSet rs = null;
         ServiceDTO service = null;
 
         try {
-            connection = DButils.getConnection();
-            if (connection != null) {
-                pst = connection.prepareStatement(GET_BY_ID);
-                pst.setString(1, ID);
-                rs = pst.executeQuery();
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_BY_ID);
+                ptm.setString(1, ID);
+                rs = ptm.executeQuery();
 
                 if (rs.next()) {
                     String serviceID = rs.getString("ServiceID");
@@ -51,11 +51,11 @@ public class ServiceDAO {
             if (rs != null) {
                 rs.close();
             }
-            if (pst != null) {
-                pst.close();
+            if (ptm != null) {
+                ptm.close();
             }
-            if (connection != null) {
-                connection.close();
+            if (conn != null) {
+                conn.close();
             }
         }
 
@@ -183,7 +183,7 @@ public class ServiceDAO {
         return check;
     }
 
-    public List<ServiceDTO> searchservice(String keyword) throws SQLException {
+    public List<ServiceDTO> searchService(String keyword) throws SQLException {
         List<ServiceDTO> list = new ArrayList<>();
 
         Connection connection = null;
@@ -254,4 +254,40 @@ public class ServiceDAO {
         }
         return service;
     }
+
+    public List<ServiceDTO> getAll() throws SQLException {
+        List<ServiceDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_ALL);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    String id = rs.getString("ServiceID");
+                    String name = rs.getString("ServiceName");
+                    float price = rs.getFloat("ServicePrice");
+                    String description = rs.getString("ServiceDescription");
+                    list.add(new ServiceDTO(id, name, price, description));
+                }
+            }
+        } catch (Exception e) {
+           e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return list;
+    }
+
 }

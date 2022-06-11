@@ -29,7 +29,7 @@ public class SearchServiceController extends HttpServlet {
             if(searchService == null) searchService = "";
             ServiceDAO dao = new ServiceDAO();
 
-            List<ServiceDTO> list = dao.searchservice(searchService);
+            List<ServiceDTO> list = dao.searchService(searchService);
 
             request.setAttribute("SERVICE_LIST", list);
             request.setAttribute("SEARCH_SERVICE", searchService);

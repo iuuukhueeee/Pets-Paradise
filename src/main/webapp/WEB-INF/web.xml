@@ -11,6 +11,14 @@
         <servlet-name>BlogContentController</servlet-name>
         <servlet-class>com.controllers.BlogContentController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadServiceController</servlet-name>
+        <servlet-class>com.controllers.LoadServiceController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoadServiceController</servlet-name>
+        <url-pattern>/shopping</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>blogController</servlet-name>
         <url-pattern>/blog</url-pattern>
