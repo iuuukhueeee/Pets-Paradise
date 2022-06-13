@@ -15,6 +15,10 @@
         <servlet-name>LoadServiceController</servlet-name>
         <servlet-class>com.controllers.LoadServiceController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ResetPasswordController</servlet-name>
+        <servlet-class>com.controllers.ResetPasswordController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoadServiceController</servlet-name>
         <url-pattern>/shopping</url-pattern>
@@ -27,7 +31,35 @@
         <servlet-name>BlogContentController</servlet-name>
         <url-pattern>/BlogContent</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetPasswordController</servlet-name>
+        <url-pattern>/ResetPassword</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>imap.gmail.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>email</param-name>
+        <param-value>thisisthientesting@gmail.com</param-value>
+    </context-param>
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>Pets Paradise</param-value>
+    </context-param>
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>6AAhn9T8K-wXpjL</param-value>
+    </context-param>
+
 </web-app>

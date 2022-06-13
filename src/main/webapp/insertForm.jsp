@@ -22,7 +22,6 @@
             }
         %>
     </select>
-    <input type="submit" name="action" value="AddToCart"/>
     <%
 
         ServiceDTO service = (ServiceDTO) request.getAttribute("SERVICE");
