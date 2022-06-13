@@ -5,8 +5,10 @@ $c1-400:#c2d0da;
 $c1-500: #656774;
 $c1-600: #2a73dd;
 $c1-700: #1d365e;
+$c2-600:#eaf4f3;
 $c2-700:#a5d0cc;
 $c2-800:#68A7AD;
+$c:#51969c;
 $c2-900:#C3DBD9;
 $c2: #ffffff;
 $c2-100:#EFEFEF;
@@ -25,6 +27,8 @@ $font-light: 300;
 $font-normal: 400;
 $font-semibold: 600;
 $font-bold: 700;
+
+$font-family-1: "Pacifico", cursive;
 
 @mixin text($fs: $text-base, $fw: $font-normal, $c: $c1-700) {
   font-size: $fs;
