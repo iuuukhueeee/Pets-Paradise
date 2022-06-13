@@ -6,20 +6,18 @@ import com.DAO.ShopServiceDetailDAO;
 import com.DTO.ServiceDTO;
 import com.DTO.ShopDTO;
 import com.DTO.ShopServiceDetailDTO;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "InsertFormController", value = "/InsertFormController")
-public class InsertFormController extends HttpServlet {
+@WebServlet(name = "GetSupportedShopController", value = "/GetSupportedShopController")
+public class GetSupportedShopController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "insertform.jsp";
+    private static final String SUCCESS = "insertForm.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;

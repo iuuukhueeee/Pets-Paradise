@@ -32,7 +32,8 @@
     </p>
     <textarea placeholder="Pet's information"></textarea>
     <input type="file" name="picture" />
-    <input type="submit" name="action" value="AddServiceToCart" />
+    <input type="hidden" name="ID" value="<%=service.getServiceID()%>" />
+    <input type="submit" name="action" value="AddToCart" />
 </form>
 </body>
 </html>

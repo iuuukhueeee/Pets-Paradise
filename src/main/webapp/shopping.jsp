@@ -14,14 +14,14 @@
 
     for (ServiceDTO service : listService) {
 %>
-<%--    <form action="insertform.jsp" method="POST">--%>
+<%--    <form action="insertForm.jsp" method="POST">--%>
 <%--        <input type="hidden" name="ID" value="<%=service.getServiceID()%>" />--%>
 <%--        <input type="hidden" name="serviceName" value="<%=service.getServiceName()%>"--%>
 <%--        <input type="submit" name="service" value="InserForm" />--%>
 <%--    </form>--%>
     <form action="MainController" method="POST">
         <input type="hidden" name="ID" value="<%=service.getServiceID()%>" />
-        <input type="submit" name="action" value="InsertForm" />
+        <input type="submit" name="action" value="GetSupportedShop" />
     </form>
 <%
     }
