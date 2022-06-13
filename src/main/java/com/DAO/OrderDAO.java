@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.UUID;
 
 public class OrderDAO {
-    private static final String CREATE= "INSERT INTO Orders(OrderID, OrderDate, Username, FeedbackOrder, Status) VALUES(?,?,?,?,1)";
+    private static final String CREATE= "INSERT INTO Orders(OrderID, OrderDate, Username, Status) VALUES(?,?,?,1)";
     private static final String UPDATE= "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
     private static final String DELETE= "UPDATE Orders SET Status=0 WHERE OrderID=?";
 

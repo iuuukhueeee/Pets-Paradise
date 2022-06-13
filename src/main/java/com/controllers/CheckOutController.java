@@ -19,21 +19,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CheckOutController", value = "/CheckOutController")
 public class CheckOutController extends HttpServlet {
 
-    private static final String ERROR = "index.jsp";
+    private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "CheckOut.jsp";
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
         try {
             HttpSession session = request.getSession();
             Cart cart = (Cart) session.getAttribute("CART");
@@ -57,20 +55,24 @@ public class CheckOutController extends HttpServlet {
                         orderDT = orderDetail.createOrderDetail(order.getOrderID(),item);
                         product.updateQuantity(item);
                     }
-                    String itemType = orderDT.getItemID().split("-")[0];
+                    String[] orderDTID = orderDT.getItemID().split("-");
+                    String itemType = orderDTID[0];
 
                     if(itemType.equals("SERVICE")){
-                        List<String> petInfo = (ArrayList) session.getAttribute("PET_INFO");
+                        Map<String,PetDTO> petInfo = (Map<String, PetDTO>) session.getAttribute("PET_INFO");
                         String orderDetailID = orderDT.getOrderDetailID();
-                        String animalID = petInfo.get(0);
-                        String animalName = petInfo.get(1);
-                        int animalAge = Integer.parseInt(petInfo.get(2));
-                        String animalDescription = petInfo.get(3);
-                        String getDate = petInfo.get(4);
-                        Date bookingTime = formatter.parse(getDate);
-                        PetDTO pet = new PetDTO("",animalID,orderDetailID,animalName,animalAge,"",animalDescription,bookingTime);
-                        PetDAO petDAO = new PetDAO();
-                        petDAO.addPetInfo(pet);
+                        PetDTO pet = null;
+                        for(PetDTO getInfo : petInfo.values()){
+                            String animalID = getInfo.getAnimalID();
+                            String animalName = getInfo.getAnimalName();
+                            int animalAge = getInfo.getAnimalAge();
+                            String animalPicture = getInfo.getAnimalPicture();
+                            String animalDescription = getInfo.getAnimalDescription();
+                            Date bookingTime = getInfo.getBookingTime();
+                            pet = new PetDTO("",animalID,orderDetailID,animalName,animalAge,animalPicture,animalDescription,bookingTime);
+                            PetDAO petDAO = new PetDAO();
+                            petDAO.addPetInfo(pet);
+                        }
                     }
                     request.setAttribute("ORDER_ID",order.getOrderID());
                     request.setAttribute("CART",cart);

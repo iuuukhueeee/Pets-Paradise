@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 public class AddToCartController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "shopping.jsp";
+    private static final String SUCCESS = "checkOut.jsp";
     private static final String INSERT_FORM = "InfoInputController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

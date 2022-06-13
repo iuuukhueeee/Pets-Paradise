@@ -55,6 +55,11 @@ public class MainController extends HttpServlet {
     private static final String ADD_TO_CART = "AddToCart";
     private static final String ADD_TO_CART_CONTROLLER = "AddToCartController";
 
+    //           ============= USER ==============
+
+    private static final String CHECK_OUT = "checkOut";
+    private static final String CHECK_OUT_CONTROLLER = "CheckOutController";
+
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -108,6 +113,8 @@ public class MainController extends HttpServlet {
                 url = GET_SUPPORTED_SHOP_CONTROLLER;
             } else if (ADD_TO_CART.equals(action)) {
                 url = ADD_TO_CART_CONTROLLER;
+            }else if (CHECK_OUT.equals(action)) {
+                url = CHECK_OUT_CONTROLLER;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());
