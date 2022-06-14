@@ -316,7 +316,7 @@ html {
 }
 
 .testimonials {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
 }
@@ -379,29 +379,29 @@ html {
 
 .pricing-plan .row {
   margin: 0 auto;
-  height: auto;
   width: 100%;
   gap: 30px;
 }
 
-.pricing-plan .row .col-md {
+.pricing-plan .row .col {
   background: #EFEFEF;
+  min-width: 350px;
 }
 
-.pricing-plan .row .col-md .item {
+.pricing-plan .row .col .item {
   margin-top: 60px;
   text-align: center;
 }
 
-.pricing-plan .row .col-md .item ul {
+.pricing-plan .row .col .item ul {
   list-style-type: none;
 }
 
-.pricing-plan .row .col-md .item ul li {
+.pricing-plan .row .col .item ul li {
   margin: 2rem;
 }
 
-.pricing-plan .row .col-md .item hr {
+.pricing-plan .row .col .item hr {
   border-bottom: 2px dashed #68A7AD;
   width: 50%;
   margin: auto;

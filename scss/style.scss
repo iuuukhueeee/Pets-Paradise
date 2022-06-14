@@ -270,7 +270,7 @@ html {
   }
 }
 .testimonials {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   // height: 100%;
@@ -335,11 +335,11 @@ html {
   }
   .row {
     margin: 0 auto;
-    height: auto;
     width: 100%;
     gap: 30px;
-    .col-md {
+    .col {
       background: $c2-100;
+      min-width: 350px;
       .item {
         margin-top: 60px;
         text-align: center;
