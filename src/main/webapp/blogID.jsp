@@ -1,5 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.blog.BlogDTO" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%--WORKING ON FIXING CROSS-SITE-SCRIPTING--%>
+
+<%@ page import="com.DTO.BlogDTO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Random" %>
 <!DOCTYPE html>
@@ -80,6 +84,12 @@
     }
 %>
 
+<jsp:useBean id="BLOG_CONTENT" class="com.DTO.BlogDTO" scope="request">
+    <jsp:getProperty name="BLOG_CONTENT" property="blogTitle"/>
+    <jsp:getProperty name="BLOG_CONTENT" property="blogContent"/>
+    <jsp:getProperty name="BLOG_CONTENT" property="blogDescription"/>
+    <jsp:getProperty name="BLOG_CONTENT" property="writtenDate"/>
+</jsp:useBean>
 <!-- Body -->
 <div class="container body mt-4 pt-2">
     <div class="row pb-3">
@@ -87,11 +97,13 @@
             <div class="mt-2">
                 <div class="read-title text-center">
                     <h3 style="font-weight: bold">
-                        <%=blog.getBlogTitle()%>
+                        <%--                        <%=blog.getBlogTitle()%>--%>
+                        <c:out value='${BLOG_CONTENT.blogTitle}'/>
                     </h3>
                 </div>
                 <div class="text-muted float-right">
-                    <%=blog.getWrittenDate()%>
+<%--                    <%=blog.getWrittenDate()%>--%>
+                    <c:out value="${BLOG_CONTENT.writtenDate}"/>
                 </div>
 
                 <img
@@ -103,7 +115,8 @@
             </div>
 
             <div class="mt-1">
-                <%=blog.getBlogContent()%>
+<%--                <%=blog.getBlogContent()%>--%>
+                <c:out value="${BLOG_CONTENT.blogContent}" escapeXml="false"/>
             </div>
             <hr/>
             <div class="footer-body">

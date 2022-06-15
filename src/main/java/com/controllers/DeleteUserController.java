@@ -4,7 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import com.user.*;
+
+import com.DAO.UserDAO;
 
 @WebServlet(name = "DeleteUserController", value = "/DeleteUserController")
 public class DeleteUserController extends HttpServlet {

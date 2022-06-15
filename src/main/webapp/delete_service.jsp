@@ -2,10 +2,10 @@
 
 
 <%@page import="java.util.List"%>
-<%@page import="com.service.ServiceDTO"%>
-<%@page import="com.service.ServiceDAO"%>
-<%@page import="com.user.UserDTO"%>
-<%@page import="com.user.UserDAO"%>
+<%@page import="com.DTO.ServiceDTO"%>
+<%@page import="com.DAO.ServiceDAO"%>
+<%@page import="com.DTO.UserDTO"%>
+<%@page import="com.DAO.UserDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>

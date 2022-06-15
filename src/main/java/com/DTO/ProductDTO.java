@@ -1,6 +1,10 @@
-package com.product;
+package com.DTO;
 
 import java.sql.Date;
+
+/*
+* categoryID: refactor later
+* */
 
 public class ProductDTO {
     private String productID;

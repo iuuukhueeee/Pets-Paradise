@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="com.service.ServiceDTO" %>
+<%@page import="com.DTO.ServiceDTO" %>
 <%@page import="java.util.List" %>
-<%@page import="com.user.UserDTO" %>
+<%@page import="com.DTO.UserDTO" %>
 <html>
 
 <head>

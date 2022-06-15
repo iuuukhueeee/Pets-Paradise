@@ -4,15 +4,19 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import com.product.*;
+
+import com.DAO.ProductDAO;
+import com.DTO.ProductDTO;
+import com.Error.ProductError;
+
 import java.sql.Date;
 import com.utils.*;
 
 @WebServlet(name = "AddProductController", value = "/AddProductController")
 public class AddProductController extends HttpServlet {
 
-    private static final String ERROR = "product.jsp";
-    private static final String SUCCESS = "product.jsp";
+    private static final String ERROR = "admin_product.jsp";
+    private static final String SUCCESS = "admin_product.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

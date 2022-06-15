@@ -1,6 +1,6 @@
-<%@ page import="com.product.ProductDTO" %>
+<%@ page import="com.DTO.ProductDTO" %>
 <%@page import="java.util.List"%>
-<%@page import="com.user.UserDTO"%>
+<%@page import="com.DTO.UserDTO"%>
 
 <!DOCTYPE html>
 <html>

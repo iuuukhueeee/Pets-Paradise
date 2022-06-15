@@ -2,10 +2,12 @@ package com.controllers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+@MultipartConfig
 @WebServlet(name = "MainController", value = "/MainController")
 public class MainController extends HttpServlet {
 
@@ -47,6 +49,11 @@ public class MainController extends HttpServlet {
     private static final String DELETE_PRODUCT_CONTROLLER = "DeleteProductController";
     private static final String UPDATE_PRODUCT = "UpdateProduct";
     private static final String UPDATE_PRODUCT_CONTROLLER = "UpdateProductController";
+
+    private static final String GET_SUPPORTED_SHOP = "GetSupportedShop";
+    private static final String GET_SUPPORTED_SHOP_CONTROLLER = "GetSupportedShopController";
+    private static final String ADD_TO_CART = "AddToCart";
+    private static final String ADD_TO_CART_CONTROLLER = "AddToCartController";
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -97,6 +104,10 @@ public class MainController extends HttpServlet {
 
             }else if (DELETE_PRODUCT.equals(action)) {
                 url = DELETE_PRODUCT_CONTROLLER;
+            } else if (GET_SUPPORTED_SHOP.equals(action)) {
+                url = GET_SUPPORTED_SHOP_CONTROLLER;
+            } else if (ADD_TO_CART.equals(action)) {
+                url = ADD_TO_CART_CONTROLLER;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());

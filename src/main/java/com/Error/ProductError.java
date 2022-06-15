@@ -1,5 +1,5 @@
 
-package com.product;
+package com.Error;
 
 public class ProductError {
     private String productIDError;

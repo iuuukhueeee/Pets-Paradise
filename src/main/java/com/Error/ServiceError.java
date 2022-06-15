@@ -1,4 +1,4 @@
-package com.service;
+package com.Error;
 
 public class ServiceError {
     private String serviceIDError;

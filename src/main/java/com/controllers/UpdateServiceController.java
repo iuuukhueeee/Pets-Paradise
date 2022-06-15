@@ -4,13 +4,15 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import com.service.*;
+
+import com.DAO.ServiceDAO;
+import com.DTO.ServiceDTO;
 
 @WebServlet(name = "UpdateServiceController", value = "/UpdateServiceController")
 public class UpdateServiceController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "add_service.jsp";
+    private static final String SUCCESS = "admin_service.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

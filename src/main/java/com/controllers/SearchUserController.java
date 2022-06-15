@@ -6,14 +6,15 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-import com.user.*;
+import com.DAO.UserDAO;
+import com.DTO.UserDTO;
 
 
 @WebServlet(name = "SearchUserController", value = "/SearchUserController")
 public class SearchUserController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "admin.jsp";
+    private static final String SUCCESS = "admin_user.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

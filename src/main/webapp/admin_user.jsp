@@ -1,5 +1,5 @@
 <%@page import="java.util.List" %>
-<%@page import="com.user.UserDTO" %>
+<%@page import="com.DTO.UserDTO" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -13,13 +13,6 @@
     if (user == null || !user.getRoleID().equals("AD")) {
         response.sendRedirect("login.jsp");
         return;
-    }
-    if (user == null) {
-        user = new UserDTO();
-    }
-    String search = request.getParameter("search");
-    if (search == null) {
-        search = "";
     }
 %>
 <h1>Welcome Manager: <%=user.getName()%>!</h1>
@@ -100,7 +93,7 @@
 <a href="MainController?action=Logout">Logout</a>
 
 
-<a href="add_service.jsp">Service</a>
-<a href="product.jsp">Product</a>
+<a href="admin_service.jsp">Service</a>
+<a href="admin_product.jsp">Product</a>
 </body>
 </html>

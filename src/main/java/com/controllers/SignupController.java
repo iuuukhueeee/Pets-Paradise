@@ -7,12 +7,14 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.user.*;
+import com.DAO.UserDAO;
+import com.DTO.UserDTO;
+import com.Error.UserError;
 
 @WebServlet(name = "SignupController", value = "/SignupController")
 public class SignupController extends HttpServlet {
 
-    private static final String ERROR = "signup.jsp";
+    private static final String ERROR = "register.jsp";
     private static final String SUCCESS = "login.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
