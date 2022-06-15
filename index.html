@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -12,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" >
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
     rel="stylesheet">
@@ -26,25 +27,27 @@
     <div class="container">
       <a href="#" class="logo">
         <img src="./img/paw-solid.svg" style="height: 40px" />
-        <span>Pet Paradise</span>
+        <span>Pet's Paradise</span>
       </a>
-      <nav class="navbar ">
+      <nav class="navbar navbar-expand-lg navbar-light " style="  box-sizing: border-box;
+      ">
         <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="active" href="#">HOME </a>
-        <a href="./services.html">SERVICES</a>
-        <a href="./shopping.html">SHOPPING</a>
-        <a href="#">BLOG</a>
-        <a href="#">ABOUT</a>
-        <a href="#">CONTACT</a>
-    </div>
+          <a class="navbar" href="#"></a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="active" href="./index.html">Home</a>
+              <a class="" href="./services.html">Services</a>
+              <a class="" href="./shopping.html">Shopping</a>
+              <a class="" href="./blog.html">Blog</a>
+              <a class="" href="./about.html">About</a>
+            </div>
+          </div>
+        </div>
       </nav>
-      <button class="navbar-toggler">
-        <i class="fa fa-bars"></i>
-      </button>
     </div>
   </header>
   <section class="carousell">
@@ -260,78 +263,94 @@
 
     </div>
   </section>
-  <section class="pricing-plan "
-    style="animation-iteration-count: 1; animation-duration: 10s;">
+  <section class="pricing-plan " style="animation-iteration-count: 1; animation-duration: 10s;">
     <header>
       <h1>Pricing Plan</h1>
       <P>Lorem ipsum dolor sit amet consectetetur accusantium sint ad laboriosam, voluptatibus autem ullam voluptate
         molestias placeat! Nisi excepturi consequuntur modi unde.</P>
     </header>
     <div class="container">
-      <div class="row">
+      <div class="row row-cols-4">
         <div class="col">
           <div class="item">
-            <div class="shield">
-              <i class="fa-solid fa-shield-cat"></i>
-              <h4>We care for pet</h4>
+            <div class="title">
+              <h4>Bath & Brush</h4>
             </div>
-            <ul>
-              <li>Walking</li>
-              <hr>
-              <li>Grooming & Spa</li>
-              <hr>
-              <li>Vet</li>
-              <hr>
-              <li>Hotel</li>
-              <hr>
-              <li>Accessories & Food</li>
-              <button class="button">Book now</button>
-            </ul>
+            <button class="price btn btn-danger">$6- $14</button>
+            <div class="body">
+              <div class="container">
+                <ul>
+                  <li>Bath (Hypo-Allergenic)</li>
+                  <li>Conditioning Treatment</li>
+                  <li>Ears Flushed & Cleaned</li>
+                  <li>Watering Plants</li>
+                  <li>Setting Lenght of Coat</li>
+                </ul>
+                <button class="button">PURCHASE NOW</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col">
           <div class="item">
-            <div class="shield">
-              <i class="fa-solid fa-shield-cat"></i>
+            <div class="title">
+              <h4>Bath & Brush</h4>
             </div>
-            <h4>We care for pet</h4>
-            <ul>
-              <li>Walking</li>
-              <hr>
-              <li>Grooming & Spa</li>
-              <hr>
-              <li>Vet</li>
-              <hr>
-              <li>Hotel</li>
-              <hr>
-              <li>Accessories & Food</li>
-              <button class="button">Book now</button>
-            </ul>
-
+            <button class="price btn btn-danger">$6- $14</button>
+            <div class="body">
+              <div class="container">
+                <ul>
+                  <li>Bath (Hypo-Allergenic)</li>
+                  <li>Conditioning Treatment</li>
+                  <li>Ears Flushed & Cleaned</li>
+                  <li>Watering Plants</li>
+                  <li>Setting Lenght of Coat</li>
+                </ul>
+                <button class="button">PURCHASE NOW</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col">
           <div class="item">
-            <div class="shield">
-              <i class="fa-solid fa-shield-cat"></i>
+            <div class="title">
+              <h4>Bath & Brush</h4>
             </div>
-            <h4>We care for pet</h4>
-            <ul>
-              <li>Walking</li>
-              <hr>
-              <li>Grooming & Spa</li>
-              <hr>
-              <li>Vet</li>
-              <hr>
-              <li>Hotel</li>
-              <hr>
-              <li>Accessories & Food</li>
-              <button class="button">Book now</button>
-            </ul>
+            <button class="price btn btn-danger">$6- $14</button>
+            <div class="body">
+              <div class="container">
+                <ul>
+                  <li>Bath (Hypo-Allergenic)</li>
+                  <li>Conditioning Treatment</li>
+                  <li>Ears Flushed & Cleaned</li>
+                  <li>Watering Plants</li>
+                  <li>Setting Lenght of Coat</li>
+                </ul>
+                <button class="button">PURCHASE NOW</button>
+              </div>
+            </div>
           </div>
         </div>
-    
-      
+        <div class="col">
+          <div class="item">
+            <div class="title">
+              <h4>Bath & Brush</h4>
+            </div>
+            <button class="price btn btn-danger">$6- $14</button>
+            <div class="body">
+              <div class="container">
+                <ul>
+                  <li>Bath (Hypo-Allergenic)</li>
+                  <li>Conditioning Treatment</li>
+                  <li>Ears Flushed & Cleaned</li>
+                  <li>Watering Plants</li>
+                  <li>Setting Lenght of Coat</li>
+                </ul>
+                <button class="button">PURCHASE NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -464,8 +483,7 @@
     <a href="#header"><i class="fa fa-arrow-down"></i></a>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
