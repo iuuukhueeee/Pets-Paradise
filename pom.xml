@@ -53,6 +53,22 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>codeartifact</id>
+            <name>codeartifact</name>
+            <url>https://petsparadise-141226611494.d.codeartifact.ap-southeast-1.amazonaws.com/maven/PetsParadiseRepository/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>codeartifact</id>
+            <name>codeartifact</name>
+            <url>https://petsparadise-141226611494.d.codeartifact.ap-southeast-1.amazonaws.com/maven/PetsParadiseRepository/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
