@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class OrderDetailDAO {
 
-    private static final String CREATE= "INSERT INTO OrderDetail(OrderDetailID, OrderDetailPrice, OrderID, ServiceID, ProductID, BookingTime) VALUES(?,?,?,?,?,?)";
+    private static final String CREATE= "INSERT INTO OrderDetail(OrderDetailID, OrderDetailPrice, OrderID, itemID, Quantity, Status) VALUES(?,?,?,?,?,1)";
 
 
     public OrderDetailDTO createOrderDetail(String orderID, Item item) throws SQLException {

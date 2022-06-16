@@ -26,5 +26,6 @@
 <%
     }
 %>
+    <a href="checkout.jsp">checkout</a>
 </body>
 </html>
