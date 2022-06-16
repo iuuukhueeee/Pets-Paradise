@@ -120,7 +120,7 @@
                                                     type="button"
                                                     class="btn btn-primary btn-floating mx-2"
                                             >
-                                                <a href="https://accounts.google.com/o/oauth2/auth?scope=email profile&redirect_uri=http://localhost:8080/Pets_Paradise_war_exploded/GoogleAuthController&response_type=code&client_id=63664510771-rmeas4m92o8c7no4g6t7fgqlc2kbj2c5.apps.googleusercontent.com&approval_prompt=force"><i class="fab fa-google"></i></a>
+                                                <a href="https://accounts.google.com/o/oauth2/auth?scope=email profile&redirect_uri=http://localhost:8080/Pets_Paradise_war_exploded/GoogleAuthController&response_type=code&client_id=503483004538-81lb3cajsdbmmnec4i8b1b9sif92ia5n.apps.googleusercontent.com&approval_prompt=force"><i class="fab fa-google"></i></a>
                                             </button>
                                         </div>
                                     </div>

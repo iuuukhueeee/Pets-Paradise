@@ -3,10 +3,10 @@ package com.DTO;
 public class GoogleDTO {
     private String id;
     private String email;
-    private boolean verifiedEmail;
+    private boolean verify_email;
     private String name;
-    private String givenName;
-    private String familyName;
+    private String given_name;
+    private String family_name;
 
     public String getId() {
         return id;
@@ -24,12 +24,12 @@ public class GoogleDTO {
         this.email = email;
     }
 
-    public boolean isVerifiedEmail() {
-        return verifiedEmail;
+    public boolean isVerify_email() {
+        return verify_email;
     }
 
-    public void setVerifiedEmail(boolean verifiedEmail) {
-        this.verifiedEmail = verifiedEmail;
+    public void setVerify_email(boolean verify_email) {
+        this.verify_email = verify_email;
     }
 
     public String getName() {
@@ -40,27 +40,27 @@ public class GoogleDTO {
         this.name = name;
     }
 
-    public String getGivenName() {
-        return givenName;
+    public String getGiven_name() {
+        return given_name;
     }
 
-    public void setGivenName(String givenName) {
-        this.givenName = givenName;
+    public void setGiven_name(String given_name) {
+        this.given_name = given_name;
     }
 
-    public String getFamilyName() {
-        return familyName;
+    public String getFamily_name() {
+        return family_name;
     }
 
-    public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+    public void setFamily_name(String family_name) {
+        this.family_name = family_name;
     }
 
     @Override
     public String toString() {
         return "GoogleDTO [id=" + id + ", email=" + email
-                + ", verified_email=" + verifiedEmail + ", name=" + name
-                + ", given_name=" + givenName + ", family_name=" + familyName
+                + ", verified_email=" + verify_email + ", name=" + name
+                + ", given_name=" + given_name + ", family_name=" + family_name
                 + "]";
     }
 }
