@@ -74,7 +74,7 @@
         }
     %>
     <form action="MainController" method="post">
-        <button type="submit" name="action" value="checkOut">DONE?</button>
+        <button type="submit" name="action" value="checkout">DONE?</button>
     </form>
 </table>
 </body>

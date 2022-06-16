@@ -57,8 +57,8 @@ public class MainController extends HttpServlet {
 
     //           ============= USER ==============
 
-    private static final String CHECK_OUT = "checkOut";
-    private static final String CHECK_OUT_CONTROLLER = "CheckOutController";
+    private static final String CHECK_OUT = "checkout";
+    private static final String CHECK_OUT_CONTROLLER = "CheckoutController";
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

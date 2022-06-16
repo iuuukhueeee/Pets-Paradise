@@ -22,11 +22,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
-@WebServlet(name = "CheckOutController", value = "/CheckOutController")
-public class CheckOutController extends HttpServlet {
+@WebServlet(name = "CheckoutController", value = "/CheckoutController")
+public class CheckoutController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "CheckOut.jsp";
+    private static final String SUCCESS = "index.jsp";
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -82,7 +82,7 @@ public class CheckOutController extends HttpServlet {
 
             }
         } catch (Exception e) {
-            log("Error at CheckOutController: " + e.toString());
+            log("Error at CheckoutController: " + e.toString());
 
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
