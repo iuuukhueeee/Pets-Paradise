@@ -216,7 +216,7 @@ html {
   content: "\f138";
   position: absolute;
   left: 8rem;
-  color: #68a7ad;
+  color: #a4c1c4;
 }
 
 .welcome .angle {
@@ -231,7 +231,7 @@ html {
   border-radius: 4px;
   background-color: transparent;
   outline: none;
-  border: 1px solid #68a7ad;
+  border: 1px solid #a4c1c4;
   font-size: 16px;
   position: relative;
   isolation: isolate;
@@ -244,7 +244,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #68a7ad;
+  background-color: #a4c1c4;
   z-index: -1;
   -webkit-transition: width 0.25s ease-in;
   transition: width 0.25s ease-in;
@@ -326,7 +326,7 @@ html {
 }
 
 .testimonials .carousel .carousel-indicators .active {
-  background-color: #68a7ad;
+  background-color: #a4c1c4;
 }
 
 .testimonials .carousel .carousel-indicators {
@@ -368,7 +368,7 @@ html {
 }
 
 .testimonials .carousel .carousel-inner .carousel-item .carousel-caption .top i {
-  color: #68a7ad;
+  color: #a4c1c4;
   font-size: 2rem;
 }
 
@@ -402,7 +402,7 @@ html {
 }
 
 .pricing-plan .row .col-md .item hr {
-  border-bottom: 2px dashed #68a7ad;
+  border-bottom: 2px dashed #a4c1c4;
   width: 50%;
   margin: auto;
 }
@@ -418,7 +418,7 @@ html {
   padding: 15px 30px;
   width: 200px;
   border-radius: 4px;
-  background-color: #68a7ad;
+  background-color: #a4c1c4;
   cursor: pointer;
   font-weight: 500;
   outline: none;
@@ -448,7 +448,7 @@ html {
 }
 
 .map .row .left .contact-info i {
-  color: #68a7ad;
+  color: #a4c1c4;
   margin-right: 8px;
   padding: 16px;
   border-radius: 4px;
@@ -547,7 +547,7 @@ footer .row .col .item h4::after {
 }
 
 footer .row .col .item h4:hover {
-  color: #68a7ad;
+  color: #a4c1c4;
 }
 
 footer .row .col .item h4:hover::after {
@@ -572,7 +572,7 @@ footer .row .col .item .submit div input[type="text"] {
 
 footer .row .col .item .submit div input[type="submit"] {
   width: 100%;
-  background-color: #68a7ad;
+  background-color: #a4c1c4;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -589,7 +589,7 @@ footer .row .col .item .submit div input[type="submit"]:hover {
 
 .backToTop a {
   text-decoration: none;
-  color: #68a7ad;
+  color: #a4c1c4;
   position: fixed;
   bottom: 5%;
   right: 5%;
@@ -620,8 +620,8 @@ footer .row .col .item .submit div input[type="submit"]:hover {
   background-color: #1773bdcc;
   -webkit-transform: translateY(-5%);
           transform: translateY(-5%);
-  -webkit-box-shadow: 0.125rem 0.125rem 1rem #68a7ad;
-          box-shadow: 0.125rem 0.125rem 1rem #68a7ad;
+  -webkit-box-shadow: 0.125rem 0.125rem 1rem #a4c1c4;
+          box-shadow: 0.125rem 0.125rem 1rem #a4c1c4;
 }
 
 .backToTop a:hover i {
@@ -912,7 +912,7 @@ footer .row .col .item h4::after {
 }
 
 footer .row .col .item h4:hover {
-  color: #68a7ad;
+  color: #a4c1c4;
 }
 
 footer .row .col .item h4:hover::after {
@@ -937,7 +937,7 @@ footer .row .col .item .submit div input[type="text"] {
 
 footer .row .col .item .submit div input[type="submit"] {
   width: 100%;
-  background-color: #68a7ad;
+  background-color: #a4c1c4;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
