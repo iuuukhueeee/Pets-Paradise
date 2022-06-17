@@ -22,7 +22,6 @@
             }
         %>
     </select>
-    <input type="submit" name="action" value="AddToCart"/>
     <%
 
         ServiceDTO service = (ServiceDTO) request.getAttribute("SERVICE");
@@ -32,6 +31,14 @@
     </p>
     <textarea placeholder="Pet's information"></textarea>
     <input type="file" name="picture" />
+    <select id="cars" name="animalType" >
+        <option value="cat">cat</option>
+        <option value="dog">dog</option>
+    </select>
+    <input type="text" name="animalName" value="">
+    <input type="text" name="animalAge" value="">
+    <input type="text" name="animalDescription" value="">
+    Date<input type="date" name="bookingTime" value="">
     <input type="hidden" name="ID" value="<%=service.getServiceID()%>" />
     <input type="submit" name="action" value="AddToCart" />
 </form>
