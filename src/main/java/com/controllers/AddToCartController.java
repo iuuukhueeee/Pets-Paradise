@@ -20,7 +20,7 @@ public class AddToCartController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "shopping";
-    private static final String INSERT_FORM = "InfoInputController";
+    private static final String INSERT_PET_INFO = "InfoInputController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
@@ -44,7 +44,6 @@ public class AddToCartController extends HttpServlet {
                 url = INSERT_PET_INFO;
                 request.getRequestDispatcher(url).include(request, response);
             }
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
             item.setItemID(ID);
             String[] itemTypeID = ID.split("-");
             ProductDAO product = new ProductDAO();
@@ -61,7 +60,7 @@ public class AddToCartController extends HttpServlet {
                 cart.addProduct(item);
             }
             else if(itemTypeID[0].equals("SERVICE")){
-                url = INSERT_FORM;
+                url = INSERT_PET_INFO;
                 request.getRequestDispatcher(url).include(request, response);
                 item.setService(service.getByID(item.getItemID()));
                 cart.addService(item);

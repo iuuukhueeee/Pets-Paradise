@@ -78,11 +78,6 @@ public class CheckoutController extends HttpServlet {
                     url = SUCCESS;
                     session.removeAttribute("CART");
                 }
-                request.setAttribute("ORDER_ID", order.getOrderID());
-                request.setAttribute("CART", cart);
-                url = SUCCESS;
-                session.removeAttribute("CART");
-
             }
         } catch (Exception e) {
             log("Error at CheckoutController: " + e.toString());
