@@ -35,9 +35,8 @@ public class CheckoutController extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             Cart cart = (Cart) session.getAttribute("CART");
-            if(cart == null) {
+            if (cart == null) {
                 cart = new Cart();
-                request.setAttribute("ERROR" , "Your Shopping cart is Empty!");
             }
             else{
                 OrderDAO orderDAO = new OrderDAO();
@@ -79,6 +78,10 @@ public class CheckoutController extends HttpServlet {
                     url = SUCCESS;
                     session.removeAttribute("CART");
                 }
+                request.setAttribute("ORDER_ID", order.getOrderID());
+                request.setAttribute("CART", cart);
+                url = SUCCESS;
+                session.removeAttribute("CART");
 
             }
         } catch (Exception e) {
@@ -91,11 +94,11 @@ public class CheckoutController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request,response);
+        processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request,response);
+        processRequest(request, response);
     }
 }

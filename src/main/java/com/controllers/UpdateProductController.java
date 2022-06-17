@@ -35,7 +35,7 @@ public class UpdateProductController extends HttpServlet {
             Date expiredDate = ValidUtils.isValidDate(request.getParameter("expiredDate"));
             ProductDAO dao = new ProductDAO();
             ProductDTO product = new ProductDTO(productID, categoryID, productName, quantity, image, price, importDate, expiredDate);
-            boolean checkUpdate = dao.update(product);
+            boolean checkUpdate = dao.updateProduct(product);
             if (checkUpdate) {
                 url = SUCCESS;
             }

@@ -40,6 +40,11 @@ public class AddToCartController extends HttpServlet {
 
             Item item = new Item();
             String ID = request.getParameter("ID");
+            if (ID.split("-")[0].equals("SERVICE")) {
+                url = INSERT_PET_INFO;
+                request.getRequestDispatcher(url).include(request, response);
+            }
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
             item.setItemID(ID);
             String[] itemTypeID = ID.split("-");
             ProductDAO product = new ProductDAO();
@@ -66,7 +71,7 @@ public class AddToCartController extends HttpServlet {
             url = SUCCESS;
 
         } catch (Exception e) {
-            log("Error at AddToCartController" + e.toString());
+            log("Error at AddToCartController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

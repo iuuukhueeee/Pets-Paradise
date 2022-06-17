@@ -70,7 +70,6 @@ public class OrderDAO {
 
 
     public OrderDTO createOrder(String username) throws SQLException {
-        boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
         String orderID = "";
@@ -85,7 +84,6 @@ public class OrderDAO {
                 ptm.setString(1,orderID);
                 ptm.setDate(2,orderDate);
                 ptm.setString(3,username);
-                check = ptm.executeUpdate() > 0;
                 order = new OrderDTO(orderID,orderDate,username,"");
             }
         } catch (Exception e) {
