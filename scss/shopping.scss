@@ -22,6 +22,7 @@ html {
 
 .header {
   li {
+    font-size: 14px;
     a {
       &:hover {
         color: $c2-700;
@@ -29,7 +30,6 @@ html {
     }
     
   }
-  
 
    
   @media screen and (max-width: 768px) {
@@ -40,11 +40,15 @@ html {
       }
     }
     button{
-      max-width: 120px;
+      max-width: 100px;
       height: 70px;
       
     }
+
   }
+
+  
+  
 }
 
 .deal {
@@ -60,7 +64,7 @@ html {
 
 .coming-soon {
   z-index: 9999;
-  margin-top: 30px;
+  margin-top: 2rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -98,9 +102,8 @@ html {
     text-align: center;
   }
   @media screen and (max-width: 640px) {
-    .coming-soon {
       font-size: 16px;
-    }
+    
   }
 }
 
@@ -143,6 +146,15 @@ html {
       }
     }
   }
+}
+ 
+#authentication-modal{
+.submit{
+  @media screen and (max-width:576px){
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 }
 
 .blog {

@@ -19,6 +19,10 @@ html {
   padding: 0;
 }
 
+.header li {
+  font-size: 14px;
+}
+
 .header li a:hover {
   color: #a5d0cc;
 }
@@ -31,7 +35,7 @@ html {
     display: none;
   }
   .header button {
-    max-width: 120px;
+    max-width: 100px;
     height: 70px;
   }
 }
@@ -48,7 +52,7 @@ html {
 
 .coming-soon {
   z-index: 9999;
-  margin-top: 30px;
+  margin-top: 2rem;
   max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,7 +109,7 @@ html {
 }
 
 @media screen and (max-width: 640px) {
-  .coming-soon .coming-soon {
+  .coming-soon {
     font-size: 16px;
   }
 }
@@ -172,6 +176,13 @@ html {
   }
   .product .grid button {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #authentication-modal .submit {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
