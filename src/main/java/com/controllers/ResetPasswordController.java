@@ -1,40 +1,38 @@
 package com.controllers;
 
+import com.DAO.UserDAO;
 import com.utils.EmailUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet(name = "ResetPasswordController", value = "/ResetPasswordController")
 public class ResetPasswordController extends HttpServlet {
 
     private static final String SUCCESS = "login.jsp";
     private static final String ERROR = "error.jsp";
-    private String host;
-    private String port;
-    private String email;
-    private String name;
-    private String pass;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         try {
-            String recipient = "phuongmtse161187@fpt.edu.vn";
-            String subject = "RESET";
-            String content = "sup bro";
-            ServletContext context = getServletContext();
-            host = context.getInitParameter("host");
-            port = context.getInitParameter("port");
-            email = context.getInitParameter("email");
-            name = context.getInitParameter("name");
-            pass = context.getInitParameter("pass");
 
-//            EmailUtils.sendMail(host, port, email, name, pass, recipient, subject, content);
-            EmailUtils.sendMail();
-            url = SUCCESS;
+            String username = request.getParameter("username");
+            UserDAO userDAO = new UserDAO();
+            if (!userDAO.checkDuplicate(username)) {
+                request.setAttribute("ERROR", "Username does not exist!");
+                response.sendRedirect("forgotPassword.jsp");
+            }
+            String email = userDAO.getEmail(username);
+            UUID uuid = UUID.randomUUID();
+            String newPassword = DigestUtils.sha256Hex(uuid.toString()).substring(0, 16);
+            if(EmailUtils.sendMail(newPassword, email)) {
+                userDAO.updatePassword(newPassword, username);
+                url = SUCCESS;
+            }
         } catch (Exception e) {
             log("Error at ResetPasswordController: " + e.toString());
         } finally {
