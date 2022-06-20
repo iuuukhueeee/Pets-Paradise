@@ -248,12 +248,16 @@ public class UserDAO {
         Connection conn = null;
         PreparedStatement ptm = null;
         String password = org.apache.commons.codec.digest.DigestUtils.sha256Hex(user.toString()).substring(0, 15);
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
                 ptm = conn.prepareStatement(CREATE_GOOGLE);
                 ptm.setString(1, user.getName().replaceAll("\\s+", ""));
                 ptm.setString(2, user.getGiven_name() + " " + user.getFamily_name());
                 ptm.setString(3, password);
                 ptm.setString(4, user.getEmail());
                 check = ptm.executeUpdate() > 0;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -264,8 +268,9 @@ public class UserDAO {
                 conn.close();
             }
         }
-    } 
-    
+        return check;
+    }
+
     public String getEmail(String username) throws SQLException {
         String email = "";
         Connection conn = null;
@@ -282,7 +287,7 @@ public class UserDAO {
                     email = rs.getString("Email");
                 }
             }
-        } catch (Exception e ) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (rs != null) rs.close();
@@ -305,11 +310,12 @@ public class UserDAO {
                 ptm.setString(2, username);
                 check = ptm.executeUpdate() > 0;
             }
-        } catch (Exception e ) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (ptm != null) ptm.close();
             if (conn != null) conn.close();
         }
         return check;
+    }
 }

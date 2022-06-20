@@ -28,7 +28,7 @@ public class ResetPasswordController extends HttpServlet {
             }
             String email = userDAO.getEmail(username);
             UUID uuid = UUID.randomUUID();
-            String newPassword = DigestUtils.sha256Hex(uuid.toString()).substring(0, 16);
+            String newPassword = org.apache.commons.codec.digest.DigestUtils.sha256Hex(uuid.toString()).substring(0, 15);
             if(EmailUtils.sendMail(newPassword, email)) {
                 userDAO.updatePassword(newPassword, username);
                 url = SUCCESS;
