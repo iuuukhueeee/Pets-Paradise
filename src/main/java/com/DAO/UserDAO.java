@@ -15,11 +15,13 @@ public class UserDAO {
     private static final String LOGIN = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Username=? AND Password=? AND Status=1";
     private static final String CHECK_DUPLICATE = "SELECT 1 FROM Users WHERE Username=?";
     private static final String CHECK_EXISTING_EMAIL = "SELECT 1 FROM Users WHERE Email=?";
+    private static final String GET_EMAIL_BY_USERNAME = "SELECT Email from Users WHERE Username=?";
     private static final String SEARCH = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Name LIKE ? AND Status=1";
     private static final String CREATE = "INSERT INTO Users(Username, Name, Password, Email, PhoneNumber, RoleID, Status) VALUES(?, ?, ?, ?, ?, 'US', 1)";
     private static final String CREATE_GOOGLE = "INSERT INTO Users(Username, Name, Password, Email, RoleID, Status) VALUES(?, ?, ?, ?, 'US', 1)";
     private static final String DELETE = "UPDATE Users SET Status=0 WHERE Username=?";
     private static final String UPDATE = "UPDATE Users SET Name = ? , Password = ? , Email = ? , PhoneNumber = ? WHERE Username = ?";
+    private static final String UPDATE_PASSWORD = "UPDATE Users SET Password=? WHERE Username=?";
 
 
     public UserDTO checkLogin(String Username, String Password) throws SQLException {
@@ -246,17 +248,12 @@ public class UserDAO {
         Connection conn = null;
         PreparedStatement ptm = null;
         String password = org.apache.commons.codec.digest.DigestUtils.sha256Hex(user.toString()).substring(0, 15);
-
-        try {
-            conn = DButils.getConnection();
-            if (conn != null) {
                 ptm = conn.prepareStatement(CREATE_GOOGLE);
                 ptm.setString(1, user.getName().replaceAll("\\s+", ""));
                 ptm.setString(2, user.getGiven_name() + " " + user.getFamily_name());
                 ptm.setString(3, password);
                 ptm.setString(4, user.getEmail());
                 check = ptm.executeUpdate() > 0;
-            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -267,7 +264,52 @@ public class UserDAO {
                 conn.close();
             }
         }
+    } 
+    
+    public String getEmail(String username) throws SQLException {
+        String email = "";
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
 
-        return check;
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_EMAIL_BY_USERNAME);
+                ptm.setString(1, username);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    email = rs.getString("Email");
+                }
+            }
+        } catch (Exception e ) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
+        return email;
     }
+
+    public boolean updatePassword(String newPassword, String username) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(UPDATE_PASSWORD);
+                ptm.setString(1, newPassword);
+                ptm.setString(2, username);
+                check = ptm.executeUpdate() > 0;
+            }
+        } catch (Exception e ) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
+        return check;
 }
