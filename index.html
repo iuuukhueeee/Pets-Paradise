@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -18,38 +17,31 @@
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
     rel="stylesheet">
   <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg" />
-
   <title>Pet Paradise</title>
 </head>
 
 <body>
   <header class="header " id="header">
     <div class="container">
-      <a href="#" class="logo">
+      <a href="./index.html" class="logo">
+        <!-- <i class="fab fa-atlassian"></i> -->
         <img src="./img/paw-solid.svg" style="height: 40px" />
-        <span>Pet's Paradise</span>
+        <span>Pet Paradise</span>
       </a>
-      <nav class="navbar navbar-expand-lg navbar-light " style="  box-sizing: border-box;
-      ">
-        <div class="container-fluid">
-          <a class="navbar" href="#"></a>
-          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="active" href="./index.html">HOME</a>
-              <a class="" href="./services.html">SERVICES</a>
-              <a class="" href="./shopping.html">SHOPPING</a>
-              <a class="" href="./blog.html">BLOG</a>
-              <a class="" href="./about.html">ABOUT</a>
-              <a class="" href="./about.html">CONTACT</a>
-
-            </div>
-          </div>
-        </div>
+      <nav class="navbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="active" href="./index.html">HOME </a>
+        <a href="./services.html">SERVICES</a>
+        <a href="./shopping.html">SHOPPING</a>
+        <a href="./blog.html">BLOG</a>
+        <a href="#">CONTACT</a>
       </nav>
+      <button class="navbar-toggler">
+        <i class="fa fa-bars"></i>
+      </button>
     </div>
   </header>
   <section class="carousell">
@@ -151,7 +143,7 @@
         <div class="col col-12 col-md-6 col-lg-4 mb-3">
           <div class="item">
             <div class="top">
-              <img class="ramsay" src="/img/vett.jpeg" alt=" " />
+              <img class="ramsay" src="./img/vett.jpeg" alt=" " />
               <div class="social-icon w-100 text-center">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
@@ -168,7 +160,7 @@
         <div class="col col-12 col-md-6 col-lg-4">
           <div class="item">
             <div class="top">
-              <img src="/img/vetdog.jpeg" alt=" " />
+              <img src="./img/vetdog.jpeg" alt=" " />
               <div class="social-icon w-100 text-center">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
@@ -184,8 +176,8 @@
       </div>
     </div>
   </section>
-  <section class="testimonials animate__animated animate__backInLeft" style="animation-iteration-count: 3; animation-duration: 4s; animation-direction:initial;
-    ">
+  <section class="testimonials animate__animated animate__backInDown"
+    style="animation-iteration-count: 3; animation-duration: 4s;">
     <div class="container">
       <div class="title animation-item-1 wow">
         <span>Testimonials</span>
@@ -204,7 +196,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active text-center">
               <div class="image-wrap">
-                <img src="/img/cus1.webp" class="animation-item-2 wow" alt="...">
+                <img src="./img/cus1.webp" class="animation-item-2 wow" alt="...">
               </div>
               <div class="carousel-caption d-md-block">
                 <div class="top animation-item-3 wow">
@@ -223,7 +215,7 @@
             </div>
             <div class="carousel-item text-center">
               <div class="image-wrap">
-                <img src="/img/cus2.jpeg" class="" alt="...">
+                <img src="./img/cus2.jpeg" class="" alt="...">
               </div>
               <div class="carousel-caption d-md-block">
                 <div class="top">
@@ -242,7 +234,7 @@
             </div>
             <div class="carousel-item text-center">
               <div class="image-wrap">
-                <img src="/img/cus3.webp" class="" alt="...">
+                <img src="./img/cus3.webp" class="" alt="...">
               </div>
               <div class="carousel-caption d-md-block">
                 <div class="top">
@@ -265,7 +257,8 @@
 
     </div>
   </section>
-  <section class="pricing-plan " style="animation-iteration-count: 1; animation-duration: 10s;">
+  <section class="pricing-plan animate__animated animate__fadeIn"
+    style="animation-iteration-count: infinite; animation-duration: 6s;">
     <header>
       <h1>Pricing Plan</h1>
       <P>Lorem ipsum dolor sit amet consectetetur accusantium sint ad laboriosam, voluptatibus autem ullam voluptate

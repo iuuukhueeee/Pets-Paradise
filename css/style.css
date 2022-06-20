@@ -271,7 +271,7 @@ html {
   content: "\f138";
   position: absolute;
   left: 8rem;
-  color: #a4c1c4;
+  color: #68A7AD;
 }
 
 .welcome .angle {
@@ -286,7 +286,7 @@ html {
   border-radius: 4px;
   background-color: transparent;
   outline: none;
-  border: 1px solid #a4c1c4;
+  border: 1px solid #68A7AD;
   font-size: 16px;
   position: relative;
   isolation: isolate;
@@ -299,7 +299,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #a4c1c4;
+  background-color: #68A7AD;
   z-index: -1;
   -webkit-transition: width 0.25s ease-in;
   transition: width 0.25s ease-in;
@@ -357,12 +357,12 @@ html {
 
 .our-team .container .row.expert .col .item .top .social-icon i:hover {
   background-color: #1d365e;
-  color: #a4c1c4;
+  color: #68A7AD;
   opacity: 1;
 }
 
 .our-team .container .row.expert .col .item:hover .expert-info h1 {
-  color: #a4c1c4;
+  color: #68A7AD;
 }
 
 .our-team .container .row.expert .col .item .expert-info h1 {
@@ -381,7 +381,7 @@ html {
 }
 
 .testimonials .carousel .carousel-indicators .active {
-  background-color: #a4c1c4;
+  background-color: #68A7AD;
 }
 
 .testimonials .carousel .carousel-indicators {
@@ -423,7 +423,7 @@ html {
 }
 
 .testimonials .carousel .carousel-inner .carousel-item .carousel-caption .top i {
-  color: #a4c1c4;
+  color: #68A7AD;
   font-size: 2rem;
 }
 
@@ -464,7 +464,7 @@ html {
   font-family: FontAwesome;
   content: "\f138";
   margin-right: 8px;
-  color: #a4c1c4;
+  color: #68A7AD;
 }
 
 .pricing-plan .row .col .item .button {
@@ -472,7 +472,7 @@ html {
   padding: 15px 30px;
   width: 200px;
   border-radius: 4px;
-  background-color: #a4c1c4;
+  background-color: #68A7AD;
   cursor: pointer;
   font-weight: 500;
   outline: none;
@@ -515,7 +515,7 @@ html {
 }
 
 .pricing-plan .row .col:nth-child(3) {
-  background-color: #a4c1c4;
+  background-color: #68A7AD;
 }
 
 .pricing-plan .row .col:nth-child(3) ul li {
@@ -559,7 +559,7 @@ html {
 }
 
 .map .row .left .contact-info i {
-  color: #a4c1c4;
+  color: #68A7AD;
   margin-right: 8px;
   padding: 16px;
   border-radius: 4px;
@@ -658,7 +658,7 @@ footer .row .col .item h4::after {
 }
 
 footer .row .col .item h4:hover {
-  color: #a4c1c4;
+  color: #68A7AD;
 }
 
 footer .row .col .item h4:hover::after {
@@ -683,7 +683,7 @@ footer .row .col .item .submit div input[type="text"] {
 
 footer .row .col .item .submit div input[type="submit"] {
   width: 100%;
-  background-color: #a4c1c4;
+  background-color: #68A7AD;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -700,7 +700,7 @@ footer .row .col .item .submit div input[type="submit"]:hover {
 
 .backToTop a {
   text-decoration: none;
-  color: #a4c1c4;
+  color: #68A7AD;
   position: fixed;
   bottom: 5%;
   right: 5%;
@@ -731,8 +731,8 @@ footer .row .col .item .submit div input[type="submit"]:hover {
   background-color: #1773bdcc;
   -webkit-transform: translateY(-5%);
           transform: translateY(-5%);
-  -webkit-box-shadow: 0.125rem 0.125rem 1rem #a4c1c4;
-          box-shadow: 0.125rem 0.125rem 1rem #a4c1c4;
+  -webkit-box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
+          box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
 }
 
 .backToTop a:hover i {
