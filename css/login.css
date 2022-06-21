@@ -1,9 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .divider:after,
 .divider:before {
   content: "";
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   height: 1px;
   background: #eee;
 }
@@ -17,7 +35,6 @@
     height: 100%;
   }
 }
-
 .logo-text {
   font-size: 35px;
   font-weight: 900;
@@ -32,8 +49,8 @@
 }
 
 .icon button:hover {
-  border-color: #68a7ad00;
-  background-color: #5bbcc5ab;
+  border-color: rgba(104, 167, 173, 0);
+  background-color: rgba(91, 188, 197, 0.6705882353);
 }
 
 .button {
@@ -49,23 +66,19 @@
   outline: none;
   border: none;
   font-size: 16px;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-
 .button:hover {
-  -webkit-transform: rotateY(-15deg);
-          transform: rotateY(-15deg);
+  transform: rotateY(-15deg);
 }
 
 body {
-  background-image: url("/img/back-log.jpg") !important;
+  background-image: url("../img/back-log.jpg");
   background-size: cover;
 }
 
-.custom-box::-webkit-input-placeholder {
+.custom-box::-moz-placeholder {
   font-size: 15px !important;
 }
 
@@ -73,11 +86,6 @@ body {
   font-size: 15px !important;
 }
 
-.custom-box::-ms-input-placeholder {
-  font-size: 15px !important;
-}
-
 .custom-box::placeholder {
   font-size: 15px !important;
-}
-/*# sourceMappingURL=login.css.map */
+}/*# sourceMappingURL=login.css.map */

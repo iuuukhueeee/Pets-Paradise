@@ -1,5 +1,23 @@
 @import "./_variable.scss";
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway";
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+  }
 
 .divider:after,
     .divider:before {
@@ -60,7 +78,7 @@
             }
         }
         body{
-            background-image: url('/img/back-log.jpg') !important;
+            background-image: url('../img/back-log.jpg') ;
             background-size: cover;
             }
 
