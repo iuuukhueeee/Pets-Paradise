@@ -72,18 +72,19 @@ public class OrderDAO {
     public OrderDTO createOrder(String username) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
-        String orderID = "";
+        String orderID;
         OrderDTO order = null;
         try{
             Date orderDate = new Date(DateUtils.now());
             UUID uuid = UUID.randomUUID();
             conn = DButils.getConnection();
             if (conn != null) {
-                orderID = "ORDER"+"-"+uuid.toString();
+                orderID = "ORDER"+"-"+ uuid;
                 ptm = conn.prepareStatement(CREATE);
                 ptm.setString(1,orderID);
                 ptm.setDate(2,orderDate);
                 ptm.setString(3,username);
+                boolean check = ptm.executeUpdate() > 0;
                 order = new OrderDTO(orderID,orderDate,username,"");
             }
         } catch (Exception e) {

@@ -40,7 +40,7 @@ public class OrderDetailDAO {
                     ptm.setInt(5, item.getProduct().getQuantity());
                 }
                 ptm.setInt(5, 1);
-                check = ptm.executeUpdate() > 0 ?true:false ;
+                check = ptm.executeUpdate() > 0;
                 orderDT = new OrderDetailDTO(orderDetailID,0,orderID,itemTypeID,0);
             }
         } catch (Exception e) {

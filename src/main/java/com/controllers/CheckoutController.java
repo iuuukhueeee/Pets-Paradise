@@ -10,6 +10,7 @@ import com.DAO.PetDAO;
 import com.DTO.PetDTO;
 import com.DAO.ProductDAO;
 import com.DTO.UserDTO;
+import com.utils.EmailUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -73,6 +74,8 @@ public class CheckoutController extends HttpServlet {
                             petDAO.addPetInfo(pet);
                         }
                     }
+                    EmailUtils.sendConfirmOrder(order.getOrderID(), "nguyenducthien9@gmail.com", cart);
+
                     request.setAttribute("ORDER_ID",order.getOrderID());
                     request.setAttribute("CART",cart);
                     url = SUCCESS;

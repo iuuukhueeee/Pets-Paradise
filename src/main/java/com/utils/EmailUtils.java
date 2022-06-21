@@ -1,5 +1,7 @@
 package com.utils;
 
+import com.checkout.Cart;
+import com.checkout.Item;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -34,7 +36,7 @@ public class EmailUtils {
 //    }
 
 
-    public static boolean sendMail(String newPassword, String email) {
+    public static boolean sendResetPassword(String newPassword, String email) {
         final String username = "thisisthientesting@gmail.com";
         final String password = "mdkyzhywmatgpelk";
 
@@ -61,6 +63,47 @@ public class EmailUtils {
             );
             message.setSubject("Your new password");
             message.setText(newPassword);
+
+            Transport.send(message);
+            System.out.println("done");
+
+        } catch (MessagingException e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean sendConfirmOrder(String orderID, String email, Cart cart) {
+        final String username = "thisisthientesting@gmail.com";
+        final String password = "mdkyzhywmatgpelk";
+
+        Properties prop = new Properties();
+        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.port", "587");
+        prop.put("mail.smtp.auth", "true");
+        prop.put("mail.smtp.starttls.enable", "true"); //TLS
+
+        Session session = Session.getInstance(prop,
+                new Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("thisisthientesting@gmail.com"));
+            message.setRecipients(
+                    Message.RecipientType.TO,
+                    InternetAddress.parse(email)
+            );
+            message.setSubject("Your Order");
+            String order = "";
+            for (Item item: cart.getCart().values()) {
+                order += item.getProduct() + " ";
+            }
+            message.setText(orderID + "\n" + order);
 
             Transport.send(message);
             System.out.println("done");
