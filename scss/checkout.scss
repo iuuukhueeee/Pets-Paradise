@@ -1,0 +1,73 @@
+@import "./variable";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+body {
+  min-width: 1280px;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.breacrumb {
+  margin-top: 4rem;
+}
+.body {
+  line-height: 1.25rem;
+  margin-top: 2rem;
+  .payment {
+    display: flex;
+    margin-top: 1rem;
+    // display: none;
+    .col {
+      display: grid;
+      .form-group {
+        margin-top: 8px;
+        input {
+          border: none;
+        }
+      }
+    }
+  }
+  @media screen and(max-width:820px) {
+    .flex {
+      // #summary {
+      //   width: 300px;
+      // }
+    }
+  }
+  @media screen and(max-width:640px) {
+    .cart {
+      display: grid;
+      .item {
+        width: 1280px;
+      }
+    }
+    #summary {
+      h1 {
+        text-align: center;
+      }
+      width: 100%;
+      .payment {
+        .px-2 {
+          width: 100%;
+          display: flex;
+          margin-bottom: 8px;
+          .form-group {
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+  }
+}
