@@ -19,7 +19,7 @@
 }
 
 body {
-  background-image: url("/img/back-log.jpg") !important;
+  background-image: url("./img/back-log.jpg") !important;
   background-size: cover;
 }
 
