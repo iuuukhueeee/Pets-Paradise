@@ -11,7 +11,6 @@
     if (listService == null) {
         response.sendRedirect("error.jsp");
     }
-
     for (ServiceDTO service : listService) {
 %>
 <%--    <form action="insertForm.jsp" method="POST">--%>

@@ -1,6 +1,6 @@
 package com.DAO;
 
-import com.checkout.Item;
+import com.DTO.CartDTO;
 import com.DTO.ProductDTO;
 import com.utils.DButils;
 import java.sql.Connection;
@@ -23,7 +23,7 @@ public class ProductDAO {
     private static final String UPDATE = "UPDATE Product SET ProductCategoryID=?, Name=?, Quantity=?, Image=?, Price=?, ImportDate=?, ExpiredDate=? WHERE ProductID=?";
     private static final String GET_BY_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
 
-    public boolean updateQuantity(Item item) throws SQLException {
+    public boolean updateQuantity(String productID, CartDTO cart) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -31,8 +31,8 @@ public class ProductDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(UPDATE_QUANTITY_ON_HAND);
-                ptm.setInt(1, item.getProduct().getQuantity());
-                ptm.setString(2, item.getProduct().getProductID());
+                ptm.setInt(1, cart.getQuantity());
+                ptm.setString(2, productID);
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {

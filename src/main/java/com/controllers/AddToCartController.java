@@ -1,9 +1,8 @@
 package com.controllers;
 
-import com.checkout.Cart;
-import com.checkout.Item;
-import com.DAO.ProductDAO;
-import com.DAO.ServiceDAO;
+import com.DAO.CartDAO;
+import com.DTO.CartDTO;
+import com.DTO.UserDTO;
 import org.apache.commons.io.FileUtils;
 
 import javax.servlet.ServletContext;
@@ -37,38 +36,37 @@ public class AddToCartController extends HttpServlet {
             FileUtils.copyInputStreamToFile(fileContent, targetFile);
             request.setAttribute("IMG_URL", relativePath + hashedFileName + ".png");
 
-
-            Item item = new Item();
-            String ID = request.getParameter("ID");
-            if (ID.split("-")[0].equals("SERVICE")) {
-                url = INSERT_PET_INFO;
+            HttpSession session = request.getSession();
+            UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
+            if(user == null){
+                request.setAttribute("ERROR","Please Login to use this function!");
                 request.getRequestDispatcher(url).include(request, response);
             }
-            item.setItemID(ID);
+            CartDTO cart = new CartDTO();
+            CartDAO addCart = new CartDAO();
+
+            String ID = request.getParameter("ID");
             String[] itemTypeID = ID.split("-");
-            ProductDAO product = new ProductDAO();
-            ServiceDAO service = new ServiceDAO();
-            HttpSession session = request.getSession();
-            Cart cart = (Cart) session.getAttribute("CART");
+
             if(cart == null){
-                cart = new Cart();
+                cart = new CartDTO();
             }
             if(itemTypeID[0].equals("PRODUCT")){
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
-                item.setProduct(product.getByID(item.getItemID()));
-                item.getProduct().setQuantity(quantity);
-                cart.addProduct(item);
+                cart = new CartDTO(user.getUsername(), ID, true ,quantity);
+                if(addCart.addToCart(cart)){
+                    request.setAttribute("MESSAGE","Added Successfully");
+                }
             }
             else if(itemTypeID[0].equals("SERVICE")){
-                url = INSERT_PET_INFO;
-                request.getRequestDispatcher(url).include(request, response);
-                item.setService(service.getByID(item.getItemID()));
-                cart.addService(item);
+                    url = INSERT_PET_INFO;
+                    request.getRequestDispatcher(url).include(request, response);
+                    cart = new CartDTO(user.getUsername(), ID, true, 1);
+                    if (addCart.addToCart(cart)) {
+                        request.setAttribute("MESSAGE", "Added Successfully");
+                }
             }
-            session.setAttribute("CART",cart);
-            request.setAttribute("MESSAGE","Added Successfully");
             url = SUCCESS;
-
         } catch (Exception e) {
             log("Error at AddToCartController: " + e.toString());
         } finally {
