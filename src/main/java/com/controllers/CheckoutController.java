@@ -20,6 +20,7 @@ public class CheckoutController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "index.jsp";
+    private static final String CHECK_LOGIN = "login.jsp";
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,9 +33,9 @@ public class CheckoutController extends HttpServlet {
             ProductDAO product = new ProductDAO();
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
             if(user == null){
+                url = CHECK_LOGIN;
                 request.setAttribute("ERROR","Please Login to use this function!");
-                url = ERROR;
-                request.getRequestDispatcher(url).include(request, response);
+                request.getRequestDispatcher(url).forward(request, response);
             }
             String username = user.getUsername();
             OrderDetailDTO orderDT = null;

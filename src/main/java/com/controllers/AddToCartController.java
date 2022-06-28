@@ -19,6 +19,8 @@ public class AddToCartController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "shopping";
+
+    private static final String CHECK_LOGIN = "login.jsp";
     private static final String INSERT_PET_INFO = "InfoInputController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,8 +41,9 @@ public class AddToCartController extends HttpServlet {
             HttpSession session = request.getSession();
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
             if(user == null){
-                request.setAttribute("ERROR","Please Login to use this function!");
-                request.getRequestDispatcher(url).include(request, response);
+                url = CHECK_LOGIN;
+                request.setAttribute("ERROR","Plea se Login to use this function!");
+                request.getRequestDispatcher(url).forward(request, response);
             }
             CartDTO cart = new CartDTO();
             CartDAO addCart = new CartDAO();
