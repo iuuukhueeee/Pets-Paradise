@@ -2,7 +2,13 @@
 <%@ page import="com.checkout.Item" %>
 <%@ page import="com.DTO.PetDTO" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Map" %><%--
+<%@ page import="java.util.Map" %>
+<%@ page import="com.DTO.UserDTO" %>
+<%@ page import="com.DAO.CartDAO" %>
+<%@ page import="com.DAO.ProductDAO" %>
+<%@ page import="com.DTO.ProductDTO" %>
+<%@ page import="com.DAO.ServiceDAO" %>
+<%@ page import="com.DTO.ServiceDTO" %><%--
   Created by IntelliJ IDEA.
   User: ADMINS
   Date: 6/13/2022
@@ -19,10 +25,15 @@
 
 
     <%
-        Cart cart   = (Cart) session.getAttribute("CART");
-        for (Item item : cart.getCart().values()) {
-            String itemID = item.getItemID().split("-")[0];
-            if(itemID.equals("PRODUCT")){
+        UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
+        CartDAO getCart = new CartDAO();
+        ProductDAO getProduct = new ProductDAO();
+        ProductDTO product = null;
+        for (int i = 0; i < getCart.getByUsername(user.getUsername()).size(); i++) {
+            String itemID = getCart.getByUsername(user.getUsername()).get(i).getItemID();
+            String itemTypeID = itemID.split("-")[0];
+            product = getProduct.getByID(itemID);
+            if(itemTypeID.equals("PRODUCT")){
 
     %>
     <tr>
@@ -33,16 +44,18 @@
         <td width="168"><b>ExpiredDate</b></td>
     </tr>
     <tr>
-        <td width="168"><%= item.getProduct().getName() %></td>
-        <td width="119"><%= item.getProduct().getQuantity() %></td>
-        <td width="168"><%= item.getProduct().getPrice() %></td>
-        <td width="168"><%= item.getProduct().getImportDate() %></td>
-        <td width="168"><%= item.getProduct().getExpiredDate() %></td>
+        <td width="168"><%= product.getName()  %></td>
+        <td width="119"><%= getCart.getByUsername(user.getUsername()).get(i).getQuantity() %></td>
+        <td width="168"><%= product.getPrice() %></td>
+        <td width="168"><%= product.getImportDate() %></td>
+        <td width="168"><%= product.getExpiredDate() %></td>
     </tr>
 
     <%
-    } else if (itemID.equals("SERVICE")) {
+    } else if (itemTypeID.equals("SERVICE")) {
         Map<String, PetDTO> petInfo = (Map<String, PetDTO>) session.getAttribute("PET_INFO");
+        ServiceDAO getService = new ServiceDAO();
+        ServiceDTO service = getService.getByID(itemID);
         for(PetDTO getInfo : petInfo.values()){
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     %>
@@ -64,8 +77,8 @@
         <td width="168"><b>ServicePrice</b></td>
     </tr>
     <tr>
-        <td width="168"><%= item.getService().getServiceName() %></td>
-        <td width="119"><%= item.getService().getServicePrice() %></td>
+        <td width="168"><%= service.getServiceName() %></td>
+        <td width="119"><%= service.getServicePrice() %></td>
     </tr>
 
     <%

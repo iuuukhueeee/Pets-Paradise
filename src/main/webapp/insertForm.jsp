@@ -29,15 +29,14 @@
     %>
     <p><%=service.getServiceName()%>
     </p>
-    <textarea placeholder="Pet's information"></textarea>
     <input type="file" name="picture" />
     <select id="cars" name="animalType" >
         <option value="cat">cat</option>
         <option value="dog">dog</option>
     </select>
-    <input type="text" name="animalName" value="">
-    <input type="text" name="animalAge" value="">
-    <input type="text" name="animalDescription" value="">
+    <input type="text" name="animalName" placeholder="animalName" value="">
+    <input type="text" name="animalAge" placeholder="animalAge" value="">
+    <input type="text" name="animalDescription" placeholder="animalDescription" value="">
     Date<input type="date" name="bookingTime" value="">
     <input type="hidden" name="ID" value="<%=service.getServiceID()%>" />
     <input type="submit" name="action" value="AddToCart" />

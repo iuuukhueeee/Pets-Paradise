@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -39,13 +38,6 @@ public class InfoInputController extends HttpServlet {
             petInfo.put(serviceID,pet);
             HttpSession session = request.getSession();
             session.setAttribute("PET_INFO",petInfo);
-//            petInfo.add(animal.getAnimalID());
-//            petInfo.add(animalName);
-//            petInfo.add(animalAge);
-//            petInfo.add(animalDescription);
-//            petInfo.add(bookingTime);
-//            petInfo.add(serviceID);
-
         } catch (Exception e) {
             log("Error at InfoInputController: " + e.toString());
         }
