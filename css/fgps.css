@@ -11,15 +11,11 @@
   outline: none;
   border: none;
   font-size: 14px;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-
 .button:hover {
-  -webkit-transform: rotateY(-15deg);
-          transform: rotateY(-15deg);
+  transform: rotateY(-15deg);
 }
 
 body {
@@ -27,7 +23,7 @@ body {
   background-size: cover;
 }
 
-.custom-box::-webkit-input-placeholder {
+.custom-box::-moz-placeholder {
   font-size: 15px !important;
 }
 
@@ -35,11 +31,6 @@ body {
   font-size: 15px !important;
 }
 
-.custom-box::-ms-input-placeholder {
-  font-size: 15px !important;
-}
-
 .custom-box::placeholder {
   font-size: 15px !important;
-}
-/*# sourceMappingURL=fgps.css.map */
+}/*# sourceMappingURL=fgps.css.map */

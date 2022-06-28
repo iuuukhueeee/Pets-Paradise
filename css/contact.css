@@ -12,7 +12,6 @@ html {
 .header .nav .dropdown-menu {
   background-color: white;
 }
-
 .header .nav .dropdown-menu li a {
   color: black;
 }
@@ -20,25 +19,21 @@ html {
 .contact-us {
   padding-top: 2rem;
 }
-
 .contact-us .title span {
   font-size: 1rem;
   font-weight: 400;
   color: #68A7AD;
   font-family: "Pacifico", cursive;
 }
-
 .contact-us .title h1 {
   font-size: 2.5rem;
   font-weight: 400;
   color: black;
   margin-bottom: 1.5rem;
 }
-
 .contact-us .form {
   margin-bottom: 3rem;
 }
-
 .contact-us .form .row input,
 .contact-us .form .row textarea {
   background-color: #dbe3e5;
@@ -47,28 +42,23 @@ html {
   font-weight: 300;
   color: gray;
 }
-
 .contact-us .form .row input:hover, .contact-us .form .row input:focus,
 .contact-us .form .row textarea:hover,
 .contact-us .form .row textarea:focus {
   border: 1px solid #68A7AD;
 }
-
 .contact-us .form .row label {
   font-size: 1rem;
   font-weight: 300;
   color: gray;
 }
-
 .contact-us .form .row button {
   background-color: #68A7AD;
   font-size: 1rem;
   font-weight: 500;
   color: white;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-
 .contact-us .form .row button:hover {
   opacity: 0.6;
 }
@@ -85,68 +75,54 @@ footer {
   border-top-right-radius: 300px;
   background-color: #dbe3e5;
 }
-
 footer .row .col {
   padding: 32px;
 }
-
 footer .row .col .item img {
   height: auto;
   width: 100%;
 }
-
 footer .row .col .item li {
   margin-bottom: 16px;
   list-style-type: none;
 }
-
 footer .row .col .item li i {
   margin-right: 8px;
 }
-
 footer .row .col .item h4 {
   z-index: 0;
   text-decoration: none;
   font-size: 32px;
 }
-
 footer .row .col .item h4::after {
   content: "";
   width: 0;
   display: block;
   height: 2px;
   background-color: #4c5baf;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
-
 footer .row .col .item h4:hover {
   color: #68A7AD;
 }
-
 footer .row .col .item h4:hover::after {
   width: 10%;
 }
-
 footer .row .col .item .submit {
   margin-bottom: 1rem;
 }
-
-footer .row .col .item .submit div input[type="text"] {
+footer .row .col .item .submit div input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-top: 16px;
 }
-
-footer .row .col .item .submit div input[type="submit"] {
+footer .row .col .item .submit div input[type=submit] {
   width: 100%;
   background-color: #68A7AD;
   color: white;
@@ -155,11 +131,9 @@ footer .row .col .item .submit div input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-
-footer .row .col .item .submit div input[type="submit"]:hover {
+footer .row .col .item .submit div input[type=submit]:hover {
   opacity: 0.7;
 }
 
@@ -174,34 +148,19 @@ footer .row .col .item .submit div input[type="submit"]:hover {
   width: 3rem;
   border-radius: 50%;
   background-color: rgba(0, 187, 255, 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all 0.5s;
+  justify-content: center;
+  align-items: center;
   transition: all 0.5s;
 }
-
 .backToTop a i {
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-
 .backToTop a:hover {
-  background-color: #1773bdcc;
-  -webkit-transform: translateY(-5%);
-          transform: translateY(-5%);
-  -webkit-box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
-          box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
+  background-color: rgba(23, 115, 189, 0.8);
+  transform: translateY(-5%);
+  box-shadow: 0.125rem 0.125rem 1rem #68A7AD;
 }
-
 .backToTop a:hover i {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-/*# sourceMappingURL=contact.css.map */
+  transform: rotate(180deg);
+}/*# sourceMappingURL=contact.css.map */
