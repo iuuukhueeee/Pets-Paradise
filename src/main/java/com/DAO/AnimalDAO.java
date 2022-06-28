@@ -10,9 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AnimalDAO {
-    private static final String GET_ID = "SELECT AnimalID FROM Animal WHERE AnimalName = ?";
+    private static final String GET_ID = "SELECT AnimalID FROM Animal WHERE AnimalType = ?";
 
-    public AnimalDTO getID(String animalName) throws SQLException {
+    public AnimalDTO getID(String animalType) throws SQLException {
         Connection conn = null;
         ResultSet rs = null;
         PreparedStatement ptm = null;
@@ -21,11 +21,11 @@ public class AnimalDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(GET_ID);
-                ptm.setString(1,animalName);
+                ptm.setString(1,animalType);
                 rs = ptm.executeQuery();
                 if(rs.next()) {
                     String animalID = rs.getString("AnimalID");
-                    animal = new AnimalDTO(animalID,animalName);
+                    animal = new AnimalDTO(animalID,animalType);
                 }
             }
         } catch (Exception e) {

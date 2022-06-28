@@ -1,6 +1,6 @@
 package com.DAO;
 
-import com.checkout.Item;
+import com.DTO.CartDTO;
 import com.DTO.ProductDTO;
 import com.utils.DButils;
 import java.sql.Connection;
@@ -16,16 +16,14 @@ import com.utils.*;
 public class ProductDAO {
     private static final String UPDATE_QUANTITY_ON_HAND = "UPDATE Product SET Quantity= Quantity - ? where ProductID=?";
     private static final String DELETE = "UPDATE Product SET Status=0 WHERE ProductID=?";
-    private static final String GET_BY_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE productID=?";
-    private static final String UPDATE_QUANTITY = "UPDATE Product SET Quantity=? WHERE ProductID=?";
     private static final String CHECK_DUPLICATE = "SELECT Name FROM Product WHERE ProductID=?";
     private static final String ADD = "INSERT INTO Product(ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)";
     private static final String SEARCH_PRODUCT = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Name LIKE ? AND Status=1";
     private static final String GET_ALL = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Status=1";
     private static final String UPDATE = "UPDATE Product SET ProductCategoryID=?, Name=?, Quantity=?, Image=?, Price=?, ImportDate=?, ExpiredDate=? WHERE ProductID=?";
-    private static final String GET_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
+    private static final String GET_BY_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
 
-    public boolean updateQuantity(Item item) throws SQLException {
+    public boolean updateQuantity(String productID, CartDTO cart) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -33,8 +31,8 @@ public class ProductDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(UPDATE_QUANTITY_ON_HAND);
-                ptm.setInt(1, item.getProduct().getQuantity());
-                ptm.setString(2, item.getProduct().getProductID());
+                ptm.setInt(1, cart.getQuantity());
+                ptm.setString(2, productID);
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
@@ -45,58 +43,6 @@ public class ProductDAO {
             }
             if (conn != null) {
                 ptm.close();
-            }
-        }
-        return check;
-    }
-
-    public boolean deleteProduct(String ProductID) throws SQLException {
-        boolean check = false;
-        Connection conn = null;
-        PreparedStatement ptm = null;
-
-        try {
-            conn = DButils.getConnection();
-            if (conn != null) {
-                ptm = conn.prepareStatement(DELETE);
-                ptm.setString(1, ProductID);
-                check = ptm.executeUpdate() > 0;
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (ptm != null) {
-                ptm.close();
-            }
-            if (conn != null) {
-                conn.close();
-            }
-        }
-        return check;
-        }
-
-    public boolean updateQuantity(String id, int quantity) throws SQLException {
-        boolean check = false;
-        Connection conn = null;
-        PreparedStatement ptm = null;
-
-        try {
-            conn = DButils.getConnection();
-            if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE_QUANTITY_ON_HAND);
-                ptm.setInt(1, quantity);
-                ptm.setString(2, id);
-                check = ptm.executeUpdate() > 0;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (ptm != null) {
-                ptm.close();
-            }
-            if (conn != null) {
-                conn.close();
             }
         }
         return check;
@@ -104,7 +50,6 @@ public class ProductDAO {
 
     public boolean delete(String ID) throws SQLException {
         boolean check = false;
-
         Connection conn = null;
         PreparedStatement ptm = null;
         ResultSet rs = null;
@@ -129,13 +74,11 @@ public class ProductDAO {
                 conn.close();
             }
         }
-
         return check;
     }
 
-    public boolean update(ProductDTO product) throws SQLException {
+    public boolean updateProduct(ProductDTO product) throws SQLException {
         boolean check = false;
-
         Connection conn = null;
         PreparedStatement ptm = null;
         try {
@@ -162,7 +105,6 @@ public class ProductDAO {
                 conn.close();
             }
         }
-
         return check;
     }
 
@@ -175,7 +117,7 @@ public class ProductDAO {
         try {
             conn = DButils.getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_ID);
+                ptm = conn.prepareStatement(GET_BY_ID);
                 ptm.setString(1, ID);
                 rs = ptm.executeQuery();
 
@@ -204,7 +146,6 @@ public class ProductDAO {
                 conn.close();
             }
         }
-
         return product;
     }
     public List<ProductDTO> getListProduct(String search) throws SQLException {
@@ -247,13 +188,11 @@ public class ProductDAO {
                 conn.close();
             }
         }
-
         return productList;
     }
 
     public List<ProductDTO> getAll() throws SQLException {
         List<ProductDTO> list = new ArrayList<>();
-
         Connection conn = null;
         PreparedStatement ptm = null;
         ResultSet rs = null;
@@ -298,7 +237,6 @@ public class ProductDAO {
     public boolean create(ProductDTO product) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
-
         boolean success = false;
 
         try {
@@ -313,7 +251,7 @@ public class ProductDAO {
                 ptm.setFloat(6, product.getPrice());
                 ptm.setDate(7, product.getImportDate());
                 ptm.setDate(8, product.getExpiredDate());
-                success = ptm.executeUpdate() > 0 ? true : false;
+                success = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
             e.printStackTrace();

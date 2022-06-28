@@ -39,6 +39,8 @@ public class MainController extends HttpServlet {
     private static final String DELETE_USER_CONTROLLER = "DeleteUserController";
     private static final String UPDATE_USER = "UpdateUser";
     private static final String UPDATE_USER_CONTROLLER = "UpdateUserController";
+    private static final String RESET_PASSWORD = "ResetPassword";
+    private static final String RESET_PASSWORD_CONTROLLER = "ResetPasswordController";
 
     //         ============= PRODUCT ==============
     private static final String ADD_PRODUCT = "AddProduct";
@@ -49,12 +51,19 @@ public class MainController extends HttpServlet {
     private static final String DELETE_PRODUCT_CONTROLLER = "DeleteProductController";
     private static final String UPDATE_PRODUCT = "UpdateProduct";
     private static final String UPDATE_PRODUCT_CONTROLLER = "UpdateProductController";
-
     private static final String GET_SUPPORTED_SHOP = "GetSupportedShop";
     private static final String GET_SUPPORTED_SHOP_CONTROLLER = "GetSupportedShopController";
     private static final String ADD_TO_CART = "AddToCart";
     private static final String ADD_TO_CART_CONTROLLER = "AddToCartController";
 
+    //           ============= USER ==============
+
+    private static final String CHECK_OUT = "checkout";
+    private static final String CHECK_OUT_CONTROLLER = "CheckoutController";
+
+//    ================= BLOG ===============
+    private static final String UPLOAD_BLOG = "UploadBlog";
+    private static final String UPLOAD_BLOG_CONTROLLER = "UploadBlogController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -108,6 +117,12 @@ public class MainController extends HttpServlet {
                 url = GET_SUPPORTED_SHOP_CONTROLLER;
             } else if (ADD_TO_CART.equals(action)) {
                 url = ADD_TO_CART_CONTROLLER;
+            }else if (CHECK_OUT.equals(action)) {
+                url = CHECK_OUT_CONTROLLER;
+            } else if (RESET_PASSWORD.equals(action)) {
+                url = RESET_PASSWORD_CONTROLLER;
+            } else if (UPLOAD_BLOG.equals(action)) {
+                url = UPLOAD_BLOG_CONTROLLER;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());

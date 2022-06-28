@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.UUID;
 
 public class OrderDAO {
-    private static final String CREATE= "INSERT INTO Orders(OrderID, OrderDate, Username, FeedbackOrder, Status) VALUES(?,?,?,?,1)";
+    private static final String CREATE= "INSERT INTO Orders(OrderID, OrderDate, Username, Status) VALUES(?,?,?,1)";
     private static final String UPDATE= "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
     private static final String DELETE= "UPDATE Orders SET Status=0 WHERE OrderID=?";
 
@@ -70,22 +70,21 @@ public class OrderDAO {
 
 
     public OrderDTO createOrder(String username) throws SQLException {
-        boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
-        String orderID = "";
+        String orderID;
         OrderDTO order = null;
         try{
             Date orderDate = new Date(DateUtils.now());
             UUID uuid = UUID.randomUUID();
             conn = DButils.getConnection();
             if (conn != null) {
-                orderID = "ORDER"+"-"+uuid.toString();
+                orderID = "ORDER"+"-"+ uuid;
                 ptm = conn.prepareStatement(CREATE);
                 ptm.setString(1,orderID);
                 ptm.setDate(2,orderDate);
                 ptm.setString(3,username);
-                check = ptm.executeUpdate() > 0;
+                boolean check = ptm.executeUpdate() > 0;
                 order = new OrderDTO(orderID,orderDate,username,"");
             }
         } catch (Exception e) {

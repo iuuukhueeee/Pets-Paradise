@@ -5,19 +5,35 @@
          version="4.0">
     <servlet>
         <servlet-name>blogController</servlet-name>
-        <servlet-class>com.controllers.BlogController</servlet-class>
+        <servlet-class>com.controllers.blog.BlogController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogContentController</servlet-name>
-        <servlet-class>com.controllers.BlogContentController</servlet-class>
+        <servlet-class>com.controllers.blog.BlogContentController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoadServiceController</servlet-name>
         <servlet-class>com.controllers.LoadServiceController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminBlogLoadingController</servlet-name>
+        <servlet-class>com.controllers.blog.AdminBlogLoadingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminGetSelectedBlogController</servlet-name>
+        <servlet-class>com.controllers.blog.AdminGetSelectedBlogController</servlet-class>
+    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>ResetPasswordController</servlet-name>-->
+<!--        <servlet-class>com.controllers.ResetPasswordController</servlet-class>-->
+<!--    </servlet>-->
     <servlet-mapping>
         <servlet-name>LoadServiceController</servlet-name>
         <url-pattern>/shopping</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadProductController</servlet-name>
+        <url-pattern>/products</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>blogController</servlet-name>
@@ -27,7 +43,43 @@
         <servlet-name>BlogContentController</servlet-name>
         <url-pattern>/BlogContent</url-pattern>
     </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>ResetPasswordController</servlet-name>-->
+<!--        <url-pattern>/ResetPassword</url-pattern>-->
+<!--    </servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>AdminBlogLoadingController</servlet-name>
+        <url-pattern>/AdminBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminGetSelectedBlogController</servlet-name>
+        <url-pattern>/AdminGetSelectedBlogController</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>imap.gmail.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>email</param-name>
+        <param-value>thisisthientesting@gmail.com</param-value>
+    </context-param>
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>Pets Paradise</param-value>
+    </context-param>
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>6AAhn9T8K-wXpjL</param-value>
+    </context-param>
+
 </web-app>
