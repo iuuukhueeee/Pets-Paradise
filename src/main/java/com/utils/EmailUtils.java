@@ -75,8 +75,8 @@ public class EmailUtils {
     }
 
     public static boolean sendConfirmOrder(String orderID, String email, Cart cart) {
-        final String username = "thisisthientesting@gmail.com";
-        final String password = "mdkyzhywmatgpelk";
+        final String username = ENVIRONMENT.usernameEmail;
+        final String password = ENVIRONMENT.passwordEmail;
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
