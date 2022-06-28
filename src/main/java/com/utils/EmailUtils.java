@@ -2,6 +2,7 @@ package com.utils;
 
 import com.checkout.Cart;
 import com.checkout.Item;
+import com.env.ENVIRONMENT;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -37,8 +38,8 @@ public class EmailUtils {
 
 
     public static boolean sendResetPassword(String newPassword, String email) {
-        final String username = "thisisthientesting@gmail.com";
-        final String password = "mdkyzhywmatgpelk";
+        final String username = ENVIRONMENT.usernameEmail;
+        final String password = ENVIRONMENT.passwordEmail;
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
