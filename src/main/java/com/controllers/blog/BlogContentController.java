@@ -1,4 +1,4 @@
-package com.controllers;
+package com.controllers.blog;
 
 import com.DAO.BlogDAO;
 import com.DTO.BlogDTO;
@@ -9,25 +9,29 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "BlogController", value = "/BlogController")
-public class BlogController extends HttpServlet {
-    private static final String ERROR = "blog.jsp";
-    private static final String SUCCESS = "blog.jsp";
+@WebServlet(name = "BlogContentController", value = "/BlogContentController")
+public class BlogContentController extends HttpServlet {
+
+    private static final String ERROR = "blogID.jsp";
+    private static final String SUCCESS = "blogID.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
+        BlogDTO blog = null;
 
         try {
+            String blogID = request.getParameter("blogID");
             BlogDAO blogDAO = new BlogDAO();
-            List<BlogDTO> listBlog;
-            listBlog = blogDAO.loadListBlog();
+            blog = blogDAO.loadByID(blogID);
+            List<BlogDTO> listBlog = blogDAO.loadListBlogTemplate();
 
-            if (listBlog.size() > 0) {
-                request.setAttribute("LIST_BLOG", listBlog);
+            if (blog != null) {
+                request.setAttribute("BLOG_CONTENT", blog);
+                request.setAttribute("BLOG_TEMPLATE", listBlog);
                 url = SUCCESS;
             }
         } catch (Exception e) {
-            log("Error at BlogController:" + e.toString());
+            log("Error at BlogContentController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
