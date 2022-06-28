@@ -1,0 +1,32 @@
+@import "./_variable.scss";
+
+.button {
+    --color: #68a7ad;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    padding: 15px 30px;
+    width: 200px;
+    border-radius: 4px;
+    background-color: var(--color);
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 0.2s linear;
+    &:hover {
+        transform: rotateY(-15deg);
+    }
+}
+
+body{
+    background-image: url('/img/back-log.jpg') !important;
+    background-size: cover;
+    }
+
+    .custom-box::placeholder{
+            font-size: 15px !important;
+    }

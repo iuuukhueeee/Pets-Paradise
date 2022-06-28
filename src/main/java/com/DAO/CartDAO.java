@@ -114,7 +114,7 @@ public class CartDAO {
         return toString;
     }
 
-    public List<CartDTO> getByUsername(String username) throws SQLException {
+    public List<CartDTO> getItemOnCartByUsername(String username) throws SQLException {
         List<CartDTO> list = new ArrayList<>();
         CartDTO cart = null;
         Connection conn = null;

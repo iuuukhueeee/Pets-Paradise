@@ -3,7 +3,7 @@ package com.controllers;
 import com.DAO.*;
 
 import com.DTO.*;
-import com.utils.EmailUtils;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,14 +41,14 @@ public class CheckoutController extends HttpServlet {
             OrderDTO order = orderDAO.createOrder(username);
 
 
-            for(int i = 0; i < getCart.getByUsername(username).size(); i++){
+            for(int i = 0; i < getCart.getItemOnCartByUsername(username).size(); i++){
 
                 //Get the Product/Service Price
-                String getPrice = getCart.getPrice(getCart.getByUsername(username).get(i).getItemID());
+                String getPrice = getCart.getPrice(getCart.getItemOnCartByUsername(username).get(i).getItemID());
                 float price = Float.parseFloat(getPrice);
 
                 //Create OrderDetail
-                orderDT = orderDetail.createOrderDetail(order.getOrderID(), getCart.getByUsername(username).get(i), price);
+                orderDT = orderDetail.createOrderDetail(order.getOrderID(), getCart.getItemOnCartByUsername(username).get(i), price);
 
                 //Get the ItemType.
                 String[] orderDTID = orderDT.getItemID().split("-");
@@ -56,7 +56,7 @@ public class CheckoutController extends HttpServlet {
 
                 //Update Quantity if it's a Product
                 if(itemType.equals("PRODUCT")){
-                    if(product.updateQuantity(orderDT.getItemID(),getCart.getByUsername(username).get(i))){
+                    if(product.updateQuantity(orderDT.getItemID(),getCart.getItemOnCartByUsername(username).get(i))){
                         System.out.println("Update successfully");
                     }
                 }
