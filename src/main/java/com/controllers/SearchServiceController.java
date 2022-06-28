@@ -2,13 +2,11 @@ package com.controllers;
 
 import com.DAO.ServiceDAO;
 import com.DTO.ServiceDTO;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
-
 import com.DTO.UserDTO;
 
 @WebServlet(name = "SearchServiceController", value = "/SearchServiceController")

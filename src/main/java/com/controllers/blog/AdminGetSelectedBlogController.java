@@ -5,14 +5,11 @@ import com.DTO.BlogDTO;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.sun.scenario.effect.impl.sw.java.JSWBrightpassPeer;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
 @WebServlet(name = "AdminGetSelectedBlogController", value = "/AdminGetSelectedBlogController")
 public class AdminGetSelectedBlogController extends HttpServlet {

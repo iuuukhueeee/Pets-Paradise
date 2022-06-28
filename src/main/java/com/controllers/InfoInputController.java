@@ -1,10 +1,8 @@
 package com.controllers;
 
-
 import com.DAO.AnimalDAO;
 import com.DTO.AnimalDTO;
 import com.DTO.PetDTO;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

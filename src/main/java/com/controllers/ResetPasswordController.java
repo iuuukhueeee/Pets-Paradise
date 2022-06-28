@@ -2,7 +2,6 @@ package com.controllers;
 
 import com.DAO.UserDAO;
 import com.utils.EmailUtils;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

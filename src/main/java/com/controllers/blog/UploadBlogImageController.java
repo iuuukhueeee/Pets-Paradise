@@ -2,11 +2,9 @@ package com.controllers.blog;
 
 import com.google.gson.JsonObject;
 import org.apache.commons.io.FileUtils;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,10 +1,8 @@
 package com.controllers;
 
 import java.io.IOException;
-
 import com.DAO.ProductDAO;
 import com.DTO.ProductDTO;
-
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -2,7 +2,6 @@ package com.controllers.blog;
 
 import com.DAO.BlogDAO;
 import com.DTO.BlogDTO;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

@@ -1,9 +1,7 @@
 package com.DAO;
 
-
 import com.DTO.AnimalDTO;
 import com.utils.DButils;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
