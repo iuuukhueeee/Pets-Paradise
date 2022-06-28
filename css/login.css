@@ -1,14 +1,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Raleway";
 }
 
 .divider:after,
 .divider:before {
   content: "";
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   height: 1px;
   background: #eee;
 }
@@ -22,6 +25,7 @@
     height: 100%;
   }
 }
+
 .logo-text {
   font-size: 35px;
   font-weight: 900;
@@ -36,8 +40,8 @@
 }
 
 .icon button:hover {
-  border-color: rgba(104, 167, 173, 0);
-  background-color: rgba(91, 188, 197, 0.6705882353);
+  border-color: #68a7ad00;
+  background-color: #5bbcc5ab;
 }
 
 .button {
@@ -53,11 +57,15 @@
   outline: none;
   border: none;
   font-size: 16px;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+
 .button:hover {
-  transform: rotateY(-15deg);
+  -webkit-transform: rotateY(-15deg);
+          transform: rotateY(-15deg);
 }
 
 body {
@@ -65,7 +73,7 @@ body {
   background-size: cover;
 }
 
-.custom-box::-moz-placeholder {
+.custom-box::-webkit-input-placeholder {
   font-size: 15px !important;
 }
 
@@ -73,6 +81,11 @@ body {
   font-size: 15px !important;
 }
 
+.custom-box::-ms-input-placeholder {
+  font-size: 15px !important;
+}
+
 .custom-box::placeholder {
   font-size: 15px !important;
-}/*# sourceMappingURL=login.css.map */
+}
+/*# sourceMappingURL=login.css.map */
