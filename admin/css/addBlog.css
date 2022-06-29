@@ -236,6 +236,11 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   }
 }
 
+.label {
+  display: unset !important;
+}
+
+
 @keyframes botToTop {
   0% {
     opacity: 0;
@@ -251,7 +256,9 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   }
 }
 
-
+#_no-clickjacking-1 > div.tox.tox-silver-sink.tox-tinymce-aux > div{
+  display: none !important;
+}
 /* ============================== RESPONSIVE ==================================== */
 
 @media screen and (max-width: 991px) {
@@ -273,6 +280,7 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   .box_cust_rs {
     padding-right: 10vh;
   }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -318,7 +326,7 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
     float: none;
   }
 
-  .container{
+  .container {
     display: contents;
   }
 }
