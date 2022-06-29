@@ -84,9 +84,10 @@ div.content {
 
   animation-name: botToTop;
   animation-duration: 1s;
+  align-items: center;
 }
 
-body > div.res_cust > div > div > div.container.tm-mt-big.tm-mb-big {
+body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   animation-name: botToTop;
   animation-duration: 1.3s;
 }
@@ -160,58 +161,6 @@ body > div.res_cust > div > div > div.container.tm-mt-big.tm-mb-big {
   transition: all 0.3s;
 }
 
-/* ============================== RESPONSIVE ==================================== */
-
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .sidebar a {
-    float: left;
-  }
-
-  div.content {
-    margin-left: 0;
-  }
-
-  .box_cust_rs {
-    padding-right: unset !important;
-  }
-
-  .container .row {
-    max-width: 100vh;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .content {
-    width: 90%;
-  }
-
-  .res_cust {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  .searchBar {
-    padding-left: 2vh !important;
-    width: 80%;
-  }
-
-  .box_cust_rs {
-    padding-right: 10vh;
-  }
-}
 
 /* body */
 .tm-product-img-dummy {
@@ -299,5 +248,77 @@ body > div.res_cust > div > div > div.container.tm-mt-big.tm-mb-big {
 
   100% {
     opacity: 1;
+  }
+}
+
+
+/* ============================== RESPONSIVE ==================================== */
+
+@media screen and (max-width: 991px) {
+  .content {
+    width: 90%;
+  }
+
+  .res_cust {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .searchBar {
+    padding-left: 2vh !important;
+    width: 80%;
+
+  }
+
+  .box_cust_rs {
+    padding-right: 10vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar a {
+    float: left;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+
+  .box_cust_rs {
+    padding-right: unset !important;
+  }
+
+  .container .row {
+    max-width: 100vh;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+
+  .Search_414rs {
+    display: none !important;
+  }
+
+  .left-pan {
+    display: none !important;
+  }
+
+}
+
+@media screen and (max-width: 414px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .container{
+    display: contents;
   }
 }
