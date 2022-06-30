@@ -23,6 +23,10 @@
         <servlet-name>AdminGetSelectedBlogController</servlet-name>
         <servlet-class>com.controllers.blog.AdminGetSelectedBlogController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadProductController</servlet-name>
+        <servlet-class>com.controllers.LoadProductController</servlet-class>
+    </servlet>
 <!--    <servlet>-->
 <!--        <servlet-name>ResetPasswordController</servlet-name>-->
 <!--        <servlet-class>com.controllers.ResetPasswordController</servlet-class>-->

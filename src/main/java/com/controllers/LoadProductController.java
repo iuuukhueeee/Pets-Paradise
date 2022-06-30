@@ -1,6 +1,8 @@
 package com.controllers;
 
+import com.DAO.BlogDAO;
 import com.DAO.ProductDAO;
+import com.DTO.BlogDTO;
 import com.DTO.ProductDTO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +16,7 @@ import java.util.List;
 public class LoadProductController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "products.jsp";
+    private static final String SUCCESS = "shopping.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
@@ -25,6 +27,13 @@ public class LoadProductController extends HttpServlet {
             listProduct = productDAO.getAll();
             if (listProduct != null) {
                 request.setAttribute("LIST_PRODUCT", listProduct);
+                url = SUCCESS;
+            }
+            if (request.getRequestURI().equals("/shopping")) {
+                List<BlogDTO> listBlog;
+                BlogDAO blogDAO = new BlogDAO();
+                listBlog = blogDAO.loadListBlogTemplate();
+                request.setAttribute("LIST_BLOG", listBlog);
                 url = SUCCESS;
             }
         } catch (Exception e) {
