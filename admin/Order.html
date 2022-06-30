@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="css/dropDownAdmin.css">
     <link rel="shortcut icon" type="img/png" href="../img/paw-solid.svg" />
-    <link rel="stylesheet" href="./css/editProduct.css">
+    <link rel="stylesheet" href="./css/Order.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
@@ -25,49 +25,19 @@
                 Pet's Paradise
             </div>
         </div>
-
-        <a class="collapsible">Product</a>
-
-        <div class="contentCollapse ">
-            <a href="./addProduct.html" class="unhoverContent text-muted">
-                <p>Add Product</p>
-            </a>
-            <a href="./editProduct.html" class="unhoverContent text-muted">
-                <p>Edit Product</p>
-            </a>
+        <div>
+            <a href="./Product.html" class="collapsible">Product</a>
         </div>
-
-        <a class="collapsible">Service</a>
-        <div class="contentCollapse ">
-            <a href="./addService.html" class="unhoverContent text-muted">
-                <p>Add Service</p>
-            </a>
-            <a href="./editService.html" class="unhoverContent text-muted">
-                <p>Edit Service</p>
-            </a>
+        <div>
+            <a href="./Service.html" class="collapsible">Service</a>
         </div>
-
-        <a class="collapsible">User</a>
-        <div class="contentCollapse">
-            <a href="./addUser.html" class="unhoverContent text-muted">
-                <p>Add User</p>
-            </a>
-            <a href="./editUser.html" class="unhoverContent text-muted">
-                <p>Edit User</p>
-            </a>
+        <div>
+            <a href="./User.html" class="collapsible">User</a>
         </div>
-
-        <a class="collapsible">Blog</a>
-        <div class="contentCollapse">
-            <a href="./addBlog.html" class="unhoverContent text-muted">
-                <p>Add Blog</p>
-            </a>
-            <a href="./editBlog.html" class="unhoverContent text-muted">
-                <p>Edit Blog</p>
-            </a>
-        </div>
-
-        <a class="collapsible" href="./Order.html">Order</a>
+        <div>
+            <a href="./Blog.html" class="collapsible">Blog</a>
+        </div>  
+        <a class="collapsible active" href="#Order">Order</a>
     </div>
 
     <div class="content">
@@ -75,7 +45,7 @@
 
             <div class="row height d-flex justify-content-center align-items-center">
 
-                <div class="col-md-10 searchBar">
+                <div class="col-md-12 searchBar">
 
                     <div class="form">
                         <input type="text" class="form-control form-input" placeholder="Search...">
@@ -96,7 +66,9 @@
                     </div>
                 </div>
             </div>
+            </div>
             <br>
+            <div class="t-container">
             <div class="container">
                 <ul class="responsive-table">
                     <li class="table-header">
@@ -106,7 +78,6 @@
                         <div class="col col-4">Item</div>
                         <div class="col col-5">Product</div>
                         <div class="col col-6">Quantity</div>
-                        <div class="col col-7">Action</div>
                     </li>
 
                     <li class="table-row">
@@ -116,10 +87,6 @@
                         <div class="col col-4" data-label="Item">Food</div>
                         <div class="col col-5" data-label="Product">Cookies</div>
                         <div class="col col-6" data-label="Quantity">3</div>
-                        <div class="col col-7" data-label="Action">
-
-                            <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
-                        </div>
                     </li>
 
                     <li class="table-row">
@@ -129,14 +96,8 @@
                         <div class="col col-4" data-label="Item">Food</div>
                         <div class="col col-5" data-label="Product">Cookies</div>
                         <div class="col col-6" data-label="Quantity">3</div>
-                        <div class="col col-7" data-label="Action">
-
-                            <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
-                        </div>
-
                 </ul>
             </div>
-
         </div>
     </div>
 

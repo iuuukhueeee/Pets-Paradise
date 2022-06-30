@@ -222,13 +222,18 @@ body > div.content > div > div.container{
             transform: rotateY(-15deg);
   }
 
-.container {
+  .container:not(.t-container .container) {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.t-container .container{
+    max-width: 1090px;
+}
+
 h2 {
     font-size: 26px;
     margin: 20px 0;

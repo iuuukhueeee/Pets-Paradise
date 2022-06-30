@@ -14,70 +14,39 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
     rel="stylesheet">
-  <title>Admin - Add Product</title>
+  <title>Admin - Product</title>
 
 </head>
 
 <body>
 
-  <body>
-
     <div class="sidebar">
       <div class="LOGO">
-        <img src="../img/paw-solid.svg" alt="" class="img-responsive">
-        <div style="font-size: 20px;font-weight: 900;color: #68A7AD; justify-content: center; padding-left: 16px;">
-          Pet's Paradise
-        </div>
+          <img src="../img/paw-solid.svg" alt="" class="img-responsive">
+          <div style="font-size: 20px;font-weight: 900;color: #68A7AD; justify-content: center; padding-left: 16px;">
+              Pet's Paradise
+          </div>
       </div>
-
-      <a class="collapsible">Product</a>
-
-      <div class="contentCollapse ">
-        <a href="#!" class="unhoverContent text-muted">
-          <p>Add Product</p>
-        </a>
-        <a href="./editProduct.html" class="unhoverContent text-muted">
-          <p>Edit Product</p>
-        </a>
+      <div>
+          <a href="#Product" class="collapsible active">Product</a>
       </div>
-
-      <a class="collapsible">Service</a>
-      <div class="contentCollapse ">
-        <a href="./addService.html" class="unhoverContent text-muted">
-          <p>Add Service</p>
-        </a>
-        <a href="./editService.html" class="unhoverContent text-muted">
-          <p>Edit Service</p>
-        </a>
+      <div>
+          <a href="./Service.html" class="collapsible">Service</a>
       </div>
-
-      <a class="collapsible">User</a>
-      <div class="contentCollapse">
-        <a href="./addUser.html" class="unhoverContent text-muted">
-          <p>Add User</p>
-        </a>
-        <a href="./editUser.html" class="unhoverContent text-muted">
-          <p>Edit User</p>
-        </a>
+      <div>
+          <a href="./User.html" class="collapsible">User</a>
       </div>
-
-      <a class="collapsible">Blog</a>
-      <div class="contentCollapse">
-        <a href="./addBlog.html" class="unhoverContent text-muted">
-          <p>Add Blog</p>
-        </a>
-        <a href="./editBlog.html" class="unhoverContent text-muted">
-          <p>Edit Blog</p>
-        </a>
+      <div>
+          <a href="./Blog.html" class="collapsible">Blog</a>
       </div>
 
       <a class="collapsible" href="./Order.html">Order</a>
-    </div>
+  </div>
     <div class="content">
       <div class="container">
         <div class="row height d-flex justify-content-center align-items-center">
 
-          <div class="col-md-10 searchBar">
+          <div class="col-md-12 searchBar">
             <div class="form">
               <input type="text" class="form-control form-input" placeholder="Search...">
               <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
@@ -95,10 +64,16 @@
         </div>
       </div>
       <br>
-      <div class="container tm-mt-big tm-mb-big">
+      <div class="container tm-mt-big tm-mb-big ">
         <div class="row">
-          <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
-            <div class="tm table-h-autotm-block-h-auto">
+          <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="d-inline-block">Product Management</h2>
+              </div>
+            </div>
+            
+            <div class="tm table-h-auto tm-block-h-auto">
               <div class="row tm-edit-product-row">
                 <div class="col-xl-6 col-lg-6 col-md-12">
                   <form action="" class="tm-edit-product-form">
@@ -166,17 +141,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
-      <div class="content">
-        <div class="container">
-
-            <div class="row height d-flex justify-content-center align-items-center">
-
-                <div class="col-md-10 searchBar">
-                </div>
-            </div>
-            <br>
+      <div class="t-container">
             <div class="container">
                 <ul class="responsive-table">
                     <li class="table-header">
@@ -203,7 +170,7 @@
                     <div class="col col-7" data-label="ImportDate">dd/mm/yyyy</div>
                     <div class="col col-8" data-label="ExpiredDate">dd/mm/yyyy</div>
                     <div class="col col-9" data-label="Action">
-                        <i class='fas fa-sync' style='font-size:24px; cursor: pointer;'></i>
+                      <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
                         <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
                     </div>
                     </li>
@@ -220,7 +187,7 @@
                     <div class="col col-7" data-label="ImportDate">dd/mm/yyyy</div>
                     <div class="col col-8" data-label="ExpiredDate">dd/mm/yyyy</div>
                     <div class="col col-9" data-label="Action">
-                        <i class='fas fa-sync' style='font-size:24px; cursor: pointer;'></i>
+                      <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
                         <i class='far fa-trash-alt' style='font-size:24px; cursor: pointer;'></i>
                     </div>
                     </li>
@@ -237,7 +204,7 @@
                     <div class="col col-7" data-label="ImportDate">dd/mm/yyyy</div>
                     <div class="col col-8" data-label="ExpiredDate">dd/mm/yyyy</div>
                     <div class="col col-9" data-label="Action">
-                        <i class='fas fa-sync' style='font-size:24px; cursor: pointer;'></i>
+                      <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
                         <i class='far fa-trash-alt' style='font-size:24px; cursor: pointer;'></i>
                     </div>
                     </li>
@@ -254,16 +221,13 @@
                     <div class="col col-7" data-label="ImportDate">dd/mm/yyyy</div>
                     <div class="col col-8" data-label="ExpiredDate">dd/mm/yyyy</div>
                     <div class="col col-9" data-label="Payment Status action">
-                        <i class='fas fa-sync' style='font-size:24px; cursor: pointer;'></i>
+                      <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
                         <i class='far fa-trash-alt' style='font-size:24px; cursor: pointer;'></i>
                     </div>
                     </li>
                 </ul>
-            </div>
-
-        </div>
-    </div>
-    
+                </div>
+            </div>    
     </div>
     <script src="./js/selector.js"></script>
     <script src="./js/admin.js"></script>
@@ -271,6 +235,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
   </body>
-</body>
 
 </html>
