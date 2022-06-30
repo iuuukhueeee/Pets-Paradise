@@ -12,7 +12,7 @@ public class BlogDAO {
 
     private static final String LOAD_BLOG = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE Status=1";
     private static final String LOAD_BLOG_BY_ID = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE BlogID LIKE ? AND Status=1";
-    private static final String LOAD_BLOG_TEMPLATE = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogDescription FROM Blog WHERE Status=1";
+    private static final String LOAD_BLOG_TEMPLATE = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogDescription FROM Blog WHERE Status=1 ORDER BY RAND() LIMIT 3";
     private static final String UPLOAD_BLOG = "INSERT INTO Blog(BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription, Status) VALUES(?, ?, ?, ?, ?, ?, ?, 1)";
     private static final String LOAD_ALL = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE Status=1";
 
