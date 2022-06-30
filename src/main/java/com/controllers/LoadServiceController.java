@@ -15,13 +15,13 @@ import java.util.List;
 public class LoadServiceController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "shopping.jsp";
+    private static final String SUCCESS = "services.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
 
         try {
-            List<ServiceDTO> listService = new ArrayList<>();
+            List<ServiceDTO> listService;
             ServiceDAO serviceDAO = new ServiceDAO();
             listService = serviceDAO.getAll();
             if (listService != null) {

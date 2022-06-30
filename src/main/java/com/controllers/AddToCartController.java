@@ -44,15 +44,12 @@ public class AddToCartController extends HttpServlet {
                 request.setAttribute("ERROR","Plea se Login to use this function!");
                 request.getRequestDispatcher(url).forward(request, response);
             }
-            CartDTO cart = new CartDTO();
+            CartDTO cart;
             CartDAO addCart = new CartDAO();
 
             String ID = request.getParameter("ID");
             String[] itemTypeID = ID.split("-");
 
-            if(cart == null){
-                cart = new CartDTO();
-            }
             if(itemTypeID[0].equals("PRODUCT")){
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
                 cart = new CartDTO(user.getUsername(), ID, true ,quantity);

@@ -17,7 +17,7 @@ import java.util.Map;
 public class GetSupportedShopController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "insertForm.jsp";
+    private static final String SUCCESS = "form.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
