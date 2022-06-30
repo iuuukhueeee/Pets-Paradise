@@ -125,15 +125,12 @@
 
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-                  <div class="tm-product-img-dummy mx-auto">
-                    <i class="fas fa-cloud-upload-alt tm-upload-icon"
-                      onclick="document.getElementById('fileInput').click();"></i>
+                  <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile">
                   </div>
                   
                   <div class="custom-file mt-3 mb-3" style="display: flex;">
                     <input id="fileInput" type="file" style="display:none;" />
-                    <input type="button" class="button btn-block mx-auto" value="UPLOAD IMAGE"
-                      onclick="document.getElementById('fileInput').click();" />
                       <button class="button" style="margin-left: 2px;background-color: #51969c;">Upload</button>
                     </div>
                 </div>
@@ -221,7 +218,7 @@
                     </div>
                     <div class="col col-7" data-label="ImportDate">dd/mm/yyyy</div>
                     <div class="col col-8" data-label="ExpiredDate">dd/mm/yyyy</div>
-                    <div class="col col-9" data-label="Payment Status action">
+                    <div class="col col-9" data-label="Action">
                       <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
                         <i class='far fa-trash-alt' style='font-size:24px; cursor: pointer;'></i>
                     </div>
