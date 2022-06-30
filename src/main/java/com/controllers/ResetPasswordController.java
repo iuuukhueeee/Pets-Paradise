@@ -27,10 +27,10 @@ public class ResetPasswordController extends HttpServlet {
             String email = userDAO.getEmail(username);
             UUID uuid = UUID.randomUUID();
             String newPassword = org.apache.commons.codec.digest.DigestUtils.sha256Hex(uuid.toString()).substring(0, 15);
-//            if(EmailUtils.sendResetPassword(newPassword, email)) {
-//                userDAO.updatePassword(newPassword, username);
-//                url = SUCCESS;
-//            }
+            if(EmailUtils.sendResetPassword(newPassword, email)) {
+                userDAO.updatePassword(newPassword, username);
+                url = SUCCESS;
+            }
         } catch (Exception e) {
             log("Error at ResetPasswordController: " + e.toString());
         } finally {

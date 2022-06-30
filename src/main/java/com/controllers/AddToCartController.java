@@ -41,7 +41,7 @@ public class AddToCartController extends HttpServlet {
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
             if(user == null){
                 url = RETURN_LOGIN;
-                request.setAttribute("ERROR","Plea se Login to use this function!");
+                request.setAttribute("ERROR","Please Login to use this function!");
                 response.sendRedirect("login.jsp");
                 return;
             }
