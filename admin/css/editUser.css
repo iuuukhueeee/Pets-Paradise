@@ -258,25 +258,25 @@ h2 small {
     flex-basis: 6%;
 }
 .responsive-table .col-2 {
-    flex-basis: 14%;
+    flex-basis: 18%;
+    
 }
 .responsive-table .col-3 {
     flex-basis: 15%;
+    text-align: center;
+
 }
 .responsive-table .col-4 {
-    flex-basis: 34%;
+    flex-basis: 50%;
 }
 .responsive-table .col-5 {
-    flex-basis: 15%;
+    flex-basis: 20%;
 }
 .responsive-table .col-6 {
     flex-basis: 6%;
-}
-.responsive-table .col-7 {
-    flex-basis: 10%;
     text-align: center;
-}
 
+}
 
 @media screen and (max-width: 820px) {
     .content {
