@@ -1,5 +1,3 @@
-<%@ page import="com.checkout.Cart" %>
-<%@ page import="com.checkout.Item" %>
 <%@ page import="com.DTO.PetDTO" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Map" %>

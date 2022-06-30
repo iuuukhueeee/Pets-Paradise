@@ -1,7 +1,5 @@
 package com.utils;
 
-import com.checkout.Cart;
-import com.checkout.Item;
 import com.env.ENVIRONMENT;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
