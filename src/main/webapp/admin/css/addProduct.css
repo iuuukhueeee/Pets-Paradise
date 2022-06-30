@@ -28,6 +28,9 @@ body {
   height: 100%;
   overflow: auto;
 }
+.input_file{
+  margin-top: 2.5rem !important;
+}
 
 img {
   width: 40px;
