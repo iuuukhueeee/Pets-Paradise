@@ -24,6 +24,7 @@ public class SignupController extends HttpServlet {
             String username = request.getParameter("username");
             String name = request.getParameter("name");
             String password = request.getParameter("password");
+            String confirmed = request.getParameter("confirmed");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phoneNumber");
             UserDAO dao = new UserDAO();
@@ -56,6 +57,11 @@ public class SignupController extends HttpServlet {
 
             if (phoneNumber.length() < 9 || phoneNumber.length() > 13) {
                 userError.setPhoneNumberError("Phone number must be in [9, 13]");
+                validation = false;
+            }
+
+            if (!confirmed.equals(password)) {
+                userError.setPasswordError("Password does not match!");
                 validation = false;
             }
 
