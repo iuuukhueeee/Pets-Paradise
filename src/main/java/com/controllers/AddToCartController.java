@@ -17,9 +17,9 @@ import java.nio.file.Paths;
 public class AddToCartController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "shopping";
+    private static final String SUCCESS = "services";
 
-    private static final String CHECK_LOGIN = "login.jsp";
+    private static final String RETURN_LOGIN = "login.jsp";
     private static final String INSERT_PET_INFO = "InfoInputController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,9 +40,10 @@ public class AddToCartController extends HttpServlet {
             HttpSession session = request.getSession();
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
             if(user == null){
-                url = CHECK_LOGIN;
+                url = RETURN_LOGIN;
                 request.setAttribute("ERROR","Plea se Login to use this function!");
-                request.getRequestDispatcher(url).forward(request, response);
+                response.sendRedirect("login.jsp");
+                return;
             }
             CartDTO cart;
             CartDAO addCart = new CartDAO();

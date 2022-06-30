@@ -44,7 +44,7 @@
                       <label class="form-label" for="form3Example4">Password
                       </label>
                       <input required="" type="password" id="form3Example4cg"
-                        class="custom-box form-control form-control-lg pt-1" placeholder="password" />
+                        class="custom-box form-control form-control-lg pt-1" placeholder="password" name="password"/>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
