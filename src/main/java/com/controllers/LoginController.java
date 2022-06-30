@@ -26,10 +26,10 @@ public class LoginController extends HttpServlet {
         String url = ERROR;
 
         try {
-            String Username = request.getParameter("Username");
-            String Password = request.getParameter("Password");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
             UserDAO dao = new UserDAO();
-            UserDTO user = dao.checkLogin(Username, Password);
+            UserDTO user = dao.checkLogin(username, password);
 
             if (user != null) {
                 HttpSession session = request.getSession();
