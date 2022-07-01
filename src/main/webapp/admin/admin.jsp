@@ -25,19 +25,19 @@
             </div>
         </div>
         <div>
-            <a href="Product.html" class="collapsible">Product</a>
+            <a href="admin/product.jsp" class="collapsible">Product</a>
         </div>
         <div>
-            <a href="Service.html" class="collapsible">Service</a>
+            <a href="admin/service.jsp" class="collapsible">Service</a>
         </div>
         <div>
-            <a href="User.html" class="collapsible">User</a>
+            <a href="admin/user.jsp" class="collapsible">User</a>
         </div>
         <div>
-            <a href="Blog.html" class="collapsible">Blog</a>
+            <a href="blog.jsp" class="collapsible">Blog</a>
         </div>
 
-        <a class="collapsible" href="Order.html">Order</a>
+        <a class="collapsible" href="admin/order">Order</a>
     </div>
     <div class="content">
         <div class="container">
@@ -58,7 +58,7 @@
                         <p onclick="myFunction()" class="dropbtn" style="padding-left:12px; padding-top: 12px;">Admin
                         </p>
                         <div id="myDropdown" class="dropdown-content">
-                            <a href="../../../../user.html">Profile</a>
+                            <a href="../../../../user.jsp">Profile</a>
                             <a href="#">Logout</a>
                         </div>
                     </div>

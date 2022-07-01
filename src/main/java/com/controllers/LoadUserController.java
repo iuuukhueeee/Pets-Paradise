@@ -1,39 +1,40 @@
 package com.controllers;
 
-import com.DAO.ServiceDAO;
-import com.DTO.ServiceDTO;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
+
+import com.DAO.UserDAO;
+import com.DTO.UserDTO;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "LoadServiceController", value = "/LoadServiceController")
-public class LoadServiceController extends HttpServlet {
+@WebServlet(name = "LoadUserController", value = "/LoadUserController")
+public class LoadUserController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "service.jsp";
+    private static final String SUCCESS = "user.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
 
         try {
-            List<ServiceDTO> listService;
-            ServiceDAO serviceDAO = new ServiceDAO();
-            listService = serviceDAO.getAll();
-            if (listService != null) {
-                request.setAttribute("LIST_SERVICE", listService);
+            List<UserDTO> listUser;
+            UserDAO userDAO = new UserDAO();
+            listUser = userDAO.getAll();
+            if (listUser != null) {
+                request.setAttribute("LIST_USER", listUser);
                 url = SUCCESS;
             }
         } catch (Exception e) {
-            log("Error at LoadServiceController: " + e.toString());
+            log("Error at LoadUserController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
