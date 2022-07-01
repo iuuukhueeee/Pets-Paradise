@@ -121,7 +121,7 @@
 
               <div class="username row mb-4">
                 <div class="col-md-2 d-flex align-items-center">
-                  Service
+                  Service Description
                 </div>
                 <div class="col-md-10">
                   <textarea class="form-control validate" rows="3" required></textarea>
@@ -142,15 +142,7 @@
     </div>
 
     <div class="t-container">
-      <%
-        List<ServiceDTO> list = (List<ServiceDTO>) request.getAttribute("LIST_SERVICE");
-        int index = 0;
-        if (list == null) {
-          response.sendRedirect("error.jsp");
-          return;
-        }
-        for(ServiceDTO service: list){
-      %>
+
       <div class="container">
         <ul class="responsive-table">
           <li class="table-header">
@@ -160,8 +152,17 @@
             <div class="col col-4">Description</div>
             <div class="col col-5">Action</div>
           </li>
+          <%
+            List<ServiceDTO> list = (List<ServiceDTO>) request.getAttribute("LIST_SERVICE");
+            int index = 1;
+            if (list == null) {
+              response.sendRedirect("error.jsp");
+              return;
+            }
+            for(ServiceDTO service: list){
+          %>
           <li class="table-row">
-            <div class="col col-1" data-label="Number"><%= service.getServiceID()%></div>
+            <div class="col col-1" data-label="Number"><%= index++ %></div>
             <div class="col col-2" data-label="Service"><%= service.getServiceName()%></div>
             <div class="col col-3" data-label="Price"><%= service.getServicePrice()%></div>
             <div class="col col-4" data-label="Description"><%= service.getServiceDescription()%></div>
@@ -170,11 +171,12 @@
               <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
             </div>
           </li>
+          <%
+            }
+          %>
         </ul>
       </div>
-      <%
-        }
-      %>
+
     </div>
   </div>
 </div>

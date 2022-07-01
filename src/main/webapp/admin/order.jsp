@@ -76,15 +76,7 @@
         </div>
     </div>
     <br>
-    <%
-        List<OrderDTO> list = (List<OrderDTO>) request.getAttribute("LIST_ORDER");
-        int index = 0;
-        if (list == null) {
-            response.sendRedirect("error.jsp");
-            return;
-        }
-        for(OrderDTO order: list){
-    %>
+
     <div class="t-container">
         <div class="container">
             <ul class="responsive-table">
@@ -95,7 +87,15 @@
                     <div class="col col-4">Username</div>
                     <div class="col col-5">FeedbackOrder</div>
                 </li>
-
+                <%
+                    List<OrderDTO> list = (List<OrderDTO>) request.getAttribute("LIST_ORDER");
+                    int index = 1;
+                    if (list == null) {
+                        response.sendRedirect("error.jsp");
+                        return;
+                    }
+                    for(OrderDTO order: list){
+                %>
                 <li class="table-row">
                     <div class="col col-1" data-label="#"><%= index++ %></div>
                     <div class="col col-2" data-label="OrderID"><%= order.getOrderID() %>></div>
@@ -103,13 +103,13 @@
                     <div class="col col-4" data-label="Username"><%= order.getUsername() %></div>
                     <div class="col col-5" data-label="FeedbackOrder"><%= order.getFeedBackOrder() %></div>
                 </li>
-
+                <%
+                    }
+                %>
             </ul>
         </div>
     </div>
-    <%
-        }
-    %>
+
 </div>
 
 

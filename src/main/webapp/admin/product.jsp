@@ -1,5 +1,6 @@
 <%@ page import="com.DTO.ProductDTO" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.DTO.UserDTO" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -47,16 +48,26 @@
 
     <a class="collapsible" href="admin/order.html">Order</a>
 </div>
+
 <div class="content">
     <div class="container">
         <div class="row height d-flex justify-content-center align-items-center">
-
+            <%
+                UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
+                if (loginUser == null || !loginUser.getRoleID().equals("AD")) {
+                    response.sendRedirect("login.jsp");
+                    return;
+                }
+                String search = request.getParameter("search");
+                if (search == null) {
+                    search = "";
+                }
+            %>
             <div class="col-md-12 searchBar">
-                <div class="form">
-                    <input type="text" class="form-control form-input" placeholder="Search...">
-                    <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
-                </div>
-                <div></div>
+                    <div class="form">
+                        <input type="text" class="form-control form-input" placeholder="Search..." name="SearchProduct">
+                        <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
                 <div style="display: flex; align-items:center; padding-left: 10px;">
                     <img class="adminIcon" src="" alt="">
                     <p onclick="myFunction()" class="dropbtn" style="padding-left:12px; padding-top: 12px;">Admin</p>
@@ -80,7 +91,7 @@
 
                 <div class="tm table-h-auto tm-block-h-auto">
                     <div class="row tm-edit-product-row">
-                        < class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
                         <form action="MainController" class="tm-edit-product-form" method="post">
 
                             <div class="form-group mb-3">
@@ -145,15 +156,7 @@
         </div>
     </div>
 </div>
-<%
-    List<ProductDTO> list = (List<ProductDTO>) request.getAttribute("LIST_PRODUCT");
-    int index = 0;
-    if (list == null) {
-        response.sendRedirect("error.jsp");
-        return;
-    }
-    for(ProductDTO product: list){
-%>
+
     <div class="t-container">
         <div class="container">
             <ul class="responsive-table">
@@ -168,11 +171,19 @@
                     <div class="col col-8">ExpiredDate</div>
                     <div class="col col-9">Action</div>
                 </li>
-
+                <%
+                    List<ProductDTO> list = (List<ProductDTO>) request.getAttribute("LIST_PRODUCT");
+                    int index = 1;
+                    if (list == null) {
+                        response.sendRedirect("error.jsp");
+                        return;
+                    }
+                    for(ProductDTO product: list){
+                %>
                 <li class="table-row">
-                    <div class="col col-1" data-label="Number"><%= product.getProductID() %></div>
-                    <div class="col col-2" data-label="Product"><%= product.getName() %>></div>
-                    <div class="col col-3" data-label="Price"><%= product.getPrice() %>></div>
+                    <div class="col col-1" data-label="Number"><%= index++ %></div>
+                    <div class="col col-2" data-label="Product"><%= product.getName() %></div>
+                    <div class="col col-3" data-label="Price"><%= product.getPrice() %></div>
                     <div class="col col-4" data-label="Category"><%= product.getCategoryID() %></div>
                     <div class="col col-5" data-label="Quantity"><%= product.getQuantity() %></div>
                     <div class="col col-6" data-label="Image">
@@ -185,13 +196,14 @@
                         <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
                     </div>
                 </li>
+                <%
+                    }
+                %>
 
             </ul>
         </div>
     </div>
-<%
-    }
-%>
+
 </div>
 
 <script src="js/selector.js"></script>

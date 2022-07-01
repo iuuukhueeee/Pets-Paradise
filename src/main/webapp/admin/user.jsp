@@ -145,15 +145,7 @@
       </div>
     </div>
   </div>
-  <%
-    List<UserDTO> list = (List<UserDTO>) request.getAttribute("LIST_USER");
-    int index = 0;
-    if (list == null) {
-      response.sendRedirect("error.jsp");
-      return;
-    }
-    for(UserDTO user: list){
-  %>
+
   <div class="t-container">
     <div class="container">
       <ul class="responsive-table">
@@ -165,7 +157,15 @@
           <div class="col col-5">RoleID</div>
           <div class="col col-6">Action</div>
         </li>
-
+        <%
+          List<UserDTO> list = (List<UserDTO>) request.getAttribute("LIST_USER");
+          int index = 1;
+          if (list == null) {
+            response.sendRedirect("error.jsp");
+            return;
+          }
+          for(UserDTO user: list){
+        %>
         <li class="table-row">
           <div class="col col-1" data-label="Number"><%= index++%></div>
           <div class="col col-2" data-label="User"><%= user.getName()%> </div>
@@ -177,13 +177,13 @@
             <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
           </div>
         </li>
-
+        <%
+          }
+        %>
       </ul>
     </div>
   </div>
-  <%
-    }
-  %>
+
 </div>
 </div>
 
