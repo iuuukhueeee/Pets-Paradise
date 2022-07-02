@@ -18,7 +18,7 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
             rel="stylesheet">
-    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg"/>
+    <link rel="shortcut icon" type="img/png" href="./img/paw-solid.svg"/>
     <title>Blog</title>
 </head>
 
@@ -89,7 +89,8 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                             <div class="blog-details">
-                                <h4 class="mt-4"><a href="BlogContent?blogID=<%=blog.getBlogID()%>" class="text-dark title"><%=blog.getBlogTitle()%>
+                                <h4 class="mt-4"><a href="BlogContent?blogID=<%=blog.getBlogID()%>"
+                                                    class="text-dark title"><%=blog.getBlogTitle()%>
                                 </a>
                                 </h4>
                                 <p class="text-muted text-content">
@@ -136,16 +137,21 @@
                         </div>
                     </div>
                     <div class="content p-3">
-                        <small class="text-muted p float-right"><%=blog.getWrittenDate()%></small>
-                        <h4 class="mt-4"><a href="BlogContent?blogID=<%=blog.getBlogID()%>" class="text-dark title"><%=blog.getBlogTitle()%></a></h4>
-                        <p class="text-muted text-content mt-2" style="text-overflow: ellipsis; ">
+                        <small class="text-muted p float-right"><%=blog.getWrittenDate()%>
+                        </small>
+                        <h4 class="mt-4"><a href="BlogContent?blogID=<%=blog.getBlogID()%>"
+                                            class="text-dark title text-muted"><%=blog.getBlogTitle()%>
+                        </a></h4>
+                        <p class="text-muted text-content mt-2">
                             <%=blog.getBlogDescription()%>
+<%--                            lorem oaf iweoi eoiknskdn oiahe nasdlkv nwieh dvsklvan ilehg adn v kvnoi aihk dno andih ito knlks nvksnovi eoihqwikcnvoihiorhoghonvksnih igonknvoknvoaisihgo wngkdnvoinsoinanlsknvlinrknkrnla kdnvins vnlknlknlena linglnklnvondovianlgkndlivnivnovinononononsnkegkndokn snd nsoienlekgninknlvasnvoslkgnldknvlsnvisnkvsnlkneklvnsleknvsienvsnvl--%>
                         </p>
                         <div class="pt-3 mt-3 border-top d-flex">
                             <img src="./img/cat.jpg" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"
                                  alt="">
                             <div class="author mt-2">
-                                <h6 class="mb-0"><p class="text-dark name"><%=blog.getAuthor()%></p>
+                                <h6 class="mb-0"><p class="text-dark name"><%=blog.getAuthor()%>
+                                </p>
                                 </h6>
                             </div>
                         </div>

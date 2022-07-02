@@ -58,7 +58,7 @@ public class MainController extends HttpServlet {
 
     //           ============= USER ==============
 
-    private static final String CHECK_OUT = "checkout";
+    private static final String CHECK_OUT = "Checkout";
     private static final String CHECK_OUT_CONTROLLER = "CheckoutController";
 
 //    ================= BLOG ===============

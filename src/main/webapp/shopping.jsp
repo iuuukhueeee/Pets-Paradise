@@ -492,9 +492,10 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold text-gray-900 "><%=product.getPrice()%></span>
-                            <form action="" method="POST">
-                                <input type="hidden" name="productID" value="<%=product.getProductID()%>"/>
-                                <button
+                            <form action="MainController" method="POST">
+                                <input type="hidden" name="ID" value="<%=product.getProductID()%>"/>
+                                <input type="hidden" name="quantity" value="1" min="0" placeholder="quantity">
+                                <button type="submit" name="action" value="AddToCart"
                                         class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">
                                     Add to cart
                                 </button>
@@ -988,54 +989,54 @@
 
 <section class="blog mx-auto">
 
-    <%
-        List<BlogDTO> listBlog = (List<BlogDTO>) request.getAttribute("LIST_BLOG");
-        if (listBlog == null) {
-            response.sendRedirect("error.jsp");
-            return;
-        }
-    %>
+<%--    <%--%>
+<%--        List<BlogDTO> listBlog = (List<BlogDTO>) request.getAttribute("LIST_BLOG");--%>
+<%--        if (listBlog == null) {--%>
+<%--            response.sendRedirect("error.jsp");--%>
+<%--            return;--%>
+<%--        }--%>
+<%--    %>--%>
 
     <div class="title">
         <span>Lastest blogs</span>
         <h1> Blog Posts</h1>
     </div>
     <div class="grid grid-cols-3 gap-3">
-        <%
-            for (BlogDTO blog : listBlog) {
-        %>
+<%--        <%--%>
+<%--            for (BlogDTO blog : listBlog) {--%>
+<%--        %>--%>
 
-        <div class="col">
-            <div class="item">
-                <div class="blog-img">
-                    <img src="./img/cus1.webp"/>
-                </div>
-                <div class="blog-content">
-                    <ul>
-                        <li><i class="fa-solid fa-calendar"></i><%=blog.getWrittenDate()%></li>
-                    </ul>
-                    <span><%=blog.getBlogDescription()%></span>
-                </div>
-            </div>
-        </div>
-        <%
-            }
-        %>
+<%--        <div class="col">--%>
+<%--            <div class="item">--%>
+<%--                <div class="blog-img">--%>
+<%--                    <img src="./img/cus1.webp"/>--%>
+<%--                </div>--%>
+<%--                <div class="blog-content">--%>
+<%--                    <ul>--%>
+<%--                        <li><i class="fa-solid fa-calendar"></i><%=blog.getWrittenDate()%></li>--%>
+<%--                    </ul>--%>
+<%--                    <span><%=blog.getBlogDescription()%></span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <%--%>
+<%--            }--%>
+<%--        %>--%>
 
-        <%--        <div class="col">--%>
-        <%--            <div class="item">--%>
-        <%--                <div class="blog-img">--%>
-        <%--                    <img src="./img/cus1.webp"/>--%>
-        <%--                </div>--%>
-        <%--                <div class="blog-content">--%>
-        <%--                    <ul>--%>
-        <%--                        <li><i class="fa-solid fa-calendar"></i>2022/7/21</li>--%>
-        <%--                    </ul>--%>
-        <%--                    <span>Lorem tatibus itaque blanditiis cumque praesentium dolore veniam, animi laboriosam--%>
-        <%--                            repellendus pariatur error explicabo. Numquam quam sequi, autem ipsum eius aperiam--%>
-        <%--                            totam!</span>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
+                <div class="col">
+                    <div class="item">
+                        <div class="blog-img">
+                            <img src="./img/cus1.webp"/>
+                        </div>
+                        <div class="blog-content">
+                            <ul>
+                                <li><i class="fa-solid fa-calendar"></i>2022/7/21</li>
+                            </ul>
+                            <span>Lorem tatibus itaque blanditiis cumque praesentium dolore veniam, animi laboriosam
+                                    repellendus pariatur error explicabo. Numquam quam sequi, autem ipsum eius aperiam
+                                    totam!</span>
+                        </div>
+                    </div>
         <%--        </div>--%>
         <%--        <div class="col">--%>
         <%--            <div class="item">--%>

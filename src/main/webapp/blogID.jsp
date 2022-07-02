@@ -115,7 +115,7 @@
                 </div>
                 <br/>
                 <div>
-                    <div class="row justify-content-center orther">Orther</div>
+                    <div class="row justify-content-center orther">Other</div>
                     <hr class="mt-2 ml-4 mr-4"/>
 
                     <%
@@ -123,12 +123,12 @@
                         for (BlogDTO blogTemplate : listBlog) {
                     %>
                     <article class="row justify-content-center">
-                        <div class="picture">
-                            <a href="#!">
-                                <img class="img-fluid img-responsive pl-4 pr-4 img-more" src="./img/angry-cat.webp"
-                                     alt=""/>
-                            </a>
-                        </div>
+<%--                        <div class="picture">--%>
+<%--                            <a href="#!">--%>
+<%--                                <img class="img-fluid img-responsive pl-4 pr-4 img-more" src="./img/angry-cat.webp"--%>
+<%--                                     alt=""/>--%>
+<%--                            </a>--%>
+<%--                        </div>--%>
                         <div class="title-more mt-1 pl-4 pr-4">
                             <a href="BlogContent?blogID=<%=blog.getBlogID()%>">
                                 <%=blogTemplate.getBlogTitle()%>

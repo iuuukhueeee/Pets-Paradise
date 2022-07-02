@@ -4,6 +4,7 @@ import com.DAO.CartDAO;
 import com.DTO.CartDTO;
 import com.DTO.UserDTO;
 import org.apache.commons.io.FileUtils;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,22 +27,12 @@ public class AddToCartController extends HttpServlet {
         String url = ERROR;
 
         try {
-            //HANDLE SAVE IMAGE
-            Part filePart = request.getPart("picture");
-            InputStream fileContent = filePart.getInputStream();
-            String hashedFileName = Integer.toString(Paths.get(filePart.getSubmittedFileName()).hashCode());
-            ServletContext context = request.getServletContext();
-            String savePath = context.getRealPath("/") + "img\\upload\\";
-            String relativePath = "./img/upload/";
-            File targetFile = new File(savePath + hashedFileName + ".png");
-            FileUtils.copyInputStreamToFile(fileContent, targetFile);
-            request.setAttribute("IMG_URL", relativePath + hashedFileName + ".png");
 
             HttpSession session = request.getSession();
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
-            if(user == null){
+            if (user == null) {
                 url = RETURN_LOGIN;
-                request.setAttribute("ERROR","Please Login to use this function!");
+                request.setAttribute("ERROR", "Please Login to use this function!");
                 response.sendRedirect("login.jsp");
                 return;
             }
@@ -51,19 +42,29 @@ public class AddToCartController extends HttpServlet {
             String ID = request.getParameter("ID");
             String[] itemTypeID = ID.split("-");
 
-            if(itemTypeID[0].equals("PRODUCT")){
+            if (itemTypeID[0].equals("PRODUCT")) {
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
-                cart = new CartDTO(user.getUsername(), ID, true ,quantity);
-                if(addCart.addToCart(cart)){
-                    request.setAttribute("MESSAGE","Added Successfully");
+                cart = new CartDTO(user.getUsername(), ID, true, quantity);
+                if (addCart.addToCart(cart)) {
+                    request.setAttribute("MESSAGE", "Added Successfully");
                 }
-            }
-            else if(itemTypeID[0].equals("SERVICE")){
-                    url = INSERT_PET_INFO;
-                    request.getRequestDispatcher(url).include(request, response);
-                    cart = new CartDTO(user.getUsername(), ID, true, 1);
-                    if (addCart.addToCart(cart)) {
-                        request.setAttribute("MESSAGE", "Added Successfully");
+            } else if (itemTypeID[0].equals("SERVICE")) {
+
+                //HANDLE SAVE IMAGE
+                Part filePart = request.getPart("picture");
+                InputStream fileContent = filePart.getInputStream();
+                String hashedFileName = Integer.toString(Paths.get(filePart.getSubmittedFileName()).hashCode());
+                ServletContext context = request.getServletContext();
+                String savePath = context.getRealPath("/") + "img\\upload\\";
+                String relativePath = "./img/upload/";
+                File targetFile = new File(savePath + hashedFileName + ".png");
+                FileUtils.copyInputStreamToFile(fileContent, targetFile);
+                request.setAttribute("IMG_URL", relativePath + hashedFileName + ".png");
+                url = INSERT_PET_INFO;
+                request.getRequestDispatcher(url).include(request, response);
+                cart = new CartDTO(user.getUsername(), ID, true, 1);
+                if (addCart.addToCart(cart)) {
+                    request.setAttribute("MESSAGE", "Added Successfully");
                 }
             }
             url = SUCCESS;

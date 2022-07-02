@@ -474,7 +474,7 @@ footer .row .col .item .submit div input[type=submit]:hover {
 .img-more {
   border-radius: 10%;
   min-height: 63px;
-  background-color: none;
+  background-color: transparent;
   position: relative;
   max-height: 100000px;
 }
@@ -504,7 +504,7 @@ footer .row .col .item .submit div input[type=submit]:hover {
 }
 .title-more-bonus a:hover {
   font-weight: bold;
-  font-size: 164x;
+  font-size: 164px;
   text-decoration: none;
   color: #68a7ad;
 }
