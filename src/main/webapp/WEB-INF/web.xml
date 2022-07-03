@@ -16,8 +16,8 @@
         <servlet-class>com.controllers.LoadServiceController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AdminBlogLoadingController</servlet-name>
-        <servlet-class>com.controllers.blog.AdminBlogLoadingController</servlet-class>
+        <servlet-name>BlogController</servlet-name>
+        <servlet-class>com.controllers.blog.BlogController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminGetSelectedBlogController</servlet-name>
@@ -27,10 +27,6 @@
         <servlet-name>LoadProductController</servlet-name>
         <servlet-class>com.controllers.LoadProductController</servlet-class>
     </servlet>
-<!--    <servlet>-->
-<!--        <servlet-name>ResetPasswordController</servlet-name>-->
-<!--        <servlet-class>com.controllers.ResetPasswordController</servlet-class>-->
-<!--    </servlet>-->
     <servlet-mapping>
         <servlet-name>LoadServiceController</servlet-name>
         <url-pattern>/services</url-pattern>
@@ -47,12 +43,8 @@
         <servlet-name>BlogContentController</servlet-name>
         <url-pattern>/BlogContent</url-pattern>
     </servlet-mapping>
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>ResetPasswordController</servlet-name>-->
-<!--        <url-pattern>/ResetPassword</url-pattern>-->
-<!--    </servlet-mapping>-->
     <servlet-mapping>
-        <servlet-name>AdminBlogLoadingController</servlet-name>
+        <servlet-name>BlogController</servlet-name>
         <url-pattern>/AdminBlog</url-pattern>
     </servlet-mapping>
     <servlet-mapping>

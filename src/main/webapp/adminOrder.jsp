@@ -4,14 +4,15 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-    <link rel="shortcut icon" type="img/png" href="../img/paw-solid.svg" />
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="css/dropDownAdmin.css">
+    <link rel="shortcut icon" type="img/png" href="img/paw-solid.svg" />
+    <link rel="stylesheet" href="css/Order.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
         rel="stylesheet">
-    <title>Admin</title>
+    <title>Admin - Order Details</title>
 
 </head>
 
@@ -19,7 +20,7 @@
 
     <div class="sidebar">
         <div class="LOGO">
-            <img src="../img/paw-solid.svg" alt="" class="img-responsive">
+            <img src="img/paw-solid.svg" alt="" class="img-responsive">
             <div style="font-size: 20px;font-weight: 900;color: #68A7AD; justify-content: center; padding-left: 16px;">
                 Pet's Paradise
             </div>
@@ -35,16 +36,16 @@
         </div>
         <div>
             <a href="Blog.html" class="collapsible">Blog</a>
-        </div>
-
-        <a class="collapsible" href="Order.html">Order</a>
+        </div>  
+        <a class="collapsible active" href="#Order">Order</a>
     </div>
+
     <div class="content">
         <div class="container">
 
             <div class="row height d-flex justify-content-center align-items-center">
 
-                <div class="col-md-10 searchBar">
+                <div class="col-md-12 searchBar">
 
                     <div class="form">
                         <input type="text" class="form-control form-input" placeholder="Search...">
@@ -61,13 +62,46 @@
                             <a href="../../../../user.html">Profile</a>
                             <a href="#">Logout</a>
                         </div>
+                        <!-- </div> -->
                     </div>
                 </div>
-
             </div>
+            </div>
+            <br>
+            <div class="t-container">
+            <div class="container">
+                <ul class="responsive-table">
+                    <li class="table-header">
+                        <div class="col col-1">#</div>
+                        <div class="col col-2">OrderID</div>
+                        <div class="col col-3">User</div>
+                        <div class="col col-4">Item</div>
+                        <div class="col col-5">Product</div>
+                        <div class="col col-6">Quantity</div>
+                    </li>
 
+                    <li class="table-row">
+                        <div class="col col-1" data-label="#">1</div>
+                        <div class="col col-2" data-label="OrderID">ORDER-29b0f143-e3c7-4f4b-8cf1-d41945617df4</div>
+                        <div class="col col-3" data-label="User">KhoaNguyen</div>
+                        <div class="col col-4" data-label="Item">Food</div>
+                        <div class="col col-5" data-label="Product">Cookies</div>
+                        <div class="col col-6" data-label="Quantity">3</div>
+                    </li>
+
+                    <li class="table-row">
+                        <div class="col col-1" data-label="#">2</div>
+                        <div class="col col-2" data-label="OrderID">ORDER-29b0f143-e3c7-4f4b-8cf1-d41945617df4</div>
+                        <div class="col col-3" data-label="User">ThienSan</div>
+                        <div class="col col-4" data-label="Item">Food</div>
+                        <div class="col col-5" data-label="Product">Cookies</div>
+                        <div class="col col-6" data-label="Quantity">3</div>
+                </ul>
+            </div>
         </div>
     </div>
+
+
     <script src="js/admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

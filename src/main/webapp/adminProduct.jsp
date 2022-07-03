@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <link rel="stylesheet" href="css/dropDownAdmin.css">
   
-  <link rel="shortcut icon" type="img/png" href="../img/paw-solid.svg" />
+  <link rel="shortcut icon" type="img/png" href="img/paw-solid.svg" />
   <link rel="stylesheet" href="css/addProduct.css">
   <link rel="stylesheet" href="css/editProduct.css">
 
@@ -23,7 +23,7 @@
 
     <div class="sidebar">
       <div class="LOGO">
-          <img src="../img/paw-solid.svg" alt="" class="img-responsive">
+          <img src="img/paw-solid.svg" alt="" class="img-responsive">
           <div style="font-size: 20px;font-weight: 900;color: #68A7AD; justify-content: center; padding-left: 16px;">
               Pet's Paradise
           </div>
@@ -227,7 +227,7 @@
                 </div>
             </div>    
     </div>
-    <script src="js/selector.js"></script>
+    <script src="js/admin_selector.js"></script>
     <script src="js/admin.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
