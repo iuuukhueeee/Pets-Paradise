@@ -1,7 +1,21 @@
+<%@ page import="com.DTO.UserDTO" %>
+<%@ page import="com.DTO.ServiceDTO" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <%
+    UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
+    if (loginUser == null || !loginUser.getRoleID().equals("AD")) {
+      response.sendRedirect("login.jsp");
+      return;
+    }
+    String search = request.getParameter("SearchService");
+    if (search == null) {
+      search = "";
+    }
+  %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -27,19 +41,19 @@
           </div>
       </div>
       <div>
-          <a href="Product.html" class="collapsible">Product</a>
+          <a href="adminProduct.html" class="collapsible">Product</a>
       </div>
       <div>
-          <a href="#Service" class="collapsible active">Service</a>
+          <a href="#adminService" class="collapsible active">Service</a>
       </div>
       <div>
-          <a href="User.html" class="collapsible">User</a>
+          <a href="adminUser.html" class="collapsible">User</a>
       </div>
       <div>
-          <a href="Blog.html" class="collapsible">Blog</a>
+          <a href="adminBlog.html" class="collapsible">Blog</a>
       </div>
 
-      <a class="collapsible" href="Order.html">Order</a>
+      <a class="collapsible" href="adminOrder.html">Order</a>
 
       <a class="collapsible Addmin_414rs">Admin</a>
       <div class="contentCollapse">
@@ -57,12 +71,13 @@
         <div class="row height d-flex justify-content-center align-items-center">
 
           <div class=" searchBar col-xl-9 col-lg-10 col-md-10 col-sm-10 mx-auto">
-
-            <div class="form">
-              <input type="text" class="form-control form-input" placeholder="Search...">
-
-              <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
-            </div>
+            <form action="MainController" method="post">
+              <div class="form">
+                <input type="text" class="form-control form-input" placeholder="Search..." name="SearchService">
+                <input type="submit" name="action" value="SearchService">
+                <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
+              </div>
+            </form>
             <div></div>
             <div style="display: flex; align-items:center;" class="Search_390rs">
               <img class="adminIcon" src="" alt="">
@@ -97,7 +112,7 @@
                       </div>
                       <div class="col-md-10">
                         <div class="form-outline">
-                          <input type="text" id="form3Example1cg" required=""
+                          <input type="text" id="form3Example1cg1" required=""
                             class="custom-box form-control form-control-lg pt-1" />
                         </div>
                       </div>
@@ -145,32 +160,32 @@
             <div class="col col-4">Description</div>
             <div class="col col-5">Action</div>
           </li>
+          <%
+            List<ServiceDTO> list = (List<ServiceDTO>) request.getAttribute("SERVICE_LIST");
+            int index = 1;
+            if (list == null) {
+              response.sendRedirect("error.jsp");
+              return;
+            }
+            for(ServiceDTO service: list){
+          %>
           <li class="table-row">
-            <div class="col col-1" data-label="Number">1</div>
-            <div class="col col-2" data-label="Service">Spa</div>
-            <div class="col col-3" data-label="Price">$500</div>
-            <div class="col col-4" data-label="Description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusantium aut quia enim dignissimos voluptatibus eligendi, laborum natus vel incidunt perspiciatis?
-            </div>
+            <div class="col col-1" data-label="Number"><%= index++%></div>
+            <div class="col col-2" data-label="Service"><%= service.getServiceName()%></div>
+            <div class="col col-3" data-label="Price"><%= service.getServicePrice()%></div>
+            <div class="col col-4" data-label="Description"><%= service.getServiceDescription()%></div>
             <div class="col col-5" data-label="Action">
               <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
               <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
             </div>
           </li>
-          <li class="table-row">
-            <div class="col col-1" data-label="Number">2</div>
-            <div class="col col-2" data-label="Service">Spa</div>
-            <div class="col col-3" data-label="Price">$500</div>
-            <div class="col col-4" data-label="Description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Cum nam dolorum ipsum! Non nemo quisquam eos recusandae maxime provident iure.</div>
-            <div class="col col-5" data-label="Action">
-              <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-              <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
-            </div>
-          </li>
+          <%
+            }
+          %>
         </ul>
       </div>
       </div>
+    </div>
     </div>
 
 

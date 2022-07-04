@@ -13,7 +13,7 @@ import com.DTO.UserDTO;
 public class SearchUserController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "admin_user.jsp";
+    private static final String SUCCESS = "adminUser.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class SearchUserController extends HttpServlet {
             UserDAO dao = new UserDAO();
             List<UserDTO> listUser = dao.getListUser(search);
             if (listUser.size() > 0) {
-                request.setAttribute("LIST_USER", listUser);
+                request.setAttribute("USER_LIST", listUser);
                 url = SUCCESS;
             }
         } catch (Exception e) {

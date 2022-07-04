@@ -1,7 +1,20 @@
+<%@ page import="com.DTO.UserDTO" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <%
+    UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
+    if (loginUser == null || !loginUser.getRoleID().equals("AD")) {
+      response.sendRedirect("login.jsp");
+      return;
+    }
+    String search = request.getParameter("searchUser");
+    if (search == null) {
+      search = "";
+    }
+  %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -28,31 +41,32 @@
           </div>
       </div>
       <div>
-          <a href="Product.html" class="collapsible">Product</a>
+          <a href="adminProduct.html" class="collapsible">Product</a>
       </div>
       <div>
-          <a href="Service.html" class="collapsible">Service</a>
+          <a href="adminService.html" class="collapsible">Service</a>
       </div>
       <div>
-          <a href="#User" class="collapsible active">User</a>
+          <a href="#adminUser" class="collapsible active">User</a>
       </div>
       <div>
-          <a href="Blog.html" class="collapsible">Blog</a>
+          <a href="adminBlog.html" class="collapsible">Blog</a>
       </div>
 
-      <a class="collapsible" href="Order.html">Order</a>
+      <a class="collapsible" href="adminOrder.html">Order</a>
   </div>
     <div class="content">
       <div class="container">
         <div class="row height d-flex justify-content-center align-items-center">
 
           <div class="col-md-12 searchBar">
-
+          <form action="MainController" method="post">
             <div class="form">
-              <input type="text" class="form-control form-input" placeholder="Search...">
-
+              <input type="text" class="form-control form-input" placeholder="Search..." name="SearchUser">
+              <input type="submit" name="action" value="SearchUser">
               <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
             </div>
+          </form>
             <div></div>
             <div style="display: flex; align-items:center;" class="Admin_414rs">
               <img class="adminIcon" src="" alt="">
@@ -99,7 +113,7 @@
                     </div>
                     <div class="col-md-10">
                       <div class="form-outline">
-                        <input type="email" id="form3Example3cg" required=""
+                        <input type="email" id="form3Example3cg1" required=""
                           class="custom-box form-control form-control-lg pt-1" />
                       </div>
                     </div>
@@ -111,7 +125,7 @@
                     </div>
                     <div class="col-md-10">
                       <div class="form-outline">
-                        <input type="text" id="form3Example3cg" required=""
+                        <input type="text" id="form3Example3cg2" required=""
                           class="custom-box form-control form-control-lg pt-1" />
                       </div>
                     </div>
@@ -134,6 +148,7 @@
                     <button class="button">Add User</button>
                     </div>
                   </div>
+                </div>
               </form>
 
 
@@ -153,40 +168,29 @@
             <div class="col col-5">RoleID</div>
             <div class="col col-6">Action</div>
           </li>
-
+          <%
+            List<UserDTO> list = (List<UserDTO>) request.getAttribute("USER_LIST");
+            int index = 1;
+            if (list == null) {
+              response.sendRedirect("error.jsp");
+              return;
+            }
+            for(UserDTO user: list){
+          %>
           <li class="table-row">
-            <div class="col col-1" data-label="Number">1</div>
-            <div class="col col-2" data-label="User">admin ne</div>
-            <div class="col col-3" data-label="Email">example@example.com</div>
-            <div class="col col-4" data-label="Phone">0123456789</div>
-            <div class="col col-5" data-label="RoleID">Admin</div>
+            <div class="col col-1" data-label="Number"><%= index++%></div>
+            <div class="col col-2" data-label="User"><%= user.getName() %></div>
+            <div class="col col-3" data-label="Email"><%= user.getEmail() %></div>
+            <div class="col col-4" data-label="Phone"><%= user.getPhoneNumber() %></div>
+            <div class="col col-5" data-label="RoleID"><%= user.getRoleID() %></div>
             <div class="col col-6" data-label="Action">
               <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
               <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
             </div>
           </li>
-          <li class="table-row">
-            <div class="col col-1" data-label="Number">1</div>
-            <div class="col col-2" data-label="User">admin ne</div>
-            <div class="col col-3" data-label="Email">example@example.com</div>
-            <div class="col col-4" data-label="Phone">0123456789</div>
-            <div class="col col-5" data-label="RoleID">Admin</div>
-            <div class="col col-6" data-label="Action">
-              <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-              <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
-            </div>
-          </li>
-          <li class="table-row">
-            <div class="col col-1" data-label="Number">1</div>
-            <div class="col col-2" data-label="User">admin ne</div>
-            <div class="col col-3" data-label="Email">example@example.com</div>
-            <div class="col col-4" data-label="Phone">0123456789</div>
-            <div class="col col-5" data-label="RoleID">Admin</div>
-            <div class="col col-6" data-label="Action">
-              <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-              <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
-            </div>
-          </li>
+          <%
+            }
+          %>
 
         </ul>
       </div>

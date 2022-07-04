@@ -45,7 +45,7 @@ public class MainController extends HttpServlet {
     //         ============= PRODUCT ==============
     private static final String ADD_PRODUCT = "AddProduct";
     private static final String ADD_PRODUCT_CONTROLLER = "AddProductController";
-    private static final String SEARCH_PRODUCT = "SearchProduct";
+    private static final String SEARCH_PRODUCT = "searchProduct";
     private static final String SEARCH_PRODUCT_CONTROLLER = "SearchProductController";
     private static final String DELETE_PRODUCT = "DeleteProduct";
     private static final String DELETE_PRODUCT_CONTROLLER = "DeleteProductController";
@@ -65,6 +65,10 @@ public class MainController extends HttpServlet {
     private static final String UPLOAD_BLOG = "UploadBlog";
     private static final String UPLOAD_BLOG_CONTROLLER = "UploadBlogController";
 
+    //    ================= ADMIN ===============
+    private static final String SEARCH_ORDER = "searchOrder";
+    private static final String SEARCH_ORDER_CONTROLLER = "SearchOrderController";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -83,6 +87,9 @@ public class MainController extends HttpServlet {
 
             } else if (SEARCH_PRODUCT.equals(action)) {
                 url = SEARCH_PRODUCT_CONTROLLER;
+
+            }else if (SEARCH_ORDER.equals(action)) {
+                url = SEARCH_ORDER_CONTROLLER;
 
             } else if (DELETE_USER.equals(action)) {
                 url = DELETE_USER_CONTROLLER;
