@@ -8,6 +8,7 @@ public class UserDTO {
     private String password = null;
     private String email = null;
     private String phoneNumber = null;
+    private String avatar = null;
 
     public UserDTO() {
         this.name = "";
@@ -16,15 +17,25 @@ public class UserDTO {
         this.password = "";
         this.email = "";
         this.phoneNumber = "";
+        this.avatar = "";
     }
 
-    public UserDTO(String Username, String Name, String password, String email, String phoneNumber, String roleID) {
+    public UserDTO(String Username, String Name, String password, String email, String phoneNumber, String roleID, String avatar) {
         this.name = Name;
         this.username = Username;
         this.roleID = roleID;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.avatar = avatar;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getName() {

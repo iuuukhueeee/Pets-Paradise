@@ -11,7 +11,7 @@ import com.DTO.UserDTO;
 import com.utils.DButils;
 
 public class UserDAO {
-    private static final String LOGIN = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Username=? AND Password=? AND Status=1";
+    private static final String LOGIN = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID, Avatar FROM Users WHERE Username=? AND Password=? AND Status=1";
     private static final String CHECK_DUPLICATE = "SELECT 1 FROM Users WHERE Username=?";
     private static final String CHECK_EXISTING_EMAIL = "SELECT 1 FROM Users WHERE Email=?";
     private static final String GET_EMAIL_BY_USERNAME = "SELECT Email from Users WHERE Username=?";
@@ -39,10 +39,12 @@ public class UserDAO {
                 if (rs.next()) {
                     String username = rs.getString("Username");
                     String name = rs.getString("Name");
+                    String password = rs.getString("Password");
                     String email = rs.getString("Email");
                     String phoneNumber = rs.getString("PhoneNumber");
+                    String avatar = rs.getString("Avatar");
                     String roleID = rs.getString("RoleID");
-                    user = new UserDTO(username, name, "", email, phoneNumber, roleID);
+                    user = new UserDTO(username, name, password, email, phoneNumber, roleID, avatar);
                 }
             }
         } catch (Exception e) {
@@ -109,7 +111,7 @@ public class UserDAO {
                     String phoneNumber = rs.getString("PhoneNumber");
                     String email = rs.getString("Email");
                     String roleID = rs.getString("RoleID");
-                    list.add(new UserDTO(username, name, "", email, phoneNumber, roleID));
+                    list.add(new UserDTO(username, name, "", email, phoneNumber, roleID, ""));
                 }
             }
         } catch (Exception e) {

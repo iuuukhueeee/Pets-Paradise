@@ -25,8 +25,6 @@
 
 <body>
 
-<body>
-
 <div class="sidebar">
     <div class="LOGO">
         <img src="img/paw-solid.svg" alt="" class="img-responsive">
@@ -35,7 +33,7 @@
         </div>
     </div>
     <div>
-        <a href="./adminPoduct.jsp" class="collapsible">Product</a>
+        <a href="./adminProduct.jsp" class="collapsible">Product</a>
     </div>
     <div>
         <a href="./adminService.jsp" class="collapsible">Service</a>
@@ -44,7 +42,7 @@
         <a href="./adminUser.jsp" class="collapsible">User</a>
     </div>
     <div>
-        <a href="#Blog" class="collapsible active">Blog</a>
+        <a href="./adminBlog.jsp" class="collapsible active">Blog</a>
     </div>
 
     <a class="collapsible" href="./adminOrder.jsp">Order</a>
@@ -58,9 +56,10 @@
                 <div class="searchBar col-md-12">
 
                     <div class="form">
-                        <input type="text" class="form-control form-input" placeholder="Search...">
-
-                        <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <form action="MainController" method="POST">
+                            <input type="text" class="form-control form-input" placeholder="Search..." name="name">
+                            <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"><button type="submit" name="action" value="SearchBlog"></button></i></span>
+                        </form>
                     </div>
                     <div></div>
                     <div style="display: flex; align-items:center;" class="Search_414rs">
@@ -69,7 +68,7 @@
                         <p onclick="myFunction()" class="dropbtn" style="padding-left:12px; padding-top: 12px;">
                             Admin</p>
                         <div id="myDropdown" class="dropdown-content">
-                            <a href="../../../../user.html">Profile</a>
+                            <a href="./user.jsp">Profile</a>
                             <a href="#">Logout</a>
                         </div>
                         <!-- </div> -->
@@ -83,25 +82,26 @@
                         <div class="">
                             <div class="row">
                                 <div class="col-12">
-                                    <h2 class="d-inline-block">Blog Magagement</h2>
+                                    <h2 class="d-inline-block">Blog Management</h2>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form action="" class="tm-edit-product-form">
+                                    <form action="MainController" class="tm-edit-product-form" method="POST">
+                                        <input type="hidden" name="ID" id="ID" value=""/>
                                         <div class="form-group mb-3">
-                                            <div class="username row mb-4">
-                                                <div class="col-md-2 d-flex align-items-center">
-                                                    Author
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="form-outline">
-                                                        <input type="text" id="form3Example1cg" required=""
-                                                               class="custom-box form-control form-control-lg pt-1"/>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <%--                                            <div class="username row mb-4">--%>
+                                            <%--                                                <div class="col-md-2 d-flex align-items-center">--%>
+                                            <%--                                                    Author--%>
+                                            <%--                                                </div>--%>
+                                            <%--                                                <div class="col-md-10">--%>
+                                            <%--                                                    <div class="form-outline">--%>
+                                            <%--                                                        <input type="text" id="form3Example1cg" required=""--%>
+                                            <%--                                                               class="custom-box form-control form-control-lg pt-1"/>--%>
+                                            <%--                                                    </div>--%>
+                                            <%--                                                </div>--%>
+                                            <%--                                            </div>--%>
 
                                             <div class="username row mb-4">
                                                 <div class="col-md-2 d-flex align-items-center">
@@ -109,7 +109,7 @@
                                                 </div>
                                                 <div class="col-md-10">
                                                     <div class="form-outline">
-                                                        <input type="text" id="form3Example1cg" required=""
+                                                        <input type="text" id="title" name="title" required=""
                                                                class="custom-box form-control form-control-lg pt-1"/>
                                                     </div>
                                                 </div>
@@ -120,7 +120,8 @@
                                                 </div>
                                                 <div class="col-md-10">
                                                     <div class="form-outline">
-                                                        <input type="text" id="form3Example1cg" required=""
+                                                        <input type="text" id="description" name="description"
+                                                               required=""
                                                                class="custom-box form-control form-control-lg pt-1"/>
                                                     </div>
                                                 </div>
@@ -131,16 +132,19 @@
                                                     Content
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <form style="margin-bottom: 2rem;">
-                                                        <textarea name="message" id="message" placeholder="WRITE BLOG HERE!"></textarea>
-                                                    </form>
+                                                    <textarea name="message" id="message"
+                                                              placeholder="WRITE BLOG HERE!"></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-4">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-10">
-                                                <button class="button">Add User</button>
+                                                <button class="button" type="submit" name="action" value="UploadBlog">
+                                                    UPLOAD!
+                                                </button>
+                                                <button class="clearData button">CLEAR
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
@@ -174,9 +178,15 @@
                             <div class="col col-5 description" data-label="Description">${i.getBlogDescription()}
                             </div>
                             <div class="col col-6" data-label="Action">
-                                <i class="fa-solid fa-arrow-up"
-                                   style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-                                <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
+                                <form method="POST" action="MainController">
+                                    <input type="hidden" id="blogID" name="ID" value="${i.getBlogID()}" class="blogID"/>
+                                    <i class="fa-solid fa-arrow-up GET"
+                                       style='font-size:24px; cursor: pointer; padding-right: 5px;'>
+                                    </i>
+                                    <button type="submit" name="action" value="DeleteBlog">
+                                        <i class='far fa-trash-alt' style='font-size:24px ;'></i>
+                                    </button>
+                                </form>
                             </div>
                         </li>
                     </c:forEach>
@@ -215,7 +225,8 @@
         });
     </script>
 </div>
-</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="./js/handleGetBlog.js"></script>
 </body>
 
 </html>

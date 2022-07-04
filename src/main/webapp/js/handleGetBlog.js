@@ -12,6 +12,7 @@ $(document).ready(function () {
             success: function (data) {
 
                 if (data) {
+                    $("#ID").val(data.BLOG.blogID)
                     $("#title").val(data.BLOG.blogTitle)
                     tinyMCE.activeEditor.setContent(data.BLOG.blogContent)
                     $("#description").val(data.BLOG.blogDescription)
@@ -25,4 +26,12 @@ $(document).ready(function () {
             }
         });
     });
+    $(".clearData").click(function (e) {
+        console.log("clicked")
+        e.preventDefault()
+        $("#ID").val("")
+        $("#title").val("")
+        tinyMCE.activeEditor.setContent("")
+        $("#description").val("")
+    })
 });

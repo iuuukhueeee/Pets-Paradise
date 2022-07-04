@@ -2,6 +2,8 @@ package com.controllers.blog;
 
 import com.DAO.BlogDAO;
 import com.DTO.UserDTO;
+import com.Error.AdminBlogError;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -17,13 +19,32 @@ public class UploadBlogController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         try {
+            boolean validation = true;
+            AdminBlogError error = new AdminBlogError();
+            String ID = request.getParameter("ID");
             String title = request.getParameter("title");
             String content = request.getParameter("message");
             String description = request.getParameter("description");
             UserDTO userDTO = (UserDTO) request.getSession().getAttribute("LOGIN_USER");
-            if (content != null) {
-                BlogDAO blogDAO = new BlogDAO();
-                if (blogDAO.uploadBlog(userDTO, title, content, description)) url = SUCCESS;
+            if ("".equals(title)) {
+                error.setTitleError("Title can't be blank");
+                validation = false;
+            }
+            if ("".equals(content)) {
+                error.setContentError("Content can't be blank");
+                validation = false;
+            }
+            if ("".equals(description)) {
+                error.setDescriptionError("Description can't be blank");
+                validation = false;
+            }
+
+            BlogDAO blogDAO = new BlogDAO();
+            if (validation && !"".equals(ID)) {
+                if (blogDAO.updateBlog(userDTO, ID, title, content, description)) url = SUCCESS;
+            }
+            else if (validation && "".equals(ID)) {
+                if (blogDAO.createBlog(userDTO, title, content, description)) url = SUCCESS;
             }
         } catch (Exception e) {
             log("Error at UploadBlogController: " + e.toString());

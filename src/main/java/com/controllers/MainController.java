@@ -64,6 +64,8 @@ public class MainController extends HttpServlet {
 //    ================= BLOG ===============
     private static final String UPLOAD_BLOG = "UploadBlog";
     private static final String UPLOAD_BLOG_CONTROLLER = "UploadBlogController";
+    private static final String DELETE_BLOG = "DeleteBlog";
+    private static final String DELETE_BLOG_CONTROLLER = "DeleteBlogController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -123,6 +125,8 @@ public class MainController extends HttpServlet {
                 url = RESET_PASSWORD_CONTROLLER;
             } else if (UPLOAD_BLOG.equals(action)) {
                 url = UPLOAD_BLOG_CONTROLLER;
+            } else if (DELETE_BLOG.equals(action)) {
+                url = DELETE_BLOG_CONTROLLER;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());
