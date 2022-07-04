@@ -16,6 +16,14 @@
         <servlet-class>com.controllers.LoadServiceController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LoadOrderController</servlet-name>
+        <servlet-class>com.controllers.LoadOrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadUserController</servlet-name>
+        <servlet-class>com.controllers.LoadUserController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>BlogController</servlet-name>
         <servlet-class>com.controllers.blog.BlogController</servlet-class>
     </servlet>
@@ -29,11 +37,19 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>LoadServiceController</servlet-name>
-        <url-pattern>/services</url-pattern>
+        <url-pattern>/adminService</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoadProductController</servlet-name>
-        <url-pattern>/shopping</url-pattern>
+        <url-pattern>/adminProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadOrderController</servlet-name>
+        <url-pattern>/adminOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadUserController</servlet-name>
+        <url-pattern>/adminUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>blogController</servlet-name>

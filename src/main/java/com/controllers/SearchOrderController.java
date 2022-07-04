@@ -1,23 +1,23 @@
 package com.controllers;
 
-import java.io.IOException;
+import com.DAO.OrderDAO;
 import com.DAO.ProductDAO;
+import com.DTO.OrderDTO;
 import com.DTO.ProductDTO;
-import java.util.List;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import com.DTO.UserDTO;
 
-@WebServlet(name = "SearchProductController", value = "/SearchProductController")
-public class SearchProductController extends HttpServlet {
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet(name = "SearchOrderController", value = "/SearchOrderController")
+public class SearchOrderController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS_US = "index.jsp";
-    private static final String SUCCESS_AD = "adminProduct.jsp";
+    private static final String SUCCESS_AD = "adminOrder.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,13 +26,13 @@ public class SearchProductController extends HttpServlet {
         String url = ERROR;
 
         try {
-            String searchproduct = request.getParameter("searchProduct");
-            if(searchproduct == null) searchproduct = "";
-            ProductDAO dao = new ProductDAO();
+            String searchOrder = request.getParameter("SearchOrder");
+            if(searchOrder == null) searchOrder = "";
+            OrderDAO orderDAO = new OrderDAO();
 
-            List<ProductDTO> list = dao.getListProduct(searchproduct);
-            request.removeAttribute("PRODUCT_LIST");
-            request.setAttribute("PRODUCT_LIST", list);
+            List<OrderDTO> list = orderDAO.getListOrder(searchOrder);
+
+            request.setAttribute("LIST_ORDER", list);
 
             HttpSession session = request.getSession();
             UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
@@ -47,6 +47,7 @@ public class SearchProductController extends HttpServlet {
             request.getRequestDispatcher(url).forward(request, response);
         }
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);

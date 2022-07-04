@@ -21,6 +21,8 @@ public class UserDAO {
     private static final String DELETE = "UPDATE Users SET Status=0 WHERE Username=?";
     private static final String UPDATE = "UPDATE Users SET Name = ? , Password = ? , Email = ? , PhoneNumber = ? WHERE Username = ?";
     private static final String UPDATE_PASSWORD = "UPDATE Users SET Password=? WHERE Username=?";
+    private static final String GET_USERS = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Status = 1";
+
 
 
     public UserDTO checkLogin(String Username, String Password) throws SQLException {
@@ -319,4 +321,45 @@ public class UserDAO {
         }
         return check;
     }
+
+    public List<UserDTO> getAll() throws SQLException {
+        List<UserDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_USERS);
+                rs = ptm.executeQuery();
+
+                while (rs.next()) {
+                    String username = rs.getString("Username");
+                    String name = rs.getString("Name");
+                    String password = rs.getString("Password");
+                    String email = rs.getString("Email");
+                    String phoneNumber = rs.getString("PhoneNumber");
+                    String roleID = rs.getString("RoleID");
+                    UserDTO user = new UserDTO(username,name,password,email,phoneNumber,roleID);
+                    list.add(user);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+
+        return list;
+    }
+
 }

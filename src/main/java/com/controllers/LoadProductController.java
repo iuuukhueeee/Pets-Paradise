@@ -16,7 +16,7 @@ import java.util.List;
 public class LoadProductController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "shopping.jsp";
+    private static final String SUCCESS = "adminProduct.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
@@ -26,7 +26,7 @@ public class LoadProductController extends HttpServlet {
             ProductDAO productDAO = new ProductDAO();
             listProduct = productDAO.getAll();
             if (listProduct != null) {
-                request.setAttribute("LIST_PRODUCT", listProduct);
+                request.setAttribute("PRODUCT_LIST", listProduct);
                 url = SUCCESS;
             }
             if (request.getRequestURI().equals("/shopping")) {
