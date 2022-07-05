@@ -307,11 +307,13 @@ h2 small {
 .responsive-table .col-3 {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
+  text-align: center;
 }
 
 .responsive-table .col-4 {
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
+  text-align: center;
 }
 
 @media screen and (max-width: 820px) {
