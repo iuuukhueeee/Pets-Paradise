@@ -987,7 +987,7 @@
     </div>
 </section>
 
-<section class="blog mx-auto">
+<%--<section class="blog mx-auto">--%>
 
 <%--    <%--%>
 <%--        List<BlogDTO> listBlog = (List<BlogDTO>) request.getAttribute("LIST_BLOG");--%>
@@ -997,11 +997,11 @@
 <%--        }--%>
 <%--    %>--%>
 
-    <div class="title">
-        <span>Lastest blogs</span>
-        <h1> Blog Posts</h1>
-    </div>
-    <div class="grid grid-cols-3 gap-3">
+<%--    <div class="title">--%>
+<%--        <span>Lastest blogs</span>--%>
+<%--        <h1> Blog Posts</h1>--%>
+<%--    </div>--%>
+<%--    <div class="grid grid-cols-3 gap-3">--%>
 <%--        <%--%>
 <%--            for (BlogDTO blog : listBlog) {--%>
 <%--        %>--%>
@@ -1023,20 +1023,20 @@
 <%--            }--%>
 <%--        %>--%>
 
-                <div class="col">
-                    <div class="item">
-                        <div class="blog-img">
-                            <img src="./img/cus1.webp"/>
-                        </div>
-                        <div class="blog-content">
-                            <ul>
-                                <li><i class="fa-solid fa-calendar"></i>2022/7/21</li>
-                            </ul>
-                            <span>Lorem tatibus itaque blanditiis cumque praesentium dolore veniam, animi laboriosam
-                                    repellendus pariatur error explicabo. Numquam quam sequi, autem ipsum eius aperiam
-                                    totam!</span>
-                        </div>
-                    </div>
+<%--                <div class="col">--%>
+<%--                    <div class="item">--%>
+<%--                        <div class="blog-img">--%>
+<%--                            <img src="./img/cus1.webp"/>--%>
+<%--                        </div>--%>
+<%--                        <div class="blog-content">--%>
+<%--                            <ul>--%>
+<%--                                <li><i class="fa-solid fa-calendar"></i>2022/7/21</li>--%>
+<%--                            </ul>--%>
+<%--                            <span>Lorem tatibus itaque blanditiis cumque praesentium dolore veniam, animi laboriosam--%>
+<%--                                    repellendus pariatur error explicabo. Numquam quam sequi, autem ipsum eius aperiam--%>
+<%--                                    totam!</span>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
         <%--        </div>--%>
         <%--        <div class="col">--%>
         <%--            <div class="item">--%>
@@ -1054,8 +1054,8 @@
         <%--            </div>--%>
         <%--        </div>--%>
 
-    </div>
-</section>
+<%--    </div>--%>
+<%--</section>--%>
 
 <footer>
     <div class="container">

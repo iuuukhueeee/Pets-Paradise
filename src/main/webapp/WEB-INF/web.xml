@@ -12,16 +12,16 @@
         <servlet-class>com.controllers.blog.BlogContentController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoadServiceController</servlet-name>
-        <servlet-class>com.controllers.LoadServiceController</servlet-class>
+        <servlet-name>AdminLoadServiceController</servlet-name>
+        <servlet-class>com.controllers.AdminLoadServiceController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoadOrderController</servlet-name>
-        <servlet-class>com.controllers.LoadOrderController</servlet-class>
+        <servlet-name>AdminLoadOrderController</servlet-name>
+        <servlet-class>com.controllers.AdminLoadOrderController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoadUserController</servlet-name>
-        <servlet-class>com.controllers.LoadUserController</servlet-class>
+        <servlet-name>AdminLoadUserController</servlet-name>
+        <servlet-class>com.controllers.AdminLoadUserController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogController</servlet-name>
@@ -32,24 +32,32 @@
         <servlet-class>com.controllers.blog.AdminGetSelectedBlogController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>AdminLoadProductController</servlet-name>
+        <servlet-class>com.controllers.AdminLoadProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadServiceController</servlet-name>
+        <servlet-class>com.controllers.LoadServiceController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>LoadProductController</servlet-name>
         <servlet-class>com.controllers.LoadProductController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LoadServiceController</servlet-name>
-        <url-pattern>/adminService</url-pattern>
+        <servlet-name>AdminLoadServiceController</servlet-name>
+        <url-pattern>/AdminService</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LoadProductController</servlet-name>
-        <url-pattern>/adminProduct</url-pattern>
+        <servlet-name>AdminLoadProductController</servlet-name>
+        <url-pattern>/AdminProduct</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LoadOrderController</servlet-name>
-        <url-pattern>/adminOrder</url-pattern>
+        <servlet-name>AdminLoadOrderController</servlet-name>
+        <url-pattern>/AdminOrder</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LoadUserController</servlet-name>
-        <url-pattern>/adminUser</url-pattern>
+        <servlet-name>AdminLoadUserController</servlet-name>
+        <url-pattern>/AdminUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>blogController</servlet-name>
@@ -66,6 +74,14 @@
     <servlet-mapping>
         <servlet-name>AdminGetSelectedBlogController</servlet-name>
         <url-pattern>/AdminGetSelectedBlogController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadServiceController</servlet-name>
+        <url-pattern>/services</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadProductController</servlet-name>
+        <url-pattern>/shopping</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

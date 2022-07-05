@@ -1,38 +1,38 @@
 package com.controllers;
 
-import com.DAO.UserDAO;
-import com.DTO.UserDTO;
-
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import com.DAO.ServiceDAO;
+import com.DTO.ServiceDTO;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "LoadUserController", value = "/LoadUserController")
-public class LoadUserController extends HttpServlet {
+@WebServlet(name = "LoadServiceController", value = "/LoadServiceController")
+public class AdminLoadServiceController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "adminUser.jsp";
+    private static final String SUCCESS = "adminService.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
 
         try {
-            List<UserDTO> listUser;
-            UserDAO userDAO = new UserDAO();
-            listUser = userDAO.getAll();
-            if (listUser != null) {
-                request.setAttribute("USER_LIST", listUser);
+            List<ServiceDTO> listService;
+            ServiceDAO serviceDAO = new ServiceDAO();
+            listService = serviceDAO.getAll();
+            if (listService != null) {
+                request.setAttribute("SERVICE_LIST", listService);
                 url = SUCCESS;
             }
         } catch (Exception e) {
-            log("Error at LoadUserController: " + e.toString());
+            log("Error at LoadServiceController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
     }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);

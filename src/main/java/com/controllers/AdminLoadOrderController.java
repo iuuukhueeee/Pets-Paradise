@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "LoadOrderController", value = "/LoadOrderController")
-public class LoadOrderController extends HttpServlet {
+public class AdminLoadOrderController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "adminOrder.jsp";

@@ -341,7 +341,7 @@ public class UserDAO {
                     String email = rs.getString("Email");
                     String phoneNumber = rs.getString("PhoneNumber");
                     String roleID = rs.getString("RoleID");
-                    UserDTO user = new UserDTO(username,name,password,email,phoneNumber,roleID);
+                    UserDTO user = new UserDTO(username,name,password,email,phoneNumber,roleID, "");
                     list.add(user);
                 }
             }
