@@ -169,16 +169,19 @@
             }
             for(ServiceDTO service: list){
           %>
+        <form method="post" action="MainController">
           <li class="table-row">
+            <input type="hidden" name="serviceID" value="<%= service.getServiceID()%>">
             <div class="col col-1" data-label="Number"><%= index++%></div>
             <div class="col col-2" data-label="Service"><%= service.getServiceName()%></div>
             <div class="col col-3" data-label="Price"><%= service.getServicePrice()%></div>
             <div class="col col-4" data-label="Description"><%= service.getServiceDescription()%></div>
             <div class="col col-5" data-label="Action">
               <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-              <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
+              <button type="submit" name="action" value="DeleteService"><i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i></button>
             </div>
           </li>
+        </form>
           <%
             }
           %>

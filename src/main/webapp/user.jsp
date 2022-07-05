@@ -29,7 +29,7 @@
 			return;
 		}
 	%>
-
+	<form action="MainController" method="post">
     <div class="container">
         <div class="main-body">
         
@@ -47,6 +47,7 @@
                   </div>
 
                 </div>
+
                 <div class="col-lg-9">
 					<div class="card">
 						<div class="card-body">
@@ -55,15 +56,15 @@
 									<h6 class="mb-0">Full Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<%=user.getName()%>">
+									<input type="text" class="form-control" value="<%=user.getName()%>" name="name">
 								</div>
 							</div>
-              <div class="row mb-3">
+							<div class="row mb-3">
 								<div class="col-sm-3">
 									<h6 class="mb-0">Username</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<%=user.getUsername()%>">
+									<input type="text" class="form-control" value="<%=user.getUsername()%>" name="userName">
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -71,7 +72,7 @@
 									<h6 class="mb-0">Email</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<%=user.getEmail()%>">
+									<input type="text" class="form-control" value="<%=user.getEmail()%>" name="email">
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -79,29 +80,31 @@
 									<h6 class="mb-0">Phone</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<%=user.getPhoneNumber()%>">
+									<input type="text" class="form-control" value="<%=user.getPhoneNumber()%>" name="phoneNumber">
 								</div>
 							</div>
-              <div class="row mb-3">
+             				 <div class="row mb-3">
 								<div class="col-sm-3">
 									<h6 class="mb-0">Password</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="password" class="form-control" value="">
+									<input type="password" class="form-control" value="" name="password">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-3"></div>
 								<div class="col-sm-9">
-									<button class="button">Update</button>
+									<button type="submit" name="action" value="UpdateUser" class="button">Update</button>
 								</div>
 							</div>
               
 						</div>
 					</div>
                 </div>
+
             </div>    
         </div>
     </div>
+	</form>
 </body>
 </html>
