@@ -11,6 +11,8 @@
   outline: none;
   border: none;
   font-size: 16px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: all 0.2s linear;
 }
@@ -19,18 +21,12 @@
 }
 
 body {
-  background-image: url("./img/back-log.jpg") !important;
+  background-image: url("../img/back-log.jpg") !important;
   background-size: cover;
-}
-
-.custom-box::-moz-placeholder {
-  font-size: 15px !important;
-}
-
-.custom-box:-ms-input-placeholder {
-  font-size: 15px !important;
 }
 
 .custom-box::placeholder {
   font-size: 15px !important;
-}/*# sourceMappingURL=register.css.map */
+}
+
+/*# sourceMappingURL=register.css.map */

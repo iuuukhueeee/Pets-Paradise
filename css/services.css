@@ -138,8 +138,7 @@ html {
   color: aliceblue;
   justify-content: center;
   background-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 1;
   max-width: 100%;
 }
@@ -171,16 +170,11 @@ html {
 }
 .carousell i {
   font-size: 40px;
-  -webkit-animation-name: bounce;
-          animation-name: bounce;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-delay: 0.2s;
 }
 
 .services .row .col {
@@ -324,4 +318,6 @@ footer .row .col .item .submit div input[type=submit]:hover {
 }
 .backToTop a:hover i {
   transform: rotate(180deg);
-}/*# sourceMappingURL=services.css.map */
+}
+
+/*# sourceMappingURL=services.css.map */
