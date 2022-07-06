@@ -5,7 +5,7 @@ name: Java CI Build Test
 
 on:
   push:
-    branches: [ main, merge_frontend ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -32,5 +32,9 @@ jobs:
         key: ${{ secrets.DEPLOY_SECRET }}
         port: 22
         script: |
-          ls
-          pwd
+          cd build
+          git pull origin main
+          mvn clean install
+          cp target/Pets_Paradise-1.0-SNAPSHOT.war /opt/tomcat/webapps
+          sudo systemctl restart tomcat
+          sudo systemctl is-active tomcat
