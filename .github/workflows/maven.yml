@@ -5,7 +5,7 @@ name: Java CI Build Test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, merge_frontend ]
   pull_request:
     branches: [ main ]
 
@@ -24,3 +24,12 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Deploy to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: 18.142.232.218
+        key: ${{ secrets.DEPLOY_SECRET }}
+        port: 22
+        script: |
+          ls
+          pwd
