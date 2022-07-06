@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Raleway";
 }
 
@@ -20,10 +21,12 @@ body {
   min-height: 100%;
   margin-top: 2rem;
 }
+
 body h1 {
   text-align: center;
   margin-bottom: 2u7rem;
   font-size: 2rem;
   font-weight: 900;
   color: #1d365e;
-}/*# sourceMappingURL=form.css.map */
+}
+/*# sourceMappingURL=form.css.map */
