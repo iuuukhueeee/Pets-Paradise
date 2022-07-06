@@ -10,26 +10,29 @@ import java.util.List;
 import java.util.UUID;
 
 public class OrderDAO {
-    private static final String CREATE= "INSERT INTO Orders(OrderID, OrderDate, Username, Status) VALUES(?,?,?,1)";
-    private static final String UPDATE= "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
-    private static final String DELETE= "UPDATE Orders SET Status=0 WHERE OrderID=?";
+    private static final String CREATE = "INSERT INTO Orders(OrderID, OrderDate, Username, Status) VALUES(?,?,?,2)";
+    private static final String UPDATE = "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
+    private static final String DELETE = "UPDATE Orders SET Status=0 WHERE OrderID=?";
     private static final String GET_ORDERS = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE status = 1 ";
     private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE Username LIKE ? AND Status = 1";
+    private static final String GET_BY_USERNAME = "SELECT OrderID, OrderDate FROM Orders WHERE Status=2 AND Username=?";
+    private static final String UPDATE_TOTAL = "UPDATE Orders SET Total=? WHERE OrderID=?";
+    private static final String CHECKOUT = "UPDATE Orders SET Status=1 WHERE OrderID=?";
 
 
-    public boolean deleteOrder(String OrderID) throws SQLException{
+    public boolean deleteOrder(String OrderID) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
 
-        try{
+        try {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(DELETE);
                 ptm.setString(1, OrderID);
                 check = ptm.executeUpdate() > 0;
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (ptm != null) {
@@ -46,27 +49,27 @@ public class OrderDAO {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
-        try{
+        try {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(UPDATE);
-                ptm.setString(1,order.getOrderID());
+                ptm.setString(1, order.getOrderID());
                 ptm.setDate(2, (Date) order.getOrderDate());
-                ptm.setString(3,order.getUsername());
-                ptm.setString(4,order.getFeedBackOrder());
+                ptm.setString(3, order.getUsername());
+                ptm.setString(4, order.getFeedBackOrder());
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(ptm != null){
+            if (ptm != null) {
                 ptm.close();
             }
-            if (conn != null){
+            if (conn != null) {
                 ptm.close();
             }
         }
-        return  check;
+        return check;
     }
 
 
@@ -75,26 +78,26 @@ public class OrderDAO {
         PreparedStatement ptm = null;
         String orderID;
         OrderDTO order = null;
-        try{
+        try {
             Date orderDate = new Date(DateUtils.now());
             UUID uuid = UUID.randomUUID();
             conn = DButils.getConnection();
             if (conn != null) {
-                orderID = "ORDER"+"-"+ uuid;
+                orderID = "ORDER-" + uuid;
                 ptm = conn.prepareStatement(CREATE);
-                ptm.setString(1,orderID);
-                ptm.setDate(2,orderDate);
-                ptm.setString(3,username);
+                ptm.setString(1, orderID);
+                ptm.setDate(2, orderDate);
+                ptm.setString(3, username);
                 boolean check = ptm.executeUpdate() > 0;
-                order = new OrderDTO(orderID,orderDate,username,"");
+                if (check) order = new OrderDTO(orderID, orderDate, username, "");
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(ptm != null){
+            if (ptm != null) {
                 ptm.close();
             }
-            if (conn != null){
+            if (conn != null) {
                 ptm.close();
             }
         }
@@ -118,7 +121,7 @@ public class OrderDAO {
                     Date orderDate = rs.getDate("OrderDate");
                     String username = rs.getString("Username");
                     String feedbackOrder = rs.getString("FeedbackOrder");
-                    OrderDTO order = new OrderDTO(orderID,orderDate,username,feedbackOrder);
+                    OrderDTO order = new OrderDTO(orderID, orderDate, username, feedbackOrder);
                     list.add(order);
                 }
             }
@@ -157,7 +160,7 @@ public class OrderDAO {
                     Date orderDate = rs.getDate("OrderDate");
                     String username = rs.getString("Username");
                     String feedbackOrder = rs.getString("FeedbackOrder");
-                    OrderDTO order = new OrderDTO(orderID,orderDate,username,feedbackOrder);
+                    OrderDTO order = new OrderDTO(orderID, orderDate, username, feedbackOrder);
                     orderList.add(order);
                 }
             }
@@ -175,5 +178,127 @@ public class OrderDAO {
             }
         }
         return orderList;
+    }
+
+
+    public OrderDTO getByID(String ID) throws SQLException {
+        OrderDTO order = null;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_ORDERS);
+                rs = ptm.executeQuery();
+
+                while (rs.next()) {
+                    String orderID = rs.getString("OrderID");
+                    Date orderDate = rs.getDate("OrderDate");
+                    String username = rs.getString("Username");
+                    String feedbackOrder = rs.getString("FeedbackOrder");
+                    order = new OrderDTO(orderID, orderDate, username, feedbackOrder);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+
+        return order;
+    }
+
+    public OrderDTO getByUsername(String username) throws SQLException {
+        OrderDTO order = null;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_BY_USERNAME);
+                ptm.setString(1, username);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    String id = rs.getString("OrderID");
+                    Date orderDate = rs.getDate("OrderDate");
+                    order = new OrderDTO(id, orderDate, username, "");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return order;
+    }
+
+
+    public boolean updateTotal(String orderID, float total) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(UPDATE_TOTAL);
+                ptm.setFloat(1, total);
+                ptm.setString(2, orderID);
+                check = ptm.executeUpdate() > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                ptm.close();
+            }
+        }
+        return check;
+    }
+
+    public boolean checkout(String orderID) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(CHECKOUT);
+                ptm.setString(1, orderID);
+                check = ptm.executeUpdate() > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                ptm.close();
+            }
+        }
+        return check;
     }
 }

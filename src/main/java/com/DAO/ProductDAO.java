@@ -14,7 +14,7 @@ import java.util.List;
 import com.utils.*;
 
 public class ProductDAO {
-    private static final String UPDATE_QUANTITY_ON_HAND = "UPDATE Product SET Quantity= Quantity - ? where ProductID=?";
+    private static final String UPDATE_QUANTITY_ON_HAND = "UPDATE Product SET Quantity=Quantity - ? WHERE ProductID=?";
     private static final String DELETE = "UPDATE Product SET Status=0 WHERE ProductID=?";
     private static final String CHECK_DUPLICATE = "SELECT Name FROM Product WHERE ProductID=?";
     private static final String ADD = "INSERT INTO Product(ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)";
@@ -23,7 +23,7 @@ public class ProductDAO {
     private static final String UPDATE = "UPDATE Product SET ProductCategoryID=?, Name=?, Quantity=?, Image=?, Price=?, ImportDate=?, ExpiredDate=? WHERE ProductID=?";
     private static final String GET_BY_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
 
-    public boolean updateQuantity(String productID, CartDTO cart) throws SQLException {
+    public boolean updateQuantity(String productID, int quantity) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -31,7 +31,7 @@ public class ProductDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(UPDATE_QUANTITY_ON_HAND);
-                ptm.setInt(1, cart.getQuantity());
+                ptm.setInt(1, quantity);
                 ptm.setString(2, productID);
                 check = ptm.executeUpdate() > 0;
             }

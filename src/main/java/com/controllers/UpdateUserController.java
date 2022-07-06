@@ -26,7 +26,7 @@ public class UpdateUserController extends HttpServlet {
             String phoneNumber = request.getParameter("phoneNumber");
 
             UserDAO dao = new UserDAO();
-            UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US", "");
+            UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US");
             boolean checkUpdate = dao.updateUser(user);
             if (checkUpdate) {
                 url = SUCCESS;

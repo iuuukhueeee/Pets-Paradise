@@ -67,7 +67,7 @@ public class SignupController extends HttpServlet {
 
 
             if (validation) {
-                UserDTO user = new UserDTO(username, name, password, email, phoneNumber, "US", "");
+                UserDTO user = new UserDTO(username, name, password, email, phoneNumber, "US");
                 boolean checkCreate = dao.createUser(user);
                 if (checkCreate) url = SUCCESS;
             } else {

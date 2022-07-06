@@ -15,7 +15,7 @@ public class BlogDAO {
     private static final String UPDATE_BLOG = "UPDATE Blog SET Author = ?, AuthorAvatar = ?, WrittenDate = ?, BlogTitle = ?, BlogContent = ?, BlogDescription = ? WHERE BlogID = ?";
     private static final String LOAD_ALL = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE Status=1";
     private static final String COUNT = "SELECT COUNT(*) AS NUM FROM Blog";
-    private static final String CREATE_BLOG = "INSERT INTO Blog(BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription, Status) VALUES(?, ?,?,?,?,?,?,1)";
+    private static final String CREATE_BLOG = "INSERT INTO Blog(BlogID, Author, WrittenDate, BlogTitle, BlogContent, BlogDescription, Status) VALUES(?,?,?,?,?,?,1)";
     private static final String DELETE_BLOG = "UPDATE Blog SET Status=0 WHERE BlogID=?";
 
     public BlogDTO loadByID(String id) throws SQLException {
@@ -195,11 +195,10 @@ public class BlogDAO {
                 ptm = conn.prepareStatement(CREATE_BLOG);
                 ptm.setString(1, id);
                 ptm.setString(2, user.getName());
-                ptm.setString(3, user.getAvatar());
-                ptm.setDate(4, new Date(System.currentTimeMillis()));
-                ptm.setString(5, title);
-                ptm.setString(6, content);
-                ptm.setString(7, description);
+                ptm.setDate(3, new Date(System.currentTimeMillis()));
+                ptm.setString(4, title);
+                ptm.setString(5, content);
+                ptm.setString(6, description);
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {

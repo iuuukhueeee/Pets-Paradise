@@ -1,8 +1,7 @@
 package com.controllers;
 
-import com.DAO.CartDAO;
-import com.DTO.CartDTO;
-import com.DTO.UserDTO;
+import com.DAO.*;
+import com.DTO.*;
 import org.apache.commons.io.FileUtils;
 
 import javax.servlet.ServletContext;
@@ -13,42 +12,68 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Paths;
+import java.util.Map;
 
 @WebServlet(name = "AddToCartController", value = "/AddToCartController")
 public class AddToCartController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "services";
-
-    private static final String RETURN_LOGIN = "login.jsp";
     private static final String INSERT_PET_INFO = "InfoInputController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
 
         try {
+            OrderDAO orderDAO = new OrderDAO();
+            OrderDTO order = null;
 
-            HttpSession session = request.getSession();
+            OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
+
+            ProductDAO productDAO = new ProductDAO();
+
+            ServiceDAO serviceDAO = new ServiceDAO();
+            ServiceDTO service;
+            HttpSession session = request.getSession(false);
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
             if (user == null) {
-                url = RETURN_LOGIN;
                 request.setAttribute("ERROR", "Please Login to use this function!");
-                response.sendRedirect("login.jsp");
-                return;
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-            CartDTO cart;
-            CartDAO addCart = new CartDAO();
 
             String ID = request.getParameter("ID");
             String[] itemTypeID = ID.split("-");
 
+//            String ordered = (String) session.getAttribute("ORDERED");
+//            if (ordered == null) {
+//                order = orderDAO.createOrder(user.getUsername());
+//                session.setAttribute("ORDERED", order.getOrderID());
+//            } else {
+//                order = orderDAO.getByID(ordered);
+//            }
+//
+//
+
+            order = orderDAO.getByUsername(user.getUsername());
+            if (order == null) {
+                orderDAO.createOrder(user.getUsername());
+                order = orderDAO.getByUsername(user.getUsername());
+            }
+
+
             if (itemTypeID[0].equals("PRODUCT")) {
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
-                cart = new CartDTO(user.getUsername(), ID, true, quantity);
-                if (addCart.addToCart(cart)) {
-                    request.setAttribute("MESSAGE", "Added Successfully");
+
+                if (orderDetailDAO.checkItemDuplicate(ID, order.getOrderID())) {
+                    orderDetailDAO.addMoreQuantity(ID, order.getOrderID(), quantity);
+                } else {
+                    ProductDTO product = productDAO.getByID(ID);
+                    if (orderDetailDAO.createOrderDetail(order, product, quantity)) {
+                        request.setAttribute("MESSAGE", "Added Successfully");
+                    }
                 }
             } else if (itemTypeID[0].equals("SERVICE")) {
+                service = serviceDAO.getByID(ID);
 
                 //HANDLE SAVE IMAGE
                 Part filePart = request.getPart("picture");
@@ -60,10 +85,16 @@ public class AddToCartController extends HttpServlet {
                 File targetFile = new File(savePath + hashedFileName + ".png");
                 FileUtils.copyInputStreamToFile(fileContent, targetFile);
                 request.setAttribute("IMG_URL", relativePath + hashedFileName + ".png");
+
+                //HANDLE USER'S INPUT
+
+                String bookingTime = request.getParameter("bookingTime");
                 url = INSERT_PET_INFO;
                 request.getRequestDispatcher(url).include(request, response);
-                cart = new CartDTO(user.getUsername(), ID, true, 1);
-                if (addCart.addToCart(cart)) {
+
+                Map<String, PetDTO> petInfo = (Map<String, PetDTO>) session.getAttribute("PET_INFO");
+
+                if (orderDetailDAO.createOrderDetail(order, service, 1, bookingTime, petInfo.get(ID).getPetID())) {
                     request.setAttribute("MESSAGE", "Added Successfully");
                 }
             }
