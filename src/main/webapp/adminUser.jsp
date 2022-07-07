@@ -177,7 +177,9 @@
             }
             for(UserDTO user: list){
           %>
+        <form method="post" action="MainController">
           <li class="table-row">
+            <input type="hidden" name="userName" value="<%= user.getUsername()%>">
             <div class="col col-1" data-label="Number"><%= index++%></div>
             <div class="col col-2" data-label="User"><%= user.getName() %></div>
             <div class="col col-3" data-label="Email"><%= user.getEmail() %></div>
@@ -185,9 +187,10 @@
             <div class="col col-5" data-label="RoleID"><%= user.getRoleID() %></div>
             <div class="col col-6" data-label="Action">
               <i class="fa-solid fa-arrow-up" style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-              <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
+              <button type="submit" name="action" value="DeleteUser"><i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i></button>
             </div>
           </li>
+        </form>
           <%
             }
           %>

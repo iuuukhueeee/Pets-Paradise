@@ -169,7 +169,10 @@ public class ProductDAO {
                     String image = rs.getString("Image");
                     float price = Float.parseFloat(rs.getString("Price"));
                     Date importDate = ValidUtils.isValidDate(rs.getString("ImportDate"));
-                    Date expiredDate = ValidUtils.isValidDate(rs.getString("ExpiredDate"));
+                    Date expiredDate = null;
+                    if (!"CATEGORY-003".equals(productCategoryID) && !"CATEGORY-004".equals(productCategoryID) && !"CATEGORY-005".equals(productCategoryID)) {
+                        expiredDate = ValidUtils.isValidDate(rs.getString("ExpiredDate"));
+                    }
                     ProductDTO product = new ProductDTO(productID, productCategoryID, productName, quantity, image, price, importDate,
                             expiredDate);
                     productList.add(product);

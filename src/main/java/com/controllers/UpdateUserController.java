@@ -6,14 +6,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.DAO.UserDAO;
 import com.DTO.UserDTO;
 
 @WebServlet(name = "UpdateUserController", value = "/UpdateUserController")
 public class UpdateUserController extends HttpServlet {
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "admin_user.jsp";
-
+    private static final String SUCCESS_AD = "adminUser.jsp";
+    private static final String SUCCESS_US = "user.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -29,7 +31,15 @@ public class UpdateUserController extends HttpServlet {
             UserDTO user = new UserDTO(userName, name, password, email, phoneNumber, "US");
             boolean checkUpdate = dao.updateUser(user);
             if (checkUpdate) {
-                url = SUCCESS;
+                HttpSession session = request.getSession();
+                UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
+
+                if (loginUser.getRoleID().equals("US")) {
+                    session.setAttribute("LOGIN_USER", user);
+                    url = SUCCESS_US;
+                } else if (loginUser.getRoleID().equals("AD")) {
+                    url = SUCCESS_AD;
+                }
             }
 
         } catch (Exception e) {

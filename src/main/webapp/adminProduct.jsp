@@ -185,7 +185,9 @@
                     }
                     for(ProductDTO product: list){
                 %>
+            <form method="post" action="MainController">
                 <li class="table-row">
+                    <input type="hidden" name="productID" value="<%= product.getProductID()%>">
                     <div class="col col-1" data-label="Number"><%= index++ %></div>
                     <div class="col col-2" data-label="Product"><%= product.getName() %></div>
                     <div class="col col-3" data-label="Price"><%= product.getPrice() %></div>
@@ -200,9 +202,10 @@
                     <div class="col col-9" data-label="Action">
                         <i class="fa-solid fa-arrow-up"
                            style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-                        <i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i>
+                        <button type="submit" name="action" value="DeleteProduct"><i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i></button>
                     </div>
                 </li>
+            </form>
                 <%
                     }
                 %>
