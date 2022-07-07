@@ -1,13 +1,8 @@
-<%@ page import="com.DTO.UserDTO" %>
-<%@ page import="com.DAO.CartDAO" %>
-<%@ page import="com.DAO.ProductDAO" %>
-<%@ page import="com.DTO.ProductDTO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.checkout.ItemDetails" %>
-<%@ page import="com.DTO.CartDTO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.DTO.ServiceDTO" %>
-<%@ page import="com.DAO.ServiceDAO" %>
+<%@ page import="com.DTO.*" %>
+<%@ page import="com.DAO.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,23 +34,28 @@
         response.sendRedirect("login.jsp");
         return;
     }
-    CartDAO cartDAO = new CartDAO();
     ProductDAO productDAO = new ProductDAO();
     ServiceDAO serviceDAO = new ServiceDAO();
     ProductDTO product;
     ServiceDTO service;
     List<ItemDetails> list = new ArrayList<>();
-    List<CartDTO> cart = cartDAO.getByUsername(user.getUsername());
-    if (cart.size() > 0 && cart != null) {
-        for (int i = 0; i < cart.size(); i++) {
-            String itemID = cart.get(i).getItemID();
-            String itemTypeID = itemID.split("-")[0];
-            if ("PRODUCT".equals(itemTypeID)) {
-                product = productDAO.getByID(itemID);
-                list.add(new ItemDetails(product.getImage(), product.getName(), cart.get(i).getQuantity(), product.getPrice()));
-            } else if ("SERVICE".equals(itemTypeID)) {
-                service = serviceDAO.getByID(itemID);
-                list.add(new ItemDetails("", service.getServiceName(), 1, service.getServicePrice()));
+
+    OrderDAO orderDAO = new OrderDAO();
+    OrderDTO order = orderDAO.getByUsername(user.getUsername());
+    if (order != null) {
+        OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
+        List<OrderDetailDTO> cart = orderDetailDAO.getByOrderID(order.getOrderID());
+        if (cart.size() > 0 && cart != null) {
+            for (int i = 0; i < cart.size(); i++) {
+                String itemID = cart.get(i).getItemID();
+                String itemTypeID = itemID.split("-")[0];
+                if ("PRODUCT".equals(itemTypeID)) {
+                    product = productDAO.getByID(itemID);
+                    list.add(new ItemDetails(product.getImage(), product.getName(), cart.get(i).getQuantity(), product.getPrice()));
+                } else if ("SERVICE".equals(itemTypeID)) {
+                    service = serviceDAO.getByID(itemID);
+                    list.add(new ItemDetails("", service.getServiceName(), 1, service.getServicePrice()));
+                }
             }
         }
     }
@@ -147,7 +147,7 @@
                         </div>
                         <div class="flex justify-center w-1/5">
                             <div class="qty">
-                                <input type="number" class="count" name="qty" value="<%=item.getQuantity()%>" min="0"
+                                <input type="number" class="count" name="qty" value="<%=item.getQuantity()%>" min="1"
                                        style="width: 80px;height: 60px;">
                             </div>
                         </div>

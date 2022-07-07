@@ -10,13 +10,14 @@ import java.util.UUID;
 
 public class BlogDAO {
 
-    private static final String LOAD_BLOG_BY_ID = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE BlogID LIKE ? AND Status=1";
-    private static final String LOAD_BLOG_TEMPLATE = "SELECT BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogDescription FROM Blog WHERE Status=1 ORDER BY RAND() LIMIT 3";
-    private static final String UPDATE_BLOG = "UPDATE Blog SET Author = ?, AuthorAvatar = ?, WrittenDate = ?, BlogTitle = ?, BlogContent = ?, BlogDescription = ? WHERE BlogID = ?";
+    private static final String LOAD_BLOG_BY_ID = "SELECT BlogID, Author, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE BlogID=? AND Status=1";
+    private static final String LOAD_BLOG_TEMPLATE = "SELECT BlogID, Author, WrittenDate, BlogTitle, BlogDescription FROM Blog WHERE Status=1 ORDER BY RAND() LIMIT 3";
+    private static final String UPDATE_BLOG = "UPDATE Blog SET Author = ?, WrittenDate = ?, BlogTitle = ?, BlogContent = ?, BlogDescription = ? WHERE BlogID = ?";
     private static final String LOAD_ALL = "SELECT BlogID, Author, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE Status=1";
     private static final String COUNT = "SELECT COUNT(*) AS NUM FROM Blog";
-    private static final String CREATE_BLOG = "INSERT INTO Blog(BlogID, Author, AuthorAvatar, WrittenDate, BlogTitle, BlogContent, BlogDescription, Status) VALUES(?, ?,?,?,?,?,?,1)";
+    private static final String CREATE_BLOG = "INSERT INTO Blog(BlogID, Author, WrittenDate, BlogTitle, BlogContent, BlogDescription, Status) VALUES(?,?,?,?,?,?,1)";
     private static final String DELETE_BLOG = "UPDATE Blog SET Status=0 WHERE BlogID=?";
+    private static final String SEARCH_BLOG = "SELECT BlogID, Author, WrittenDate, BlogTitle, BlogContent, BlogDescription FROM Blog WHERE BlogTitle LIKE ? AND Status=1";
 
     public BlogDTO loadByID(String id) throws SQLException {
         BlogDTO blog = null;
@@ -33,12 +34,11 @@ public class BlogDAO {
                 if (rs.next()) {
                     String blogID = rs.getString("BlogID");
                     String author = rs.getString("Author");
-                    String authorAvatar = rs.getString("AuthorAvatar");
                     String writtenDate = rs.getString("WrittenDate");
                     String blogTitle = rs.getString("BlogTitle");
                     String blogContent = rs.getString("BlogContent");
                     String blogDescription = rs.getString("BlogDescription");
-                    blog = new BlogDTO(blogID, author, authorAvatar, writtenDate, blogTitle, blogContent, blogDescription);
+                    blog = new BlogDTO(blogID, author, writtenDate, blogTitle, blogContent, blogDescription);
                 }
             }
         } catch (Exception e) {
@@ -66,12 +66,11 @@ public class BlogDAO {
                 while (rs.next()) {
                     String blogID = rs.getString("BlogID");
                     String author = rs.getString("Author");
-                    String authorAvatar = rs.getString("AuthorAvatar");
                     String writtenDate = rs.getString("WrittenDate");
                     String blogTitle = rs.getString("BlogTitle");
                     String blogContent = rs.getString("BlogContent");
                     String blogDescription = rs.getString("BlogDescription");
-                    listBlog.add(new BlogDTO(blogID, author, authorAvatar, writtenDate, blogTitle, blogContent, blogDescription));
+                    listBlog.add(new BlogDTO(blogID, author, writtenDate, blogTitle, blogContent, blogDescription));
                 }
             }
         } catch (Exception e) {
@@ -98,11 +97,10 @@ public class BlogDAO {
                 while (rs.next()) {
                     String blogID = rs.getString("BlogID");
                     String author = rs.getString("Author");
-                    String authorAvatar = rs.getString("AuthorAvatar");
                     String writtenDate = rs.getString("WrittenDate");
                     String blogTitle = rs.getString("BlogTitle");
                     String blogDescription = rs.getString("BlogDescription");
-                    listBlogTemplate.add(new BlogDTO(blogID, author, authorAvatar, writtenDate, blogTitle, "", blogDescription));
+                    listBlogTemplate.add(new BlogDTO(blogID, author, writtenDate, blogTitle, "", blogDescription));
                 }
             }
         } catch (Exception e) {
@@ -126,12 +124,11 @@ public class BlogDAO {
             if (conn != null) {
                 ptm = conn.prepareStatement(UPDATE_BLOG);
                 ptm.setString(1, user.getName());
-                ptm.setString(2, "");
-                ptm.setDate(3, new Date(System.currentTimeMillis()));
-                ptm.setString(4, title);
-                ptm.setString(5, content);
-                ptm.setString(6, description);
-                ptm.setString(7, ID);
+                ptm.setDate(2, new Date(System.currentTimeMillis()));
+                ptm.setString(3, title);
+                ptm.setString(4, content);
+                ptm.setString(5, description);
+                ptm.setString(6, ID);
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {
@@ -157,12 +154,11 @@ public class BlogDAO {
                 while (rs.next()) {
                     String blogID = rs.getString("BlogID");
                     String author = rs.getString("Author");
-                    String authorAvatar = rs.getString("AuthorAvatar");
                     String writtenDate = rs.getString("WrittenDate");
                     String blogTitle = rs.getString("BlogTitle");
                     String blogContent = rs.getString("BlogContent");
                     String blogDescription = rs.getString("BlogDescription");
-                    listBlog.add(new BlogDTO(blogID, author, authorAvatar, writtenDate, blogTitle, blogContent, blogDescription));
+                    listBlog.add(new BlogDTO(blogID, author, writtenDate, blogTitle, blogContent, blogDescription));
                 }
             }
         } catch (Exception e) {
@@ -230,5 +226,37 @@ public class BlogDAO {
             if (conn != null) conn.close();
         }
         return check;
+    }
+
+    public List<BlogDTO> search (String search) throws SQLException {
+        List<BlogDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(SEARCH_BLOG);
+                ptm.setString(1, "%" + search + "%");
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    String blogID = rs.getString("BlogID");
+                    String author = rs.getString("Author");
+                    String writtenDate = rs.getString("WrittenDate");
+                    String blogTitle = rs.getString("BlogTitle");
+                    String blogContent = rs.getString("BlogContent");
+                    String blogDescription = rs.getString("BlogDescription");
+                    list.add(new BlogDTO(blogID, author, writtenDate, blogTitle, blogContent, blogDescription));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
+        return list;
     }
 }

@@ -66,6 +66,8 @@ public class MainController extends HttpServlet {
     private static final String UPLOAD_BLOG_CONTROLLER = "UploadBlogController";
     private static final String DELETE_BLOG = "DeleteBlog";
     private static final String DELETE_BLOG_CONTROLLER = "DeleteBlogController";
+    private static final String SEARCH_BLOG = "SearchBlog";
+    private static final String SEARCH_BLOG_CONTROLLER = "SearchBlogController";
 
     //    ================= ADMIN ===============
     private static final String SEARCH_ORDER = "searchOrder";
@@ -134,6 +136,8 @@ public class MainController extends HttpServlet {
                 url = UPLOAD_BLOG_CONTROLLER;
             } else if (DELETE_BLOG.equals(action)) {
                 url = DELETE_BLOG_CONTROLLER;
+            } else if (SEARCH_BLOG.equals(action)) {
+                url = SEARCH_BLOG_CONTROLLER;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());

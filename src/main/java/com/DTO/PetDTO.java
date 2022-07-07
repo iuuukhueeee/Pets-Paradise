@@ -1,37 +1,25 @@
 package com.DTO;
 
-import java.util.Date;
-
 public class PetDTO {
     private String petID;
+    private String username;
     private String animalID;
-    private String orderDetailID;
     private String animalName;
     private int animalAge;
     private String animalPicture;
     private String animalDescription;
-    private Date bookingTime;
 
-    public PetDTO(){
-        this.petID = "";
-        this.animalID = "";
-        this.orderDetailID = "";
-        this.animalName = "";
-        this.animalAge = 0;
-        this.animalPicture = "";
-        this.animalDescription = "";
-        this.bookingTime = null;
+    public PetDTO() {
     }
 
-    public PetDTO(String petID, String animalID, String orderDetailID, String animalName, int animalAge, String animalPicture, String animalDescription, Date bookingTime){
+    public PetDTO(String petID, String username, String animalID, String animalName, int animalAge, String animalPicture, String animalDescription) {
         this.petID = petID;
+        this.username = username;
         this.animalID = animalID;
-        this.orderDetailID = orderDetailID;
         this.animalName = animalName;
         this.animalAge = animalAge;
         this.animalPicture = animalPicture;
         this.animalDescription = animalDescription;
-        this.bookingTime = bookingTime;
     }
 
     public String getPetID() {
@@ -42,20 +30,20 @@ public class PetDTO {
         this.petID = petID;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getAnimalID() {
         return animalID;
     }
 
     public void setAnimalID(String animalID) {
         this.animalID = animalID;
-    }
-
-    public String getOrderDetailID() {
-        return orderDetailID;
-    }
-
-    public void setOrderDetailID(String orderDetailID) {
-        this.orderDetailID = orderDetailID;
     }
 
     public String getAnimalName() {
@@ -88,13 +76,5 @@ public class PetDTO {
 
     public void setAnimalDescription(String animalDescription) {
         this.animalDescription = animalDescription;
-    }
-
-    public Date getBookingTime() {
-        return bookingTime;
-    }
-
-    public void setBookingTime(Date bookingTime) {
-        this.bookingTime = bookingTime;
     }
 }

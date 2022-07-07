@@ -10,31 +10,25 @@ import java.sql.SQLException;
 import java.util.UUID;
 
 public class PetDAO {
-    private static final String CREATE= "INSERT INTO Pet(PetID, AnimalID, OrderDetailID, AnimalName, AnimalAge, AnimalPicture, AnimalDescription, BookingTime) VALUES(?,?,?,?,?,?,?,?)";
+    private static final String CREATE= "INSERT INTO Pet(PetID, Username, AnimalID, AnimalName, AnimalAge, AnimalPicture, AnimalDescription, Saved, Status) VALUES(?,?,?,?,?,?,?,?,1)";
 
 
-    public boolean addPetInfo(PetDTO pet) throws SQLException {
+    public boolean addPetInfo(PetDTO pet, boolean saved) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
-        String petID = "";
-        java.util.Date getDate = pet.getBookingTime();
-        Date bookingTime = null;
         try{
-            UUID uuid = UUID.randomUUID();
             conn = DButils.getConnection();
             if (conn != null) {
-                petID = "PET"+"-"+uuid.toString();
-                bookingTime = new Date(getDate.getTime());
                 ptm = conn.prepareStatement(CREATE);
-                ptm.setString(1,petID);
-                ptm.setString(2,pet.getAnimalID());
-                ptm.setString(3,pet.getOrderDetailID());
+                ptm.setString(1,pet.getPetID());
+                ptm.setString(2,pet.getUsername());
+                ptm.setString(3,pet.getAnimalID());
                 ptm.setString(4,pet.getAnimalName());
                 ptm.setInt(5,pet.getAnimalAge());
                 ptm.setString(6,pet.getAnimalPicture());
                 ptm.setString(7,pet.getAnimalDescription());
-                ptm.setDate(8,bookingTime);
+                ptm.setBoolean(8, saved);
                 check = ptm.executeUpdate() > 0;
             }
         } catch (Exception e) {

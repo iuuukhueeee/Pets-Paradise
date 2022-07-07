@@ -1,5 +1,7 @@
 package com.DTO;
 
+import java.sql.Date;
+
 public class OrderDetailDTO {
 
     private String orderDetailID;
@@ -7,24 +9,20 @@ public class OrderDetailDTO {
     private String orderID;
     private String itemID;
     private int quantity;
+    private String petID;
+    private Date bookingTime;
 
-    public OrderDetailDTO(){
-        this.orderDetailID = "";
-        this.orderDetailPrice = 0;
-        this.orderID = "";
-        this.itemID = "";
-        this.quantity = 0;
+    public OrderDetailDTO() {
     }
 
-
-
-    public OrderDetailDTO(String orderDetailID, float orderDetailPrice, String orderID, String itemID,int quantity){
+    public OrderDetailDTO(String orderDetailID, float orderDetailPrice, String orderID, String itemID, int quantity, String petID, Date bookingTime) {
         this.orderDetailID = orderDetailID;
         this.orderDetailPrice = orderDetailPrice;
         this.orderID = orderID;
         this.itemID = itemID;
         this.quantity = quantity;
-
+        this.petID = petID;
+        this.bookingTime = bookingTime;
     }
 
     public String getOrderDetailID() {
@@ -65,5 +63,21 @@ public class OrderDetailDTO {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getPetID() {
+        return petID;
+    }
+
+    public void setPetID(String petID) {
+        this.petID = petID;
+    }
+
+    public Date getBookingTime() {
+        return bookingTime;
+    }
+
+    public void setBookingTime(Date bookingTime) {
+        this.bookingTime = bookingTime;
     }
 }

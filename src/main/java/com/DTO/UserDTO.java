@@ -27,7 +27,6 @@ public class UserDTO {
         this.phoneNumber = phoneNumber;
     }
 
-
     public String getName() {
         return name;
     }
