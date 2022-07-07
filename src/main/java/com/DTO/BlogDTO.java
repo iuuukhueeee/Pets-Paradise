@@ -3,7 +3,6 @@ package com.DTO;
 public class BlogDTO {
     private String blogID;
     private String author;
-    private String authorAvatar;
     private String writtenDate;
     private String blogTitle;
     private String blogContent;
@@ -12,17 +11,15 @@ public class BlogDTO {
     public BlogDTO() {
         this.blogID = "";
         this.author = "";
-        this.authorAvatar = "";
         this.writtenDate = "";
         this.blogTitle = "";
         this.blogContent = "";
         this.blogDescription = "";
     }
 
-    public BlogDTO(String blogID, String author, String authorAvatar, String writtenDate, String blogTitle, String blogContent, String blogDescription) {
+    public BlogDTO(String blogID, String author, String writtenDate, String blogTitle, String blogContent, String blogDescription) {
         this.blogID = blogID;
         this.author = author;
-        this.authorAvatar = authorAvatar;
         this.writtenDate = writtenDate;
         this.blogTitle = blogTitle;
         this.blogContent = blogContent;
@@ -43,14 +40,6 @@ public class BlogDTO {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public String getAuthorAvatar() {
-        return authorAvatar;
-    }
-
-    public void setAuthorAvatar(String authorAvatar) {
-        this.authorAvatar = authorAvatar;
     }
 
     public String getWrittenDate() {

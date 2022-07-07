@@ -18,7 +18,7 @@ public class OrderDetailDAO {
     private static final String CREATE_PRODUCT = "INSERT INTO OrderDetail(OrderDetailID, OrderDetailPrice, OrderID, ItemID, Quantity, Status) VALUES(?,?,?,?,?,2)";
     private static final String CREATE_SERVICE = "INSERT INTO OrderDetail(OrderDetailID, OrderDetailPrice, OrderID, ItemID, Quantity, PetID, BookingTime, Status) VALUES(?,?,?,?,?,?,?,2)";
     private static final String GET_BY_ORDERID = "SELECT OrderDetailID, OrderDetailPrice, ItemID, Quantity, PetID, BookingTime FROM OrderDetail WHERE OrderID=? AND Status=2";
-    private static final String CHECK_DUPLICATE = "SELECT ItemID=? FROM OrderDetail WHERE OrderID=? AND Status=2";
+    private static final String CHECK_DUPLICATE = "SELECT COUNT(*) AS NUM FROM OrderDetail WHERE OrderID=? AND ItemID=? AND Status=2";
     private static final String UPDATE_QUANTITY = "UPDATE OrderDetail SET Quantity=Quantity + ? WHERE ItemID=? AND OrderID=? AND Status=2";
     private static final String CHECKOUT = "UPDATE OrderDetail SET Status=1 WHERE OrderID=?";
 
@@ -134,10 +134,13 @@ public class OrderDetailDAO {
             conn = DButils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(CHECK_DUPLICATE);
-                ptm.setString(1, itemID);
-                ptm.setString(2, orderID);
+                ptm.setString(1, orderID);
+                ptm.setString(2, itemID);
                 rs = ptm.executeQuery();
-                if (rs.next()) check = true;
+                if (rs.next()) {
+                    int num = Integer.parseInt(rs.getString("NUM"));
+                    if (num > 0) check = true;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

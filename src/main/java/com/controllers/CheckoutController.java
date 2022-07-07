@@ -3,6 +3,7 @@ package com.controllers;
 import com.DAO.*;
 
 import com.DTO.*;
+import com.utils.EmailUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +42,8 @@ public class CheckoutController extends HttpServlet {
 
             float total = 0;
 
+            String orderTable = "";
+
             for (OrderDetailDTO orderDetail: list) {
                 String itemID = orderDetail.getItemID();
                 if ("PRODUCT".equals(itemID.split("-")[0])) {
@@ -49,6 +52,10 @@ public class CheckoutController extends HttpServlet {
                         outOfStock.add(orderDetail);
                     } else {
                         total += orderDetail.getOrderDetailPrice() * orderDetail.getQuantity();
+                        orderTable += "<tr><td>" + product.getName() + "</td><td>"
+                                + orderDetail.getOrderDetailPrice()
+                                + "</td><td>" + orderDetail.getQuantity()
+                                + "</td><td>" + orderDetail.getQuantity() * orderDetail.getOrderDetailPrice() + "</td></tr>";
                         productDAO.updateQuantity(itemID, orderDetail.getQuantity());
                     }
                 } else if ("SERVICE".equals(itemID.split("-")[0])) {
@@ -58,6 +65,15 @@ public class CheckoutController extends HttpServlet {
 
             if (orderDAO.updateTotal(order.getOrderID(), total)) {
                 if (orderDAO.checkout(order.getOrderID())) {
+
+                    String emailContent = "<html>" +
+                            "<h1>Thank you for buying</h1>" +
+                            "<table><tr><th>Name</th><th>Price</th><th>Quantity</th><th>Total</th></tr>" + orderTable +
+                            "</table>" +
+                            "</html>";
+
+                    EmailUtils.sendConfirmOrder(order.getOrderID(), user.getEmail(), emailContent);
+
                     orderDetailDAO.checkout(order.getOrderID());
                     url = SUCCESS;
                 }

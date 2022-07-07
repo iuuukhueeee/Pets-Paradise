@@ -55,10 +55,16 @@
                 <br>
                 <div class="searchBar col-md-12">
 
+                    <%
+                        String search = request.getParameter("search");
+                        if (search == null) search = "";
+                    %>
+
                     <div class="form">
                         <form action="MainController" method="POST">
-                            <input type="text" class="form-control form-input" placeholder="Search..." name="name">
-                            <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"><button type="submit" name="action" value="SearchBlog"></button></i></span>
+                            <input type="text" class="form-control form-input" placeholder="Search..." name="search" value="<%=search%>">
+                            <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <button type="submit" name="action" value="SearchBlog">SEARCH</button>
                         </form>
                     </div>
                     <div></div>
@@ -168,7 +174,8 @@
                         <div class="col col-6">Action</div>
                     </li>
 
-                    <c:set var="blog" value="${requestScope['LIST_BLOG']}"/>
+<%--                    <c:set var="blog" value="${requestScope['LIST_BLOG']}"/>--%>
+                    <c:set var="blog" value="${requestScope['SEARCH']}"/>
                     <c:forEach var="i" items="${blog}" varStatus="loop">
                         <li class="table-row">
                             <div class="col col-1" data-label="Number">${loop.count}</div>
