@@ -65,8 +65,13 @@
                 <form method="post" action="MainController">
                     <div class="form">
                         <input type="text" class="form-control form-input" placeholder="Search..." name="searchProduct">
-                        <input type="submit" name="action" value="searchProduct">
-                        <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
+<%--                        <input type="submit" name="action" value="searchProduct">--%>
+
+                        <span class="left-pan btn ">
+                            <button name="action" value="searchProduct">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </span>
                     </div>
                 </form>
                 <div></div>

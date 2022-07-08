@@ -6,6 +6,8 @@ import com.DAO.ShopServiceDetailDAO;
 import com.DTO.ServiceDTO;
 import com.DTO.ShopDTO;
 import com.DTO.ShopServiceDetailDTO;
+import com.DTO.UserDTO;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -22,6 +24,12 @@ public class GetSupportedShopController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         try {
+            UserDTO user = (UserDTO) request.getAttribute("LOGIN_USER");
+            if (user == null) {
+                request.setAttribute("ERROR", "You need to login");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+
             ServiceDAO serviceDAO = new ServiceDAO();
             ShopDAO shopDAO = new ShopDAO();
             ShopServiceDetailDAO serviceDetailDAO = new ShopServiceDetailDAO();

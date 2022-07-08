@@ -12,26 +12,24 @@ import java.util.List;
 @WebServlet(name = "SearchBlogController", value = "/SearchBlogController")
 public class SearchBlogController extends HttpServlet {
 
-    private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "AdminBlog";
+    private static final String ERROR = "adminBlog.jsp";
+    private static final String SUCCESS = "adminBlog.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         String url = ERROR;
+        String url = ERROR;
 
-         try {
-             String search = request.getParameter("search");
-             BlogDAO blogDAO = new BlogDAO();
-             List<BlogDTO> list = blogDAO.search(search);
-             if (list.size() > 0) {
-                 request.setAttribute("SEARCH", list);
-                 url = SUCCESS;
-             }
+        try {
+            String search = request.getParameter("search");
+            BlogDAO blogDAO = new BlogDAO();
+            List<BlogDTO> list = blogDAO.search(search);
+            request.setAttribute("LIST_BLOG", list);
+            url = SUCCESS;
 
-         } catch (Exception e) {
-             log("Error at SearchBlogController: " + e);
-         } finally {
-             request.getRequestDispatcher(url).forward(request, response);
-         }
+        } catch (Exception e) {
+            log("Error at SearchBlogController: " + e);
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
+        }
     }
 
     @Override

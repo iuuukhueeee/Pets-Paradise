@@ -25,6 +25,17 @@
 
 <body>
 
+<style>
+    button {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+</style>
+
 <div class="sidebar">
     <div class="LOGO">
         <img src="img/paw-solid.svg" alt="" class="img-responsive">
@@ -62,9 +73,14 @@
 
                     <div class="form">
                         <form action="MainController" method="POST">
-                            <input type="text" class="form-control form-input" placeholder="Search..." name="search" value="<%=search%>">
-                            <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <button type="submit" name="action" value="SearchBlog">SEARCH</button>
+                            <input type="text" class="form-control form-input" placeholder="Search..." name="search"
+                                   value="<%=search%>">
+                            <span class="left-pan btn ">
+                                <button type="submit" name="action" value="SearchBlog">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </span>
+
                         </form>
                     </div>
                     <div></div>
@@ -174,29 +190,34 @@
                         <div class="col col-6">Action</div>
                     </li>
 
-<%--                    <c:set var="blog" value="${requestScope['LIST_BLOG']}"/>--%>
-                    <c:set var="blog" value="${requestScope['SEARCH']}"/>
-                    <c:forEach var="i" items="${blog}" varStatus="loop">
-                        <li class="table-row">
-                            <div class="col col-1" data-label="Number">${loop.count}</div>
-                            <div class="col col-2" data-label="Author">${i.getAuthor()}</div>
-                            <div class="col col-3" data-label="Title">${i.getBlogTitle()}</div>
-                            <div class="col col-4" data-label="Date">${i.getWrittenDate()}</div>
-                            <div class="col col-5 description" data-label="Description">${i.getBlogDescription()}
-                            </div>
-                            <div class="col col-6" data-label="Action">
-                                <form method="POST" action="MainController">
-                                    <input type="hidden" id="blogID" name="ID" value="${i.getBlogID()}" class="blogID"/>
-                                    <i class="fa-solid fa-arrow-up GET"
-                                       style='font-size:24px; cursor: pointer; padding-right: 5px;'>
-                                    </i>
-                                    <button type="submit" name="action" value="DeleteBlog">
-                                        <i class='far fa-trash-alt' style='font-size:24px ;'></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </li>
-                    </c:forEach>
+                    <c:set var="blog" value="${requestScope['LIST_BLOG']}"/>
+                    <%--                    <c:set var="blog" value="${requestScope['SEARCH']}"/>--%>
+                    <c:if test="${blog.size() > 0 && blog != null}">
+                        <c:forEach var="i" items="${blog}" varStatus="loop">
+                            <li class="table-row">
+                                <div class="col col-1" data-label="Number">${loop.count}</div>
+                                <div class="col col-2" data-label="Author">${i.getAuthor()}</div>
+                                <div class="col col-3" data-label="Title">${i.getBlogTitle()}</div>
+                                <div class="col col-4" data-label="Date">${i.getWrittenDate()}</div>
+                                <div class="col col-5 description" data-label="Description">${i.getBlogDescription()}
+                                </div>
+                                <div class="col col-6" data-label="Action">
+                                    <form method="POST" action="MainController">
+                                        <input type="hidden" id="blogID" name="ID" value="${i.getBlogID()}"
+                                               class="blogID"/>
+                                        <i class="fa-solid fa-arrow-up GET"
+                                           style='font-size:24px; cursor: pointer; padding-right: 5px;'>
+                                        </i>
+                                        <button type="submit" name="action" value="DeleteBlog">
+                                            <i class='far fa-trash-alt' style='font-size:24px ;'></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </li>
+                        </c:forEach>
+
+                    </c:if>
+
 
                     <%--                    <li class="table-row">--%>
                     <%--                        <div class="col col-1" data-label="Number">1</div>--%>

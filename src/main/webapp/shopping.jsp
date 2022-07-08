@@ -81,15 +81,15 @@
                      id="mobile-menu-2">
                     <ol
                             class="list-reset flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                        <li><a href="index.html"
+                        <li><a href="./index.jsp"
                                class="active text-gray-700 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:text-white ">HOME</a>
                         </li>
                         <li><span class="text-gray-500 mx-2">|</span></li>
-                        <li><a href="./services.html" class="text-gray-500 hover:text-gray-600">SERVICES</a></li>
+                        <li><a href="services" class="text-gray-500 hover:text-gray-600">SERVICES</a></li>
                         <li><span class="text-gray-500 mx-2">|</span></li>
-                        <li><a href="blog.html" class="text-gray-500 hover:text-gray-600">BLOG</a></li>
+                        <li><a href="blog" class="text-gray-500 hover:text-gray-600">BLOG</a></li>
                         <li><span class="text-gray-500 mx-2">|</span></li>
-                        <li><a href="contact.html" class="text-gray-500 hover:text-gray-600">CONTACT</a></li>
+                        <li><a href="./contact.jsp" class="text-gray-500 hover:text-gray-600">CONTACT</a></li>
                         </li>
                     </ol>
 
@@ -100,7 +100,7 @@
                         id="mobile-menu-2" start="margin-left:16px;">
                         <li
                                 style="border-color: #a5d0cc;padding: 12px;color:rgb(107 114 128 / 1);border-radius: 8px;">
-                            <a href="checkout.html" id="cart"><i class="fa fa-shopping-cart py-2.5" type="button"
+                            <a href="./checkout.jsp" id="cart"><i class="fa fa-shopping-cart py-2.5" type="button"
                                                                  data-modal-toggle="defaultModal"></i> Cart </a>
                             <!-- <div id="defaultModal" tabindex="-1" aria-hidden="true"
                                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
@@ -201,7 +201,7 @@
                             </div> -->
                         </li>
                         <li style="margin-left: 2px;" class="">
-                            <a href="login.html">
+                            <a href="./login.jsp">
                                 <i class="fa-solid fa-user block text-gray-600 focus:outline-none font-medium rounded-lg text-sm "
                                    type="button" data-modal-toggle="authentication-modal" style="padding:16px"></i>
                             </a>

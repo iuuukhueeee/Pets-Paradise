@@ -29,13 +29,13 @@ public class AdminLoadProductController extends HttpServlet {
                 request.setAttribute("PRODUCT_LIST", listProduct);
                 url = SUCCESS;
             }
-            if (request.getRequestURI().equals("/shopping")) {
-                List<BlogDTO> listBlog;
-                BlogDAO blogDAO = new BlogDAO();
-                listBlog = blogDAO.loadListBlogTemplate();
-                request.setAttribute("LIST_BLOG", listBlog);
-                url = SUCCESS;
-            }
+//            if (request.getRequestURI().equals("/shopping")) {
+//                List<BlogDTO> listBlog;
+//                BlogDAO blogDAO = new BlogDAO();
+//                listBlog = blogDAO.loadListBlogTemplate();
+//                request.setAttribute("LIST_BLOG", listBlog);
+//                url = SUCCESS;
+//            }
         } catch (Exception e) {
             log("Error at LoadProductController: " + e.toString());
         } finally {

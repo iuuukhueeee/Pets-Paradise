@@ -16,7 +16,7 @@ import com.DTO.UserDTO;
 public class SearchProductController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS_US = "index.jsp";
+    private static final String SUCCESS_US = "shopping";
     private static final String SUCCESS_AD = "adminProduct.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
