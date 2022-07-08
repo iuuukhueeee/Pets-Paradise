@@ -64,7 +64,7 @@ img {
   color: #68A7AD;
 }
 
-.sidebar a:hover:not(.active, .unhoverContent) {
+.sidebar a:hover {
   background-color: #e2ebfc;
   color: #528388fe;
   -webkit-transform: scale(1.05);
@@ -316,10 +316,6 @@ h2 small {
   .res_cust {
     padding-left: 5%;
     padding-right: 5%;
-  }
-  .searchBar {
-    padding-left: 2vh !important;
-    width: 80%;
   }
   .container {
     max-width: 90vh;

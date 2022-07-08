@@ -63,7 +63,7 @@ img {
   color: #68A7AD;
 }
 
-.sidebar a:hover:not(.active, .unhoverContent) {
+.sidebar a:hover {
   background-color: #e2ebfc;
   color: #528388fe;
   -webkit-transform: scale(1.05);
