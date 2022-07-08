@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Raleway";
 }
 
@@ -11,8 +12,10 @@ html {
 
 body {
   margin: 0;
-  animation-name: appearance;
-  animation-duration: 1.5s;
+  -webkit-animation-name: appearance;
+          animation-name: appearance;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
 
 .sidebar {
@@ -36,15 +39,22 @@ img {
   padding-left: 32px;
   padding-top: 16px;
   padding-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .sidebar a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: black;
   padding: 16px 32px;
   text-decoration: none;
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
@@ -55,12 +65,14 @@ img {
 
 .sidebar a:hover:not(.active, .unhoverContent) {
   background-color: #e2ebfc;
-  color: rgba(82, 131, 136, 0.9960784314);
-  transform: scale(1.05);
+  color: #528388fe;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .unhoverContent:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   color: black !important;
 }
 
@@ -70,13 +82,23 @@ div.content {
   height: 1000px;
 }
 
+@media screen and (max-width: 912px) {
+  div.content {
+    margin-left: 300px;
+    padding: 16px;
+    height: 1000px;
+  }
+}
+
 .height {
   height: 10vh;
 }
 
 body > div.content > div > div.container {
-  animation-name: botToTop;
-  animation-duration: 1.5s;
+  -webkit-animation-name: botToTop;
+          animation-name: botToTop;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
 
 .form {
@@ -106,7 +128,8 @@ body > div.content > div > div.container {
 }
 
 .form-input:focus {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border: none;
 }
 
@@ -124,6 +147,7 @@ body > div.content > div > div.container {
   overflow: hidden;
   font-size: 16px;
   max-height: 0px;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -141,68 +165,49 @@ h2 small {
   .content {
     width: 90%;
   }
-
+  .content .container {
+    padding-left: 2vh !important;
+    width: 80%;
+  }
   .res_cust {
     padding-left: 5%;
     padding-right: 5%;
   }
-
-  .searchBar {
-    padding-left: 2vh !important;
-    width: 80%;
-  }
-
   .box_cust_rs {
     padding-right: 10vh;
   }
 }
-@media all and (max-width: 768px) {
-  .responsive-table .table-header {
-    display: none;
-  }
 
-  .responsive-table li {
-    display: block;
-  }
-
-  .responsive-table .col {
-    flex-basis: 100%;
-  }
-
-  .responsive-table .col {
-    display: flex;
-    padding: 10px 0;
-  }
-
-  .responsive-table .col:before {
-    color: #6c7a89;
-    padding-right: 10px;
-    content: attr(data-label);
-    flex-basis: 50%;
-    text-align: right;
-  }
-}
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
   }
-
   .sidebar a {
     float: left;
   }
-
   div.content {
     margin-left: 0;
   }
 }
+
 @media screen and (max-width: 576px) {
   .sidebar a {
     text-align: center;
     float: none;
   }
 }
+
+@-webkit-keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes appearance {
   0% {
     opacity: 0;
@@ -211,6 +216,7 @@ h2 small {
     opacity: 1;
   }
 }
+
 .button {
   --color: #68a7ad;
   color: white;
@@ -233,5 +239,4 @@ h2 small {
   -webkit-transform: rotateY(-15deg);
   transform: rotateY(-15deg);
 }
-
 /*# sourceMappingURL=personalInformation.css.map */

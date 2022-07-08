@@ -259,6 +259,7 @@ h2 small {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 .responsive-table .table-header {
     background-color: #95a5a6;
@@ -309,28 +310,6 @@ h2 small {
         left: 20px;
     }
 }
-@media all and (max-width: 768px) {
-    .responsive-table .table-header {
-        display: none;
-   }
-    .responsive-table li {
-        display: block;
-   }
-    .responsive-table .col {
-        flex-basis: 100%;
-   }
-    .responsive-table .col {
-        display: flex;
-        padding: 10px 0;
-   }
-    .responsive-table .col:before {
-        color: #6c7a89;
-        padding-right: 10px;
-        content: attr(data-label);
-        flex-basis: 50%;
-        text-align: right;
-   }
-}
 
 @media screen and (max-width: 576px) {
     .sidebar a {
@@ -369,4 +348,27 @@ h2 small {
 
 .arrow{
     cursor: pointer;
+}
+
+@media all and (max-width: 767px) {
+	.responsive-table {
+		.table-header {
+			display: none;
+		}
+		li {
+			display: block;
+		}
+		.col {
+			flex-basis: 100%;
+			display: flex;
+			padding: 10px 0;
+			&:before {
+				color: #6c7a89;
+				padding-right: 10px;
+				content: attr(data-label);
+				flex-basis: 50%;
+				text-align: right;
+			}
+		}
+	}
 }
