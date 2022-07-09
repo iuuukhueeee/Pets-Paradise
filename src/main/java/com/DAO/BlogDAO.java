@@ -51,38 +51,6 @@ public class BlogDAO {
         return blog;
     }
 
-
-    public List<BlogDTO> loadListBlog() throws SQLException {
-        List<BlogDTO> listBlog = new ArrayList<>();
-        Connection conn = null;
-        PreparedStatement ptm = null;
-        ResultSet rs = null;
-
-        try {
-            conn = DButils.getConnection();
-            if (conn != null) {
-                ptm = conn.prepareStatement(LOAD_ALL);
-                rs = ptm.executeQuery();
-                while (rs.next()) {
-                    String blogID = rs.getString("BlogID");
-                    String author = rs.getString("Author");
-                    String writtenDate = rs.getString("WrittenDate");
-                    String blogTitle = rs.getString("BlogTitle");
-                    String blogContent = rs.getString("BlogContent");
-                    String blogDescription = rs.getString("BlogDescription");
-                    listBlog.add(new BlogDTO(blogID, author, writtenDate, blogTitle, blogContent, blogDescription));
-                }
-            }
-        } catch (Exception e) {
-            e.toString();
-        } finally {
-            if (rs != null) rs.close();
-            if (ptm != null) ptm.close();
-            if (conn != null) conn.close();
-        }
-        return listBlog;
-    }
-
     public List<BlogDTO> loadListBlogTemplate() throws SQLException {
         List<BlogDTO> listBlogTemplate = new ArrayList<>();
         Connection conn = null;

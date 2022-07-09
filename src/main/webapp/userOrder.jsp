@@ -19,19 +19,19 @@
 
     <div class="sidebar">
         <div class="LOGO">
-            <img src="../img/paw-solid.svg" alt="" class="img-responsive">
+            <img src="./img/paw-solid.svg" alt="" class="img-responsive">
             <div style="font-size: 20px;font-weight: 900;color: #68A7AD; justify-content: center; padding-left: 16px;">
                 Pet's Paradise
             </div>
         </div>
         <div>
-            <a href="./user.html" class="collapsible">Personal Information</a>
+            <a href="./user.jsp" class="collapsible">Personal Information</a>
         </div>
         <div>
-            <a href="./order.html" class="collapsible active">Order</a>
+            <a href="./userOrder.jsp" class="collapsible active">Order</a>
         </div>
         <div>
-            <a href="../../../petInfo.html" class="collapsible">Pet's Info</a>
+            <a href="./petInfo.jsp" class="collapsible">Pet's Info</a>
         </div>
     </div>
     <div class="content">

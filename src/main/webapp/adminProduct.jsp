@@ -35,6 +35,17 @@
 
 <body>
 
+<style>
+    button {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+</style
+
 <div class="sidebar">
     <div class="LOGO">
         <img src="img/paw-solid.svg" alt="" class="img-responsive">

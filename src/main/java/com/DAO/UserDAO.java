@@ -21,7 +21,8 @@ public class UserDAO {
     private static final String DELETE = "UPDATE Users SET Status=0 WHERE Username=?";
     private static final String UPDATE = "UPDATE Users SET Name = ? , Password = ? , Email = ? , PhoneNumber = ? WHERE Username = ?";
     private static final String UPDATE_PASSWORD = "UPDATE Users SET Password=? WHERE Username=?";
-    private static final String GET_USERS = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Status = 1";
+    private static final String LOAD_ALL = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Status = 1";
+    private static final String GET_BY_USERNAME = "SELECT Username, Name, Password, Email, PhoneNumber FROM Users WHERE Username=? AND Status=1";
 
 
 
@@ -330,7 +331,7 @@ public class UserDAO {
         try {
             conn = DButils.getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_USERS);
+                ptm = conn.prepareStatement(LOAD_ALL);
                 rs = ptm.executeQuery();
 
                 while (rs.next()) {
@@ -359,6 +360,37 @@ public class UserDAO {
         }
 
         return list;
+    }
+
+
+    public UserDTO getByUsername(String username) throws SQLException {
+        UserDTO user = null;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_BY_USERNAME);
+                ptm.setString(1, username);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    String name = rs.getString("Name");
+                    String password = rs.getString("Password");
+                    String email = rs.getString("Email");
+                    String phone = rs.getString("PhoneNumber");
+                    user = new UserDTO(username, name, password, email, phone, "US");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
+        return user;
     }
 
 }

@@ -25,19 +25,19 @@
             </div>
         </div>
         <div>
-            <a href="./product.jsp" class="collapsible">Product</a>
+            <a href="AdminProduct" class="collapsible">Product</a>
         </div>
         <div>
-            <a href="./service.jsp" class="collapsible">Service</a>
+            <a href="AdminService" class="collapsible">Service</a>
         </div>
         <div>
-            <a href="user.jsp" class="collapsible">User</a>
+            <a href="AdminUser" class="collapsible">User</a>
         </div>
         <div>
-            <a href="./blog.jsp" class="collapsible">Blog</a>
+            <a href="AdminBlog" class="collapsible">Blog</a>
         </div>
 
-        <a class="collapsible" href="./order.jsp">Order</a>
+        <a class="collapsible" href="AdminOrder">Order</a>
     </div>
     <div class="content">
         <div class="container">

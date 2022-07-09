@@ -13,8 +13,8 @@ import com.Error.ServiceError;
 @WebServlet(name = "AddServiceController", value = {"/AddServiceController"})
 public class AddServiceController extends HttpServlet {
 
-    private static final String ERROR = "admin_service.jsp";
-    private static final String SUCCESS = "admin_service.jsp";
+    private static final String ERROR = "AdminService";
+    private static final String SUCCESS = "AdminService";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

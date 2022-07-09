@@ -1,7 +1,10 @@
 package com.controllers;
 
 import com.DAO.ServiceDAO;
+import com.DAO.ShopDAO;
 import com.DTO.ServiceDTO;
+import com.DTO.ShopDTO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +26,11 @@ public class AdminLoadServiceController extends HttpServlet {
             List<ServiceDTO> listService;
             ServiceDAO serviceDAO = new ServiceDAO();
             listService = serviceDAO.getAll();
+            ShopDAO shopDAO = new ShopDAO();
+            List<ShopDTO> shop = shopDAO.getAll();
             if (listService != null) {
                 request.setAttribute("SERVICE_LIST", listService);
+                request.setAttribute("SHOP_LIST", shop);
                 url = SUCCESS;
             }
         } catch (Exception e) {

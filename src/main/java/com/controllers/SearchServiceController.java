@@ -12,9 +12,9 @@ import com.DTO.UserDTO;
 @WebServlet(name = "SearchServiceController", value = "/SearchServiceController")
 public class SearchServiceController extends HttpServlet {
 
-    private static final String ERROR = "error.jsp";
+    private static final String ERROR = "AdminService";
     private static final String SUCCESS_US = "index.jsp";
-    private static final String SUCCESS_AD = "adminService.jsp";
+    private static final String SUCCESS_AD = "AdminService";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

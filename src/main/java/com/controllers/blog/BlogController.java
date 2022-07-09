@@ -23,7 +23,7 @@ public class BlogController extends HttpServlet {
             UserDTO user = (UserDTO) request.getSession().getAttribute("LOGIN_USER");
             BlogDAO blogDAO = new BlogDAO();
             List<BlogDTO> listBlog;
-            listBlog = blogDAO.loadListBlog();
+            listBlog = blogDAO.loadAll();
 
             if (listBlog.size() > 0) {
                 request.setAttribute("LIST_BLOG", listBlog);
