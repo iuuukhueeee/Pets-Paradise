@@ -272,7 +272,6 @@ footer .row .col .item .submit div input[type=submit]:hover {
 }
 
 .blog-post {
-  -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
 }
 .blog-post .blog-img img:not(.img-title) {
@@ -283,7 +282,6 @@ footer .row .col .item .submit div input[type=submit]:hover {
 .blog-post .blog-img .overlay {
   position: absolute;
   opacity: 0;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   top: 0;
   right: 0;
@@ -293,7 +291,6 @@ footer .row .col .item .submit div input[type=submit]:hover {
 .blog-post .blog-img .post-meta {
   position: absolute;
   opacity: 0;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   bottom: 5%;
   right: 5%;
@@ -321,9 +318,7 @@ footer .row .col .item .submit div input[type=submit]:hover {
   font-size: 18px;
 }
 .blog-post:hover {
-  -webkit-transform: translateY(-7px);
   transform: translateY(-7px);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 .blog-post:hover .blog-img .overlay {
@@ -338,7 +333,6 @@ footer .row .col .item .submit div input[type=submit]:hover {
 }
 
 .shadow {
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
 }
 

@@ -140,7 +140,7 @@
                             </div>
                             <div class="flex flex-col justify-between ml-4 flex-grow">
                                 <span class="font-bold text-sm"><%=item.getName()%></span>
-                                <span class="text-red-500 text-xs">Apple</span>
+<%--                                <span class="text-red-500 text-xs">Apple</span>--%>
                                 <a href="#"
                                    class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
                             </div>

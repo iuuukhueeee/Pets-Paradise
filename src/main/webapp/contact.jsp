@@ -66,7 +66,7 @@
             </div>
             <div class="form">
                 <form class="row g-3">
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <input type="text" class="form-control" id="inputName" placeholder="Name">
                     </div>
                     <div class="col-md-4">
@@ -82,10 +82,12 @@
                             <label for="messageTextArea">Message</label>
 
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">
+                            <a href="mailto:PetCenter@gmail" style="text-decoration: none;color: black;">Get in touch</a>
+                        </button>
                     </div>
                 </form>
             </div>

@@ -184,8 +184,7 @@
       </div>
     </div>
   </section>
-  <section class="testimonials animate__animated animate__backInLeft"
-    style=" animation-duration: 5s;">
+  <section class="testimonials animate__animated animate__backInLeft" style=" animation-duration: 5s;">
     <div class="container">
       <div class="title animation-item-1 wow">
         <span>Testimonials</span>
@@ -265,8 +264,7 @@
 
     </div>
   </section>
-  <section class="pricing-plan animate__animated animate__fadeIn"
-    style="animation-duration: 6s;">
+  <section class="pricing-plan animate__animated animate__fadeIn" style="animation-duration: 6s;">
     <header>
       <h1>Pricing Plan</h1>
       <P>Lorem ipsum dolor sit amet consectetetur accusantium sint ad laboriosam, voluptatibus autem ullam voluptate
@@ -289,7 +287,9 @@
                   <li>Watering Plants</li>
                   <li>Setting Lenght of Coat</li>
                 </ul>
-                <button class="button">PURCHASE NOW</button>
+
+                <a href="./form.html"><button class="button">PURCHASE NOW</button></a>
+
               </div>
             </div>
           </div>
@@ -309,7 +309,7 @@
                   <li>Watering Plants</li>
                   <li>Setting Lenght of Coat</li>
                 </ul>
-                <button class="button">PURCHASE NOW</button>
+                <a href="./form.html"><button class="button">PURCHASE NOW</button></a>
               </div>
             </div>
           </div>
@@ -329,7 +329,7 @@
                   <li>Watering Plants</li>
                   <li>Setting Lenght of Coat</li>
                 </ul>
-                <button class="button">PURCHASE NOW</button>
+                <a href="./form.html"><button class="button">PURCHASE NOW</button></a>
               </div>
             </div>
           </div>
@@ -349,7 +349,7 @@
                   <li>Watering Plants</li>
                   <li>Setting Lenght of Coat</li>
                 </ul>
-                <button class="button">PURCHASE NOW</button>
+                <a href="./form.html"><button class="button">PURCHASE NOW</button></a>
               </div>
             </div>
           </div>
