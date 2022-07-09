@@ -72,7 +72,7 @@ img {
 }
 
 div.content {
-    margin-left: 200px;
+    margin-left: 250px;
     padding: 16px;
     height: 1000px;
 }
@@ -95,23 +95,23 @@ body > div.content > div > div.container{
 }
 
 
-.form span {
+.form {span {
 
     position: absolute;
     right: 17px;
     top: 13px;
     padding: 2px;
     border-left: 1px solid #d1d5db;
-
+}
 }
 
 .left-pan {
     padding-left: 7px;
 }
 
-.left-pan i {
+.left-pan {i {
     padding-left: 10px;
-}
+}}
 
 .form-input {
 
@@ -206,28 +206,30 @@ body > div.content > div > div.container{
     padding-top: 15px;
     font-size: 22px;
   }
-  .button button:hover {
-    border-color: #68a7ad00;
-    background-color: #5bbcc5ab;
-  }
-  
   .button {
-    --color: #68a7ad;
-    color: white;
-    padding: 15px 30px;
-    width: 200px;
-    border-radius: 4px;
-    background-color: var(--color);
-    cursor: pointer;
-    font-weight: 500;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-  }
+	button {
+		&:hover {
+			border-color: #68a7ad00;
+			background-color: #5bbcc5ab;
+		}
+	}
+	--color: #68a7ad;
+	color: white;
+	padding: 15px 30px;
+	width: 200px;
+	border-radius: 4px;
+	background-color: var(--color);
+	cursor: pointer;
+	font-weight: 500;
+	outline: none;
+	border: none;
+	font-size: 16px;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
   
   .button:hover {
     -webkit-transform: rotateY(-15deg);
@@ -242,71 +244,72 @@ body > div.content > div > div.container{
     padding-right: 10px;
 }
 
-.t-container .container{
+.t-container {.container{
     max-width: 1090px;
-}
+}}
 h2 {
     font-size: 26px;
     margin: 20px 0;
     text-align: center;
 }
-h2 small {
+h2 {small {
     font-size: 0.5em;
-}
-.responsive-table li {
+}}
+.responsive-table {li {
     border-radius: 3px;
     padding: 25px 30px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-}
-.responsive-table .table-header {
+}}
+.responsive-table {.table-header {
     background-color: #95a5a6;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-}
-.responsive-table .table-row {
+}}
+.responsive-table {.table-row {
     background-color: #fff;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-}
-.responsive-table .col-1 {
+}}
+.responsive-table {.col-1 {
     flex-basis: 10%;
-}
-.responsive-table .col-2 {
+}}
+.responsive-table {.col-2 {
     flex-basis: 10%;
-}
-.responsive-table .col-3 {
+}}
+.responsive-table {.col-3 {
     flex-basis: 10%;
-}
-.responsive-table .col-4 {
+}}
+.responsive-table {.col-4 {
     flex-basis: 10%;
-}
-.responsive-table .col-5 {
+}}
+.responsive-table {.col-5 {
     flex-basis: 10%;
-}
-.responsive-table .col-6 {
+}}
+.responsive-table {.col-6 {
     flex-basis: 40%;
-
-}
-.responsive-table .col-7 {
+}}
+.responsive-table {.col-7 {
     flex-basis: 10%;
     text-align: center;
-}
+}}
 
 @media screen and (max-width: 820px) {
     .content {
         width: 90%;
+        .t-container{
+            .responsive-table {
+                .table-header{
+                    font-size: 12px;
+            }
+        }
+        }
     }
 
     .res_cust {
         padding-left: 5%;
         padding-right: 5%;
-    }
-
-    .searchBar {
-        padding-left: 2vh !important;
-        width: 80%;
     }
 
     .container{
@@ -318,26 +321,49 @@ h2 small {
     }
 }
 @media all and (max-width: 768px) {
-    .responsive-table .table-header {
+    .responsive-table {.table-header {
         display: none;
    }
-    .responsive-table li {
+   .col-6{
+    max-width: 100%;
+   }
+}
+    .responsive-table {li {
         display: block;
-   }
-    .responsive-table .col {
+   }}
+    .responsive-table {.col {
         flex-basis: 100%;
-   }
-    .responsive-table .col {
-        display: flex;
         padding: 10px 0;
-   }
-    .responsive-table .col:before {
+   }}
+    .responsive-table {.col:before {
         color: #6c7a89;
-        padding-right: 10px;
         content: attr(data-label);
-        flex-basis: 50%;
-        text-align: right;
-   }
+   }}
+}
+
+@media screen and (min-width: 1090px) {
+    .content {
+        width: 80%;
+        .t-container{
+            .responsive-table {
+                .table-header{
+                    font-size: 12px;
+            }
+        }
+        }
+    }
+}
+@media screen and (min-width: 012px) {
+    .content {
+        width: 80%;
+        .t-container{
+            .responsive-table {
+                .table-header{
+                    font-size: 12px;
+            }
+        }
+        }
+    }
 }
 
 @media screen and (max-width: 576px) {
