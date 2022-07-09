@@ -35,6 +35,6 @@ jobs:
           cd build
           git pull origin main
           mvn clean install
-          cp target/Pets_Paradise-1.0-SNAPSHOT.war /opt/tomcat/webapps
+          sudo cp target/Pets_Paradise-1.0-SNAPSHOT.war /opt/tomcat/webapps
           sudo systemctl restart tomcat
           sudo systemctl is-active tomcat
