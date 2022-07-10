@@ -22,7 +22,7 @@ public class UserDAO {
     private static final String UPDATE = "UPDATE Users SET Name = ? , Password = ? , Email = ? , PhoneNumber = ? WHERE Username = ?";
     private static final String UPDATE_PASSWORD = "UPDATE Users SET Password=? WHERE Username=?";
     private static final String LOAD_ALL = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Status = 1";
-    private static final String GET_BY_USERNAME = "SELECT Username, Name, Password, Email, PhoneNumber FROM Users WHERE Username=? AND Status=1";
+    private static final String GET_BY_USERNAME = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Username=? AND Status=1";
 
 
 
@@ -380,7 +380,8 @@ public class UserDAO {
                     String password = rs.getString("Password");
                     String email = rs.getString("Email");
                     String phone = rs.getString("PhoneNumber");
-                    user = new UserDTO(username, name, password, email, phone, "US");
+                    String roleID = rs.getString("RoleID");
+                    user = new UserDTO(username, name, password, email, phone, roleID);
                 }
             }
         } catch (Exception e) {

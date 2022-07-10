@@ -15,7 +15,7 @@ public class OrderDAO {
     private static final String UPDATE = "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
     private static final String DELETE = "UPDATE Orders SET Status=0 WHERE OrderID=?";
     private static final String GET_ORDERS = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE status = 1 ";
-    private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE Username LIKE ? AND Status = 1";
+    private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE OrderID LIKE ? AND Status = 1";
     private static final String GET_BY_USERNAME = "SELECT OrderID, OrderDate FROM Orders WHERE Status=2 AND Username=?";
     private static final String UPDATE_TOTAL = "UPDATE Orders SET Total=? WHERE OrderID=?";
     private static final String CHECKOUT = "UPDATE Orders SET Status=1 WHERE OrderID=?";

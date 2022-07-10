@@ -109,6 +109,7 @@ public class ProductDAO {
     }
 
     public ProductDTO getByID(String ID) throws SQLException {
+        String[] dontCheck = {"CATEGORY-003", "CATEGORY-004", "CATEGORY-005"};
         Connection conn = null;
         PreparedStatement ptm = null;
         ResultSet rs = null;
@@ -122,6 +123,7 @@ public class ProductDAO {
                 rs = ptm.executeQuery();
 
                 if (rs.next()) {
+                    Date expiredDate = null;
                     String productID = rs.getString("ProductID");
                     String productCategoryID = rs.getString("ProductCategoryID");
                     String productName = rs.getString("Name");
@@ -129,7 +131,10 @@ public class ProductDAO {
                     String image = rs.getString("Image");
                     float price = Float.parseFloat(rs.getString("Price"));
                     Date importDate = ValidUtils.isValidDate(rs.getString("ImportDate"));
-                    Date expiredDate = ValidUtils.isValidDate(rs.getString("ExpiredDate"));
+                    if (!"CATEGORY-003".equals(productCategoryID) && !"CATEGORY-004".equals(productCategoryID) && !"CATEGORY-005".equals(productCategoryID)) {
+                        expiredDate = ValidUtils.isValidDate(rs.getString("ExpiredDate"));
+                    }
+
                     product = new ProductDTO(productID, productCategoryID, productName, quantity, image, price, importDate, expiredDate);
                 }
             }
