@@ -18,7 +18,8 @@ import java.util.Map;
 public class AddToCartController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "services";
+    private static final String SUCCESS_SERVICES = "services";
+    private static final String SUCCESS_SHOPPING = "shopping";
     private static final String INSERT_PET_INFO = "InfoInputController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +35,7 @@ public class AddToCartController extends HttpServlet {
 
             ServiceDAO serviceDAO = new ServiceDAO();
             ServiceDTO service;
-            HttpSession session = request.getSession(false);
+            HttpSession session = request.getSession();
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
             if (user == null) {
                 request.setAttribute("ERROR", "Please Login to use this function!");
@@ -70,6 +71,7 @@ public class AddToCartController extends HttpServlet {
                     ProductDTO product = productDAO.getByID(ID);
                     if (orderDetailDAO.createOrderDetail(order, product, quantity)) {
                         request.setAttribute("MESSAGE", "Added Successfully");
+                        url = SUCCESS_SHOPPING;
                     }
                 }
             } else if (itemTypeID[0].equals("SERVICE")) {
@@ -95,10 +97,10 @@ public class AddToCartController extends HttpServlet {
                 Map<String, PetDTO> petInfo = (Map<String, PetDTO>) session.getAttribute("PET_INFO");
 
                 if (orderDetailDAO.createOrderDetail(order, service, 1, bookingTime, petInfo.get(ID).getPetID())) {
+                    url = SUCCESS_SERVICES;
                     request.setAttribute("MESSAGE", "Added Successfully");
                 }
             }
-            url = SUCCESS;
         } catch (Exception e) {
             log("Error at AddToCartController: " + e.toString());
         } finally {

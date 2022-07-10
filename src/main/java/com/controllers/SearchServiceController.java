@@ -30,6 +30,7 @@ public class SearchServiceController extends HttpServlet {
             List<ServiceDTO> list = dao.searchService(searchService);
 
             request.setAttribute("SERVICE_LIST", list);
+            request.getSession().setAttribute("ON_SEARCH", true);
             request.setAttribute("SEARCH_SERVICE", searchService);
 
             HttpSession session = request.getSession();

@@ -24,7 +24,7 @@ public class GetSupportedShopController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         try {
-            UserDTO user = (UserDTO) request.getAttribute("LOGIN_USER");
+            UserDTO user = (UserDTO) request.getSession().getAttribute("LOGIN_USER");
             if (user == null) {
                 request.setAttribute("ERROR", "You need to login");
                 request.getRequestDispatcher("login.jsp").forward(request, response);

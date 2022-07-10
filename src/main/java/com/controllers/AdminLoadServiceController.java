@@ -29,7 +29,10 @@ public class AdminLoadServiceController extends HttpServlet {
             ShopDAO shopDAO = new ShopDAO();
             List<ShopDTO> shop = shopDAO.getAll();
             if (listService != null) {
-                request.setAttribute("SERVICE_LIST", listService);
+                boolean onSearch = Boolean.TRUE == request.getSession().getAttribute("ON_SEARCH");
+                if (!onSearch) {
+                    request.setAttribute("SERVICE_LIST", listService);
+                }
                 request.setAttribute("SHOP_LIST", shop);
                 url = SUCCESS;
             }
