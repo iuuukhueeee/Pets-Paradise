@@ -19,9 +19,18 @@
         <servlet-name>AdminLoadOrderController</servlet-name>
         <servlet-class>com.controllers.AdminLoadOrderController</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>UserLoadOrderController</servlet-name>
+        <servlet-class>com.controllers.UserLoadOrderController</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>AdminLoadUserController</servlet-name>
         <servlet-class>com.controllers.AdminLoadUserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadPetInfoController</servlet-name>
+        <servlet-class>com.controllers.LoadPetInfoController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogController</servlet-name>
@@ -62,6 +71,15 @@
     <servlet-mapping>
         <servlet-name>AdminLoadUserController</servlet-name>
         <url-pattern>/AdminUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadPetInfoController</servlet-name>
+        <url-pattern>/userPetInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserLoadOrderController</servlet-name>
+        <url-pattern>/userOrder</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>blogController</servlet-name>

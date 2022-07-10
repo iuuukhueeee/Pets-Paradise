@@ -21,7 +21,6 @@ public class OrderDAO {
     private static final String CHECKOUT = "UPDATE Orders SET Status=1 WHERE OrderID=?";
     private static final String TOTAL_INCOME_A_MONTH = "select sum(total) as Total, month(OrderDate) as Month from Orders group by month(OrderDate)";
 
-
     public boolean deleteOrder(String OrderID) throws SQLException {
         boolean check = false;
         Connection conn = null;
@@ -330,5 +329,41 @@ public class OrderDAO {
         }
 
         return list;
+    }
+
+    public List<OrderDTO> getListByUsername(String username) throws SQLException {
+        List<OrderDTO> orderList = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_BY_USERNAME);
+                ptm.setString(1, username);
+                rs = ptm.executeQuery();
+
+                while (rs.next()) {
+                    String orderID = rs.getString("OrderID");
+                    Date orderDate = rs.getDate("OrderDate");
+                    OrderDTO order = new OrderDTO(orderID, orderDate, username, "");
+                    orderList.add(order);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return orderList;
     }
 }

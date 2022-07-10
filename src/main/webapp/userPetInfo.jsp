@@ -1,7 +1,20 @@
+<%@ page import="com.DTO.UserDTO" %>
+<%@ page import="com.DTO.PetDTO" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <%
+        UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
+        if (user == null || !user.getRoleID().equals("US")) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+        if (user == null) {
+            user = new UserDTO();
+        }
+    %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -46,25 +59,46 @@
                         <div class="col col-6">Description</div>
                         <div class="col col-7">Action</div>
                     </li>
-
+        <%
+            List<PetDTO> list = (List<PetDTO>) request.getAttribute("PET_INFO");
+            int index = 1;
+            if (list == null) {
+                response.sendRedirect("error.jsp");
+                return;
+            }
+            for (PetDTO pet : list) {
+               String petType = "";
+                if(pet.getAnimalID().equals("ANIMAL-001")){
+                    petType = "Cat";
+                }
+                else if(pet.getAnimalID().equals("ANIMAL-002")){
+                    petType = "Dog";
+                }
+        %>
+                    <form action="MainController" method="post">
+                    <input type="hidden" name="animalName" value="<%= pet.getAnimalName()%>">
                     <li class="table-row">
-                        <div class="col col-1" data-label="#">1</div>
-                        <div class="col col-2" data-label="Name">Nu</div>
-                        <div class="col col-3" data-label="Age">1</div>
-                        <div class="col col-4" data-label="Type">Dog</div>
+                        <div class="col col-1" data-label="#"><%= index++%></div>
+                        <div class="col col-2" data-label="Name"><%= pet.getAnimalName()%></div>
+                        <div class="col col-3" data-label="Age"><%= pet.getAnimalAge()%></div>
+                        <div class="col col-4" data-label="Type"><%= petType%></div>
                         <div class="col col-5" data-label="Picture" width="50px" height="50px">
-                            <img src="./img/dog.jpg" alt="">
+                            <img src="<%= pet.getAnimalPicture()%>" alt="">
                         </div>
                         <div class="col col-6" data-label="Description">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident omnis magnam atque sed,
-                            adipisci quis iste sunt commodi temporibus distinctio iure nam officia quo dolore est error
-                            eos ducimus molestiae!
+                            <%= pet.getAnimalDescription()%>
                         </div>
                         <div class="col col-7" data-label="Action">
                             <i class="fas fa-edit trash" aria-hidden="true"></i>
-                            <i class="fa fa-trash trash" aria-hidden="true"></i>
+                            <button type="submit" name="action" value="DeletePetInfo"><i class='far fa-trash-alt'
+                                                                                      style='font-size:24px ; cursor: pointer;'></i>
+                            </button>
                         </div>
                     </li>
+                    </form>
+                    <%
+                        }
+                    %>
                 </ul>
             </div>
         </div>
