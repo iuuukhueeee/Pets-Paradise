@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Raleway";
 }
 
@@ -25,30 +24,29 @@ html {
   line-height: 1.25rem;
   margin-top: 2rem;
 }
-
 .body .payment {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 1rem;
 }
-
 .body .payment .col {
-  display: -ms-grid;
   display: grid;
 }
-
 .body .payment .col .form-group {
   margin-top: 8px;
 }
-
 .body .payment .col .form-group input {
   border: none;
 }
-
+.body .finish {
+  display: flex;
+  justify-content: space-between;
+}
+.body .finish button {
+  width: 180px;
+}
 @media screen and (max-width: 640px) {
   .body .cart {
-    display: -ms-grid;
+    width: 1280px;
     display: grid;
   }
   .body .cart .item {
@@ -62,8 +60,6 @@ html {
   }
   .body #summary .payment .px-2 {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-bottom: 8px;
   }
@@ -71,4 +67,5 @@ html {
     margin-right: 16px;
   }
 }
+
 /*# sourceMappingURL=checkout.css.map */
