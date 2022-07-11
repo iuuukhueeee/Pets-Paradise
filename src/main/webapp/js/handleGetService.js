@@ -6,7 +6,7 @@ $(document).ready(function () {
         const ID = $(this).siblings('input[name="ID"]').val();
         $.ajax({
             type: "POST",
-            url: "AdminGetSelectedUserController",
+            url: "AdminGetSelectedServiceController",
             data: {ID: ID},
             dataType: "json",
             success: function (data) {

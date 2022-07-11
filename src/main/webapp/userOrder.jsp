@@ -31,7 +31,7 @@
             <a href="./userOrder.jsp" class="collapsible active">Order</a>
         </div>
         <div>
-            <a href="./petInfo.jsp" class="collapsible">Pet's Info</a>
+            <a href="./userPetInfo.jsp" class="collapsible">Pet's Info</a>
         </div>
     </div>
     <div class="content">
@@ -83,83 +83,83 @@
 
                         </ul>
                     </div>
-                    <li class="table-row">
-                        <div class="col col-1" data-label="#">1</div>
-                        <div class="col col-2" data-label="Order">user321</div>
-                        <div class="col col-3" data-label="NOI">3</div>
-                        <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row2');">
-                            <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
-                        </div>
-                    </li>
-                    <div class="container" id="hidden_row2" class="hidden_row" style="display: none">
-                        <ul class="responsive-table mb-3">
-                            <li class="table-header">
-                                <div class="col col-1">Name</div>
-                                <div class="col col-2">Price</div>
-                                <div class="col col-3">Quantity</div>
-                                <div class="col col-4">Total</div>
-                            </li>
+<%--                    <li class="table-row">--%>
+<%--                        <div class="col col-1" data-label="#">1</div>--%>
+<%--                        <div class="col col-2" data-label="Order">user321</div>--%>
+<%--                        <div class="col col-3" data-label="NOI">3</div>--%>
+<%--                        <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row2');">--%>
+<%--                            <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
+<%--                    <div class="container" id="hidden_row2" class="hidden_row" style="display: none">--%>
+<%--                        <ul class="responsive-table mb-3">--%>
+<%--                            <li class="table-header">--%>
+<%--                                <div class="col col-1">Name</div>--%>
+<%--                                <div class="col col-2">Price</div>--%>
+<%--                                <div class="col col-3">Quantity</div>--%>
+<%--                                <div class="col col-4">Total</div>--%>
+<%--                            </li>--%>
 
-                            <li class="table-row">
-                                <div class="col col-1" data-label="Name">product1</div>
-                                <div class="col col-2" data-label="Price">20</div>
-                                <div class="col col-3" data-label="Quantity">1</div>
-                                <div class="col col-4" data-label="Total">20</div>
-                            </li>
-                            <li class="table-row">
-                                <div class="col col-1" data-label="Name">service1</div>
-                                <div class="col col-2" data-label="Price">30</div>
-                                <div class="col col-3" data-label="Quantity">1</div>
-                                <div class="col col-4" data-label="Total">30</div>
-                            </li>
-                            <li class="table-row">
-                                <div class="col col-1" data-label="Name">product2</div>
-                                <div class="col col-2" data-label="Price">20</div>
-                                <div class="col col-3" data-label="Quantity">1</div>
-                                <div class="col col-4" data-label="Total">20</div>
-                            </li>
+<%--                            <li class="table-row">--%>
+<%--                                <div class="col col-1" data-label="Name">product1</div>--%>
+<%--                                <div class="col col-2" data-label="Price">20</div>--%>
+<%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
+<%--                                <div class="col col-4" data-label="Total">20</div>--%>
+<%--                            </li>--%>
+<%--                            <li class="table-row">--%>
+<%--                                <div class="col col-1" data-label="Name">service1</div>--%>
+<%--                                <div class="col col-2" data-label="Price">30</div>--%>
+<%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
+<%--                                <div class="col col-4" data-label="Total">30</div>--%>
+<%--                            </li>--%>
+<%--                            <li class="table-row">--%>
+<%--                                <div class="col col-1" data-label="Name">product2</div>--%>
+<%--                                <div class="col col-2" data-label="Price">20</div>--%>
+<%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
+<%--                                <div class="col col-4" data-label="Total">20</div>--%>
+<%--                            </li>--%>
 
-                        </ul>
-                    </div>
+<%--                        </ul>--%>
+<%--                    </div>--%>
 
-                    <li class="table-row">
-                        <div class="col col-1" data-label="#">1</div>
-                        <div class="col col-2" data-label="Order">user321</div>
-                        <div class="col col-3" data-label="NOI">3</div>
-                        <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row3');">
-                            <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
-                        </div>
-                    </li>
-                    <div class="container" id="hidden_row3" class="hidden_row" style="display: none">
-                        <ul class="responsive-table mb-3">
-                            <li class="table-header">
-                                <div class="col col-1">Name</div>
-                                <div class="col col-2">Price</div>
-                                <div class="col col-3">Quantity</div>
-                                <div class="col col-4">Total</div>
-                            </li>
+<%--                    <li class="table-row">--%>
+<%--                        <div class="col col-1" data-label="#">1</div>--%>
+<%--                        <div class="col col-2" data-label="Order">user321</div>--%>
+<%--                        <div class="col col-3" data-label="NOI">3</div>--%>
+<%--                        <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row3');">--%>
+<%--                            <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
+<%--                    <div class="container" id="hidden_row3" class="hidden_row" style="display: none">--%>
+<%--                        <ul class="responsive-table mb-3">--%>
+<%--                            <li class="table-header">--%>
+<%--                                <div class="col col-1">Name</div>--%>
+<%--                                <div class="col col-2">Price</div>--%>
+<%--                                <div class="col col-3">Quantity</div>--%>
+<%--                                <div class="col col-4">Total</div>--%>
+<%--                            </li>--%>
 
-                            <li class="table-row">
-                                <div class="col col-1" data-label="Name">product1</div>
-                                <div class="col col-2" data-label="Price">20</div>
-                                <div class="col col-3" data-label="Quantity">1</div>
-                                <div class="col col-4" data-label="Total">20</div>
-                            </li>
-                            <li class="table-row">
-                                <div class="col col-1" data-label="Name">service1</div>
-                                <div class="col col-2" data-label="Price">30</div>
-                                <div class="col col-3" data-label="Quantity">1</div>
-                                <div class="col col-4" data-label="Total">30</div>
-                            </li>
-                            <li class="table-row">
-                                <div class="col col-1" data-label="Name">product2</div>
-                                <div class="col col-2" data-label="Price">20</div>
-                                <div class="col col-3" data-label="Quantity">1</div>
-                                <div class="col col-4" data-label="Total">20</div>
-                            </li>
+<%--                            <li class="table-row">--%>
+<%--                                <div class="col col-1" data-label="Name">product1</div>--%>
+<%--                                <div class="col col-2" data-label="Price">20</div>--%>
+<%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
+<%--                                <div class="col col-4" data-label="Total">20</div>--%>
+<%--                            </li>--%>
+<%--                            <li class="table-row">--%>
+<%--                                <div class="col col-1" data-label="Name">service1</div>--%>
+<%--                                <div class="col col-2" data-label="Price">30</div>--%>
+<%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
+<%--                                <div class="col col-4" data-label="Total">30</div>--%>
+<%--                            </li>--%>
+<%--                            <li class="table-row">--%>
+<%--                                <div class="col col-1" data-label="Name">product2</div>--%>
+<%--                                <div class="col col-2" data-label="Price">20</div>--%>
+<%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
+<%--                                <div class="col col-4" data-label="Total">20</div>--%>
+<%--                            </li>--%>
 
-                        </ul>
-                    </div>
+<%--                        </ul>--%>
+<%--                    </div>--%>
 
                 </ul>
             </div>

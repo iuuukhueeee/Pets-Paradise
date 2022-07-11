@@ -1,8 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.checkout.ItemDetails" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="com.DTO.*" %>
-<%@ page import="com.DAO.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,31 +32,7 @@
         response.sendRedirect("login.jsp");
         return;
     }
-    ProductDAO productDAO = new ProductDAO();
-    ServiceDAO serviceDAO = new ServiceDAO();
-    ProductDTO product;
-    ServiceDTO service;
-    List<ItemDetails> list = new ArrayList<>();
-
-    OrderDAO orderDAO = new OrderDAO();
-    OrderDTO order = orderDAO.getByUsername(user.getUsername());
-    if (order != null) {
-        OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
-        List<OrderDetailDTO> cart = orderDetailDAO.getByOrderID(order.getOrderID());
-        if (cart.size() > 0 && cart != null) {
-            for (int i = 0; i < cart.size(); i++) {
-                String itemID = cart.get(i).getItemID();
-                String itemTypeID = itemID.split("-")[0];
-                if ("PRODUCT".equals(itemTypeID)) {
-                    product = productDAO.getByID(itemID);
-                    list.add(new ItemDetails(product.getImage(), product.getName(), cart.get(i).getQuantity(), product.getPrice()));
-                } else if ("SERVICE".equals(itemTypeID)) {
-                    service = serviceDAO.getByID(itemID);
-                    list.add(new ItemDetails("", service.getServiceName(), 1, service.getServicePrice()));
-                }
-            }
-        }
-    }
+    List<ItemDetails> list = (List<ItemDetails>) request.getAttribute("CART");
 %>
 
 <section class="breacrumb ">

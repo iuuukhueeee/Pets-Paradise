@@ -44,19 +44,19 @@
         </div>
     </div>
     <div>
-        <a href="./adminProduct.jsp" class="collapsible">Product</a>
+        <a href="AdminProduct" class="collapsible">Product</a>
     </div>
     <div>
-        <a href="./adminService.jsp" class="collapsible">Service</a>
+        <a href="AdminService" class="collapsible">Service</a>
     </div>
     <div>
-        <a href="./adminUser.jsp" class="collapsible">User</a>
+        <a href="AdminUser" class="collapsible">User</a>
     </div>
     <div>
-        <a href="./adminBlog.jsp" class="collapsible active">Blog</a>
+        <a href="AdminBlog" class="collapsible active">Blog</a>
     </div>
 
-    <a class="collapsible" href="./adminOrder.jsp">Order</a>
+    <a class="collapsible" href="AdminOrder">Order</a>
 </div>
 
 <div class="res_cust">

@@ -18,10 +18,10 @@
     %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <link rel="stylesheet" href="css/dropDownAdmin.css">
 
-    <link rel="shortcut icon" type="img/png" href="img/paw-solid.svg" />
+    <link rel="shortcut icon" type="img/png" href="img/paw-solid.svg"/>
     <link rel="stylesheet" href="css/addProduct.css">
     <link rel="stylesheet" href="css/editProduct.css">
 
@@ -44,7 +44,7 @@
         overflow: hidden;
         outline: none;
     }
-</style
+</style>
 
 <div class="sidebar">
     <div class="LOGO">
@@ -54,19 +54,19 @@
         </div>
     </div>
     <div>
-        <a href="#adminProduct" class="collapsible active">Product</a>
+        <a href="#AdminProduct" class="collapsible active">Product</a>
     </div>
     <div>
-        <a href="adminService.jsp" class="collapsible">Service</a>
+        <a href="AdminService" class="collapsible">Service</a>
     </div>
     <div>
-        <a href="adminUser.jsp" class="collapsible">User</a>
+        <a href="AdminUser" class="collapsible">User</a>
     </div>
     <div>
-        <a href="adminBlog.jsp" class="collapsible">Blog</a>
+        <a href="AdminBlog" class="collapsible">Blog</a>
     </div>
 
-    <a class="collapsible" href="adminOrder.html">Order</a>
+    <a class="collapsible" href="AdminOrder">Order</a>
 </div>
 <div class="content">
     <div class="container">
@@ -75,9 +75,7 @@
             <div class="col-md-12 searchBar">
                 <form method="post" action="MainController">
                     <div class="form">
-                        <input type="text" class="form-control form-input" placeholder="Search..." name="searchProduct">
-<%--                        <input type="submit" name="action" value="searchProduct">--%>
-
+                        <input type="text" class="form-control form-input" placeholder="Search..." name="searchProduct" value="<%=search%>">
                         <span class="left-pan btn ">
                             <button name="action" value="searchProduct">
                                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -91,7 +89,7 @@
                     <p onclick="myFunction()" class="dropbtn" style="padding-left:12px; padding-top: 12px;">Admin
                     </p>
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="../../../../user.html">Profile</a>
+                        <a href="user.jsp">Profile</a>
                         <a href="#">Logout</a>
                     </div>
                 </div>
@@ -110,26 +108,26 @@
 
                 <div class="tm table-h-auto tm-block-h-auto">
                     <div class="row tm-edit-product-row">
-                        <div class="col-xl-6 col-lg-6 col-md-12">
-                            <form action="MainController" method="post" class="tm-edit-product-form">
-
+<%--                        <form action="MainController" method="post" class="tm-edit-product-form">--%>
+                        <form action="MainController" method="post">
+                            <div class="col-xl-6 col-lg-6 col-md-12">
                                 <div class="form-group mb-3">
                                     <label class="title-lable mt-3" for="name">Product Name
                                     </label>
                                     <input id="name" name="name" type="text" class="form-control validate"
-                                           required />
+                                           required/>
                                     <div class="row mt-3">
                                         <div class="form-group col-xs-12 col-sm-6">
                                             <label for="price" class="title-lable">Price
                                             </label>
                                             <input id="price" name="price" type="number"
-                                                   class="form-control validate" data-large-mode="true" />
+                                                   class="form-control validate" data-large-mode="true"/>
                                         </div>
                                         <div class="form-group mb-3 col-xs-12 col-sm-6">
                                             <label for="quantity" class="title-lable">Quantity
                                             </label>
                                             <input id="quantity" name="quantity" type="number"
-                                                   class="form-control validate" required />
+                                                   class="form-control validate" required/>
                                         </div>
                                     </div>
                                 </div>
@@ -151,28 +149,29 @@
                                         <label for="import_date" class="title-lable">Import Date
                                         </label>
                                         <input id="import_date" name="import_date" type="date"
-                                               class="form-control validate" data-large-mode="true" />
+                                               class="form-control validate" data-large-mode="true"/>
                                     </div>
                                     <div class="form-group mb-3 col-xs-12 col-sm-6">
                                         <label for="expire_date" class="title-lable">Expired Date
                                         </label>
                                         <input id="expire_date" name="expire_date" type="date"
-                                               class="form-control validate" required />
+                                               class="form-control validate" required/>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4 input_file">
-                                    <div class="mb-3">
-                                        <input class="form-control" type="file" id="formFile">
-                                    </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4 input_file">
+                                <div class="mb-3">
+                                    <input class="form-control" type="file" id="formFile">
+                                </div>
 
-                                    <div class="custom-file mt-3 mb-3" style="display: flex;">
-                                        <input id="fileInput" type="file" style="display:none;" />
-                                        <button class="button"
-                                                style="margin-left: 2px;background-color: #51969c;">Upload</button>
-                                    </div>
+                                <div class="custom-file mt-3 mb-3" style="display: flex;">
+                                    <input id="fileInput" type="file" style="display:none;"/>
+                                    <button class="button"
+                                            style="margin-left: 2px;background-color: #51969c;">Upload
+                                    </button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -199,29 +198,38 @@
                         response.sendRedirect("error.jsp");
                         return;
                     }
-                    for(ProductDTO product: list){
+                    for (ProductDTO product : list) {
                 %>
-            <form method="post" action="MainController">
-                <li class="table-row">
-                    <input type="hidden" name="productID" value="<%= product.getProductID()%>">
-                    <div class="col col-1" data-label="Number"><%= index++ %></div>
-                    <div class="col col-2" data-label="Product"><%= product.getName() %></div>
-                    <div class="col col-3" data-label="Price"><%= product.getPrice() %></div>
-                    <div class="col col-4" data-label="Category"><%= product.getCategoryID() %></div>
-                    <div class="col col-5" data-label="Quantity"><%= product.getQuantity() %></div>
-                    <div class="col col-6" data-label="Image">
-                        <img src="<%= product.getImage()%>" width="30px"
-                             height="30px" alt="">
-                    </div>
-                    <div class="col col-7" data-label="ImportDate"><%= product.getImportDate()%></div>
-                    <div class="col col-8" data-label="ExpiredDate"><%= product.getExpiredDate()%></div>
-                    <div class="col col-9" data-label="Action">
-                        <i class="fa-solid fa-arrow-up"
-                           style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
-                        <button type="submit" name="action" value="DeleteProduct"><i class='far fa-trash-alt' style='font-size:24px ; cursor: pointer;'></i></button>
-                    </div>
-                </li>
-            </form>
+                <form method="post" action="MainController">
+                    <li class="table-row">
+                        <input type="hidden" name="productID" value="<%= product.getProductID()%>">
+                        <div class="col col-1" data-label="Number"><%= index++ %>
+                        </div>
+                        <div class="col col-2" data-label="Product"><%= product.getName() %>
+                        </div>
+                        <div class="col col-3" data-label="Price"><%= product.getPrice() %>
+                        </div>
+                        <div class="col col-4" data-label="Category"><%= product.getCategoryID() %>
+                        </div>
+                        <div class="col col-5" data-label="Quantity"><%= product.getQuantity() %>
+                        </div>
+                        <div class="col col-6" data-label="Image">
+                            <img src="<%= product.getImage()%>" width="30px"
+                                 height="30px" alt="">
+                        </div>
+                        <div class="col col-7" data-label="ImportDate"><%= product.getImportDate()%>
+                        </div>
+                        <div class="col col-8" data-label="ExpiredDate"><%= product.getExpiredDate()%>
+                        </div>
+                        <div class="col col-9" data-label="Action">
+                            <i class="fa-solid fa-arrow-up"
+                               style='font-size:24px; cursor: pointer; padding-right: 5px;'></i>
+                            <button type="submit" name="action" value="DeleteProduct"><i class='far fa-trash-alt'
+                                                                                         style='font-size:24px ; cursor: pointer;'></i>
+                            </button>
+                        </div>
+                    </li>
+                </form>
                 <%
                     }
                 %>

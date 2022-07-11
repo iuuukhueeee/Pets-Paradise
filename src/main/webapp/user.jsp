@@ -43,7 +43,7 @@
         <a href="./userOrder.jsp" class="collapsible">Order</a>
     </div>
     <div>
-        <a href="./petInfo.jsp" class="collapsible">Pet's Info</a>
+        <a href="./userPetInfo.jsp" class="collapsible">Pet's Info</a>
     </div>
 </div>
 <div class="content">

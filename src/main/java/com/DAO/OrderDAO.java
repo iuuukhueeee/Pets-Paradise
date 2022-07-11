@@ -1,5 +1,6 @@
 package com.DAO;
 
+import com.DTO.IncomeDTO;
 import com.DTO.OrderDTO;
 import com.utils.DButils;
 import com.utils.DateUtils;
@@ -14,10 +15,11 @@ public class OrderDAO {
     private static final String UPDATE = "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
     private static final String DELETE = "UPDATE Orders SET Status=0 WHERE OrderID=?";
     private static final String GET_ORDERS = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE status = 1 ";
-    private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE Username LIKE ? AND Status = 1";
+    private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE OrderID LIKE ? AND Status = 1";
     private static final String GET_BY_USERNAME = "SELECT OrderID, OrderDate FROM Orders WHERE Status=2 AND Username=?";
     private static final String UPDATE_TOTAL = "UPDATE Orders SET Total=? WHERE OrderID=?";
     private static final String CHECKOUT = "UPDATE Orders SET Status=1 WHERE OrderID=?";
+    private static final String TOTAL_INCOME_A_MONTH = "select sum(total) as Total, month(OrderDate) as Month from Orders group by month(OrderDate)";
 
 
     public boolean deleteOrder(String OrderID) throws SQLException {
@@ -300,5 +302,33 @@ public class OrderDAO {
             }
         }
         return check;
+    }
+
+    public List<IncomeDTO> getTotalIncomeAMonth() throws SQLException {
+        List<IncomeDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(TOTAL_INCOME_A_MONTH);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    float total = Float.parseFloat(rs.getString("Total"));
+                    String month = rs.getString("Month");
+                    list.add(new IncomeDTO(total, month));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
+
+        return list;
     }
 }

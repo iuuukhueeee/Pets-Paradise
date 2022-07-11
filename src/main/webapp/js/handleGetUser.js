@@ -10,8 +10,11 @@ $(document).ready(function () {
             data: {ID: ID},
             dataType: "json",
             success: function (data) {
+                console.log(data)
 
                 if (data) {
+                    $("#username").val(data.USER.username)
+                    $("#roleID").val(data.USER.roleID)
                     $("#name").val(data.USER.name)
                     $("#email").val(data.USER.email)
                     $("#phone").val(data.USER.phoneNumber)

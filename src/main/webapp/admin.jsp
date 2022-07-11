@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
         rel="stylesheet">
+
     <title>Admin</title>
 
 </head>
@@ -68,6 +69,11 @@
 
         </div>
     </div>
+
+    <canvas id="canvas" height="500" width="500"></canvas>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="./js/drawChart.js"></script>
     <script src="js/admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

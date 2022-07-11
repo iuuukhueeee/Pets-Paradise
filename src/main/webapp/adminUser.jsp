@@ -107,7 +107,7 @@
                         </div>
                     </div>
 
-                    <form>
+                    <form action="MainController" method="POST">
 
                         <div class="body">
                             <div class="username row mb-4">
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="form-outline">
-                                        <input type="text" id="name" required=""
+                                        <input type="text" name="name" id="name" required=""
                                                class="custom-box form-control form-control-lg pt-1"/>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="form-outline">
-                                        <input type="email" id="email" required=""
+                                        <input type="email" name="email" id="email" required=""
                                                class="custom-box form-control form-control-lg pt-1"/>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="form-outline">
-                                        <input type="text" id="phone" required=""
+                                        <input type="text" name="phoneNumber" id="phone" required=""
                                                class="custom-box form-control form-control-lg pt-1"/>
                                     </div>
                                 </div>
@@ -152,15 +152,18 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="form-outline">
-                                        <input type="password" id="password" required=""
+                                        <input type="password" name="password" id="password" required=""
                                                class="custom-box form-control form-control-lg pt-1"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col-md-2"></div>
+
                                 <div class="col-md-10">
-                                    <button class="button">UPDATE</button>
+                                    <input type="hidden" name="username" id="username"/>
+                                    <input type="hidden" name="roleID" id="roleID" />
+                                    <button class="button" name="action" value="UpdateUser">UPDATE</button>
                                 </div>
                             </div>
                         </div>
