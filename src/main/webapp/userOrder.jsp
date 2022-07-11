@@ -1,23 +1,7 @@
-<%@ page import="com.DTO.UserDTO" %>
-<%@ page import="com.DTO.OrderDTO" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.DTO.OrderDetailDTO" %>
-<%@ page import="com.DAO.OrderDetailDAO" %>
-<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <%
-        UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
-        if (user == null || !user.getRoleID().equals("US")) {
-            response.sendRedirect("login.jsp");
-            return;
-        }
-        if (user == null) {
-            user = new UserDTO();
-        }
-    %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -60,38 +44,15 @@
                         <div class="col col-3">Number of items</div>
                         <div class="col col-4">Action</div>
                     </li>
-                <%
-                    List<OrderDTO> list = (List<OrderDTO>) request.getAttribute("ORDER_LIST");
-                    List<OrderDetailDTO> orderDTList;
-                    OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
 
-                    int index = 1;
-                    if (list == null) {
-                        response.sendRedirect("error.jsp");
-                        return;
-                    }
-
-                    for (OrderDTO order : list) {
-
-                %>
-
-                    <input type="hidden" name="orderID" value="<%= order.getOrderID()%>">
                     <li class="table-row">
-                        <div class="col col-1" data-label="#"><%= index++%></div>
-                        <div class="col col-2" data-label="Order"><%= order.getOrderID()%></div>
-                        <div class="col col-3" data-label="NOI">1</div>
-
-                            <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row1');">
-                                <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
-                            </div>
+                        <div class="col col-1" data-label="#">1</div>
+                        <div class="col col-2" data-label="Order">user321</div>
+                        <div class="col col-3" data-label="NOI">3</div>
+                        <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row1');">
+                            <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
+                        </div>
                     </li>
-
-                    <%
-                        }
-                        for(OrderDTO orderDTO : list) {
-                            orderDTList = orderDetailDAO.getByOrderID(orderDTO.getOrderID());
-                            for(OrderDetailDTO orderDT : orderDTList){
-                    %>
                     <div class="container" id="hidden_row1" class="hidden_row" style="display: none">
                         <ul class="responsive-table p-2 mb-3">
                             <li class="table-header">
@@ -102,18 +63,26 @@
                             </li>
 
                             <li class="table-row">
-                                <div class="col col-1" data-label="Name"><%= orderDT.getItemID()%></div>
-                                <div class="col col-2" data-label="Price"><%= orderDT.getOrderDetailPrice()%></div>
-                                <div class="col col-3" data-label="Quantity"><%= orderDT.getQuantity()%></div>
-                                <div class="col col-4" data-label="Total"><%= orderDT.getOrderDetailPrice() * orderDT.getQuantity()%></div>
+                                <div class="col col-1" data-label="Name">product1</div>
+                                <div class="col col-2" data-label="Price">20</div>
+                                <div class="col col-3" data-label="Quantity">1</div>
+                                <div class="col col-4" data-label="Total">20</div>
                             </li>
-                    <%
-                            }
-                        }
-                    %>
+                            <li class="table-row">
+                                <div class="col col-1" data-label="Name">service1</div>
+                                <div class="col col-2" data-label="Price">30</div>
+                                <div class="col col-3" data-label="Quantity">1</div>
+                                <div class="col col-4" data-label="Total">30</div>
+                            </li>
+                            <li class="table-row">
+                                <div class="col col-1" data-label="Name">product2</div>
+                                <div class="col col-2" data-label="Price">20</div>
+                                <div class="col col-3" data-label="Quantity">1</div>
+                                <div class="col col-4" data-label="Total">20</div>
+                            </li>
+
                         </ul>
                     </div>
-
 <%--                    <li class="table-row">--%>
 <%--                        <div class="col col-1" data-label="#">1</div>--%>
 <%--                        <div class="col col-2" data-label="Order">user321</div>--%>
