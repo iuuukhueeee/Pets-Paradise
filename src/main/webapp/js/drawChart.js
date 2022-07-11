@@ -17,13 +17,18 @@ let TOTAL_INCOME_A_MONTH = {
     },
 
     createChart: function (chartData) {
-        console.log(chartData)
-        let lable = chartData[total_data].map(function(e) {
-            return e.month
+        // var label = chartData.total_data.$map(function(e) {
+        //     return e.month
+        // })
+        var label = $.map(chartData, function(val, i) {
+            return val[i][month]
         })
 
-        let data = chartData[total_data].map(function(e) {
-            return e.total
+        // let data = chartData.total_data.$map(function(e) {
+        //     return e.total
+        // })
+        var data = $.map(chartData, function (val, i) {
+            return val[i][total]
         })
 
         return {
@@ -31,7 +36,7 @@ let TOTAL_INCOME_A_MONTH = {
             data: {
                 // labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                 // labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                lables: lable,
+                lables: label,
                 datasets: [{
                     label: 'My First Dataset',
                     data: data,
