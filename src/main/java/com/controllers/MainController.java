@@ -41,6 +41,9 @@ public class MainController extends HttpServlet {
     private static final String UPDATE_USER_CONTROLLER = "UpdateUserController";
     private static final String RESET_PASSWORD = "ResetPassword";
     private static final String RESET_PASSWORD_CONTROLLER = "ResetPasswordController";
+    private static final String DELETE_PET_INFO = "DeletePetInfo";
+    private static final String DELETE_PET_INFO_CONTROLLER = "DeletePetInfoController";
+
 
     //         ============= PRODUCT ==============
     private static final String ADD_PRODUCT = "AddProduct";
@@ -83,7 +86,10 @@ public class MainController extends HttpServlet {
             if (LOGIN.equals(action)) {
                 url = LOGIN_CONTROLLER;
 
-            } else if (SEARCH_SERVICE.equals(action)) {
+            } else if (DELETE_PET_INFO.equals(action)) {
+                url = DELETE_PET_INFO_CONTROLLER;
+
+            }else if (SEARCH_SERVICE.equals(action)) {
                 url = SEARCH_SERVICE_CONTROLLER;
 
             } else if (SEARCH_USER.equals(action)) {
