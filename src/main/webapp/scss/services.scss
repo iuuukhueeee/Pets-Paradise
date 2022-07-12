@@ -223,6 +223,13 @@ html {
     }
   }
 }
+.price{
+  position: absolute;
+  bottom: 1px;
+  span:first-child{
+    margin-right: 4rem;
+ }
+}
 footer {
   border-top-right-radius: 300px;
   background-color: #dbe3e5;

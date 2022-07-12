@@ -226,6 +226,14 @@ html {
   color: #68A7AD;
 }
 
+.price {
+  position: absolute;
+  bottom: 1px;
+}
+.price span:first-child {
+  margin-right: 4rem;
+}
+
 footer {
   border-top-right-radius: 300px;
   background-color: #dbe3e5;

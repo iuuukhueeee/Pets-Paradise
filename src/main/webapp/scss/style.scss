@@ -205,8 +205,8 @@ html {
       font-family: FontAwesome;
       content: "\f138";
       position: absolute;
-      left: 8rem;
       color: $c2-800;
+      left: -1rem;
     }
   }
   .angle {
@@ -222,7 +222,10 @@ html {
       border: 1px solid $c2-800;
       font-size: 16px;
       position: relative;
-      isolation: isolate;
+      a{
+      text-decoration: none;
+      color: $c3-100;
+      }
     }
     .button:before {
       content: "";

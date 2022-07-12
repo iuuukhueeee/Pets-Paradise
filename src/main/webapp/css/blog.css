@@ -215,6 +215,15 @@ footer .row .col .item h4::after {
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 }
+<<<<<<< HEAD:src/main/webapp/css/blog.css
+=======
+footer .row .col .item h4:hover {
+  color: #68A7AD;
+}
+footer .row .col .item h4:hover::after {
+  width: 10%;
+}
+>>>>>>> origin/website:css/blog.css
 footer .row .col .item .submit {
   margin-bottom: 1rem;
 }

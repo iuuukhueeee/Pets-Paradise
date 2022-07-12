@@ -61,35 +61,41 @@
   </section>
   <section class="services animate__animated animate__bounce">
     <h1>Services</h1>
-    <p>Lorem ipsum dolor sit fjruv df fjjsandae iste ullam expedita.</p>
+    <p>At Pet's Paradise, we serve pets of every type, age, and phase of life because we truly love animals. We show it
+      with every belly rub, long walk, scratch behind the ear, and treat we give. We’d love to be your trusted sidekick
+      for a healthy and happy pet because we know we can deliver trusted, quality care and a professional, stress-free
+      experience for you.</p>
     <div class="container">
       <div class="row">
         <div class="col-md">
           <img src="./img/kit.png" />
           <div class="item">
             <h4>Vaccinate</h4>
-            <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
+            <p> Our medical administrators are experienced with pills, shots, injections, and fluids and can ensure that
+              your pet is getting the right medication at the right time.</p>
           </div>
         </div>
         <div class="col-md">
           <img src="./img/plus.png" />
           <div class="item">
             <h4>Special Care</h4>
-            <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
+            <p>Any time you schedule services thereafter, you’ll receive care from your primary sitter. If the primary
+              sitter is unavailable, the backup sitter will step in.</p>
           </div>
         </div>
         <div class="col-md">
           <img src="./img/support.png" />
           <div class="item">
             <h4>Support 24/7</h4>
-            <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
+            <p>Enthusiastic team support 24/7, ready to answer to your questions in all aspects</p>
           </div>
         </div>
         <div class="col-md">
           <img src="./img/expert.png" />
           <div class="item">
             <h4>Expert</h4>
-            <p>Ut enim ad minim veniam, quis aboris aliquip commodo.</p>
+            <p>You will receive professional advice from doctors and experts to provide a reasonable treatment method
+              for your pets.</p>
           </div>
         </div>
       </div>
@@ -106,19 +112,23 @@
             <h1>Welcome to the Pet Paradise's Services</h1>
             <span>Take care of our pet remotely. </span>
             <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-              ipsum quia dolor sit amet...
+              Everything we do is driven from our love of animals and our commitment to pet health. We offer one
+              budget-friendly pet insurance plan that covers vet visits for new accidents and illnesses. It makes it
+              easy to help protect you and your pet with a pet insurance plan this easy to understand.
             </p>
             <ul>
-              <li>Pet paradise</li>
-              <li>Pet paradise</li>
-              <li>Pet paradise</li>
+              <li>Is Pet Insurance Worth It?
+              </li>
+              <li>Pet Insurance Coverage and Benefits
+              </li>
+              <li>How Cat Insurance Works
+              </li>
             </ul>
           </div>
           <div class="angle">
-            <button class="button">Read More</button>
+            <button class="button">
+              <a href="./readmore.html"> Read More</a>
+            </button>
           </div>
         </div>
       </div>
@@ -228,13 +238,13 @@
                 <div class="top">
                   <i class="fa-solid fa-quote-left"></i>
                   <h1>OMG! I cannot believe. It's Awesome "</h5>
-                    <p>My new site is so much faster and easier to work with than my old site. They are here to help the
-                      customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut
-                      justo, ultrices
-                      in ligula.</p>
+                    <p>The services provided by Pet's Paradise and excellent. They are extremely reliable and
+                      communicative. It
+                      is evident how much they care for our dogs and attentive to their individual needs. Tom is the
+                      best! We could not be happier..</p>
                 </div>
                 <div class="bottom">
-                  <h1>Johnson william</h1>
+                  <h1>Morris Baumgarten</h1>
                   <p>Customer</p>
                 </div>
               </div>
@@ -247,14 +257,14 @@
                 <div class="top">
                   <i class="fa-solid fa-quote-left"></i>
                   <h1>OMG! I cannot believe. It's Awesome "</h5>
-                    <p>My new site is so much faster and easier to work with than my old site. They are here to help the
-                      customers to get their success. Nemo sit eos, quod minus eius illo labore. Pellen tesque libero ut
-                      justo, ultrices
-                      in ligula.</p>
+                    <p>I couldn’t be happier with the service I really didn’t want to leave my dog but I felt like I
+                      could trust Walter with my dog. He took such good care of her and sent us pictures and updates the
+                      whole time. My dog was cared for the way she would be cared for at home. I highly recommend this
+                      place.</p>
                 </div>
                 <div class="bottom">
-                  <h1>Johnson william</h1>
-                  <p>Customer</p>
+                  <h1>Natalie Gidcumb/h1>
+                    <p>Customer</p>
                 </div>
               </div>
             </div>
@@ -267,8 +277,8 @@
   <section class="pricing-plan animate__animated animate__fadeIn" style="animation-duration: 6s;">
     <header>
       <h1>Pricing Plan</h1>
-      <P>Lorem ipsum dolor sit amet consectetetur accusantium sint ad laboriosam, voluptatibus autem ullam voluptate
-        molestias placeat! Nisi excepturi consequuntur modi unde.</P>
+      <P>The choice is the door to the customer's heart, we always have the optimal service package for you in the most
+        perfect way.</P>
     </header>
     <div class="container">
       <div class="row row-cols-4">
@@ -422,8 +432,7 @@
           <div class="item">
             <img src="./img/footer.png" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
-              laborum tempore uscipit, laborum.
+              For more details or questions about us, please contact us via gmail, the support team will quickly find and help you 
             </p>
           </div>
         </div>

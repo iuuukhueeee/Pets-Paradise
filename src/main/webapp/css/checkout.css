@@ -37,8 +37,16 @@ html {
 .body .payment .col .form-group input {
   border: none;
 }
+.body .finish {
+  display: flex;
+  justify-content: space-between;
+}
+.body .finish button {
+  width: 180px;
+}
 @media screen and (max-width: 640px) {
   .body .cart {
+    width: 1280px;
     display: grid;
   }
   .body .cart .item {
