@@ -35,7 +35,7 @@ public class CheckoutController extends HttpServlet {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
             OrderDAO orderDAO = new OrderDAO();
-            OrderDTO order = orderDAO.getByUsername(user.getUsername());
+            OrderDTO order = orderDAO.getCartByUsername(user.getUsername());
             OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
             List<OrderDetailDTO> list = orderDetailDAO.getByOrderID(order.getOrderID());
             List<OrderDetailDTO> outOfStock = new ArrayList<>();

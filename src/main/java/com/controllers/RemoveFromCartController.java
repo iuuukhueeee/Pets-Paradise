@@ -27,7 +27,7 @@ public class RemoveFromCartController extends HttpServlet {
             }
             UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
             OrderDAO orderDAO = new OrderDAO();
-            OrderDTO order = orderDAO.getByUsername(user.getUsername());
+            OrderDTO order = orderDAO.getCartByUsername(user.getUsername());
             String ID = request.getParameter("ID");
             OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
             if (orderDetailDAO.removeItem(ID, order.getOrderID())) {

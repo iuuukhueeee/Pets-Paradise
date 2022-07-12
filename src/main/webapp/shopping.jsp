@@ -100,7 +100,7 @@
                         id="mobile-menu-2" start="margin-left:16px;">
                         <li
                                 style="border-color: #a5d0cc;padding: 12px;color:rgb(107 114 128 / 1);border-radius: 8px;">
-                            <a href="./checkout.jsp" id="cart"><i class="fa fa-shopping-cart py-2.5" type="button"
+                            <a href="checkout" id="cart"><i class="fa fa-shopping-cart py-2.5" type="button"
                                                                  data-modal-toggle="defaultModal"></i> Cart </a>
                             <!-- <div id="defaultModal" tabindex="-1" aria-hidden="true"
                                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"

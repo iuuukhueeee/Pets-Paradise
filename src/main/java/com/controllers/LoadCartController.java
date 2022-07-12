@@ -38,7 +38,7 @@ public class LoadCartController extends HttpServlet {
             List<ItemDetails> list = new ArrayList<>();
 
             OrderDAO orderDAO = new OrderDAO();
-            OrderDTO order = orderDAO.getByUsername(user.getUsername());
+            OrderDTO order = orderDAO.getCartByUsername(user.getUsername());
             if (order != null) {
                 OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
                 List<OrderDetailDTO> cart = orderDetailDAO.getByOrderID(order.getOrderID());

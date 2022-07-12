@@ -55,10 +55,10 @@ public class AddToCartController extends HttpServlet {
 //
 //
 
-            order = orderDAO.getByUsername(user.getUsername());
+            order = orderDAO.getCartByUsername(user.getUsername());
             if (order == null) {
                 orderDAO.createOrder(user.getUsername());
-                order = orderDAO.getByUsername(user.getUsername());
+                order = orderDAO.getCartByUsername(user.getUsername());
             }
 
 

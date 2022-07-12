@@ -16,10 +16,11 @@ public class OrderDAO {
     private static final String DELETE = "UPDATE Orders SET Status=0 WHERE OrderID=?";
     private static final String GET_ORDERS = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE status = 1 ";
     private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE OrderID LIKE ? AND Status = 1";
-    private static final String GET_BY_USERNAME = "SELECT OrderID, OrderDate FROM Orders WHERE Status=2 AND Username=?";
+    private static final String GET_CART_BY_USERNAME = "SELECT OrderID, OrderDate FROM Orders WHERE Status=2 AND Username=?";
     private static final String UPDATE_TOTAL = "UPDATE Orders SET Total=? WHERE OrderID=?";
     private static final String CHECKOUT = "UPDATE Orders SET Status=1 WHERE OrderID=?";
     private static final String TOTAL_INCOME_A_MONTH = "select sum(total) as Total, month(OrderDate) as Month from Orders group by month(OrderDate)";
+    private static final String GET_ORDERED_BY_USERNAME = "SELECT OrderID, OrderDate, FeedbackOrder FROM Orders WHERE Status=1 AND Username=?";
 
 
     public boolean deleteOrder(String OrderID) throws SQLException {
@@ -220,7 +221,7 @@ public class OrderDAO {
         return order;
     }
 
-    public OrderDTO getByUsername(String username) throws SQLException {
+    public OrderDTO getCartByUsername(String username) throws SQLException {
         OrderDTO order = null;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -229,7 +230,7 @@ public class OrderDAO {
         try {
             conn = DButils.getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_BY_USERNAME);
+                ptm = conn.prepareStatement(GET_CART_BY_USERNAME);
                 ptm.setString(1, username);
                 rs = ptm.executeQuery();
                 if (rs.next()) {
@@ -329,6 +330,36 @@ public class OrderDAO {
             if (conn != null) conn.close();
         }
 
+        return list;
+    }
+
+    public List<OrderDTO> getOrderByUsername(String username) throws SQLException {
+        List<OrderDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_ORDERED_BY_USERNAME);
+                ptm.setString(1, username);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    String id = rs.getString("OrderID");
+                    Date date = rs.getDate("OrderDate");
+                    String feedback = rs.getString("FeedbackOrder");
+                    list.add(new OrderDTO(id, date, username, feedback));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+
+        }
         return list;
     }
 }
