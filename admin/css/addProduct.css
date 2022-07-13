@@ -255,12 +255,43 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
 }
 
 /* 
-======================= RESPONSIVE ======================= */
+======================= RESPONSIVE ================.sidebar======= */
+
+@media screen and (max-width: 1350px){
+
+  .container:not(.t-container .container){
+    width: 80%;
+    padding-right: none;
+  }
+  .t-container .container{
+    width: 90%;
+    padding-right: none;
+  }
+  .t-container .container .table-header, .table-row, i {
+    font-size: 12px;
+  }
+}
 
 @media screen and (max-width: 820px) {
-  .container {
-    width: 100%;
+  /* body{
+    max-width: 100%;
+  } */
+  .container:not(.t-container .container){
+    width: 80%;
     padding-right: none;
+  }
+  .col{
+    font-size: 10px;
+  }
+  .t-container .container{
+    width: 90%;
+  }
+  .sidebar{
+    width: 25% !important;
+  }
+  div.content{
+    margin-left: 82px !important;
+    padding-left: 6vh !important;
   }
 }
 

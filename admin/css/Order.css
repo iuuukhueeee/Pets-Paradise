@@ -305,23 +305,28 @@ h2 small {
 }
 
 @media screen and (max-width: 820px) {
-    .content {
-        width: 90%;
-    }
-
     .res_cust {
         padding-left: 5%;
         padding-right: 5%;
     }
 
-    .searchBar {
-        padding-left: 2vh !important;
+    .container:not(.t-container .container){
         width: 80%;
-    }
-
-    .container{
-        max-width: 90vh;
-    }
+        padding-right: none;
+      }
+      .col{
+        font-size: 10px;
+      }
+      .t-container .container{
+        width: 90%;
+      }
+      .sidebar{
+        width: 25% !important;
+      }
+      div.content{
+        margin-left: 82px !important;
+        padding-left: 6vh !important;
+      }
 
     body > div.content > div > div.row.height.d-flex.justify-content-center.align-items-center > div > div.form{
         left: 20px;
