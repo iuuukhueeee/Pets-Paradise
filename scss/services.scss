@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Raleway";
- 
 }
 
 html {
@@ -170,19 +169,16 @@ html {
 .services {
   .row {
     .col {
-      height: auto;
-      width: 200px;
+      height: 540px;
+      width: 270px;
       .item {
         width: 100%;
         height: 100%;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid $c2-800;
-        text-overflow: ellipsis;
-        // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        // border: 1px solid $c2-800;
         border-radius: 10px;
-        &:hover .top .left {
-        }
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
         .top {
           .left {
             img {
@@ -205,9 +201,11 @@ html {
           }
         }
         .price {
-          margin-top: 8px;
+          left: 7rem;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
+          position: absolute;
+          bottom: 3px;
           span {
             a,
             i {
@@ -218,18 +216,15 @@ html {
               }
             }
           }
+          button{
+            font-size: 1.1rem;
+          }
         }
       }
     }
   }
 }
-.price{
-  position: absolute;
-  bottom: 1px;
-  span:first-child{
-    margin-right: 4rem;
- }
-}
+
 footer {
   border-top-right-radius: 300px;
   background-color: #dbe3e5;
