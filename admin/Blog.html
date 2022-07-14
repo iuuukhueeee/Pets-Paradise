@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="./css/dropDownAdmin.css">
   <link rel="shortcut icon" type="img/png" href="../img/paw-solid.svg" />
   <link rel="stylesheet" href="./css/addBlog.css">
-  <link rel="stylesheet" href="./css/editBlog.css">
   <script src="https://cdn.tiny.cloud/1/ebo3g8bht1kjiuwzixu450932i6t0uhja677ht67fe1xkp3r/tinymce/6/tinymce.min.js"
     referrerpolicy="origin"></script>
   <link
@@ -84,61 +83,17 @@
 
                   <div class="row">
                     <div class="col-md-12">
-                      <form action="" class="tm-edit-product-form">
-                        <div class="form-group mb-3">
-                          <div class="username row mb-4">
-                            <div class="col-md-2 d-flex align-items-center">
-                              Author
-                            </div>
-                            <div class="col-md-10">
-                              <div class="form-outline">
-                                <input type="text" id="form3Example1cg" required=""
-                                  class="custom-box form-control form-control-lg pt-1" />
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div class="username row mb-4">
-                            <div class="col-md-2 d-flex align-items-center">
-                              Blog Title
-                            </div>
-                            <div class="col-md-10">
-                              <div class="form-outline">
-                                <input type="text" id="form3Example1cg" required=""
-                                  class="custom-box form-control form-control-lg pt-1" />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="username row mb-4">
-                            <div class="col-md-2 d-flex align-items-center">
-                              Description
-                            </div>
-                            <div class="col-md-10">
-                              <div class="form-outline">
-                                <input type="text" id="form3Example1cg" required=""
-                                  class="custom-box form-control form-control-lg pt-1" />
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="username row mb-4">
-                            <div class="col-md-2 d-flex">
-                              Content
-                            </div>
-                            <div class="col-md-10">
-                              <form style="margin-bottom: 2rem;">
-                                <textarea name="message" id="message"></textarea>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
                         <div class="row mb-4">
-                          <div class="col-md-2"></div>
-                          <div class="col-md-10">
-                          <button class="button">Add User</button>
+                          <div class="col-md-2">
+                            <a
+                        href="./adminAddBlog.html"
+                        target="popup"
+                        onclick="window.open('adminAddBlog.html','_blank','fullscreen=yes','true')"
+                      >
+                          <button class="button">Create Blog</button></a>
                           </div>
+                          <div class="col-md-10"></div>
                         </div>
-                        </form>
                   </div>
                 </div>
               </div>
