@@ -316,37 +316,92 @@ h2 small {
 
 /*================= RESPONSIVE ================== */
 
-@media screen and (max-width: 992px) {
-    .Add_992rs .row {
-        width: 400px;
-        padding-left: 10%;
-        padding-right: 20px;
-    }
-}
+/* ============================== Table ==================================== */
 
+
+@media screen and (max-width: 1350px){
+
+    .container:not(.t-container .container){
+      width: 80%;
+      padding-right: none;
+    }
+    .t-container .container{
+      width: 90%;
+      padding-right: none;
+    }
+    .t-container .container .table-header, .table-row, i {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 1000px){
+
+    .container:not(.t-container .container){
+      width: 80%;
+      padding-right: none;
+    }
+    .t-container .container{
+      width: 90%;
+      padding-right: none;
+    }
+    .t-container .container .table-header, .table-row, i {
+      font-size: 10px;
+    }
+  }
+
+
+
+@media screen and (max-width: 880px) {
+    /* body{
+      max-width: 100%;
+    } */
+    .container:not(.t-container .container){
+      width: 90%;
+      padding-right: none;
+    }
+    .col{
+      font-size: 10px;
+    }
+    .t-container .container{
+      width: 100%;
+    }
+    .sidebar{
+      width: 25%;
+    }
+    div.content{
+      /* margin-left: 82px !important; */
+      /* padding-left: 6vh !important; */
+    }
+    .t-container .container .table-header, .table-row, i {
+      font-size: 8px;
+    }
+  }
 @media screen and (max-width: 820px) {
 
     .container:not(.t-container .container){
-        width: 80%;
-        padding-right: none;
+        width: 90%;
       }
       .col{
         font-size: 10px;
       }
       .t-container .container{
-        width: 115%;
-        padding-left: 3vh !important;      
+        width: 100%;
     }
       .sidebar{
         width: 25% !important;
       }
+
+  
+    .searchBar {
+        width: 80%;
+    }
 
 
 }
 
 @media screen and (max-width: 768px) {
     .sidebar {
-        width: 100vh;
+        width: 100% !important;
         height: auto;
         position: relative;
     }
@@ -356,7 +411,7 @@ h2 small {
     }
 
     .searchBar {
-        padding-left: 7vh !important;
+        margin-left: 0 !important;
     }
 
     div.content {
@@ -371,72 +426,58 @@ h2 small {
     .Addmin_414rs {
         display: none;
     }
-}
 
-@media screen and (max-width: 700px) {
-    .sidebar {
+    .table-row i{
+        font-size: 12px !important;
+    }
+    .responsive-table .table-header {
+        display: none;
+      }
+      .responsive-table .col-4 {
         width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .sidebar a {
-        float: left;
-    }
-
-    div.content {
-        margin-left: 0;
-    }
+      }
+    
+      .responsive-table li {
+        display: block;
+      }
+    
+      .responsive-table .col {
+        flex-basis: 100%;
+        padding: 10px 0;
+      }
+    
+      .responsive-table .col:before {
+        color: #6c7a89;
+        content: attr(data-label);
+      }
 }
+
+
 @media screen and (max-width: 576px) {
     .sidebar a {
-        text-align: center;
-        float: none;
+      text-align: center;
+      float: none;
     }
-
-    .form span{
-        display: none;
+  
+    body>div.content>div:nth-child(1)>div>div>div:nth-child(3) {
+      display: none !important;
     }
-}
-
-@media screen and (max-width: 414px) {
-    .Search_390rs {
-        display: none !important;
+  
+    .left-pan {
+      display: none;
     }
-
-    .Add_992rs .row{
-        width: auto;
+  
+  }
+  
+  @media screen and (max-width: 375px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
     }
-
-}
-
-@media screen and (min-width: 415px) {
-    .Addmin_414rs {
-        display: none !important;
-        ;
-    }
-}
-
-@media screen and (max-width: 390px) {
-    .form-control {
-        width: 200px;
-    }
-    
-    .responsive-table .table-row {
-        width: 250px;
-    }
-
-    .responsive-table li{
-        display: contents;
-    }
-
-    div.content {
-        max-width: 250px;
-    }
-
-    .Search_390rs {
-        display: none !important;
-    }
-}
-
-@media screen and (max-width: 375px) {}
+  
+  ul {
+      margin-top: 0;
+      margin-bottom: 1rem;
+  }
+  }
