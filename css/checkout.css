@@ -41,10 +41,24 @@ html {
   display: flex;
   justify-content: space-between;
 }
-.body .finish button {
+.body .btn-finish {
+  display: flex;
+  justify-content: flex-end;
+}
+.body .btn-finish button {
   width: 180px;
 }
+.body .total ul {
+  list-style-type: circle;
+  margin-top: 2rem;
+}
+.body .total ul li {
+  margin-bottom: 1rem;
+}
 @media screen and (max-width: 640px) {
+  .body .background {
+    min-width: 1280px;
+  }
   .body .cart {
     width: 1280px;
     display: grid;
