@@ -178,8 +178,7 @@ html {
 }
 
 .services .row .col {
-  height: 540px;
-  width: 270px;
+  height: 590px;
 }
 .services .row .col .item {
   width: 100%;
@@ -187,7 +186,7 @@ html {
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .services .row .col .item .top .left img {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -215,7 +214,7 @@ html {
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 3px;
+  bottom: 40px;
 }
 .services .row .col .item .price span a,
 .services .row .col .item .price span i {
@@ -322,6 +321,13 @@ footer .row .col .item .submit div input[type=submit]:hover {
 }
 .backToTop a:hover i {
   transform: rotate(180deg);
+}
+
+@media screen and (max-width: 576px) {
+  .price {
+    position: absolute;
+    bottom: 2px;
+  }
 }
 
 /*# sourceMappingURL=services.css.map */
