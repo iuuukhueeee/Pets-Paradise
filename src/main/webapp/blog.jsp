@@ -145,8 +145,8 @@
                             <%=blog.getBlogDescription()%>
                         </p>
                         <div class="pt-3 mt-3 border-top d-flex">
-                            <img src="./img/cat.jpg" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"
-                                 alt="">
+<%--                            <img src="./img/cat.jpg" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
+<%--                                 alt="">--%>
                             <div class="author mt-2">
                                 <h6 class="mb-0"><p class="text-dark name"><%=blog.getAuthor()%>
                                 </p>

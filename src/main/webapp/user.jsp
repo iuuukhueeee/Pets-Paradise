@@ -40,10 +40,10 @@
         <a href="./user.jsp" class="collapsible active">Personal Information</a>
     </div>
     <div>
-        <a href="./userOrder.jsp" class="collapsible">Order</a>
+        <a href="UserOrder" class="collapsible">Order</a>
     </div>
     <div>
-        <a href="./userPetInfo.jsp" class="collapsible">Pet's Info</a>
+        <a href="UserPetInfo" class="collapsible">Pet's Info</a>
     </div>
 </div>
 <div class="content">

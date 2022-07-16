@@ -16,7 +16,7 @@ import com.DTO.UserDTO;
 public class SearchProductController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS_US = "shopping";
+    private static final String SUCCESS_US = "shopping.jsp";
     private static final String SUCCESS_AD = "adminProduct.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -26,21 +26,26 @@ public class SearchProductController extends HttpServlet {
         String url = ERROR;
 
         try {
-            String searchproduct = request.getParameter("searchProduct");
+            String searchproduct = request.getParameter("SearchProduct");
             if(searchproduct == null) searchproduct = "";
             ProductDAO dao = new ProductDAO();
 
             List<ProductDTO> list = dao.getListProduct(searchproduct);
-            request.removeAttribute("PRODUCT_LIST");
-            request.setAttribute("PRODUCT_LIST", list);
+            request.setAttribute("LIST_PRODUCT", list);
 
-            HttpSession session = request.getSession();
+            HttpSession session = request.getSession(false);
             UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
-            if (loginUser.getRoleID().equals("US")) {
+            if (loginUser == null) {
                 url = SUCCESS_US;
-            } else if (loginUser.getRoleID().equals("AD")) {
-                url = SUCCESS_AD;
+            } else {
+                if (loginUser.getRoleID().equals("US")) {
+                    url = SUCCESS_US;
+                } else if (loginUser.getRoleID().equals("AD")) {
+                    url = SUCCESS_AD;
+                }
             }
+
+
         } catch (Exception e) {
             log("Error at SearchProductController: " + e.toString());
         } finally {

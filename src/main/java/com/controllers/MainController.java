@@ -45,7 +45,7 @@ public class MainController extends HttpServlet {
     //         ============= PRODUCT ==============
     private static final String ADD_PRODUCT = "AddProduct";
     private static final String ADD_PRODUCT_CONTROLLER = "AddProductController";
-    private static final String SEARCH_PRODUCT = "searchProduct";
+    private static final String SEARCH_PRODUCT = "SearchProduct";
     private static final String SEARCH_PRODUCT_CONTROLLER = "SearchProductController";
     private static final String DELETE_PRODUCT = "DeleteProduct";
     private static final String DELETE_PRODUCT_CONTROLLER = "DeleteProductController";

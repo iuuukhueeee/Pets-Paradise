@@ -75,7 +75,7 @@
             <div class="col-md-12 searchBar">
                 <form method="post" action="MainController">
                     <div class="form">
-                        <input type="text" class="form-control form-input" placeholder="Search..." name="searchProduct"
+                        <input type="text" class="form-control form-input" placeholder="Search..." name="SearchProduct"
                                value="<%=search%>">
                         <span class="left-pan btn ">
                             <button name="action" value="searchProduct">

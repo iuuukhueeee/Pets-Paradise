@@ -6,9 +6,8 @@ import com.utils.DButils;
 import com.utils.DateUtils;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.sql.Date;
+import java.util.*;
 
 public class OrderDAO {
     private static final String CREATE = "INSERT INTO Orders(OrderID, OrderDate, Username, Status) VALUES(?,?,?,2)";
@@ -19,7 +18,7 @@ public class OrderDAO {
     private static final String GET_CART_BY_USERNAME = "SELECT OrderID, OrderDate FROM Orders WHERE Status=2 AND Username=?";
     private static final String UPDATE_TOTAL = "UPDATE Orders SET Total=? WHERE OrderID=?";
     private static final String CHECKOUT = "UPDATE Orders SET Status=1 WHERE OrderID=?";
-    private static final String TOTAL_INCOME_A_MONTH = "select sum(total) as Total, month(OrderDate) as Month from Orders group by month(OrderDate)";
+    private static final String TOTAL_INCOME_A_MONTH = "select sum(total) as Total, monthname(OrderDate) as Month from Orders group by month(OrderDate)";
     private static final String GET_ORDERED_BY_USERNAME = "SELECT OrderID, OrderDate, FeedbackOrder FROM Orders WHERE Status=1 AND Username=?";
 
 
@@ -305,8 +304,8 @@ public class OrderDAO {
         return check;
     }
 
-    public List<IncomeDTO> getTotalIncomeAMonth() throws SQLException {
-        List<IncomeDTO> list = new ArrayList<>();
+    public Map<String, IncomeDTO> getTotalIncomeAMonth() throws SQLException {
+        Map<String, IncomeDTO> map = new HashMap<>();
         Connection conn = null;
         PreparedStatement ptm = null;
         ResultSet rs = null;
@@ -319,7 +318,9 @@ public class OrderDAO {
                 while (rs.next()) {
                     float total = Float.parseFloat(rs.getString("Total"));
                     String month = rs.getString("Month");
-                    list.add(new IncomeDTO(total, month));
+                    if (!map.containsKey(month)) {
+                        map.put(month, new IncomeDTO(total, month));
+                    }
                 }
             }
         } catch (Exception e) {
@@ -330,7 +331,7 @@ public class OrderDAO {
             if (conn != null) conn.close();
         }
 
-        return list;
+        return map;
     }
 
     public List<OrderDTO> getOrderByUsername(String username) throws SQLException {

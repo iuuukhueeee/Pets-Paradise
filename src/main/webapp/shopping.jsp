@@ -371,7 +371,7 @@
         <h1>Featured Products</h1>
     </div>
     <div class="search" style="margin-bottom:40px">
-        <form>
+        <form action="MainController" method="POST">
             <div class="flex">
                 <label for="search-dropdown"
                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Your
@@ -423,10 +423,10 @@
                     </ul>
                 </div>
                 <div class="relative w-full">
-                    <input type="search" id="search-dropdown"
+                    <input type="search" id="search-dropdown" name="SearchProduct"
                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-[#a5d0cc] rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-[#68A7AD] focus:border-[#68A7AD] dark:bg-transparent dark:border-l-[#68A7AD]  dark:border-[#68A7AD] dark:placeholder-gray-400 dark:text-dark dark:focus:border-[#68A7AD]"
                            placeholder="Search " required="">
-                    <button type="submit"
+                    <button type="submit" name="action" value="SearchProduct"
                             class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-[#68A7AD] dark:bg-[#68A7AD] dark:hover:bg-[#68A7AD]dark:focus:ring-[#68A7AD]">
                         <svg
                                 class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
