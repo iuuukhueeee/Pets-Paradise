@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+nav {
+  margin-top: 2rem;
+}
+
+h1 {
+  overflow: hidden;
+  text-align: center;
+  font-size: 40px;
+  margin: 2rem;
+}
+
+h1:before,
+h1:after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1.4px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+h1:before {
+  right: 0.5em;
+  margin-left: -30%;
+}
+
+h1:after {
+  left: 0.5em;
+  margin-right: -30%;
+}
+
+.submit {
+  margin-left: 54rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 820px) {
+  .submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 0px;
+  }
+}
+
+/*# sourceMappingURL=feedback.css.map */
