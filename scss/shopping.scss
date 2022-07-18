@@ -132,6 +132,11 @@ html {
 
 .product {
   margin-top: 2rem;
+  #categories{
+    color: white;
+    background-color: $c2-800;
+    width: 220px;
+  }
   .feature {
     h1 {
       margin: 2rem;
