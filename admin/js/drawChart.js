@@ -105,11 +105,20 @@ const chart = new Chart(ctx, {
                 'rgba(39, 174, 96,1.0)'
 
             ],
-            borderWidth: 1,
-            lineTension: 0.25,
+            // borderWidth: 1,
+            // lineTension: 0.25,
         }]
     },
     options: {
+        animations:{
+            borderWidth:{
+                duration:1000,
+                easing:'linear',
+                to:1,
+                from:10,
+                loop:true,
+            }
+        },
         scales: {
             // x: {
             //     type: 'time',
