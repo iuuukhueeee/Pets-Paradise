@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Raleway";
- 
 }
 
 html {
@@ -170,20 +169,15 @@ html {
 .services {
   .row {
     .col {
-      height: auto;
-      width: 200px;
+      height: 590px;
       .item {
         width: 100%;
         height: 100%;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid $c2-800;
-        text-overflow: ellipsis;
-        // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        // border: 1px solid $c2-800;
         border-radius: 10px;
-        &:hover .top .left {
-        }
-        .top {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;        .top {
           .left {
             img {
               box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -205,9 +199,11 @@ html {
           }
         }
         .price {
-          margin-top: 8px;
+          left: 7rem;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
+          position: absolute;
+          bottom: 40px;
           span {
             a,
             i {
@@ -218,18 +214,15 @@ html {
               }
             }
           }
+          button{
+            font-size: 1.1rem;
+          }
         }
       }
     }
   }
 }
-.price{
-  position: absolute;
-  bottom: 1px;
-  span:first-child{
-    margin-right: 4rem;
- }
-}
+
 footer {
   border-top-right-radius: 300px;
   background-color: #dbe3e5;
@@ -328,5 +321,11 @@ footer {
         transform: rotate(180deg);
       }
     }
+  }
+}
+@media screen and (max-width:576px){
+  .price{
+    position: absolute;
+    bottom: 2px;
   }
 }

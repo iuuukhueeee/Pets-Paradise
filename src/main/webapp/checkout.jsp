@@ -99,130 +99,192 @@
                                 Total
                             </h3>
                         </div>
-
-                        <%
-                            float total = 0;
-                            for (ItemDetails item : list) {
-                                total += item.getPrice() * item.getQuantity();
-                        %>
-
                         <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                             <div class="flex w-2/5">
                                 <div class="w-20">
                                     <img class="h-24" src="./img/service1.jpeg" alt="">
                                 </div>
                                 <div class="flex flex-col justify-between ml-4 flex-grow">
-                                    <span class="font-bold text-sm"><%=item.getName()%></span>
+                                    <span class="font-bold text-sm">Iphone 6S</span>
+                                    <!-- <span class="text-red-500 text-xs">Apple</span> -->
                                     <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs"
                                        style="margin-bottom:2.5rem">Remove</a>
                                 </div>
                             </div>
                             <div class="flex justify-center w-1/5">
                                 <div class="qty">
-                                    <input type="number" class="count" name="qty" value="<%=item.getQuantity()%>"
-                                           min="1"
+                                    <input type="number" class="count" name="qty" value="1"
                                            style="width: 80px;height: 60px;">
                                 </div>
                             </div>
-                            <span class="text-center w-1/5 font-semibold text-sm"><%=item.getPrice()%></span>
-                            <span class="text-center w-1/5 font-semibold text-sm"><%=item.getPrice() * item.getQuantity()%></span>
-                        </div>
+                            <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
+                            <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
+                            <%
+                                float total = 0;
+                                for (ItemDetails item : list) {
+                                    total += item.getPrice() * item.getQuantity();
+                            %>
 
-                        <%
-                            }
-                        %>
-                        <div class="finish">
-                            <a href="shopping" class="flex font-semibold text-indigo-600 text-sm mt-10">
-
-                                <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
-                                    <path
-                                            d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/>
-                                </svg>
-                                Continue Shopping
-                            </a>
-                            <button
-                                    class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase ">
-                                Finish
-                            </button>
-                        </div>
-                    </div>
-                    <form action="">
-                        <div id="summary" class=" px-8 py-10">
-                            <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
-                            <div>
-                                <label class="font-medium inline-block mb-3 text-sm uppercase">Payment</label>
-                                <select class="block p-2 text-gray-600 w-full text-sm" id="list"
-                                        onchange="getSelector()">
-                                    <option id="cash" value="cash">Cash</option>
-                                    <option id="paypal" value="paypal">PayPal</option>
-                                </select>
-                            </div>
-                            <div class="row justify-center payment" id="payment_method" style="display: none;">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="row">
-                                            <div class="col radio-group">
-                                                <div class="row flex px-3 radio gray mb-3">
-                                                    <img class="pay" src="./img/paypal.png" style="height: 40px;">
-                                                    <p class="my-auto">PayPal</p>
-                                                </div>
-                                            </div>
-                                            <div class="col ">
-                                                <div class="row px-2">
-                                                    <div class="form-group col-md-6">
-                                                        <label class="form-control-label">Name on Card</label>
-                                                        <input type="text" id="cname" name="cname"
-                                                               placeholder="Johnny Doe">
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label class="form-control-label">Card Number</label>
-                                                        <input type="text" id="cnum" name="cnum"
-                                                               placeholder="1111 2222 3333 4444">
-                                                    </div>
-                                                </div>
-                                                <div class="row px-2">
-                                                    <div class="form-group col-md-6">
-                                                        <label class="form-control-label">Expiration Date</label>
-                                                        <input type="text" id="exp" name="exp"
-                                                               placeholder="MM/YYYY">
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label class="form-control-label">CVV</label>
-                                                        <input type="text" id="cvv" name="cvv" placeholder="***">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
+                            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                                <div class="flex w-2/5">
+                                    <div class="w-20">
+                                        <img class="h-24" src="./img/service1.jpeg" alt="">
+                                    </div>
+                                    <div class="flex flex-col justify-between ml-4 flex-grow">
+                                        <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
+                                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                                           style="margin-bottom:2.5rem">Remove</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="py-10">
-                                <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo
-                                    Code</label>
-                                <input type="text" id="promo" placeholder="Enter your code"
-                                       class="p-2 text-sm w-full">
-                            </div>
-                            <button
-                                    class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply
-                            </button>
-                            <div class="border-t mt-8">
-                                <div class="flex font-semibold justify-between py-6 text-sm uppercase">
-                                    <span>Total cost</span>
-                                    <span>$600</span>
+                                <div class="flex justify-center w-1/5">
+                                    <div class="qty">
+                                        <input type="number" class="count" name="qty" value="1"
+                                               style="width: 80px;height: 60px;">
+                                    </div>
                                 </div>
-                                <!-- <button
-                                class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full finish">Finish</button> -->
+                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
+                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
+                            </div>
+                            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                                <div class="flex w-2/5">
+                                    <div class="w-20">
+                                        <img class="h-24" src="./img/service1.jpeg" alt="">
+                                    </div>
+                                    <div class="flex flex-col justify-between ml-4 flex-grow">
+                                        <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
+                                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                                           style="margin-bottom:2.5rem">Remove</a>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center w-1/5">
+                                    <div class="qty">
+                                        <input type="number" class="count" name="qty" value="1"
+                                               style="width: 80px;height: 60px;">
+                                    </div>
+                                </div>
+                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
+                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
+                            </div>
+                            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                                <div class="flex w-2/5">
+                                    <div class="w-20">
+                                        <img class="h-24" src="./img/service1.jpeg" alt="">
+                                    </div>
+                                    <div class="flex flex-col justify-between ml-4 flex-grow">
+                                        <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
+                                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                                           style="margin-bottom:2.5rem">Remove</a>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center w-1/5">
+                                    <div class="qty">
+                                        <input type="number" class="count" name="qty" value="1"
+                                               style="width: 80px;height: 60px;">
+                                    </div>
+                                </div>
+                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
+                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
                             </div>
 
+                            <%
+                                }
+                            %>
+                            <div class="finish">
+                                <a href="shopping" class="flex font-semibold text-indigo-600 text-sm mt-10">
+
+                                    <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+                                        <path
+                                                d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/>
+                                    </svg>
+                                    Continue Shopping
+                                </a>
+
+                                <div class="cost" style="margin-bottom: 2px;margin-top:2rem;">
+                                    <span>Total: </span>
+                                    <span
+                                            class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">$9000</span>
+                                </div>
+
+                            </div>
+                            <div class="btn-finish">
+                                <button
+                                        class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase ">
+                                    Finish
+                                </button>
+                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
+    <form action="">
+        <div id="summary " class=" px-8 py-10">
+
+            <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
+            <div class="total">
+
+                <ul>
+                    <li>User Name: avc</li>
+                    <li>Total Items: 20</li>
+                    <li>Total Services: 5</li>
+                </ul>
+
+            </div>
+            <div class="border-t mt-8"></div>
+            <div>
+                <label class="font-medium inline-block mb-3 text-sm uppercase">Payment</label>
+                <select class="block p-2 text-gray-600 w-full text-sm" id="list" onchange="getSelector()">
+                    <option id="cash" value="cash">Cash</option>
+                    <option id="paypal" value="paypal">PayPal</option>
+                </select>
+            </div>
+            <div class="row justify-center payment" id="payment_method" style="display: none;">
+                <div class="col">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col radio-group">
+                                <div class="row flex px-3 radio gray mb-3">
+                                    <img class="pay" src="./img/paypal.png" style="height: 40px;">
+                                    <p class="my-auto">PayPal</p>
+                                </div>
+                            </div>
+                            <div class="col ">
+                                <div class="row px-2">
+                                    <div class="form-group col-md-6">
+                                        <label class="form-control-label">Name on Card</label>
+                                        <input type="text" id="cname" name="cname" placeholder="Johnny Doe">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-control-label">Card Number</label>
+                                        <input type="text" id="cnum" name="cnum" placeholder="1111 2222 3333 4444">
+                                    </div>
+                                </div>
+                                <div class="row px-2">
+                                    <div class="form-group col-md-6">
+                                        <label class="form-control-label">Expiration Date</label>
+                                        <input type="text" id="exp" name="exp" placeholder="MM/YYYY">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-control-label">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="***">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-10">
+                <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo
+                    Code</label>
+                <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full">
+            </div>
+            <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
+        </div>
+    </form>
 </section>
-</div>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./js/selector.js"></script>

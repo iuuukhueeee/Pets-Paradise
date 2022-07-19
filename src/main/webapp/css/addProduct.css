@@ -100,7 +100,6 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
 .form .fa-search {
   position: absolute;
   top: 20px;
-  left: 20px;
   color: #9ca3af;
 }
 
@@ -161,7 +160,95 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   max-height: 0px;
   transition: all 0.3s;
 }
+/* ============================== Table ==================================== */
 
+.container:not(.t-container .container) {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.t-container .container{
+  max-width: 1090px;
+}
+
+h2 {
+  margin: 20px 0;
+  text-align: center;
+}
+h2 small {
+  font-size: 0.5em;
+}
+
+.responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.responsive-table .table-header {
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+  background-color: #fff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1 {
+  flex-basis: 6%;
+}
+.responsive-table .col-2 {
+  flex-basis: 18%;
+}
+.responsive-table .col-3 {
+  flex-basis: 10%;
+}
+.responsive-table .col-4 {
+  flex-basis: 10%;
+}
+.responsive-table .col-5 {
+  flex-basis: 10%;
+}
+.responsive-table .col-6 {
+  flex-basis: 10%;
+}
+.responsive-table .col-7 {
+  flex-basis: 13%;
+}
+.responsive-table .col-8 {
+  flex-basis: 13%;
+}
+.responsive-table .col-9 {
+  flex-basis: 10%;
+  text-align: center;
+}
+
+@media all and (max-width: 768px) {
+  .responsive-table .table-header {
+      display: none;
+ }
+  .responsive-table li {
+      display: block;
+ }
+  .responsive-table .col {
+      flex-basis: 100%;
+ }
+  .responsive-table .col {
+      display: flex;
+      padding: 10px 0;
+ }
+  .responsive-table .col:before {
+      color: #6c7a89;
+      padding-right: 10px;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+ }
+}
 /* ============================== RESPONSIVE ==================================== */
 
 /* body */
@@ -255,22 +342,112 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
 }
 
 /* 
-======================= RESPONSIVE ======================= */
+======================= RESPONSIVE ================.sidebar======= */
+
+@media screen and (max-width: 1350px){
+
+  .container:not(.t-container .container){
+    width: 80%;
+    padding-right: none;
+  }
+  .t-container .container{
+    width: 90%;
+    padding-right: none;
+  }
+  .t-container .container .table-header, .table-row, i {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1000px){
+
+  .container:not(.t-container .container){
+    width: 80%;
+    padding-right: none;
+  }
+  .t-container .container{
+    width: 90%;
+    padding-right: none;
+  }
+  .t-container .container .table-header, .table-row, i {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  /* body{
+    max-width: 100%;
+  } */
+  .container:not(.t-container .container){
+    width: 90%;
+    padding-right: none;
+  }
+  .col{
+    font-size: 10px;
+  }
+  .t-container .container{
+    width: 100%;
+  }
+  .sidebar{
+    width: 25%;
+  }
+  div.content{
+    /* margin-left: 82px !important; */
+    /* padding-left: 6vh !important; */
+  }
+  .t-container .container .table-header, .table-row, i {
+    font-size: 8px;
+  }
+}
 
 @media screen and (max-width: 820px) {
-  .container {
-    width: 100%;
-    padding-right: none;
+  .content {
+      width: 90%;
+  }
+
+  .res_cust {
+      padding-left: 5%;
+      padding-right: 5%;
+  }
+
+  .searchBar {
+      padding-left: 2vh !important;
+      width: 80%;
+  }
+
+  .box_cust_rs {
+      padding-right: 10vh;
+  }
+}
+
+
+@media screen and (max-width: 750px){
+  .sidebar {
+    width: 100% !important;
+    height: auto ;
+    position: relative ;
+}
+
+.sidebar a {
+  float: left;
+}
+  div.content {
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
 
 @media screen and (max-width: 768px) {
+  .container:not(.t-container .container) {
+    /* margin-left: 10vh; */
+  }
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
   }
-
+div.content{
+  margin-left: 0 !important;
+}
   .sidebar a {
     float: left;
   }
@@ -279,10 +456,6 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
     top: 65vh;
     min-width: 125px;
   }
-
-  ul {
-    margin-left: -17vh;
-}
 
 }
 
@@ -300,17 +473,20 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
     display: none;
   }
 
-  .responsive-table .table-row {
-    display: inline-block;
-  }
 }
 
 @media screen and (max-width: 375px) {
-  ul {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+ul {
     margin-top: 0;
     margin-bottom: 1rem;
-    margin-left: -4vh;
 }
+
 }
 .drop-it-hot {
   background-color: white;

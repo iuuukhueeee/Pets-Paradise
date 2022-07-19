@@ -84,21 +84,22 @@
                             <img src="./img/service1.jpeg" class="img-fluid"/>
                         </div>
                         <div class="right">
-                            <span><%=++index%></span>
-                            <h1><%=service.getServiceName()%></h1>
+                            <h1>
+                                <%=service.getServiceName()%>
+                            </h1>
+                            <span class="badge bg-info" style="color: white;"><%=service.getServicePrice()%></span>
+
                         </div>
+
                     </div>
                     <div class="bottom mt-3" style="height: auto; ">
-                        <p>
-                            <%=service.getServiceDescription()%>
+                        <p><%=service.getServiceDescription()%>
                         </p>
                     </div>
-                    <div class="price ">
-                        <span><%=service.getServicePrice()%></span>
-                        <span>
-                <a href="GetSupportedShopController?ID=<%=service.getServiceID()%>">Book now</a>
-                <i class="fa-solid fa-angle-right"></i>
-              </span>
+                    <div class="price">
+                        <a href="GetSupportedShopController?ID=<%=service.getServiceID()%>">
+                            <button class="btn btn-danger">Book now</button>
+                        </a>
                     </div>
                 </div>
 
@@ -109,6 +110,7 @@
         </div>
     </div>
 </section>
+
 <footer>
     <div class="container">
         <div class="row w-100">
@@ -117,7 +119,8 @@
                     <img src="./img/footer.png"/>
                     <p>
                         For more details or questions about us, please contact us via gmail, the support team will
-                        quickly find and help you
+                        quickly find
+                        and help you
                     </p>
                 </div>
             </div>
