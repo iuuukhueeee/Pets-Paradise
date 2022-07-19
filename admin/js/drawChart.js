@@ -110,15 +110,15 @@ const chart = new Chart(ctx, {
         }]
     },
     options: {
-        animations:{
-            borderWidth:{
-                duration:1000,
-                easing:'linear',
-                to:1,
-                from:10,
-                loop:true,
-            }
-        },
+        // animations:{
+        //     borderWidth:{
+        //         duration:1000,
+        //         easing:'linear',
+        //         to:1,
+        //         from:10,
+        //         loop:true,
+        //     }
+        // },
         scales: {
             // x: {
             //     type: 'time',
