@@ -227,29 +227,6 @@ h2 small {
   text-align: center;
 }
 
-@media all and (max-width: 768px) {
-  .responsive-table .table-header {
-      display: none;
- }
-  .responsive-table li {
-      display: block;
- }
-  .responsive-table .col {
-      flex-basis: 100%;
- }
-  .responsive-table .col {
-      display: flex;
-      padding: 10px 0;
- }
-  .responsive-table .col:before {
-      color: #6c7a89;
-      padding-right: 10px;
-      content: attr(data-label);
-      flex-basis: 50%;
-      text-align: right;
- }
-}
-/* ============================== RESPONSIVE ==================================== */
 
 /* body */
 .tm-product-img-dummy {
@@ -343,6 +320,28 @@ h2 small {
 
 /* 
 ======================= RESPONSIVE ================.sidebar======= */
+@media all and (max-width: 768px) {
+  .responsive-table .table-header {
+      display: none;
+ }
+  .responsive-table li {
+      display: block;
+ }
+  .responsive-table .col {
+      flex-basis: 100%;
+ }
+  .responsive-table .col {
+      display: flex;
+      padding: 10px 0;
+ }
+  .responsive-table .col:before {
+      color: #6c7a89;
+      padding-right: 10px;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+ }
+}
 
 @media screen and (max-width: 1350px){
 
@@ -466,7 +465,6 @@ div.content{
   }
 
   body>div.content>div:nth-child(1)>div>div>div:nth-child(3) {
-    display: none !important;
   }
 
   .left-pan {
@@ -486,6 +484,7 @@ ul {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
 
 }
 .drop-it-hot {

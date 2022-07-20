@@ -3,22 +3,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Raleway";
-
-}
-
-html {
+  }
+  
+  html {
     scroll-behavior: smooth;
-}
-
-body {
-    
+  }
+  
+  body {
     margin: 0;
-
+  
     animation-name: appearance;
     animation-duration: 1.5s;
-}
-
-.sidebar {
+  }
+  
+  /* =============================== SIDE BAR ================================== */
+  .sidebar {
     font-size: 20px;
     font-weight: 500;
     margin: 0;
@@ -28,155 +27,139 @@ body {
     position: fixed;
     height: 100%;
     overflow: auto;
-}
-
-img {
+  }
+  .input_file{
+    margin-top: 2.5rem !important;
+  }
+  
+  img {
     width: 40px;
     height: 40px;
-}
-
-.LOGO {
+  }
+  
+  .LOGO {
     padding-left: 32px;
     padding-top: 16px;
     padding-bottom: 24px;
-
+  
     display: flex;
     align-items: center;
-
-}
-
-.sidebar a {
+  }
+  
+  .sidebar a {
     display: flex;
     color: black;
     padding: 16px 32px;
     text-decoration: none;
     transition: all 0.4s ease;
-}
-
-.sidebar a.active {
-    border-left: 8px solid #68A7AD;
-    color: #68A7AD;
-}
-
-.sidebar a:hover:not(.active, .unhoverContent) {
+  }
+  
+  .sidebar a.active {
+    border-left: 8px solid #68a7ad;
+    color: #68a7ad;
+  }
+  
+  .sidebar a:hover:not(.active, .unhoverContent) {
     background-color: #e2ebfc;
     color: #528388fe;
     transform: scale(1.05);
-
-}
-
-.unhoverContent:hover {
+  }
+  
+  .unhoverContent:hover {
     transform: scale(1.1);
     color: black !important;
-}
-
-div.content {
+  }
+  
+  div.content {
     margin-left: 200px;
     padding: 16px;
     height: 1000px;
-}
-
-/* ===== ADMIN DROPDOWN ===== */
-
-
-/* =============================== SEARCH ================================== */
-.height {
+  }
+  
+  .height {
     height: 10vh;
-}
-
-.searchBar {
+  }
+  
+  .searchBar {
     display: grid;
     grid-template-columns: 7fr 0.4fr 1fr;
-
+  
     animation-name: botToTop;
     animation-duration: 1s;
-}
-
-body>div.content>div.container.tm-mt-big.tm-mb-big {
+  }
+  
+  body>div.content>div.container.tm-mt-big.tm-mb-big {
     animation-name: botToTop;
     animation-duration: 1.3s;
-}
-
-.form {
+  }
+  
+  .form {
     position: relative;
-}
-
-.form .fa-search {
-
+  }
+  
+  .form .fa-search {
     position: absolute;
     top: 20px;
-    left: 20px;
     color: #9ca3af;
-
-}
-
-.form span {
-
+  }
+  
+  .form span {
     position: absolute;
     right: 17px;
     top: 13px;
     padding: 2px;
     border-left: 1px solid #d1d5db;
-
-}
-
-.left-pan {
+  }
+  
+  .left-pan {
     padding-left: 7px;
-}
-
-.left-pan i {
+  }
+  
+  .left-pan i {
     padding-left: 10px;
-}
-
-.form-input {
-
+  }
+  
+  .form-input {
     height: 55px;
     text-indent: 4px;
     border-radius: 10px;
-}
-
-.form-input:focus {
+  }
+  
+  .form-input:focus {
     box-shadow: none;
     border: none;
-}
-
-.adminIcon {
+  }
+  
+  .adminIcon {
     display: flex;
-
+  
     border-radius: 50%;
     overflow: hidden;
     height: 40px;
     width: 40px;
-
-    background-color: #04AA6D;
+  
+    background-color: #04aa6d;
     justify-content: center;
     align-items: center;
-}
-
-
-/* =================== COLLAPSE ============================= */
-.collapsible {
+  }
+  
+  /* =================== COLLAPSE ============================= */
+  .collapsible {
     cursor: pointer;
     padding: 16px 32px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
-}
-
-.contentCollapse {
+  }
+  
+  .contentCollapse {
     padding: 16px 32px 0px;
     overflow: hidden;
     font-size: 16px;
     max-height: 0px;
     transition: all 0.3s;
-}
-
-
-
-
-/* ============================== RESPONSIVE ==================================== */
-
+  }
 
 /* body */
 .tm-product-img-dummy {
@@ -316,37 +299,86 @@ h2 small {
 
 /*================= RESPONSIVE ================== */
 
-@media screen and (max-width: 992px) {
-    .Add_992rs .row {
-        width: 400px;
-        padding-left: 10%;
-        padding-right: 20px;
-    }
-}
+/* ============================== Table ==================================== */
 
+
+@media screen and (max-width: 1350px){
+
+    .container:not(.t-container .container){
+      width: 80%;
+      padding-right: none;
+    }
+    .t-container .container{
+      width: 90%;
+      padding-right: none;
+    }
+    .t-container .container .table-header, .table-row, i {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 1000px){
+
+    .container:not(.t-container .container){
+      width: 80%;
+      padding-right: none;
+    }
+    .t-container .container{
+      width: 90%;
+      padding-right: none;
+    }
+    .t-container .container .table-header, .table-row, i {
+      font-size: 10px;
+    }
+  }
+
+
+
+@media screen and (max-width: 880px) {
+    /* body{
+      max-width: 100%;
+    } */
+    .container:not(.t-container .container){
+      width: 90%;
+      padding-right: none;
+    }
+    .col{
+      font-size: 10px;
+    }
+    .t-container .container{
+      width: 100%;
+    }
+    .sidebar{
+      width: 25%;
+    }
+    div.content{
+      /* margin-left: 82px !important; */
+      /* padding-left: 6vh !important; */
+    }
+    .t-container .container .table-header, .table-row, i {
+      font-size: 8px;
+    }
+  }
 @media screen and (max-width: 820px) {
 
     .container:not(.t-container .container){
-        width: 80%;
-        padding-right: none;
+        width: 90%;
       }
       .col{
         font-size: 10px;
       }
       .t-container .container{
-        width: 115%;
-        padding-left: 3vh !important;      
+        width: 100%;
     }
       .sidebar{
         width: 25% !important;
       }
 
-
 }
 
 @media screen and (max-width: 768px) {
     .sidebar {
-        width: 100vh;
+        width: 100% !important;
         height: auto;
         position: relative;
     }
@@ -356,7 +388,7 @@ h2 small {
     }
 
     .searchBar {
-        padding-left: 7vh !important;
+        margin-left: 0 !important;
     }
 
     div.content {
@@ -371,72 +403,57 @@ h2 small {
     .Addmin_414rs {
         display: none;
     }
-}
 
-@media screen and (max-width: 700px) {
-    .sidebar {
+    .table-row i{
+        font-size: 12px !important;
+    }
+    .responsive-table .table-header {
+        display: none;
+      }
+      .responsive-table .col-4 {
         width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .sidebar a {
-        float: left;
-    }
-
-    div.content {
-        margin-left: 0;
-    }
+      }
+    
+      .responsive-table li {
+        display: block;
+      }
+    
+      .responsive-table .col {
+        flex-basis: 100%;
+        padding: 10px 0;
+      }
+    
+      .responsive-table .col:before {
+        color: #6c7a89;
+        content: attr(data-label);
+      }
 }
+
+
 @media screen and (max-width: 576px) {
     .sidebar a {
-        text-align: center;
-        float: none;
+      text-align: center;
+      float: none;
     }
-
-    .form span{
-        display: none;
+  
+    body>div.content>div:nth-child(1)>div>div>div:nth-child(3) {
     }
-}
-
-@media screen and (max-width: 414px) {
-    .Search_390rs {
-        display: none !important;
+  
+    .left-pan {
+      display: none;
     }
-
-    .Add_992rs .row{
-        width: auto;
+  
+  }
+  
+  @media screen and (max-width: 375px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
     }
-
-}
-
-@media screen and (min-width: 415px) {
-    .Addmin_414rs {
-        display: none !important;
-        ;
-    }
-}
-
-@media screen and (max-width: 390px) {
-    .form-control {
-        width: 200px;
-    }
-    
-    .responsive-table .table-row {
-        width: 250px;
-    }
-
-    .responsive-table li{
-        display: contents;
-    }
-
-    div.content {
-        max-width: 250px;
-    }
-
-    .Search_390rs {
-        display: none !important;
-    }
-}
-
-@media screen and (max-width: 375px) {}
+  
+  ul {
+      margin-top: 0;
+      margin-bottom: 1rem;
+  }
+  }
