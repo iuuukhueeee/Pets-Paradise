@@ -260,6 +260,8 @@
   }
   .t-container .container{
     max-width: 1090px;
+    margin-left: -7%;
+    width: 110%;
   }
 
 h2 {
