@@ -13,14 +13,18 @@ public class LogoutController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "login.jsp";
+    String url = ERROR;
+
+    public String statusCode() {
+        return url;
+    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = ERROR;
 
         try {
-            HttpSession session = request.getSession(false);
+            HttpSession session = request.getSession();
 
             if (session != null) {
                 session.invalidate();

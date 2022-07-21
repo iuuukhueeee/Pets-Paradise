@@ -4,6 +4,8 @@ import com.env.ENVIRONMENT;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import org.mockito.MockedStatic;
+
 import java.util.Properties;
 
 public class EmailUtils {
