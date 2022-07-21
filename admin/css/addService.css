@@ -368,6 +368,20 @@ h2 small {
     padding-left: 5%;
     padding-right: 5%;
 }
+    .container:not(.t-container .container){
+        width: 80%;
+        padding-right: none;
+      }
+      .col{
+        font-size: 10px;
+      }
+      .t-container .container{
+        width: 115%;
+        padding-left: 3vh !important;      
+    }
+      .sidebar{
+        /* width: 25% !important; */
+      }
 
 .searchBar {
     padding-left: 2vh !important;
@@ -430,8 +444,7 @@ h2 small {
     float: none;
   }
 
-  body>div.content>div:nth-child(1)>div>div>div:nth-child(3) {
-  }
+
 
   .left-pan {
     display: none;
