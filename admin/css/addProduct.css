@@ -227,6 +227,11 @@ h2 small {
   text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+
+/* ============================== RESPONSIVE ==================================== */
+>>>>>>> 6b14535 (added-show_more-service)
 
 /* body */
 .tm-product-img-dummy {
@@ -408,6 +413,44 @@ h2 small {
   div.content {
     margin-left: 0 !important;
     width: 100% !important;
+  }
+}
+@media all and (max-width: 768px) {
+  .responsive-table .table-header {
+      display: none;
+ }
+  .responsive-table li {
+      display: block;
+ }
+  .responsive-table .col {
+      flex-basis: 100%;
+ }
+  .responsive-table .col {
+      display: flex;
+      padding: 10px 0;
+ }
+  .responsive-table .col:before {
+      color: #6c7a89;
+      padding-right: 10px;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+ }
+}
+@media screen and (max-width: 768px) {
+  .container:not(.t-container .container) {
+    /* margin-left: 10vh; */
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+div.content{
+  margin-left: 0 !important;
+}
+  .sidebar a {
+    float: left;
   }
 
   #myDropdown {
