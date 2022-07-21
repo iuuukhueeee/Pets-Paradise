@@ -320,43 +320,6 @@ h2 small {
 
 /* 
 ======================= RESPONSIVE ================.sidebar======= */
-@media all and (max-width: 768px) {
-  .responsive-table .table-header {
-      display: none;
- }
-  .responsive-table li {
-      display: block;
- }
-  .responsive-table .col {
-      flex-basis: 100%;
- }
-  .responsive-table .col {
-      display: flex;
-      padding: 10px 0;
- }
-  .responsive-table .col:before {
-      color: #6c7a89;
-      padding-right: 10px;
-      content: attr(data-label);
-      flex-basis: 50%;
-      text-align: right;
- }
-}
-
-@media screen and (max-width: 1350px){
-
-  .container:not(.t-container .container){
-    width: 80%;
-    padding-right: none;
-  }
-  .t-container .container{
-    width: 90%;
-    padding-right: none;
-  }
-  .t-container .container .table-header, .table-row, i {
-    font-size: 12px;
-  }
-}
 @media screen and (max-width: 1000px){
 
   .container:not(.t-container .container){
@@ -450,7 +413,26 @@ div.content{
     top: 65vh;
     min-width: 125px;
   }
-
+  .responsive-table .table-header {
+    display: none;
+}
+.responsive-table li {
+    display: block;
+}
+.responsive-table .col {
+    flex-basis: 100%;
+}
+.responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+}
+.responsive-table .col:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+} 
 }
 
 @media screen and (max-width: 576px) {
