@@ -1,8 +1,10 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Raleway";
+
 }
 
 html {
@@ -17,12 +19,15 @@ body {
 }
 
 .sidebar {
-    width: 200px;
   font-size: 20px;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
+  width: 270px;
   background-color: #f5f9fe;
   position: fixed;
   height: 100%;
+  overflow: auto;
 }
 
 img {
@@ -31,11 +36,13 @@ img {
 }
 
 .LOGO {
-  margin-left: 4px;
+  padding-left: 32px;
   padding-top: 16px;
   padding-bottom: 24px;
+
   display: flex;
   align-items: center;
+
 }
 
 .sidebar a {
@@ -47,14 +54,15 @@ img {
 }
 
 .sidebar a.active {
-  border-left: 8px solid #68a7ad;
-  color: #68a7ad;
+  border-left: 8px solid #68A7AD;
+  color: #68A7AD;
 }
 
 .sidebar a:hover:not(.active, .unhoverContent) {
   background-color: #e2ebfc;
   color: #528388fe;
   transform: scale(1.05);
+
 }
 
 .unhoverContent:hover {
@@ -62,17 +70,65 @@ img {
   color: black !important;
 }
 
-.content {
+div.content {
   margin-left: 200px;
   padding: 16px;
+  height: 1000px;
 }
 
-
-.container{
-    height: 100%;
+.height {
+  height: 10vh;
 }
-.graph{
-    height: 50%;
+
+.searchBar {
+  display: grid;
+  grid-template-columns: 7fr 0.4fr 1fr;
+
+  animation-name: botToTop;
+  animation-duration: 2s;
+}
+
+.form {
+  position: relative;
+}
+
+.form .fa-search {
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #9ca3af;
+
+}
+
+.form span {
+
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan {
+  padding-left: 7px;
+}
+
+.left-pan i {
+  padding-left: 10px;
+}
+
+.form-input {
+
+  height: 55px;
+  text-indent: 4px;
+  border-radius: 10px;
+}
+
+.form-input:focus {
+  box-shadow: none;
+  border: none;
 }
 
 .adminIcon {
@@ -83,7 +139,7 @@ img {
   height: 40px;
   width: 40px;
 
-  background-color: #04aa6d;
+  background-color: #04AA6D;
   justify-content: center;
   align-items: center;
 }
@@ -105,67 +161,53 @@ img {
   transition: all 0.3s;
 }
 
-/* @media screen and (max-width: 700px) {
+
+
+
+
+@media screen and (max-width: 700px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+      width: 100%;
+      height: auto;
+      position: relative;
   }
 
   .sidebar a {
-    float: left;
+      float: left;
   }
 
   div.content {
-    margin-left: 0;
+      margin-left: 0;
   }
 }
 
 @media screen and (max-width: 400px) {
   .sidebar a {
-    text-align: center;
-    float: none;
+      text-align: center;
+      float: none;
   }
-} */
-@media screen and (max-width:820px){
-    .LOGO{
-    }    
 }
-@media screen and (max-width:576px){
-    .sidebar{
-        position: static;
-        width: 100%;
-    }
-    .content{
-        margin-left: 0px;
-    }
-    .container{
-        margin-top: 2rem;
-    }
-}
-
-
 @keyframes appearance {
   0% {
-    opacity: 0;
+      opacity: 0;
   }
 
   100% {
-    opacity: 1;
+      opacity: 1;
   }
 }
 
 @keyframes botToTop {
   0% {
-    opacity: 0;
-    margin-top: 300px;
+      opacity: 0;
+      margin-top: 300px;
   }
 
   70% {
-    opacity: 0.7;
+      opacity: 0.7;
   }
 
   100% {
-    opacity: 1;
+      opacity: 1;
   }
 }
