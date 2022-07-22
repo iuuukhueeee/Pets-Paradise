@@ -28,7 +28,7 @@ body {
   height: 100%;
   overflow: auto;
 }
-.input_file{
+.input_file {
   margin-top: 2.5rem !important;
 }
 
@@ -88,7 +88,7 @@ div.content {
   animation-duration: 1s;
 }
 
-body>div.content>div.container.tm-mt-big.tm-mb-big {
+body > div.content > div.container.tm-mt-big.tm-mb-big {
   animation-name: botToTop;
   animation-duration: 1.3s;
 }
@@ -169,7 +169,7 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   padding-left: 10px;
   padding-right: 10px;
 }
-.t-container .container{
+.t-container .container {
   max-width: 1090px;
 }
 
@@ -227,13 +227,6 @@ h2 small {
   text-align: center;
 }
 
-<<<<<<< HEAD
-=======
-
-/* ============================== RESPONSIVE ==================================== */
->>>>>>> 6b14535 (added-show_more-service)
-
-/* body */
 .tm-product-img-dummy {
   max-width: 100%;
   height: 240px;
@@ -296,7 +289,6 @@ h2 small {
   transform: rotateY(-15deg);
 }
 
-
 @keyframes appearance {
   0% {
     opacity: 0;
@@ -320,36 +312,37 @@ h2 small {
   100% {
     opacity: 1;
   }
-
 }
 
 /* 
 ======================= RESPONSIVE ================.sidebar======= */
-@media screen and (max-width: 1350px){
-
-  .container:not(.t-container .container){
+@media screen and (max-width: 1350px) {
+  .container:not(.t-container .container) {
     width: 80%;
     padding-right: none;
   }
-  .t-container .container{
+  .t-container .container {
     width: 90%;
     padding-right: none;
   }
-  .t-container .container .table-header, .table-row, i {
+  .t-container .container .table-header,
+  .table-row,
+  i {
     font-size: 12px;
   }
 }
-@media screen and (max-width: 1000px){
-
-  .container:not(.t-container .container){
+@media screen and (max-width: 1000px) {
+  .container:not(.t-container .container) {
     width: 80%;
     padding-right: none;
   }
-  .t-container .container{
+  .t-container .container {
     width: 90%;
     padding-right: none;
   }
-  .t-container .container .table-header, .table-row, i {
+  .t-container .container .table-header,
+  .table-row,
+  i {
     font-size: 10px;
   }
 }
@@ -358,43 +351,45 @@ h2 small {
   /* body{
     max-width: 100%;
   } */
-  .container:not(.t-container .container){
+  .container:not(.t-container .container) {
     width: 90%;
     padding-right: none;
   }
-  .col{
+  .col {
     font-size: 10px;
   }
-  .t-container .container{
+  .t-container .container {
     width: 100%;
   }
-  .sidebar{
+  .sidebar {
     width: 25%;
   }
-  div.content{
+  div.content {
     /* margin-left: 82px !important; */
     /* padding-left: 6vh !important; */
   }
-  .t-container .container .table-header, .table-row, i {
+  .t-container .container .table-header,
+  .table-row,
+  i {
     font-size: 8px;
   }
   .content {
     width: 90%;
-}
+  }
 
-.res_cust {
+  .res_cust {
     padding-left: 5%;
     padding-right: 5%;
-}
+  }
 
-.searchBar {
+  .searchBar {
     padding-left: 2vh !important;
     width: 80%;
-}
+  }
 
-.box_cust_rs {
+  .box_cust_rs {
     padding-right: 10vh;
-}
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -403,13 +398,13 @@ h2 small {
   }
   .sidebar {
     width: 100% !important;
-    height: auto ;
-    position: relative ;
-}
+    height: auto;
+    position: relative;
+  }
 
-.sidebar a {
-  float: left;
-}
+  .sidebar a {
+    float: left;
+  }
   div.content {
     margin-left: 0 !important;
     width: 100% !important;
@@ -417,38 +412,35 @@ h2 small {
 }
 @media all and (max-width: 768px) {
   .responsive-table .table-header {
-      display: none;
- }
+    display: none;
+  }
   .responsive-table li {
-      display: block;
- }
+    display: block;
+  }
   .responsive-table .col {
-      flex-basis: 100%;
- }
+    flex-basis: 100%;
+  }
   .responsive-table .col {
-      display: flex;
-      padding: 10px 0;
- }
+    display: flex;
+    padding: 10px 0;
+  }
   .responsive-table .col:before {
-      color: #6c7a89;
-      padding-right: 10px;
-      content: attr(data-label);
-      flex-basis: 50%;
-      text-align: right;
- }
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
 }
 @media screen and (max-width: 768px) {
-  .container:not(.t-container .container) {
-    /* margin-left: 10vh; */
-  }
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
   }
-div.content{
-  margin-left: 0 !important;
-}
+  div.content {
+    margin-left: 0 !important;
+  }
   .sidebar a {
     float: left;
   }
@@ -459,25 +451,24 @@ div.content{
   }
   .responsive-table .table-header {
     display: none;
-}
-.responsive-table li {
+  }
+  .responsive-table li {
     display: block;
-}
-.responsive-table .col {
+  }
+  .responsive-table .col {
     flex-basis: 100%;
-}
-.responsive-table .col {
+  }
+  .responsive-table .col {
     display: flex;
     padding: 10px 0;
-}
-.responsive-table .col:before {
+  }
+  .responsive-table .col:before {
     color: #6c7a89;
     padding-right: 10px;
     content: attr(data-label);
     flex-basis: 50%;
     text-align: right;
-}
-
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -486,13 +477,12 @@ div.content{
     float: none;
   }
 
-  body>div.content>div:nth-child(1)>div>div>div:nth-child(3) {
+  body > div.content > div:nth-child(1) > div > div > div:nth-child(3) {
   }
 
   .left-pan {
     display: none;
   }
-
 }
 
 @media screen and (max-width: 375px) {
@@ -502,10 +492,10 @@ div.content{
     position: relative;
   }
 
-ul {
+  ul {
     margin-top: 0;
     margin-bottom: 1rem;
-}
+  }
 }
 .drop-it-hot {
   background-color: white;
@@ -516,11 +506,11 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 .drop-it-hot:after {
-  content:'';
+  content: "";
 
   position: absolute;
   width: calc(100% - 20px);
@@ -550,7 +540,7 @@ ul {
   height: 40px;
 }
 .circle:before {
-  content:'';
+  content: "";
 
   background-color: var(--accent);
   width: 130px;
@@ -562,8 +552,8 @@ ul {
   z-index: 0;
 }
 .circle:after {
-  content:'';
- 
+  content: "";
+
   position: absolute;
   width: 100px;
   height: 100px;
