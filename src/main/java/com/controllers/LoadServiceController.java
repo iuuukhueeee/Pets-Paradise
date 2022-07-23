@@ -21,9 +21,14 @@ public class LoadServiceController extends HttpServlet {
         String url = ERROR;
 
         try {
+            String page = request.getParameter("page");
+            if (page == null) {
+                page = "1";
+            }
+
             List<ServiceDTO> listService;
             ServiceDAO serviceDAO = new ServiceDAO();
-            listService = serviceDAO.getAll();
+            listService = serviceDAO.getServicePerPage(page);
             if (listService != null) {
                 request.setAttribute("LIST_SERVICE", listService);
                 url = SUCCESS;

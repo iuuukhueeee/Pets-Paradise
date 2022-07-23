@@ -26,16 +26,16 @@
 
                 <nav class="nav ms-3">
                     <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" style="background-color: #68A7AD;"
+                            data-bs-toggle="dropdown" aria-expanded="false ">
                             Menu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a class="dropdown-item " href="./index.html">Home</a></li>
-                            <li><a class="dropdown-item" href="./services.html">services</a></li>
+                            <li><a class="dropdown-item" href="./services.html">Services</a></li>
                             <li><a class="dropdown-item" href="./blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="./shopping.html">shopping</a></li>
-                            <li><a class="dropdown-item active" href="/pages/contact.html" style="background-color: #68A7AD;">Contact</a></li>
+                            <li><a class="dropdown-item" href="./shopping.html">Shopping</a></li>
+                            <li><a class="dropdown-item active" href="/pages/contact.html" style="background-color: #68A7AD;color:white ;">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -91,8 +91,8 @@
                     </div> -->
 
                     <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-primary">
-                            <a href="mailto:PetCenter@gmail" style="text-decoration: none;color: black;">Get in
+                        <button type="submit" class="btn btn-primary submit">
+                            <a href="mailto:PetCenter@gmail" style="text-decoration: none;color: white;">Get in
                                 touch</a>
                         </button>
                     </div>

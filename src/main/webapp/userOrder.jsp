@@ -1,11 +1,8 @@
 <%@ page import="com.DTO.UserDTO" %>
 <%@ page import="com.DTO.OrderDTO" %>
-<%@ page import="com.DAO.OrderDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.DTO.OrderDetailDTO" %>
-<%@ page import="com.DAO.OrderDetailDAO" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="com.mysql.cj.x.protobuf.MysqlxCrud" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,8 +73,10 @@
                     </div>
                     <div class="col col-3" data-label="NOI"><%=mapDetail.get(order.getOrderID()).size()%>
                     </div>
-                    <div class="col col-4" data-label="Action" onclick="showHideRow('<%=order.getOrderID()%>');">
-                        <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
+                    <div class="col col-4" data-label="Action">
+                        <a href="./feedback.html" target="popup" onclick="window.open('../feedback.html','_blank','fullscreen=yes','true')">
+                            <i class="fa fa-envelope-open" style='font-size:16px; cursor: pointer; padding-right: 5px; color: black'></i></a>
+                        <i class="fa fa-arrow-down" onclick="showHideRow('hidden_row3');" style='font-size:16px; cursor: pointer; padding-right: 5px; color: black' aria-hidden="true"></i>
                     </div>
                 </li>
                 <div class="container" id="<%=order.getOrderID()%>" class="hidden_row" style="display: none">
@@ -114,86 +113,6 @@
                         }
                     }
                 %>
-
-
-                <%--                    <li class="table-row">--%>
-                <%--                        <div class="col col-1" data-label="#">1</div>--%>
-                <%--                        <div class="col col-2" data-label="Order">user321</div>--%>
-                <%--                        <div class="col col-3" data-label="NOI">3</div>--%>
-                <%--                        <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row2');">--%>
-                <%--                            <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>--%>
-                <%--                        </div>--%>
-                <%--                    </li>--%>
-                <%--                    <div class="container" id="hidden_row2" class="hidden_row" style="display: none">--%>
-                <%--                        <ul class="responsive-table mb-3">--%>
-                <%--                            <li class="table-header">--%>
-                <%--                                <div class="col col-1">Name</div>--%>
-                <%--                                <div class="col col-2">Price</div>--%>
-                <%--                                <div class="col col-3">Quantity</div>--%>
-                <%--                                <div class="col col-4">Total</div>--%>
-                <%--                            </li>--%>
-
-                <%--                            <li class="table-row">--%>
-                <%--                                <div class="col col-1" data-label="Name">product1</div>--%>
-                <%--                                <div class="col col-2" data-label="Price">20</div>--%>
-                <%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
-                <%--                                <div class="col col-4" data-label="Total">20</div>--%>
-                <%--                            </li>--%>
-                <%--                            <li class="table-row">--%>
-                <%--                                <div class="col col-1" data-label="Name">service1</div>--%>
-                <%--                                <div class="col col-2" data-label="Price">30</div>--%>
-                <%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
-                <%--                                <div class="col col-4" data-label="Total">30</div>--%>
-                <%--                            </li>--%>
-                <%--                            <li class="table-row">--%>
-                <%--                                <div class="col col-1" data-label="Name">product2</div>--%>
-                <%--                                <div class="col col-2" data-label="Price">20</div>--%>
-                <%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
-                <%--                                <div class="col col-4" data-label="Total">20</div>--%>
-                <%--                            </li>--%>
-
-                <%--                        </ul>--%>
-                <%--                    </div>--%>
-
-                <%--                    <li class="table-row">--%>
-                <%--                        <div class="col col-1" data-label="#">1</div>--%>
-                <%--                        <div class="col col-2" data-label="Order">user321</div>--%>
-                <%--                        <div class="col col-3" data-label="NOI">3</div>--%>
-                <%--                        <div class="col col-4" data-label="Action" onclick="showHideRow('hidden_row3');">--%>
-                <%--                            <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>--%>
-                <%--                        </div>--%>
-                <%--                    </li>--%>
-                <%--                    <div class="container" id="hidden_row3" class="hidden_row" style="display: none">--%>
-                <%--                        <ul class="responsive-table mb-3">--%>
-                <%--                            <li class="table-header">--%>
-                <%--                                <div class="col col-1">Name</div>--%>
-                <%--                                <div class="col col-2">Price</div>--%>
-                <%--                                <div class="col col-3">Quantity</div>--%>
-                <%--                                <div class="col col-4">Total</div>--%>
-                <%--                            </li>--%>
-
-                <%--                            <li class="table-row">--%>
-                <%--                                <div class="col col-1" data-label="Name">product1</div>--%>
-                <%--                                <div class="col col-2" data-label="Price">20</div>--%>
-                <%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
-                <%--                                <div class="col col-4" data-label="Total">20</div>--%>
-                <%--                            </li>--%>
-                <%--                            <li class="table-row">--%>
-                <%--                                <div class="col col-1" data-label="Name">service1</div>--%>
-                <%--                                <div class="col col-2" data-label="Price">30</div>--%>
-                <%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
-                <%--                                <div class="col col-4" data-label="Total">30</div>--%>
-                <%--                            </li>--%>
-                <%--                            <li class="table-row">--%>
-                <%--                                <div class="col col-1" data-label="Name">product2</div>--%>
-                <%--                                <div class="col col-2" data-label="Price">20</div>--%>
-                <%--                                <div class="col col-3" data-label="Quantity">1</div>--%>
-                <%--                                <div class="col col-4" data-label="Total">20</div>--%>
-                <%--                            </li>--%>
-
-                <%--                        </ul>--%>
-                <%--                    </div>--%>
-
             </ul>
         </div>
     </div>

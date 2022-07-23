@@ -9,6 +9,8 @@ import java.util.List;
 import com.DTO.ServiceDTO;
 import com.utils.DButils;
 
+import javax.xml.ws.Service;
+
 
 public class ServiceDAO {
 
@@ -20,7 +22,7 @@ public class ServiceDAO {
     private static final String UPDATE = "UPDATE Service SET  ServiceName=?, ServicePrice=?, ServiceDescription=? WHERE ServiceID=?";
     private static final String GET_BY_ID = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE ServiceID=? AND Status=1";
     private static final String DELETE = "UPDATE Service SET status=0 WHERE ServiceID=?";
-
+    private static final String GET_SERVICE_PER_PAGE = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE Status=1 LIMIT ?, 3";
 
 
     public ServiceDTO getByID(String ID) throws SQLException {
@@ -275,6 +277,43 @@ public class ServiceDAO {
             }
         } catch (Exception e) {
            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return list;
+    }
+
+    public List<ServiceDTO> getServicePerPage(String page) throws SQLException {
+        List<ServiceDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+        Integer pageNumber = (Integer.parseInt(page) - 1) * 3;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_SERVICE_PER_PAGE);
+                ptm.setInt(1, pageNumber);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    String id = rs.getString("ServiceID");
+                    String name = rs.getString("ServiceName");
+                    float price = rs.getFloat("ServicePrice");
+                    String description = rs.getString("ServiceDescription");
+                    list.add(new ServiceDTO(id, name, price, description));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             if (rs != null) {
                 rs.close();
