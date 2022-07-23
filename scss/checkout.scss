@@ -21,9 +21,13 @@ html {
   margin-top: 4rem;
 }
 .body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   line-height: 1.25rem;
   margin-top: 2rem;
-
+.left{
+  width: 100%;
+}
   .payment {
     display: flex;
     margin-top: 1rem;
@@ -63,39 +67,47 @@ html {
     margin-top: 1rem;
   
   }
-  @media screen and(max-width:820px) {
-    .flex {
-      // #summary {
-      //   width: 300px;
-      // }
+
+}
+@media screen and (max-width:820px) {
+  .body{
+    display: block;
+  }
+}
+@media screen and (max-width:640px) {
+  .background {
+    min-width: 1280px;
+  }
+  .cart {
+    width: 1280px;
+    display: grid;
+    .item {
+      width: 1280px;
     }
   }
-  @media screen and(max-width:640px) {
-    .background {
-      min-width: 1280px;
+  #summary {
+
+    h1 {
+      text-align: center;
     }
-    .cart {
-      width: 1280px;
-      display: grid;
-      .item {
-        width: 1280px;
-      }
-    }
-    #summary {
-      h1 {
-        text-align: center;
-      }
-      width: 100%;
-      .payment {
-        .px-2 {
-          width: 100%;
-          display: flex;
-          margin-bottom: 8px;
-          .form-group {
-            margin-right: 16px;
-          }
+    width: 100%;
+    .payment {
+      .px-2 {
+        width: 100%;
+        display: flex;
+        margin-bottom: 8px;
+        .form-group {
+          margin-right: 16px;
         }
       }
     }
   }
+
+}
+@media screen and (max-width:576px){
+  .body{
+    display: block;
+  
+  }
+
 }
