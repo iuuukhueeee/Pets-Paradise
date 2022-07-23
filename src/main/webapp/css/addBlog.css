@@ -71,9 +71,6 @@ div.content {
   height: 1000px;
 }
 
-/* ===== ADMIN DROPDOWN ===== */
-
-/* =============================== SEARCH ================================== */
 .height {
   height: 10vh;
 }
@@ -87,7 +84,7 @@ div.content {
   align-items: center;
 }
 
-body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
+body > div.res_cust > div > div > div.container.tm-mt-big.tm-mb-big {
   animation-name: botToTop;
   animation-duration: 1.3s;
 }
@@ -143,7 +140,6 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   align-items: center;
 }
 
-/* =================== COLLAPSE ============================= */
 .collapsible {
   cursor: pointer;
   padding: 16px 32px;
@@ -160,7 +156,6 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   max-height: 0px;
   transition: all 0.3s;
 }
-
 
 /* body */
 .tm-product-img-dummy {
@@ -215,17 +210,14 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   outline: none;
   border: none;
   font-size: 16px;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
 .button:hover {
-  -webkit-transform: rotateY(-15deg);
   transform: rotateY(-15deg);
 }
-/* Table */
+
 .container:not(.t-container .container) {
   max-width: 1000px;
   margin-left: auto;
@@ -234,7 +226,7 @@ body>div.res_cust>div>div>div.container.tm-mt-big.tm-mb-big {
   padding-right: 10px;
 }
 
-.t-container .container{
+.t-container .container {
   max-width: 1090px;
 }
 
@@ -283,7 +275,6 @@ h2 small {
   text-align: center;
 }
 
-
 @keyframes appearance {
   0% {
     opacity: 0;
@@ -297,7 +288,6 @@ h2 small {
 .label {
   display: unset !important;
 }
-
 
 @keyframes botToTop {
   0% {
@@ -314,12 +304,49 @@ h2 small {
   }
 }
 
-#_no-clickjacking-1 > div.tox.tox-silver-sink.tox-tinymce-aux > div{
+#_no-clickjacking-1 > div.tox.tox-silver-sink.tox-tinymce-aux > div {
   display: none !important;
 }
-/* ============================== RESPONSIVE ==================================== */
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1000px) {
+  .container:not(.t-container .container) {
+    width: 80%;
+    padding-right: none;
+  }
+  .t-container .container {
+    width: 90%;
+    padding-right: none;
+  }
+  .t-container .container .table-header,
+  .table-row,
+  i {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .container:not(.t-container .container) {
+    width: 90%;
+    padding-right: none;
+  }
+  .col {
+    font-size: 10px;
+  }
+  .t-container .container {
+    width: 100%;
+  }
+  .sidebar {
+    width: 25%;
+  }
+
+  .t-container .container .table-header,
+  .table-row,
+  i {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 820px) {
   .content {
     width: 90%;
   }
@@ -329,21 +356,52 @@ h2 small {
     padding-right: 5%;
   }
 
-  .searchBar {
-    padding-left: 2vh !important;
-    width: 80%;
-
-  }
-
   .box_cust_rs {
     padding-right: 10vh;
   }
-
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .sidebar {
     width: 100%;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    margin-left: 0 !important;
+  }
+  .sidebar a {
+    float: left;
+  }
+
+  #myDropdown {
+    top: 65vh;
+    min-width: 125px;
+  }
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
+@media screen and (max-width: 750px) {
+  .sidebar {
+    width: 100% !important;
     height: auto;
     position: relative;
   }
@@ -351,40 +409,34 @@ h2 small {
   .sidebar a {
     float: left;
   }
-
   div.content {
-    margin-left: 0;
-  }
-
-  .box_cust_rs {
-    padding-right: unset !important;
-  }
-
-  .container .row {
-    max-width: 100vh;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
+
 
 
 @media screen and (max-width: 576px) {
-
-  .Search_414rs {
-    display: none !important;
-  }
-
-  .left-pan {
-    display: none !important;
-  }
-
-}
-
-@media screen and (max-width: 414px) {
   .sidebar a {
     text-align: center;
     float: none;
   }
 
-  .container {
-    display: contents;
+  .left-pan {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 }

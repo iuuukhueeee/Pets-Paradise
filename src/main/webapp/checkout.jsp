@@ -79,7 +79,7 @@
 </section>
 <section class="body">
     <form action="">
-        <div class="bg-gray-100">
+        <div class="bg-gray-100 background">
             <div class="container mx-auto mt-10">
                 <div class="flex shadow-md my-10 cart">
                     <div class="w-3/4 bg-white px-10 py-10 item">
@@ -99,6 +99,11 @@
                                 Total
                             </h3>
                         </div>
+                        <%
+                            float total = 0;
+                            for (ItemDetails item : list) {
+                                total += item.getPrice() * item.getQuantity();
+                        %>
                         <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                             <div class="flex w-2/5">
                                 <div class="w-20">
@@ -119,99 +124,32 @@
                             </div>
                             <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
                             <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
-                            <%
-                                float total = 0;
-                                for (ItemDetails item : list) {
-                                    total += item.getPrice() * item.getQuantity();
-                            %>
+                        </div>
+                        <%
+                            }
+                        %>
+                        <div class="finish">
+                            <a href="shopping" class="flex font-semibold text-indigo-600 text-sm mt-10">
 
-                            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-                                <div class="flex w-2/5">
-                                    <div class="w-20">
-                                        <img class="h-24" src="./img/service1.jpeg" alt="">
-                                    </div>
-                                    <div class="flex flex-col justify-between ml-4 flex-grow">
-                                        <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
-                                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs"
-                                           style="margin-bottom:2.5rem">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="flex justify-center w-1/5">
-                                    <div class="qty">
-                                        <input type="number" class="count" name="qty" value="1"
-                                               style="width: 80px;height: 60px;">
-                                    </div>
-                                </div>
-                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-                            </div>
-                            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-                                <div class="flex w-2/5">
-                                    <div class="w-20">
-                                        <img class="h-24" src="./img/service1.jpeg" alt="">
-                                    </div>
-                                    <div class="flex flex-col justify-between ml-4 flex-grow">
-                                        <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
-                                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs"
-                                           style="margin-bottom:2.5rem">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="flex justify-center w-1/5">
-                                    <div class="qty">
-                                        <input type="number" class="count" name="qty" value="1"
-                                               style="width: 80px;height: 60px;">
-                                    </div>
-                                </div>
-                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-                            </div>
-                            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-                                <div class="flex w-2/5">
-                                    <div class="w-20">
-                                        <img class="h-24" src="./img/service1.jpeg" alt="">
-                                    </div>
-                                    <div class="flex flex-col justify-between ml-4 flex-grow">
-                                        <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
-                                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs"
-                                           style="margin-bottom:2.5rem">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="flex justify-center w-1/5">
-                                    <div class="qty">
-                                        <input type="number" class="count" name="qty" value="1"
-                                               style="width: 80px;height: 60px;">
-                                    </div>
-                                </div>
-                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-                                <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
+                                <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+                                    <path
+                                            d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/>
+                                </svg>
+                                Continue Shopping
+                            </a>
+
+                            <div class="cost" style="margin-bottom: 2px;margin-top:2rem;">
+                                <span>Total: </span>
+                                <span
+                                        class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">$9000</span>
                             </div>
 
-                            <%
-                                }
-                            %>
-                            <div class="finish">
-                                <a href="shopping" class="flex font-semibold text-indigo-600 text-sm mt-10">
-
-                                    <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
-                                        <path
-                                                d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/>
-                                    </svg>
-                                    Continue Shopping
-                                </a>
-
-                                <div class="cost" style="margin-bottom: 2px;margin-top:2rem;">
-                                    <span>Total: </span>
-                                    <span
-                                            class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">$9000</span>
-                                </div>
-
-                            </div>
-                            <div class="btn-finish">
-                                <button
-                                        class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase ">
-                                    Finish
-                                </button>
-                            </div>
+                        </div>
+                        <div class="btn-finish">
+                            <button
+                                    class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase ">
+                                Finish
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -280,11 +218,23 @@
                 <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo
                     Code</label>
                 <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full">
+                <div class="promo-info">
+						<span
+                                class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">daily
+							- 40% off
+
+						</span>
+
+
+                </div>
             </div>
             <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
+
+
         </div>
     </form>
 </section>
+</div>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./js/selector.js"></script>

@@ -55,6 +55,9 @@ html {
 .body .total ul li {
   margin-bottom: 1rem;
 }
+.body .promo-info {
+  margin-top: 1rem;
+}
 @media screen and (max-width: 640px) {
   .body .background {
     min-width: 1280px;

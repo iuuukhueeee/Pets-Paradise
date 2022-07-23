@@ -61,7 +61,6 @@
     </div>
 </section>
 <section class="services animate__animated animate__slideInLeft  wow py-5">
-
     <div class="container">
         <div class="row">
 
@@ -77,7 +76,7 @@
             <%
                 for (ServiceDTO service : listService) {
             %>
-            <div class=" col col-12 col-md-6 col-lg-4 mb-3">
+            <div class=" col ">
                 <div class="item p-4">
                     <div class="top d-flex">
                         <div class="left me-3">
@@ -87,7 +86,7 @@
                             <h1>
                                 <%=service.getServiceName()%>
                             </h1>
-                            <span class="badge bg-info" style="color: white;"><%=service.getServicePrice()%></span>
+                            <span class="badge bg-info" style="color: white;"><%=service.getServicePrice()%> VND</span>
 
                         </div>
 
@@ -110,7 +109,19 @@
         </div>
     </div>
 </section>
-
+<section class="pagination">
+    <div class="container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a href="services?page=1" class="page-link">1</a>
+                    </a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
 <footer>
     <div class="container">
         <div class="row w-100">
@@ -184,14 +195,10 @@
         </div>
     </div>
 </footer>
-
 <section class="backToTop">
     <a href="#header"><i class="fa fa-arrow-down"></i></a>
 </section>
-</footer>
-<section class="backToTop">
-    <a href="#header"><i class="fa fa-arrow-down"></i></a>
-</section>
+<script src="./js/pagination.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

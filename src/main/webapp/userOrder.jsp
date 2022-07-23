@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-    <link rel="shortcut icon" type="img/png" href="../img/paw-solid.svg"/>
+    <link rel="shortcut icon" type="img/png" href="../img/paw-solid.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/solid.min.css" />
     <link rel="stylesheet" href="./css/order.css">
-
     <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
             rel="stylesheet">
@@ -74,13 +74,13 @@
                     <div class="col col-3" data-label="NOI"><%=mapDetail.get(order.getOrderID()).size()%>
                     </div>
                     <div class="col col-4" data-label="Action">
-                        <a href="./feedback.html" target="popup" onclick="window.open('../feedback.html','_blank','fullscreen=yes','true')">
+                        <a href="./feedback.jsp" target="popup" onclick="window.open('./feedback.jsp','_blank','fullscreen=yes','true')">
                             <i class="fa fa-envelope-open" style='font-size:16px; cursor: pointer; padding-right: 5px; color: black'></i></a>
                         <i class="fa fa-arrow-down" onclick="showHideRow('hidden_row3');" style='font-size:16px; cursor: pointer; padding-right: 5px; color: black' aria-hidden="true"></i>
                     </div>
                 </li>
                 <div class="container" id="<%=order.getOrderID()%>" class="hidden_row" style="display: none">
-                    <ul class="responsive-table p-2 mb-3">
+                    <ul class="responsive-table mb-3">
                         <li class="table-header">
                             <div class="col col-1">Name</div>
                             <div class="col col-2">Price</div>

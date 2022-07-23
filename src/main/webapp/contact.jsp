@@ -26,8 +26,8 @@
 
                 <nav class="nav ms-3">
                     <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" style="background-color: #68A7AD;"
-                            data-bs-toggle="dropdown" aria-expanded="false ">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            style="background-color: #68A7AD;" data-bs-toggle="dropdown" aria-expanded="false ">
                             Menu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -35,7 +35,8 @@
                             <li><a class="dropdown-item" href="./services.html">Services</a></li>
                             <li><a class="dropdown-item" href="./blog.html">Blog</a></li>
                             <li><a class="dropdown-item" href="./shopping.html">Shopping</a></li>
-                            <li><a class="dropdown-item active" href="/pages/contact.html" style="background-color: #68A7AD;color:white ;">Contact</a></li>
+                            <li><a class="dropdown-item active" href="/pages/contact.html"
+                                    style="background-color: #68A7AD;color:white ;">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -72,23 +73,6 @@
             </div>
             <div class="form">
                 <form class="row g-3">
-                    <!-- <div class="col-md-4">
-                        <input type="text" class="form-control" id="inputName" placeholder="Name">
-                    </div>
-                    <div class="col-md-4">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
-                    </div>
-                    <div class="col-12">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Subject" id="messageTextArea"
-                                style="height: 10rem"></textarea>
-                            <label for="messageTextArea">Message</label>
-
-                        </div>
-                    </div> -->
 
                     <div class="col-12 text-end">
                         <button type="submit" class="btn btn-primary submit">
