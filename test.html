@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<div id="app">
+		<table width="100%" border="1px">
+			<tr>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Total</th>
+			</tr>
+			<tr class="item">
+				<td price>300</td>
+				<td><input type="number" value="0"></input></td>
+				<td total>0</td>
+			</tr>
+			<tr class="item">
+				<td price>245</td>
+				<td><input type="number" value="0"></input></td>
+				<td total>0</td>
+			</tr>
+			<tr class="item">
+				<td price>567</td>
+				<td><input type="number" value="0"></input></td>
+				<td total>0</td>
+			</tr>
+			<tr class="item">
+				<td price>346</td>
+				<td><input type="number" value="0"></input></td>
+				<td total>0</td>
+			</tr>
+		</table>
+	</div>
+	<script>
+		[...document.querySelectorAll(".item")].forEach((item) => {
+			const price = item.querySelector("[price]");
+			const total = item.querySelector("[total]");
+			item.querySelector("input").addEventListener("change", (e) => {
+				const quantity = e.target.value;
+				total.textContent = parseInt(price.textContent) * parseInt(quantity);
+			});
+		});
+
+	</script>
+</body>
+
+</html>

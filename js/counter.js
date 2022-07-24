@@ -6,7 +6,7 @@ $(function(){
 	   {
 		  valueElement.val(Math.max(parseInt(valueElement.val()) + 1));
 	   } 
-	   else if (valueElement.val() > 0) // Stops the value going into negatives
+	   else if (valueElement.val() > 0) 
 	   {
 		  valueElement.val(Math.max(parseInt(valueElement.val()) - 1));
 	   } 
