@@ -65,32 +65,22 @@ html {
   .promo-info {
     margin-top: 1rem;
   }
-  .item {
-    .qty {
-      margin-right: 4rem;
-    }
-    .price {
-      margin-right: 10rem;
-    }
-    .total {
-      margin-right: 5rem;
-    }
-  }
+
 }
 @media screen and (max-width: 820px) {
   .body {
     display: block;
-    .item {
-      .qty {
-        margin-right: 1.5rem;
-      }
-      .price {
-        margin-right: 7rem;
-      }
-      .total {
-        margin-right: 3rem;
-      }
-    }
+    // .item {
+    //   .qty {
+    //     margin-right: 1.5rem;
+    //   }
+    //   .price {
+    //     margin-right: 7rem;
+    //   }
+    //   .total {
+    //     margin-right: 3rem;
+    //   }
+    // }
   }
 }
 @media screen and (max-width: 640px) {
@@ -124,15 +114,15 @@ html {
 @media screen and (max-width: 576px) {
   .body {
     display: block;
-    .item {
-      .qty {
-       margin-left: 90px;
-      }
-      .price {
-        margin-left: 5rem;
-      }
-      .total {
-      }
-    }
+    // .item {
+    //   .qty {
+    //    margin-left: 90px;
+    //   }
+    //   .price {
+    //     margin-left: 5rem;
+    //   }
+    //   .total {
+    //   }
+    // }
   }
 }
