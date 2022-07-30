@@ -23,6 +23,7 @@ html {
 .body {
   line-height: 1.25rem;
   margin-top: 2rem;
+
   .payment {
     display: flex;
     margin-top: 1rem;
@@ -37,6 +38,31 @@ html {
       }
     }
   }
+  .finish {
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  .btn-finish{
+    display: flex;
+    justify-content: flex-end;
+    button {
+      width: 180px;
+    }
+  }
+  .total{
+    ul{
+      list-style-type:circle;
+      margin-top: 2rem;
+      li{
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .promo-info{
+    margin-top: 1rem;
+  
+  }
   @media screen and(max-width:820px) {
     .flex {
       // #summary {
@@ -45,7 +71,11 @@ html {
     }
   }
   @media screen and(max-width:640px) {
+    .background {
+      min-width: 1280px;
+    }
     .cart {
+      width: 1280px;
       display: grid;
       .item {
         width: 1280px;

@@ -6,22 +6,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"/>
-    <link rel="stylesheet" href="./css/shopping.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/shopping.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
-            rel="stylesheet"/>
-    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg"/>
+            rel="stylesheet" />
+    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg" />
     <title>Shopping</title>
 </head>
 
@@ -77,7 +78,7 @@
                         </svg>
                     </button>
                 </div>
-                <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+                <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1 nav"
                      id="mobile-menu-2">
                     <ol
                             class="list-reset flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
@@ -94,181 +95,24 @@
                     </ol>
 
                 </div>
-                <div class=" justify-end
-                     items-center w-full md:flex md:w-auto md:order-1 ">
+                <div class="
+                     items-center w-full md:flex md:w-auto md:order-1 detail">
                     <ol class="list-reset flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium list"
-                        id="mobile-menu-2" start="margin-left:16px;">
-                        <li
-                                style="border-color: #a5d0cc;padding: 12px;color:rgb(107 114 128 / 1);border-radius: 8px;">
-                            <a href="./checkout.jsp" id="cart"><i class="fa fa-shopping-cart py-2.5" type="button"
-                                                                 data-modal-toggle="defaultModal"></i> Cart </a>
-                            <!-- <div id="defaultModal" tabindex="-1" aria-hidden="true"
-                                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
-                                style="z-index: 99999;">
-                                <div class="relative p-4 w-full max-w-2xl h-full md:h-auto "
-                                    style="margin-top: 20px;">
-                                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                        <div
-                                            class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                                            <h3 class="text-xl font-semibold text-gray-900 dark:text-black">
-                                                Your Shopping Cart
-                                            </h3>
-                                            <button type="button"
-                                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-gray-900"
-                                                data-modal-toggle="defaultModal">
-                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd"
-                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div class="p-6 space-y-6 table-responsive">
-                                            <div class="table">
-                                                <div class="table-img">
-                                                    <img src="./img/calendar1-1.png" />
-                                                </div>
-                                                <div class="table-content">
-                                                    <div class="product">
-                                                    <h2>product1</h2>
-                                                    <div>1 x 20$</div>
-                                                </div>
-                                                <div class="cancel">
-                                                    <button type="button"
-                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-gray-900"
-                                                    data-modal-toggle="defaultModal">
-                                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                            clip-rule="evenodd"></path>
-                                                    </svg>
-                                                </button>                                                    </div>
-                                                </div>
-                                                <div class="table-img">
-                                                    <img src="./img/calendar1-1.png" />
-                                                </div>
-                                                <div class="table-content">
-                                                    <div class="product">
-                                                    <h2>product1</h2>
-                                                    <div>1 x 20$</div>
-                                                </div>
-                                                <div class="cancel">
-                                                    <button type="button"
-                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-gray-900"
-                                                    data-modal-toggle="defaultModal">
-                                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                            clip-rule="evenodd"></path>
-                                                    </svg>
-                                                </button>                                                    </div>
-                                                </div>
-                                                <div class="table-img">
-                                                    <img src="./img/calendar1-1.png" />
-                                                </div>
-                                                <div class="table-content">
-                                                    <div class="product">
-                                                    <h2>product1</h2>
-                                                    <div>1 x 20$</div>
-                                                </div>
-                                                <div class="cancel">
-                                                    <button type="button"
-                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-gray-900"
-                                                    data-modal-toggle="defaultModal">
-                                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                            clip-rule="evenodd"></path>
-                                                    </svg>
-                                                </button>                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <div
-                                            class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                            <a data-modal-toggle="defaultModal" type="button"
-                                                class="text-white bg-[#68A7AD] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#68A7AD] dark:hover:bg-[#51969c] dark:focus:ring-[#51969c]">
-                                                Next</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                        id="mobile-menu-2">
+                        <li>
+                            <div class="cart" id="cart">
+                                <a href="checkout">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                                <span class="count">0</span>
+                            </div>
                         </li>
-                        <li style="margin-left: 2px;" class="">
+
+                        <li class="login">
                             <a href="./login.jsp">
                                 <i class="fa-solid fa-user block text-gray-600 focus:outline-none font-medium rounded-lg text-sm "
                                    type="button" data-modal-toggle="authentication-modal" style="padding:16px"></i>
                             </a>
-                            <!-- <div id="authentication-modal" tabindex="-1" aria-hidden="true"
-                                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
-                                style="z-index: 999999;">
-                                 <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-
-                                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700"
-                                        style="z-index: 99999999;">
-                                        <button type="button"
-                                            class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                                            data-modal-toggle="authentication-modal">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </button>
-                                         <div class="py-6 px-6 lg:px-8">
-                                            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-gray-700">
-                                                Sign
-                                                in </h3>
-                                            <form class="space-y-6" action="#">
-                                                <div>
-                                                    <label for="email"
-                                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                                                        User Name</label>
-                                                    <input type="email" name="email" id="email"
-                                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#68A7AD] dark:border-[[#a5d0cc] dark:placeholder-[#a5d0cc] dark:text-gray-700"
-                                                        placeholder="User Name" required="">
-                                                </div>
-                                                <div>
-                                                    <label for="password"
-                                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                                                        password</label>
-                                                    <input type="password" name="password" id="password"
-                                                        placeholder="••••••••"
-                                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#68A7AD] dark:border-[#a5d0cc] dark:placeholder-[#a5d0cc] dark:text-gray-700"
-                                                        required="">
-                                                </div>
-                                                <div class="flex justify-between">
-                                                    <div class="flex items-start">
-                                                        <div class="flex items-center h-5">
-                                                            <input id="remember" type="checkbox" value=""
-                                                                class="w-4 h-4 bg-[#68A7AD] rounded border border-[#a5d0cc] focus:ring-3 focus:ring-[#a5d0cc] dark:bg-[#a5d0cc] dark:border-[#68A7AD] dark:focus:ring-[#68A7AD] dark:ring-offset-[#68A7AD]"
-                                                                required="">
-                                                        </div>
-                                                        <label for="remember"
-                                                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-700">Remember
-                                                            me</label>
-                                                    </div>
-                                                </div>
-                                                <button type="submit"
-                                                    class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#68A7AD] dark:border-[#a5d0cc] dark:placeholder-[#a5d0cc] dark:text-gray-700">Login
-                                                </button>
-                                                <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                                                    Not registered? <a href="./register.html"
-                                                        class="text-blue-700 hover:underline dark:text-[#a5d0cc]">Create
-                                                        account</a>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
 
                         </li>
 
@@ -371,62 +215,26 @@
         <h1>Featured Products</h1>
     </div>
     <div class="search" style="margin-bottom:40px">
-        <form>
+        <form action="MainController" method="POST">
             <div class="flex">
-                <label for="search-dropdown"
-                       class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Your
-                    Email</label>
-                <button id="dropdown-button" data-dropdown-toggle="dropdownId"
-                        class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-blue-200 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-[#68A7AD] dark:hover:bg-[#51969c] dark:focus:ring-[#a5d0cc] dark:text-white "
-                        type="button"> Categories
-                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-                <div id="dropdownId" class="hidden z-10 w-44 rounded divide-y divide-gray-100 shadow dark:bg-white"
-                     data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top"
-                     style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(337.5px, 560.5px, 0px);">
-                    <ul class="py-1 text-sm text-black dark:text-black" aria-labelledby="dropdown-button">
-                        <li data-dropdown-toggle="dropdownId">
-                            <button type="button"
-                                    class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-[#a5d0cc] dark:hover:text-white">
-                                Food
-                            </button>
-                        </li>
-                        <li data-dropdown-toggle="dropdownId">
-                            <button type="button"
-                                    class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-[#a5d0cc] dark:hover:text-white">
-                                Accessories
-                            </button>
-                        </li>
-                        <li data-dropdown-toggle="dropdownId">
-                            <button type="button"
-                                    class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-[#a5d0cc] dark:hover:text-white">
-                                Gel
-                            </button>
-                        </li>
-                        <li data-dropdown-toggle="dropdownId">
-                            <button type="button"
-                                    class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-[#a5d0cc] dark:hover:text-white">
-                                Stuffs
-                            </button>
-                        </li>
-                        <li data-dropdown-toggle="dropdownId">
-                            <button type="button"
-                                    class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-[#a5d0cc] dark:hover:text-white">
-                                Toys
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+                <label for="categories"
+                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"></label>
+                <select id="categories" name="categories"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected="">Choose category</option>
+                    <option value="food">Food</option>
+                    <option value="gel">Gel</option>
+                    <option value="acc">Accessories</option>
+                    <option value="toy">Toy</option>
+                    <option value="other">Stuff</option>
+
+                </select>
+
                 <div class="relative w-full">
-                    <input type="search" id="search-dropdown"
+                    <input type="search" id="search-dropdown" name="SearchProduct"
                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-[#a5d0cc] rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-[#68A7AD] focus:border-[#68A7AD] dark:bg-transparent dark:border-l-[#68A7AD]  dark:border-[#68A7AD] dark:placeholder-gray-400 dark:text-dark dark:focus:border-[#68A7AD]"
                            placeholder="Search " required="">
-                    <button type="submit"
+                    <button type="submit" name="action" value="SearchProduct"
                             class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-[#68A7AD] dark:bg-[#68A7AD] dark:hover:bg-[#68A7AD]dark:focus:ring-[#68A7AD]">
                         <svg
                                 class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -493,569 +301,25 @@
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold text-gray-900 "><%=product.getPrice()%></span>
                             <form action="MainController" method="POST">
+                                <div class="container"
                                 <input type="hidden" name="ID" value="<%=product.getProductID()%>"/>
                                 <input type="hidden" name="quantity" value="1" min="0" placeholder="quantity">
                                 <button type="submit" name="action" value="AddToCart"
                                         class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">
                                     Add to cart
                                 </button>
-                            </form>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <%
-            }
-        %>
-
-
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--            <div class="col">--%>
-        <%--                <div class="item">--%>
-        <%--                    <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">--%>
-        <%--                        <a href="#">--%>
-        <%--                            <img class="p-8 rounded-t-lg" src="./img/cat1.jpeg" alt="product image">--%>
-        <%--                        </a>--%>
-        <%--                        <div class="p-4">--%>
-        <%--                            <a href="#">--%>
-        <%--                                <h5 class="text-md font-semibold tracking-tight text-gray-900 ">Apple Watch Series 7--%>
-        <%--                                    GPS, Aluminium--%>
-        <%--                                    Case, Starlight Sport</h5>--%>
-        <%--                            </a>--%>
-        <%--                            <div class="flex items-center mt-2.5 mb-5">--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"--%>
-        <%--                                    xmlns="http://www.w3.org/2000/svg">--%>
-        <%--                                    <path--%>
-        <%--                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">--%>
-        <%--                                    </path>--%>
-        <%--                                </svg>--%>
-        <%--                                <span--%>
-        <%--                                    class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>--%>
-        <%--                            </div>--%>
-        <%--                            <div class="flex justify-between items-center">--%>
-        <%--                                <span class="text-xl font-bold text-gray-900 ">$599</span>--%>
-        <%--                                <form action="">--%>
-        <%--                                    <button--%>
-        <%--                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">--%>
-        <%--                                        Add to cart--%>
-        <%--                                    </button>--%>
-        <%--                                </form>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--        </div>--%>
-
+    </div>
+    <%
+        }
+    %>
     </div>
 </section>
-
-<%--<section class="blog mx-auto">--%>
-
-<%--    <%--%>
-<%--        List<BlogDTO> listBlog = (List<BlogDTO>) request.getAttribute("LIST_BLOG");--%>
-<%--        if (listBlog == null) {--%>
-<%--            response.sendRedirect("error.jsp");--%>
-<%--            return;--%>
-<%--        }--%>
-<%--    %>--%>
-
-<%--    <div class="title">--%>
-<%--        <span>Lastest blogs</span>--%>
-<%--        <h1> Blog Posts</h1>--%>
-<%--    </div>--%>
-<%--    <div class="grid grid-cols-3 gap-3">--%>
-<%--        <%--%>
-<%--            for (BlogDTO blog : listBlog) {--%>
-<%--        %>--%>
-
-<%--        <div class="col">--%>
-<%--            <div class="item">--%>
-<%--                <div class="blog-img">--%>
-<%--                    <img src="./img/cus1.webp"/>--%>
-<%--                </div>--%>
-<%--                <div class="blog-content">--%>
-<%--                    <ul>--%>
-<%--                        <li><i class="fa-solid fa-calendar"></i><%=blog.getWrittenDate()%></li>--%>
-<%--                    </ul>--%>
-<%--                    <span><%=blog.getBlogDescription()%></span>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <%--%>
-<%--            }--%>
-<%--        %>--%>
-
-<%--                <div class="col">--%>
-<%--                    <div class="item">--%>
-<%--                        <div class="blog-img">--%>
-<%--                            <img src="./img/cus1.webp"/>--%>
-<%--                        </div>--%>
-<%--                        <div class="blog-content">--%>
-<%--                            <ul>--%>
-<%--                                <li><i class="fa-solid fa-calendar"></i>2022/7/21</li>--%>
-<%--                            </ul>--%>
-<%--                            <span>Lorem tatibus itaque blanditiis cumque praesentium dolore veniam, animi laboriosam--%>
-<%--                                    repellendus pariatur error explicabo. Numquam quam sequi, autem ipsum eius aperiam--%>
-<%--                                    totam!</span>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-        <%--        </div>--%>
-        <%--        <div class="col">--%>
-        <%--            <div class="item">--%>
-        <%--                <div class="blog-img">--%>
-        <%--                    <img src="./img/cus1.webp"/>--%>
-        <%--                </div>--%>
-        <%--                <div class="blog-content">--%>
-        <%--                    <ul>--%>
-        <%--                        <li><i class="fa-solid fa-calendar"></i>2022/12/14</li>--%>
-        <%--                    </ul>--%>
-        <%--                    <span>Lorem tatibus itaque blanditiis cumque praesentium dolore veniam, animi laboriosam--%>
-        <%--                            repellendus pariatur error explicabo. Numquam quam sequi, autem ipsum eius aperiam--%>
-        <%--                            totam!</span>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--        </div>--%>
-
-<%--    </div>--%>
-<%--</section>--%>
 
 <footer>
     <div class="container">
@@ -1133,9 +397,9 @@
 <section class="backToTop">
     <a href="#header"><i class="fa fa-arrow-down"></i></a>
 </section>
-
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+<script src="./js/shopping.js"></script>˝
 <script src="./js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

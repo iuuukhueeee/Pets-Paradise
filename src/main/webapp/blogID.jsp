@@ -27,7 +27,7 @@
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
             rel="stylesheet"/>
     <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg"/>
-    <title><%=blog.getBlogTitle()%></title>
+    <title>Read More</title>
 </head>
 
 <body>
@@ -67,7 +67,6 @@
         <i class="fa fa-angle-down"></i>
     </div>
 </section>
-
 <section class="body">
     <div class="container body mt-4 pt-2">
         <div class="row pb-3">
@@ -101,12 +100,10 @@
                         <div class="row justify-content-center orther">Information</div>
                         <hr class="mt-2 ml-4 mr-4"/>
 
-                        <div class="card">
-                            <img src="./img/cat.jpg" class="img-info img-responsive" alt="..."/>
+                        <div class="">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <h5 class=""><strong><%=blog.getAuthor()%>
-                                    </strong></h5>
+                                    <h5 class=""><strong><%=blog.getAuthor()%></strong></h5>
                                     <h6 class="text-primary">Author &amp; Writer</h6>
                                 </div>
                             </div>
@@ -115,7 +112,7 @@
                 </div>
                 <br/>
                 <div>
-                    <div class="row justify-content-center orther">Other</div>
+                    <div class="row justify-content-center orther">Others</div>
                     <hr class="mt-2 ml-4 mr-4"/>
 
                     <%
@@ -123,12 +120,6 @@
                         for (BlogDTO blogTemplate : listBlog) {
                     %>
                     <article class="row justify-content-center">
-<%--                        <div class="picture">--%>
-<%--                            <a href="#!">--%>
-<%--                                <img class="img-fluid img-responsive pl-4 pr-4 img-more" src="./img/angry-cat.webp"--%>
-<%--                                     alt=""/>--%>
-<%--                            </a>--%>
-<%--                        </div>--%>
                         <div class="title-more mt-1 pl-4 pr-4">
                             <a href="BlogContent?blogID=<%=blog.getBlogID()%>">
                                 <%=blogTemplate.getBlogTitle()%>
@@ -139,34 +130,6 @@
                     <%
                         }
                     %>
-
-
-                    <%--                    <article class="row justify-content-center">--%>
-                    <%--                        <div class="title-more-bonus pl-4 pr-4">--%>
-                    <%--                            <a href="#!">--%>
-                    <%--                                Chú mèo buồn và ngồi khóc huhu rất buồn, chú rất nhớ nhà và--%>
-                    <%--                                bạn--%>
-                    <%--                            </a>--%>
-                    <%--                        </div>--%>
-                    <%--                    </article>--%>
-                    <%--                    <hr class="m-2"/>--%>
-                    <%--                    <article class="row justify-content-center">--%>
-                    <%--                        <div class="title-more-bonus pl-4 pr-4">--%>
-                    <%--                            <a href="#!">--%>
-                    <%--                                Chú mèo buồn và ngồi khóc huhu rất buồn, chú rất nhớ nhà và--%>
-                    <%--                                bạn--%>
-                    <%--                            </a>--%>
-                    <%--                        </div>--%>
-                    <%--                    </article>--%>
-                    <%--                    <hr class="m-2"/>--%>
-                    <%--                    <article class="row justify-content-center">--%>
-                    <%--                        <div class="title-more-bonus pl-4 pr-4">--%>
-                    <%--                            <a href="#!">--%>
-                    <%--                                Chú mèo buồn và ngồi khóc huhu rất buồn, chú rất nhớ nhà và--%>
-                    <%--                                bạn--%>
-                    <%--                            </a>--%>
-                    <%--                        </div>--%>
-                    <%--                    </article>--%>
                 </div>
             </div>
         </div>
@@ -180,8 +143,8 @@
                 <div class="item">
                     <img src="./img/footer.png"/>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
-                        laborum tempore uscipit, laborum.
+                        For more details or questions about us, please contact us via gmail, the support team will
+                        quickly find and help you
                     </p>
                 </div>
             </div>

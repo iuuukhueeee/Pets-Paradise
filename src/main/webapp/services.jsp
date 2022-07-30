@@ -76,159 +76,50 @@
             <%
                 for (ServiceDTO service : listService) {
             %>
-
-            <div class=" col col-12 col-md-6 col-lg-4 mb-3">
+            <div class=" col ">
                 <div class="item p-4">
                     <div class="top d-flex">
                         <div class="left me-3">
                             <img src="./img/service1.jpeg" class="img-fluid"/>
                         </div>
                         <div class="right">
-                            <span><%=++index%></span>
-                            <h1><%=service.getServiceName()%>
+                            <h1>
+                                <%=service.getServiceName()%>
                             </h1>
+                            <span class="badge bg-info" style="color: white;"><%=service.getServicePrice()%> VND</span>
+
                         </div>
+
                     </div>
-                    <div class="bottom mt-3">
+                    <div class="bottom mt-3" style="height: auto; ">
                         <p><%=service.getServiceDescription()%>
                         </p>
                     </div>
                     <div class="price">
-                        <span><%=service.getServicePrice()%></span>
-                        <span>
-                <a href="GetSupportedShopController?ID=<%=service.getServiceID()%>">Book now</a>
-                <i class="fa-solid fa-angle-right"></i>
-              </span>
+                        <a href="GetSupportedShopController?ID=<%=service.getServiceID()%>">
+                            <button class="btn btn-danger">Book now</button>
+                        </a>
                     </div>
                 </div>
-            </div>
 
+            </div>
             <%
                 }
             %>
-
-
-            <%--        <div class=" col col-12 col-md-6 col-lg-4 mb-3">--%>
-            <%--          <div class="item p-4">--%>
-            <%--            <div class="top d-flex">--%>
-            <%--              <div class="left me-3">--%>
-            <%--                <img src="./img/service3.jpg" class="img-fluid" />--%>
-            <%--              </div>--%>
-            <%--              <div class="right">--%>
-            <%--                <span>02</span>--%>
-            <%--                <h1>Shopping</h1>--%>
-            <%--              </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="bottom mt-3">--%>
-            <%--              <p>Lorem ipsum dolor sit amet consectetur ipsum elit. Qui eligendi vitae sit.</p>--%>
-            <%--            </div>--%>
-            <%--            <div class="price">--%>
-            <%--              <span>$20.18</span>--%>
-            <%--              <span>--%>
-            <%--                <a href="./form.html">Book now</a>--%>
-            <%--                <i class="fa-solid fa-angle-right"></i>--%>
-            <%--              </span>--%>
-            <%--            </div>--%>
-            <%--          </div>--%>
-            <%--        </div>--%>
-            <%--        <div class="col col-12 col-md-6 col-lg-4 mb-3">--%>
-            <%--          <div class="item p-4">--%>
-            <%--            <div class="top d-flex">--%>
-            <%--              <div class="left me-3">--%>
-            <%--                <img src="./img/service2.jpg" />--%>
-
-            <%--              </div>--%>
-            <%--              <div class="right">--%>
-            <%--                <span>03</span>--%>
-            <%--                <h1>Veterinary</h1>--%>
-            <%--              </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="bottom mt-3">--%>
-            <%--              <p>Lorem ipsum dolor sit amet consectetur ipsum elit. Qui eligendi vitae sit.</p>--%>
-            <%--            </div>--%>
-            <%--            <div class="price">--%>
-            <%--              <span>$20.18</span>--%>
-            <%--              <span>--%>
-            <%--                <a href="./form.html">Book now</a>--%>
-            <%--                <i class="fa-solid fa-angle-right"></i>--%>
-            <%--              </span>--%>
-            <%--            </div>--%>
-            <%--          </div>--%>
-            <%--        </div>--%>
-            <%--        <div class=" col col-12 col-md-6 col-lg-4 mb-3 mb-md-0">--%>
-            <%--          <div class="item p-4">--%>
-            <%--            <div class="top d-flex">--%>
-            <%--              <div class="left me-3">--%>
-            <%--                <img src="./img/service4.jpg" />--%>
-            <%--              </div>--%>
-            <%--              <div class="right">--%>
-            <%--                <span>04</span>--%>
-            <%--                <h1>Pet's Hotel</h1>--%>
-            <%--              </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="bottom mt-3">--%>
-            <%--              <p>Lorem ipsum dolor sit amet consectetur ipsum elit. Qui eligendi vitae sit.</p>--%>
-            <%--            </div>--%>
-            <%--            <div class="price">--%>
-            <%--              <span>$20.18</span>--%>
-            <%--              <span>--%>
-            <%--                <a href="./form.html">Book now</a>--%>
-            <%--                <i class="fa-solid fa-angle-right"></i>--%>
-            <%--              </span>--%>
-            <%--            </div>--%>
-            <%--          </div>--%>
-
-            <%--        </div>--%>
-            <%--        <div class="col col-12 col-md-6 col-lg-4 mb-3 mb-md-0">--%>
-            <%--          <div class="item p-4">--%>
-            <%--            <div class="top d-flex">--%>
-            <%--              <div class="left me-3">--%>
-            <%--                <img src="./img/service6.jpg" />--%>
-            <%--              </div>--%>
-            <%--              <div class="right">--%>
-            <%--                <span>05</span>--%>
-            <%--                <h1>Walking</h1>--%>
-            <%--              </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="bottom mt-3">--%>
-            <%--              <p>Lorem ipsum dolor sit amet consectetur ipsum elit. Qui eligendi vitae sit.</p>--%>
-            <%--            </div>--%>
-            <%--            <div class="price">--%>
-            <%--              <span>$20.18</span>--%>
-            <%--              <span>--%>
-            <%--                <a href="./form.html">Book now</a>--%>
-            <%--                <i class="fa-solid fa-angle-right"></i>--%>
-            <%--              </span>--%>
-            <%--            </div>--%>
-            <%--          </div>--%>
-
-            <%--        </div>--%>
-            <%--        <div class="col col-12 col-md-6 col-lg-4 ">--%>
-            <%--          <div class="item p-4">--%>
-            <%--            <div class="top d-flex">--%>
-            <%--              <div class="left me-3">--%>
-            <%--                <img src="./img/service5.jpg" />--%>
-            <%--              </div>--%>
-            <%--              <div class="right">--%>
-            <%--                <span>06</span>--%>
-            <%--                <h1>Training</h1>--%>
-            <%--              </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="bottom mt-3">--%>
-            <%--              <p>Lorem ipsum dolor sit amet consectetur ipsum elit. Qui eligendi vitae sit.</p>--%>
-            <%--            </div>--%>
-            <%--            <div class="price">--%>
-            <%--              <span>$20.18</span>--%>
-            <%--              <span>--%>
-            <%--                <a href="./form.html">Book now</a>--%>
-            <%--                <i class="fa-solid fa-angle-right"></i>--%>
-            <%--              </span>--%>
-            <%--            </div>--%>
-            <%--          </div>--%>
-
-            <%--        </div>--%>
-
         </div>
+    </div>
+</section>
+<section class="pagination">
+    <div class="container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a href="services?page=1" class="page-link">1</a>
+                    </a></li>
+            </ul>
+        </nav>
     </div>
 </section>
 <footer>
@@ -238,8 +129,9 @@
                 <div class="item">
                     <img src="./img/footer.png"/>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
-                        laborum tempore uscipit, laborum.
+                        For more details or questions about us, please contact us via gmail, the support team will
+                        quickly find
+                        and help you
                     </p>
                 </div>
             </div>
@@ -306,10 +198,7 @@
 <section class="backToTop">
     <a href="#header"><i class="fa fa-arrow-down"></i></a>
 </section>
-</footer>
-<section class="backToTop">
-    <a href="#header"><i class="fa fa-arrow-down"></i></a>
-</section>
+<script src="./js/pagination.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -5,6 +5,7 @@ import com.DTO.OrderDTO;
 import com.DTO.OrderDetailDTO;
 import com.DTO.ProductDTO;
 import com.DTO.ServiceDTO;
+import com.sun.org.apache.xpath.internal.operations.Or;
 import com.utils.DButils;
 import com.utils.ValidUtils;
 
@@ -18,6 +19,7 @@ public class OrderDetailDAO {
     private static final String CREATE_PRODUCT = "INSERT INTO OrderDetail(OrderDetailID, OrderDetailPrice, OrderID, ItemID, Quantity, Status) VALUES(?,?,?,?,?,2)";
     private static final String CREATE_SERVICE = "INSERT INTO OrderDetail(OrderDetailID, OrderDetailPrice, OrderID, ItemID, Quantity, PetID, BookingTime, Status) VALUES(?,?,?,?,?,?,?,2)";
     private static final String GET_BY_ORDERID = "SELECT OrderDetailID, OrderDetailPrice, ItemID, Quantity, PetID, BookingTime FROM OrderDetail WHERE OrderID=? AND Status=2";
+    private static final String GET_DETAIL_ORDERED = "SELECT OrderDetailID, OrderDetailPrice, ItemID, Quantity, PetID, BookingTime FROM OrderDetail WHERE OrderID=? AND Status=1";
     private static final String CHECK_DUPLICATE = "SELECT COUNT(*) AS NUM FROM OrderDetail WHERE OrderID=? AND ItemID=? AND Status=2";
     private static final String UPDATE_QUANTITY = "UPDATE OrderDetail SET Quantity=Quantity + ? WHERE ItemID=? AND OrderID=? AND Status=2";
     private static final String CHECKOUT = "UPDATE OrderDetail SET Status=1 WHERE OrderID=?";
@@ -215,5 +217,37 @@ public class OrderDetailDAO {
             if (conn != null) conn.close();
         }
         return check;
+    }
+
+    public List<OrderDetailDTO> getListDetailByOrderID (String orderID) throws SQLException {
+        List<OrderDetailDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_DETAIL_ORDERED);
+                ptm.setString(1, orderID);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    String id = rs.getString("OrderDetailID");
+                    float price = rs.getFloat("OrderDetailPrice");
+                    String itemID = rs.getString("ItemID");
+                    int quantity = rs.getInt("Quantity");
+                    String petID = rs.getString("PetID");
+                    Date bookingTime = rs.getDate("BookingTime");
+                    list.add(new OrderDetailDTO(id, price, orderID, itemID, quantity, petID, bookingTime));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
+        return list;
     }
 }

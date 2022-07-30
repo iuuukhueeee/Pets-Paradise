@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -18,7 +19,7 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
             rel="stylesheet">
-    <link rel="shortcut icon" type="img/png" href="./img/paw-solid.svg"/>
+    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg"/>
     <title>Blog</title>
 </head>
 
@@ -82,8 +83,9 @@
                             <div class="image blog-img d-block overflow-hidden position-relative">
                                 <img src="./img/cat.jpg" class="img-title img-fluid rounded-top img-responsive" alt="">
                                 <div class="post-meta">
-                                    <a href="readmore.html" class="text-light read-more main-title">Read More <i
-                                            class="mdi mdi-chevron-right"></i></a>
+                                    <a href="BlogContent?blogID=<%=blog.getBlogID()%>" class="text-light read-more main-title">Read More
+                                        <i
+                                                class="mdi mdi-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -99,13 +101,10 @@
                                 <small class="text-muted float-right"><%=blog.getWrittenDate()%>
                                 </small>
                             </div>
-
                         </div>
 
                     </div>
                     <div class="pt-3 mt-3 border-top d-flex float-left">
-                        <img src="./img/phuong.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"
-                             alt="">
                         <div class="author mt-2">
                             <h6 class="mb-0"><p class="text-dark name"><%=blog.getAuthor()%>
                             </p>
@@ -144,11 +143,10 @@
                         </a></h4>
                         <p class="text-muted text-content mt-2">
                             <%=blog.getBlogDescription()%>
-<%--                            lorem oaf iweoi eoiknskdn oiahe nasdlkv nwieh dvsklvan ilehg adn v kvnoi aihk dno andih ito knlks nvksnovi eoihqwikcnvoihiorhoghonvksnih igonknvoknvoaisihgo wngkdnvoinsoinanlsknvlinrknkrnla kdnvins vnlknlknlena linglnklnvondovianlgkndlivnivnovinononononsnkegkndokn snd nsoienlekgninknlvasnvoslkgnldknvlsnvisnkvsnlkneklvnsleknvsienvsnvl--%>
                         </p>
                         <div class="pt-3 mt-3 border-top d-flex">
-                            <img src="./img/cat.jpg" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"
-                                 alt="">
+<%--                            <img src="./img/cat.jpg" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
+<%--                                 alt="">--%>
                             <div class="author mt-2">
                                 <h6 class="mb-0"><p class="text-dark name"><%=blog.getAuthor()%>
                                 </p>
@@ -158,247 +156,10 @@
                     </div>
                 </div>
             </div>
-
             <%
                     }
                 }
             %>
-
-            <%--                <div class="box col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2" style="text-overflow: ellipsis; ">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere architecto cupiditate fugiat eligendi, nisi magnam at consequatur quo iusto repudiandae. Dolore optio numquam quis? Laboriosam cumque unde amet voluptatem corrupti.--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-
-            <%--                <div class="col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates placeat ab ea non, dolorum beatae accusantium quo error sunt, voluptatibus numquam corporis necessitatibus, nemo tempora laborum harum suscipit dolor!--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-
-            <%--                <div class="col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates placeat ab ea non, dolorum beatae accusantium quo error sunt, voluptatibus numquam corporis necessitatibus, nemo tempora laborum harum suscipit dolor!--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--                <div class="col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates placeat ab ea non, dolorum beatae accusantium quo error sunt, voluptatibus numquam corporis necessitatibus, nemo tempora laborum harum suscipit dolor!--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--                <div class="col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates placeat ab ea non, dolorum beatae accusantium quo error sunt, voluptatibus numquam corporis necessitatibus, nemo tempora laborum harum suscipit dolor!--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--                <div class="col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates placeat ab ea non, dolorum beatae accusantium quo error sunt, voluptatibus numquam corporis necessitatibus, nemo tempora laborum harum suscipit dolor!--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--                <div class="col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates placeat ab ea non, dolorum beatae accusantium quo error sunt, voluptatibus numquam corporis necessitatibus, nemo tempora laborum harum suscipit dolor!--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--                <div class="col col-12 col-lg-4 col-md-6 mt-4 pt-2">--%>
-            <%--                    <div class="blog-post rounded border">--%>
-            <%--                        <div class="blog-img d-block overflow-hidden position-relative">--%>
-            <%--                            <img src="./img/cat1.jpeg" class="img-fluid rounded-top img-responsive" alt="">--%>
-            <%--                            <div class="overlay rounded-top bg-dark"></div>--%>
-            <%--                            <div class="post-meta">--%>
-            <%--                                <a href="readmore.html" class="text-light read-more">Read More <i--%>
-            <%--                                        class="mdi mdi-chevron-right"></i></a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="content p-3">--%>
-            <%--                            <small class="text-muted p float-right">dd/mm/yyyy</small>--%>
-            <%--                            <h4 class="mt-4"><a href="readmore.html" class="text-dark title">ZUTUPER BỎ NGHỀ.</a>--%>
-            <%--                            </h4>--%>
-            <%--                            <p class="text-muted text-content mt-2">--%>
-            <%--                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates placeat ab ea non, dolorum beatae accusantium quo error sunt, voluptatibus numquam corporis necessitatibus, nemo tempora laborum harum suscipit dolor!--%>
-            <%--                            </p>--%>
-            <%--                            <div class="pt-3 mt-3 border-top d-flex">--%>
-            <%--                                <img src="./img/khoa.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow"--%>
-            <%--                                    alt="">--%>
-            <%--                                <div class="author mt-2">--%>
-            <%--                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Đăng Khoa--%>
-            <%--                                            Nguên</a>--%>
-            <%--                                    </h6>--%>
-            <%--                                </div>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-
         </div>
     </div>
 </section>
@@ -410,8 +171,8 @@
                 <div class="item">
                     <img src="./img/footer.png"/>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
-                        laborum tempore uscipit, laborum.
+                        For more details or questions about us, please contact us via gmail, the support team will
+                        quickly find and help you
                     </p>
                 </div>
             </div>

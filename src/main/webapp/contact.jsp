@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet's Paradise</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/contact.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg" />
 </head>
 
 <body>
@@ -22,15 +26,17 @@
 
                 <nav class="nav ms-3">
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-bars fs-3"></i> </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item " href="index.html">HOME</a></li>
-                            <li><a class="dropdown-item" href="./services.html">SERVICES</a></li>
-                            <li><a class="dropdown-item" href="blog.html">BLOG</a></li>
-                            <li><a class="dropdown-item" href="shopping.html">SHOPPING</a></li>
-                            <li><a class="dropdown-item active" href="/pages/contact.html" style="background-color: #68A7AD;">CONTACT</a></li>
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            style="background-color: #68A7AD;" data-bs-toggle="dropdown" aria-expanded="false ">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item " href="./index.html">Home</a></li>
+                            <li><a class="dropdown-item" href="./services.html">Services</a></li>
+                            <li><a class="dropdown-item" href="./blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="./shopping.html">Shopping</a></li>
+                            <li><a class="dropdown-item active" href="/pages/contact.html"
+                                    style="background-color: #68A7AD;color:white ;">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -41,15 +47,16 @@
 
     <section class="banner contact-banner wow  d-flex ">
         <div class="title container">
-			<div class="h-100 w-100 d-flex justify-content-center align-items-center">
-			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-				<ol class="breadcrumb">
-				  <li class="breadcrumb-item"><a href="index.html" style="text-decoration:none ;color:black">Home</a></li>
-				  <li class="breadcrumb-item active" aria-current="page">Contact</li>
-				</ol>
-			  </nav>
+            <div class="h-100 w-100 d-flex justify-content-center align-items-center">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./index.html"
+                                style="text-decoration:none ;color:black">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-	</div>
 
         <div class="color-overlay h-100 w-100"></div>
     </section>
@@ -66,27 +73,11 @@
             </div>
             <div class="form">
                 <form class="row g-3">
-                    <!-- <div class="col-md-4">
-                        <input type="text" class="form-control" id="inputName" placeholder="Name">
-                    </div>
-                    <div class="col-md-4">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
-                    </div>
-                    <div class="col-12">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Subject" id="messageTextArea"
-                                style="height: 10rem"></textarea>
-                            <label for="messageTextArea">Message</label>
-
-                        </div>
-                    </div> -->
 
                     <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-primary">
-                            <a href="mailto:PetCenter@gmail" style="text-decoration: none;color: black;">Get in touch</a>
+                        <button type="submit" class="btn btn-primary submit">
+                            <a href="mailto:PetCenter@gmail" style="text-decoration: none;color: white;">Get in
+                                touch</a>
                         </button>
                     </div>
                 </form>
@@ -138,15 +129,15 @@
         </div>
     </section>
 
-	<footer>
+    <footer>
         <div class="container">
             <div class="row w-100">
                 <div class="col col-12 col-md-6 col-lg-4 ">
                     <div class="item">
                         <img src="./img/footer.png" />
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adihic quibusdam ad
-                            laborum tempore uscipit, laborum.
+                            For more details or questions about us, please contact us via gmail, the support team will
+                            quickly find and help you
                         </p>
                     </div>
                 </div>
@@ -213,8 +204,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
-       ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>

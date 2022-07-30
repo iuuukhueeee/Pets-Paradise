@@ -19,7 +19,23 @@
     transform: rotateY(-15deg);
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+}
 
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 body {
   background-image: url("../img/back-log.jpg") !important;
   background-size: cover;

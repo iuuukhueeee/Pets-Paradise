@@ -16,7 +16,6 @@ body {
   animation-duration: 1.5s;
 }
 
-/* =============================== SIDE BAR ================================== */
 .sidebar {
   font-size: 20px;
   font-weight: 500;
@@ -28,7 +27,7 @@ body {
   height: 100%;
   overflow: auto;
 }
-.input_file{
+.input_file {
   margin-top: 2.5rem !important;
 }
 
@@ -88,7 +87,7 @@ div.content {
   animation-duration: 1s;
 }
 
-body>div.content>div.container.tm-mt-big.tm-mb-big {
+body > div.content > div.container.tm-mt-big.tm-mb-big {
   animation-name: botToTop;
   animation-duration: 1.3s;
 }
@@ -100,7 +99,6 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
 .form .fa-search {
   position: absolute;
   top: 20px;
-  left: 20px;
   color: #9ca3af;
 }
 
@@ -144,7 +142,6 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   align-items: center;
 }
 
-/* =================== COLLAPSE ============================= */
 .collapsible {
   cursor: pointer;
   padding: 16px 32px;
@@ -162,9 +159,71 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   transition: all 0.3s;
 }
 
-/* ============================== RESPONSIVE ==================================== */
+.container:not(.t-container .container) {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.t-container .container {
+  max-width: 1090px;
+}
 
-/* body */
+h2 {
+  margin: 20px 0;
+  text-align: center;
+}
+h2 small {
+  font-size: 0.5em;
+}
+
+.responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.responsive-table .table-header {
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+  background-color: #fff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1 {
+  flex-basis: 6%;
+}
+.responsive-table .col-2 {
+  flex-basis: 18%;
+}
+.responsive-table .col-3 {
+  flex-basis: 10%;
+}
+.responsive-table .col-4 {
+  flex-basis: 10%;
+}
+.responsive-table .col-5 {
+  flex-basis: 10%;
+}
+.responsive-table .col-6 {
+  flex-basis: 10%;
+}
+.responsive-table .col-7 {
+  flex-basis: 13%;
+}
+.responsive-table .col-8 {
+  flex-basis: 13%;
+}
+.responsive-table .col-9 {
+  flex-basis: 10%;
+  text-align: center;
+}
+
 .tm-product-img-dummy {
   max-width: 100%;
   height: 240px;
@@ -227,7 +286,6 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   transform: rotateY(-15deg);
 }
 
-
 @keyframes appearance {
   0% {
     opacity: 0;
@@ -251,16 +309,75 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   100% {
     opacity: 1;
   }
-
 }
 
-/* 
-======================= RESPONSIVE ======================= */
-
-@media screen and (max-width: 820px) {
-  .container {
-    width: 100%;
+@media screen and (max-width: 1350px) {
+  .container:not(.t-container .container) {
+    width: 80%;
     padding-right: none;
+  }
+  .t-container .container {
+    width: 90%;
+    padding-right: none;
+  }
+  .t-container .container .table-header,
+  .table-row,
+  i {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container:not(.t-container .container) {
+    width: 80%;
+    padding-right: none;
+  }
+  .t-container .container {
+    width: 90%;
+    padding-right: none;
+  }
+  .t-container .container .table-header,
+  .table-row,
+  i {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .container:not(.t-container .container) {
+    width: 90%;
+    padding-right: none;
+  }
+  .col {
+    font-size: 10px;
+  }
+  .t-container .container {
+    width: 100%;
+  }
+  .sidebar {
+    width: 25%;
+  }
+
+  .t-container .container .table-header,
+  .table-row,
+  i {
+    font-size: 8px;
+  }
+  .content {
+    width: 90%;
+  }
+
+  .res_cust {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .searchBar {
+    padding-left: 2vh !important;
+    width: 80%;
+  }
+
+  .box_cust_rs {
+    padding-right: 10vh;
   }
 }
 
@@ -270,7 +387,10 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
     height: auto;
     position: relative;
   }
-
+  div.content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
   .sidebar a {
     float: left;
   }
@@ -279,11 +399,26 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
     top: 65vh;
     min-width: 125px;
   }
-
-  ul {
-    margin-left: -17vh;
-}
-
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -292,25 +427,22 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
     float: none;
   }
 
-  body>div.content>div:nth-child(1)>div>div>div:nth-child(3) {
-    display: none !important;
-  }
-
   .left-pan {
     display: none;
-  }
-
-  .responsive-table .table-row {
-    display: inline-block;
   }
 }
 
 @media screen and (max-width: 375px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
   ul {
     margin-top: 0;
     margin-bottom: 1rem;
-    margin-left: -4vh;
-}
+  }
 }
 .drop-it-hot {
   background-color: white;
@@ -321,11 +453,11 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 .drop-it-hot:after {
-  content:'';
+  content: "";
 
   position: absolute;
   width: calc(100% - 20px);
@@ -355,7 +487,7 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   height: 40px;
 }
 .circle:before {
-  content:'';
+  content: "";
 
   background-color: var(--accent);
   width: 130px;
@@ -367,8 +499,8 @@ body>div.content>div.container.tm-mt-big.tm-mb-big {
   z-index: 0;
 }
 .circle:after {
-  content:'';
- 
+  content: "";
+
   position: absolute;
   width: 100px;
   height: 100px;
