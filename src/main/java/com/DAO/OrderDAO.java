@@ -13,13 +13,13 @@ public class OrderDAO {
     private static final String CREATE = "INSERT INTO Orders(OrderID, OrderDate, Username, Status) VALUES(?,?,?,2)";
     private static final String UPDATE = "UPDATE Orders SET OrderDate=?, Username=?, FeedbackOrder=? WHERE OrderID=?";
     private static final String DELETE = "UPDATE Orders SET Status=0 WHERE OrderID=?";
-    private static final String GET_ORDERS = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE status = 1 ";
-    private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder FROM Orders WHERE OrderID LIKE ? AND Status = 1";
+    private static final String GET_ORDERS = "SELECT OrderID, OrderDate, Username, FeedbackOrder, Total FROM Orders WHERE status = 1 ";
+    private static final String SEARCH_ORDER = "SELECT OrderID, OrderDate, Username, FeedbackOrder, Total FROM Orders WHERE OrderID LIKE ? AND Status = 1";
     private static final String GET_CART_BY_USERNAME = "SELECT OrderID, OrderDate FROM Orders WHERE Status=2 AND Username=?";
     private static final String UPDATE_TOTAL = "UPDATE Orders SET Total=? WHERE OrderID=?";
     private static final String CHECKOUT = "UPDATE Orders SET Status=1 WHERE OrderID=?";
     private static final String TOTAL_INCOME_A_MONTH = "select sum(total) as Total, monthname(OrderDate) as Month from Orders group by month(OrderDate)";
-    private static final String GET_ORDERED_BY_USERNAME = "SELECT OrderID, OrderDate, FeedbackOrder FROM Orders WHERE Status=1 AND Username=?";
+    private static final String GET_ORDERED_BY_USERNAME = "SELECT OrderID, OrderDate, FeedbackOrder, Total FROM Orders WHERE Status=1 AND Username=?";
 
 
     public boolean deleteOrder(String OrderID) throws SQLException {
@@ -91,7 +91,7 @@ public class OrderDAO {
                 ptm.setDate(2, orderDate);
                 ptm.setString(3, username);
                 boolean check = ptm.executeUpdate() > 0;
-                if (check) order = new OrderDTO(orderID, orderDate, username, "");
+                if (check) order = new OrderDTO(orderID, orderDate, username, "", 0);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -123,7 +123,8 @@ public class OrderDAO {
                     Date orderDate = rs.getDate("OrderDate");
                     String username = rs.getString("Username");
                     String feedbackOrder = rs.getString("FeedbackOrder");
-                    OrderDTO order = new OrderDTO(orderID, orderDate, username, feedbackOrder);
+                    float total = rs.getFloat("Total");
+                    OrderDTO order = new OrderDTO(orderID, orderDate, username, feedbackOrder, total);
                     list.add(order);
                 }
             }
@@ -162,7 +163,8 @@ public class OrderDAO {
                     Date orderDate = rs.getDate("OrderDate");
                     String username = rs.getString("Username");
                     String feedbackOrder = rs.getString("FeedbackOrder");
-                    OrderDTO order = new OrderDTO(orderID, orderDate, username, feedbackOrder);
+                    float total = rs.getFloat("Total");
+                    OrderDTO order = new OrderDTO(orderID, orderDate, username, feedbackOrder, total);
                     orderList.add(order);
                 }
             }
@@ -182,44 +184,6 @@ public class OrderDAO {
         return orderList;
     }
 
-
-    public OrderDTO getByID(String ID) throws SQLException {
-        OrderDTO order = null;
-        Connection conn = null;
-        PreparedStatement ptm = null;
-        ResultSet rs = null;
-
-        try {
-            conn = DButils.getConnection();
-            if (conn != null) {
-                ptm = conn.prepareStatement(GET_ORDERS);
-                rs = ptm.executeQuery();
-
-                while (rs.next()) {
-                    String orderID = rs.getString("OrderID");
-                    Date orderDate = rs.getDate("OrderDate");
-                    String username = rs.getString("Username");
-                    String feedbackOrder = rs.getString("FeedbackOrder");
-                    order = new OrderDTO(orderID, orderDate, username, feedbackOrder);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (ptm != null) {
-                ptm.close();
-            }
-            if (conn != null) {
-                conn.close();
-            }
-        }
-
-        return order;
-    }
-
     public OrderDTO getCartByUsername(String username) throws SQLException {
         OrderDTO order = null;
         Connection conn = null;
@@ -235,7 +199,7 @@ public class OrderDAO {
                 if (rs.next()) {
                     String id = rs.getString("OrderID");
                     Date orderDate = rs.getDate("OrderDate");
-                    order = new OrderDTO(id, orderDate, username, "");
+                    order = new OrderDTO(id, orderDate, username, "", 0);
                 }
             }
         } catch (Exception e) {
@@ -350,7 +314,8 @@ public class OrderDAO {
                     String id = rs.getString("OrderID");
                     Date date = rs.getDate("OrderDate");
                     String feedback = rs.getString("FeedbackOrder");
-                    list.add(new OrderDTO(id, date, username, feedback));
+                    float total = rs.getFloat("Total");
+                    list.add(new OrderDTO(id, date, username, feedback, total));
                 }
             }
         } catch (Exception e) {
