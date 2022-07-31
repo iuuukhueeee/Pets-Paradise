@@ -3,12 +3,14 @@ package com.controllers;
 import com.DAO.OrderDAO;
 import com.DTO.OrderDTO;
 import com.DTO.UserDTO;
+import com.checkout.ItemDetails;
 import com.utils.PaymentServices;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "AuthorizePaymentController", value = "/AuthorizePaymentController")
 public class AuthorizePaymentController extends HttpServlet {
@@ -23,9 +25,9 @@ public class AuthorizePaymentController extends HttpServlet {
                 OrderDAO orderDAO = new OrderDAO();
                 UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
                 OrderDTO order = orderDAO.getCartByUsername(user.getUsername());
-
+                List<ItemDetails> list = (List<ItemDetails>) session.getAttribute("CART");
                 PaymentServices paymentServices = new PaymentServices();
-                String approvalLink = paymentServices.authorizePayment(order);
+                String approvalLink = paymentServices.authorizePayment(order, list);
                 url = approvalLink;
             }
         } catch (Exception e) {

@@ -9,9 +9,6 @@ import java.util.List;
 import com.DTO.ServiceDTO;
 import com.utils.DButils;
 
-import javax.xml.ws.Service;
-
-
 public class ServiceDAO {
 
     private static final String GET_SIZE_SERVICE = "SELECT COUNT(ServiceID) AS SIZE FROM Service";

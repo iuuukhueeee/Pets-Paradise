@@ -57,7 +57,7 @@ public class LoadCartController extends HttpServlet {
                         }
                     }
                 }
-                request.setAttribute("CART", list);
+                session.setAttribute("CART", list);
                 url = SUCCESS;
             }
         } catch (Exception e) {
