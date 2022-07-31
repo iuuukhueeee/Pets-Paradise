@@ -1,0 +1,24 @@
+@import "./variable";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.count {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .item {
+margin-bottom: 2rem;  }
+}
