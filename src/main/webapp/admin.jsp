@@ -1,5 +1,4 @@
 <%@ page import="com.DTO.IncomeDTO" %>
-<%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,56 +19,47 @@
 </head>
 
 <body>
-
-<div class="sidebar">
-    <div class="LOGO">
-        <img src="img/paw-solid.svg" alt="" class="img-responsive">
-        <div style="font-size: 20px;font-weight: 900;color: #68A7AD; justify-content: center; padding-left: 16px;">
-            Pet's Paradise
+  <div class="body">
+    <div class="sidebar">
+      <div class="LOGO">
+        <img src="./img/paw-solid.svg" alt="" class="img-responsive" />
+        <div style="
+              font-size: 20px;
+              font-weight: 900;
+              color: #68a7ad;
+              justify-content: center;
+              padding-left: 16px;
+            ">
+          Pet's Paradise
         </div>
-    </div>
-    <div>
+      </div>
+      <div>
+        <a href="admin" class="collapsible active">DashBoard</a>
+      </div>
+      <div>
+        <a class="collapsible" href="AdminOrder">Order</a>
+      </div>
+      <div>
         <a href="AdminProduct" class="collapsible">Product</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="AdminService" class="collapsible">Service</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="AdminUser" class="collapsible">User</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="AdminBlog" class="collapsible">Blog</a>
+      </div>
     </div>
-
-    <a class="collapsible" href="AdminOrder">Order</a>
-</div>
-<div class="content">
-    <div class="container">
-
-        <div class="row height d-flex justify-content-center align-items-center">
-
-            <div class="col-md-10 searchBar">
-
-                <div class="form">
-                    <input type="text" class="form-control form-input" placeholder="Search...">
-
-                    <span class="left-pan btn "><i class="fa-solid fa-magnifying-glass"></i></span>
-                </div>
-                <div></div>
-                <div style="display: flex; align-items:center;">
-                    <img class="adminIcon" src="" alt="">
-                    <!-- <div class="dropdown"> -->
-                    <p onclick="myFunction()" class="dropbtn" style="padding-left:12px; padding-top: 12px;">Admin
-                    </p>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="./user.jsp">Profile</a>
-                        <a href="#">Logout</a>
-                    </div>
-                </div>
-            </div>
-
+    <div class="content">
+      <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center graph">
+          <div class="chart--container" style="position: relative; height: 40vh; width: 80vw">
+            <canvas id="canvas"></canvas>
+          </div>
         </div>
-
+      </div>
     </div>
 </div>
 <select id="month" style="display: none">
@@ -82,16 +72,13 @@
         }
     %>
 </select>
-<div class="chart--container" style="position:relative; height: 40vh;width:80vw">
-    <canvas id="canvas"></canvas>
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-<script src="./js/drawChart.js"></script>
-<script src="js/admin.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <script src="./js/drawChart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

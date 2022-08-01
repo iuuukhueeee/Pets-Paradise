@@ -31,6 +31,7 @@ public class SearchProductController extends HttpServlet {
             ProductDAO dao = new ProductDAO();
 
             List<ProductDTO> list = dao.getListProduct(searchproduct);
+            request.setAttribute("search", searchproduct);
             request.setAttribute("LIST_PRODUCT", list);
 
             HttpSession session = request.getSession(false);
