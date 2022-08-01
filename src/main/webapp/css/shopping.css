@@ -170,8 +170,13 @@ html {
   }
 }
 
+.pagination {
+  justify-content: flex-end;
+}
+
 .product {
   margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 .product #categories {
   color: white;

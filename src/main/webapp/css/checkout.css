@@ -21,8 +21,13 @@ html {
 }
 
 .body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   line-height: 1.25rem;
   margin-top: 2rem;
+}
+.body .left {
+  width: 100%;
 }
 .body .payment {
   display: flex;
@@ -58,30 +63,43 @@ html {
 .body .promo-info {
   margin-top: 1rem;
 }
+
+@media screen and (max-width: 820px) {
+  .body {
+    display: block;
+  }
+}
 @media screen and (max-width: 640px) {
-  .body .background {
+  .background {
     min-width: 1280px;
   }
-  .body .cart {
+
+  .cart {
     width: 1280px;
     display: grid;
   }
-  .body .cart .item {
+  .cart .item {
     width: 1280px;
   }
-  .body #summary {
+
+  #summary {
     width: 100%;
   }
-  .body #summary h1 {
+  #summary h1 {
     text-align: center;
   }
-  .body #summary .payment .px-2 {
+  #summary .payment .px-2 {
     width: 100%;
     display: flex;
     margin-bottom: 8px;
   }
-  .body #summary .payment .px-2 .form-group {
+  #summary .payment .px-2 .form-group {
     margin-right: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .body {
+    display: block;
   }
 }
 
