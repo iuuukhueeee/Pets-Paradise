@@ -84,9 +84,16 @@
                         <%=pet.getAnimalDescription()%>
                     </div>
                     <div class="col col-7" data-label="Action">
-                        <a href="./form.html" target="popup" onclick="window.open('form.html','_blank','fullscreen=yes','true')">
+                        <a href="./updatePetForm.jsp" target="popup" onclick="window.open('LoadPetInfoForm?method=update&ID=<%= pet.getPetID()%>','_blank','fullscreen=yes','true')">
                             <i class="fas fa-edit trash" style="color: black" aria-hidden="true"></i></a>
-                        <i class="fa fa-trash trash" aria-hidden="true"></i>
+
+                        <form method="post" action="MainController">
+                            <input type="hidden" name="ID" value="<%= pet.getPetID()%>" />
+                            <input type="hidden" name="Name" value="<%= user.getUsername()%>" />
+                            <button name="action" value="DeletePet">
+                                <i class="fa fa-trash trash" aria-hidden="true"></i>
+                            </button>
+                        </form>
                     </div>
                 </li>
                 <%

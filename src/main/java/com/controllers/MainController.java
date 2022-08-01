@@ -78,6 +78,12 @@ public class MainController extends HttpServlet {
     //    ================= ADMIN ===============
     private static final String SEARCH_ORDER = "searchOrder";
     private static final String SEARCH_ORDER_CONTROLLER = "SearchOrderController";
+    //    ================= PET ===============
+    private static final String DELETE_PET = "DeletePet";
+    private static final String DELETE_PET_CONTROLLER = "DeletePetController";
+    private static final String UPDATE_PET_INFO = "UpdatePetInfo";
+    private static final String UPDATE_PET_INFO_CONTROLLER = "UpdatePetInfoController";
+
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -150,6 +156,10 @@ public class MainController extends HttpServlet {
                 url = UPDATE_BLOG_CONTROLLER;
             }else if (ADD_USER.equals(action)) {
                 url = ADD_USER_CONTROLLER;
+            }else if (DELETE_PET.equals(action)) {
+                url = DELETE_PET_CONTROLLER;
+            }else if (UPDATE_PET_INFO.equals(action)) {
+                url = UPDATE_PET_INFO_CONTROLLER;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());
