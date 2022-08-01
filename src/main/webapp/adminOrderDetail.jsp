@@ -1,8 +1,11 @@
+<%@ page import="com.DTO.OrderDTO" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="com.DTO.PetDTO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.checkout.ItemDetails" %>
+<%@ page import="com.DTO.OrderDetailDTO" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="com.DTO.*" %>
+<%@ page import="com.DTO.ServiceDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
