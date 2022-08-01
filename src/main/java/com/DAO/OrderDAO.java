@@ -21,6 +21,7 @@ public class OrderDAO {
     private static final String TOTAL_INCOME_A_MONTH = "select sum(total) as Total, monthname(OrderDate) as Month from Orders group by month(OrderDate)";
     private static final String GET_ORDERED_BY_USERNAME = "SELECT OrderID, OrderDate, FeedbackOrder, Total FROM Orders WHERE Status=1 AND Username=?";
     private static final String GET_ORDER_BY_ID = "SELECT OrderDate, Username, FeedbackOrder, Total, Shop FROM Orders WHERE OrderID=? AND Status=1";
+    private static final String UPDATE_SHOP = "UPDATE Orders SET Shop=? WHERE OrderID=?";
 
 
     public boolean deleteOrder(String OrderID) throws SQLException {
@@ -360,5 +361,25 @@ public class OrderDAO {
             if (conn != null) conn.close();
         }
         return order;
+    }
+
+    public void updateShop(String shop, String orderID) throws SQLException {
+        Connection conn = null;
+        PreparedStatement ptm = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(UPDATE_SHOP);
+                ptm.setString(1, shop);
+                ptm.setString(2, orderID);
+                ptm.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
     }
 }

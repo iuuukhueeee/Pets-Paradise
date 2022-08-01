@@ -46,10 +46,16 @@ public class AddToCartController extends HttpServlet {
             String[] itemTypeID = ID.split("-");
 
             order = orderDAO.getCartByUsername(user.getUsername());
+            String shop = "";
             if (order == null) {
-                String shop = request.getParameter("shopLocation");
+                shop = request.getParameter("shopLocation");
+                if (shop == null) shop = "";
                 orderDAO.createOrder(user.getUsername(), shop);
                 order = orderDAO.getCartByUsername(user.getUsername());
+            }
+
+            if ("".equals(order.getShop())) {
+                orderDAO.updateShop(shop, order.getOrderID());
             }
 
 
