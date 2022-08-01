@@ -143,9 +143,8 @@
                         }
                         for (UserDTO user : list) {
                     %>
-                    <form method="POST" action="MainController">
+
                         <li class="table-row">
-                            <input type="hidden" name="userName" value="<%= user.getUsername()%>">
                             <div class="col col-1" data-label="Number"><%=index++%>
                             </div>
                             <div class="col col-2" data-label="User"><%=user.getName()%>
@@ -159,9 +158,12 @@
                             </div>
                             <div class="col col-6" data-label="Action">
                                 <a href="./adminAddService.jsp" target="popup"
-                                   onclick="window.open('adminAddUser.jsp','_blank','fullscreen=yes','true')">
+                                   onclick="window.open('AdminAddUser?method=update&userName=<%= user.getUsername()%>','_blank','fullscreen=yes','true')">
                                     <i class="fa-solid fa-arrow-up"
                                        style='font-size:24px; cursor: pointer; padding-right: 5px; color: black'></i></a>
+
+                                <form method="POST" action="MainController">
+                                    <input type="hidden" name="userName" value="<%= user.getUsername()%>">
                                 <button type="submit" name="action" value="DeleteUser"><i class='far fa-trash-alt'
                                                                                           style='font-size:24px ; cursor: pointer;'></i>
                                 </button>

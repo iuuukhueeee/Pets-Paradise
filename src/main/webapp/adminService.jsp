@@ -170,9 +170,8 @@
                     }
                     for (ServiceDTO service : list) {
                 %>
-                <form method="POST" action="MainController">
                     <li class="table-row">
-                        <input type="hidden" name="serviceID" value="<%= service.getServiceID()%>">
+
                         <div class="col col-1" data-label="Number"><%=index++%>
                         </div>
                         <div class="col col-2" data-label="Service"><%=service.getServiceName()%>
@@ -186,18 +185,21 @@
                             <a
                                     href="./adminAddService.jsp"
                                     target="popup"
-                                    onclick="window.open('adminAddService.jsp','_blank','fullscreen=yes','true')"
+                                    onclick="window.open('AdminAddService?method=update&ID=<%= service.getServiceID()%>','_blank','fullscreen=yes','true')"
                             >
                                 <i class="fa-solid fa-arrow-up"
                                    style="font-size: 24px;cursor: pointer;padding-right: 5px;color: black;"
                                 ></i
                                 ></a>
-                            <button type="submit" name="action" value="DeleteService"><i class='far fa-trash-alt'
-                                                                                         style='font-size:24px ; cursor: pointer;'></i>
-                            </button>
+                            <form method="post" action="MainController">
+                                <input type="hidden" name="serviceID" value="<%= service.getServiceID()%>">
+
+                                <button type="submit" name="action" value="DeleteService"><i class='far fa-trash-alt'
+                                                                                             style='font-size:24px ; cursor: pointer;'></i>
+                                </button>
+                            </form>
                         </div>
                     </li>
-                </form>
                 <%
                     }
                 %>

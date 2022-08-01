@@ -23,7 +23,7 @@ public class UpdateUserController extends HttpServlet {
         String url = ERROR;
         try {
             String userName = request.getParameter("username");
-            String name = request.getParameter("name");
+            String name = request.getParameter("userName");
             String password = request.getParameter("password");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phoneNumber");

@@ -169,7 +169,7 @@
                         </div>
                         <div class="col col-9" data-label="Action">
                             <a href="./adminAddProduct.jsp" target="popup" style="text-decoration: none; color: #000"
-                               onclick="window.open('./adminAddProduct.jsp','_blank','fullscreen=yes','true')">
+                               onclick="window.open('AdminAddProduct?method=update&ID=<%= product.getProductID()%>','_blank','fullscreen=yes','true')">
 
                                 <i class="fa-solid fa-arrow-up"
                                    style="font-size: 24px; cursor: pointer; padding-right: 5px;"></i>

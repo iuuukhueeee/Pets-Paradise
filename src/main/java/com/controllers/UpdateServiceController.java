@@ -11,7 +11,7 @@ import com.DTO.ServiceDTO;
 public class UpdateServiceController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "admin_service.jsp";
+    private static final String SUCCESS = "AdminService";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -19,10 +19,10 @@ public class UpdateServiceController extends HttpServlet {
         String url = ERROR;
         try {
             String search = request.getParameter("SearchService");
-            String ServiceID = request.getParameter("ServiceID");
-            String ServiceName = request.getParameter("ServiceName");
-            float ServicePrice = Float.parseFloat(request.getParameter("ServicePrice"));
-            String ServiceDescription = request.getParameter("ServiceDescription");
+            String ServiceID = request.getParameter("ID");
+            String ServiceName = request.getParameter("serviceName");
+            float ServicePrice = Float.parseFloat(request.getParameter("servicePrice"));
+            String ServiceDescription = request.getParameter("serviceDescription");
             ServiceDAO dao = new ServiceDAO();
             ServiceDTO service = new ServiceDTO(ServiceID, ServiceName, ServicePrice, ServiceDescription);
             boolean checkUpdate = dao.update(service);

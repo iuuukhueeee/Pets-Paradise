@@ -1,3 +1,4 @@
+<%@ page import="com.DTO.UserDTO" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,6 +23,17 @@
   </head>
 
   <body>
+  <%
+    UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
+    UserDTO userDTO = (UserDTO) request.getAttribute("USER");
+    String method;
+    if (userDTO == null) {
+      method = "create";
+      userDTO = new UserDTO();
+    } else {
+      method = "update";
+    }
+  %>
     <div class="sidebar">
       <div class="LOGO">
         <img src="../img/paw-solid.svg" alt="" class="img-responsive" />
@@ -62,7 +74,8 @@
         <div class="row">
           <div class="col-xl-9 col-lg-10 col-md-10 col-sm-10">
             <div class="tm table-h-autotm-block-h-auto">
-              <form>
+              <form method="post" action="MainController">
+                <input type="hidden" name="roleID" value="<%=userDTO.getRoleID()%>"/>
                 <div class="row">
                   <div class="col-12">
                     <h2 class="d-inline-block">User Management</h2>
@@ -71,14 +84,32 @@
 
                 <div class="body">
                   <div class="username row mb-4">
-                    <div class="col-md-2 d-flex align-items-center">Name</div>
+                    <div class="col-md-2 d-flex align-items-center">Username</div>
                     <div class="col-md-10">
                       <div class="form-outline">
                         <input
                           type="text"
                           id="form3Example1cg"
                           required=""
+                          name="username"
+                          value="<%=userDTO.getUsername()%>"
                           class="custom-box form-control form-control-lg pt-1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="username row mb-4">
+                    <div class="col-md-2 d-flex align-items-center">Name</div>
+                    <div class="col-md-10">
+                      <div class="form-outline">
+                        <input
+                                type="text"
+                                id="form3Example3cg"
+                                required=""
+                                name="userName"
+                                value="<%= userDTO.getName()%>"
+                                class="custom-box form-control form-control-lg pt-1"
                         />
                       </div>
                     </div>
@@ -92,6 +123,8 @@
                           type="email"
                           id="form3Example3cg"
                           required=""
+                          name="email"
+                          value="<%= userDTO.getEmail()%>"
                           class="custom-box form-control form-control-lg pt-1"
                         />
                       </div>
@@ -106,6 +139,8 @@
                           type="text"
                           id="form3Example3cg"
                           required=""
+                          name="phoneNumber"
+                          value="<%= userDTO.getPhoneNumber()%>"
                           class="custom-box form-control form-control-lg pt-1"
                         />
                       </div>
@@ -122,6 +157,8 @@
                           type="password"
                           id="form3Example3cg"
                           required=""
+                          name="password"
+                          value="<%= userDTO.getPassword()%>"
                           class="custom-box form-control form-control-lg pt-1"
                         />
                       </div>
@@ -130,7 +167,17 @@
                   <div class="row mb-4">
                     <div class="col-md-2"></div>
                     <div class="col-md-10">
-                      <button class="button">Add User</button>
+                      <%
+                        if ("create".equals(method)) {
+                      %>
+                      <button  class="button" name="action" value="AddUser">Add User</button>
+                      <%
+                      } else {
+                      %>
+                      <button  class="button" name="action" value="UpdateUser">Update User</button>
+                      <%
+                        }
+                      %>
                     </div>
                   </div>
                 </div>

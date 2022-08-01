@@ -41,6 +41,8 @@ public class MainController extends HttpServlet {
     private static final String UPDATE_USER_CONTROLLER = "UpdateUserController";
     private static final String RESET_PASSWORD = "ResetPassword";
     private static final String RESET_PASSWORD_CONTROLLER = "ResetPasswordController";
+    private static final String ADD_USER = "AddUser";
+    private static final String ADD_USER_CONTROLLER = "AddUserController";
 
     //         ============= PRODUCT ==============
     private static final String ADD_PRODUCT = "AddProduct";
@@ -146,6 +148,8 @@ public class MainController extends HttpServlet {
                 url = CREATE_BLOG_CONTROLLER;
             } else if (UPDATE_BLOG.equals(action)) {
                 url = UPDATE_BLOG_CONTROLLER;
+            }else if (ADD_USER.equals(action)) {
+                url = ADD_USER_CONTROLLER;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());

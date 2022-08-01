@@ -24,6 +24,7 @@ public class UserDAO {
     private static final String LOAD_ALL = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Status = 1";
     private static final String GET_BY_USERNAME = "SELECT Username, Name, Password, Email, PhoneNumber, RoleID FROM Users WHERE Username=? AND Status=1";
 
+    private static final String CREATE_ADMIN = "INSERT INTO Users(Username, Name, Password, Email, PhoneNumber, RoleID, Status) VALUES(?, ?, ?, ?, ?, 'AD', 1)";
 
 
     public UserDTO checkLogin(String Username, String Password) throws SQLException {
@@ -392,6 +393,36 @@ public class UserDAO {
             if (conn != null) conn.close();
         }
         return user;
+    }
+
+    public boolean createAdmin(UserDTO user) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(CREATE_ADMIN);
+                ptm.setString(1, user.getUsername());
+                ptm.setString(2, user.getName());
+                ptm.setString(3, user.getPassword());
+                ptm.setString(4, user.getEmail());
+                ptm.setString(5, user.getPhoneNumber());
+                check = ptm.executeUpdate() > 0;
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return check;
+
     }
 
 }

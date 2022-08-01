@@ -1,3 +1,5 @@
+<%@ page import="com.DTO.ServiceDTO" %>
+<%@ page import="com.DTO.UserDTO" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,6 +23,17 @@
   </head>
 
   <body>
+  <%
+    UserDTO user = (UserDTO) session.getAttribute("LOGIN_USER");
+    ServiceDTO service = (ServiceDTO) request.getAttribute("SERVICE");
+    String method;
+    if (service == null) {
+      method = "create";
+      service = new ServiceDTO();
+    } else {
+      method = "update";
+    }
+  %>
     <body>
       <div class="sidebar">
         <div class="LOGO">
@@ -69,14 +82,18 @@
                 </div>
 
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-10">
-                  <form action="">
+                  <form action="MainController" method="POST">
+
+                    <input type="hidden" name="SearchService" value=""/>
+                    <input type="hidden" name="ID" value="<%= service.getServiceID()%>"/>
                     <label class="title-lable mt-3" for="name"
-                      >Product Name
+                      >Service Name
                     </label>
                     <input
                       id="name"
-                      name="name"
+                      name="serviceName"
                       type="text"
+                      value="<%= service.getServiceName()%>"
                       class="form-control validate"
                       required
                     />
@@ -84,8 +101,9 @@
                     <label class="title-lable mt-3" for="name">Price </label>
                     <input
                       id="name"
-                      name="name"
+                      name="servicePrice"
                       type="text"
+                      value="<%= service.getServicePrice()%>"
                       class="form-control validate"
                       required
                     />
@@ -97,6 +115,7 @@
                         id="name"
                         name="name"
                         type="text"
+                        value="<%= service.getServicePrice()%>"
                         class="form-control validate"
                         required
                     />
@@ -106,6 +125,8 @@
                         class="form-control validate"
                         rows="3"
                         required
+                        name="serviceDescription"
+                        value="<%= service.getServiceDescription()%>"
                     ></textarea>
 
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-10 mb-4">
@@ -118,15 +139,26 @@
                           aria-label="Default select example"
                         >
                           <option selected>Choose a nearby store</option>
-                          <option value="1">Store 1</option>
-                          <option value="2">Store 2</option>
+                          <option value="SHOP-001">Pets Paradise Quận 9</option>
+                          <option value="SHOP-002">Pets Paradise Quận 1</option>
+                          <option value="SHOP-003">Pets Paradise Quận 2</option>
                         </select>
                       </div>
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-10 mb-4">
                       <div class="col-md-2">
-                        <button class="button">Add Service</button>
+                        <%
+                          if ("create".equals(method)) {
+                        %>
+                        <button  class="button" name="action" value="AddService">Add Service</button>
+                        <%
+                        } else {
+                        %>
+                        <button  class="button" name="action" value="UpdateService">Update Service</button>
+                        <%
+                          }
+                        %>
                       </div>
                       <div class="col-md-10"></div>
                     </div>
