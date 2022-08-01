@@ -17,7 +17,6 @@ public class PetDAO {
     private static final String UPDATE_PET_INFO = "UPDATE Pet SET AnimalID = ? , AnimalName = ?, AnimalAge= ?, AnimalPicture = ?, AnimalDescription = ?  WHERE PetID = ?";
     private static final String GET_BY_ID = "SELECT PetID, AnimalID, AnimalName, AnimalAge, AnimalPicture, AnimalDescription FROM Pet WHERE PetID = ? AND Status=1 AND Saved=1";
 
-
     public boolean addPetInfo(PetDTO pet, boolean saved) throws SQLException {
         boolean check = false;
         Connection conn = null;

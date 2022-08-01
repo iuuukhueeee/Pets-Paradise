@@ -1,11 +1,9 @@
-<%@ page import="com.DTO.OrderDTO" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="com.DTO.PetDTO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.checkout.ItemDetails" %>
-<%@ page import="com.DTO.OrderDetailDTO" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="com.DTO.ServiceDTO" %>
+<%@ page import="com.DTO.*" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +35,7 @@
     Map<String, PetDTO> petInfo = (Map<String, PetDTO>) request.getAttribute("PET_DETAILS");
     List<ItemDetails> list = (List<ItemDetails>) request.getAttribute("ITEM_DETAILS");
     Map<String, ServiceDTO> serviceMap = (Map<String, ServiceDTO>) request.getAttribute("SERVICE_MAP");
+    Map<String, ShopDTO> shopMap = (Map<String, ShopDTO>) request.getAttribute("SHOP_DETAILS");
     int countProduct = (int) request.getAttribute("TOTAL_PRODUCT");
     int countService = (int) request.getAttribute("TOTAL_SERVICE");
 %>
@@ -204,10 +203,10 @@
                     <%=bookingTime%>
                 </td>
                 <td class="px-6 py-4">
-                    <%=pet.getAnimalID()%>
+                    <%=pet.getAnimalName()%>
                 </td>
                 <td class="px-6 py-4">
-                    <%=order.getShop()%>
+                    <%=shopMap.get(order.getShop()).getShopName()%>
                 </td>
                 <td class="px-6 py-4">
                     <%=service%>

@@ -25,6 +25,8 @@ public class LoadOrderDetail extends HttpServlet {
             String ID = request.getParameter("ID");
             OrderDAO orderDAO = new OrderDAO();
             OrderDTO order = orderDAO.getOrderByID(ID);
+            ShopDAO shopDAO = new ShopDAO();
+            Map<String, ShopDTO> shop = shopDAO.getByID(order.getShop());
             OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
             ProductDAO productDAO = new ProductDAO();
             ProductDTO product;
@@ -49,7 +51,9 @@ public class LoadOrderDetail extends HttpServlet {
                     } else if ("SERVICE".equals(itemTypeID)) {
                         service = serviceDAO.getByID(itemID);
                         serviceMap.put(itemID, service);
-                        petInfo.put(itemID, petDAO.getPetByID(details.get(i).getPetID()));
+                        String petID = details.get(i).getPetID();
+                        PetDTO pet = petDAO.getPetByID(petID);
+                        petInfo.put(itemID, pet);
                         list.add(new ItemDetails("", service.getServiceName(), 1, service.getServicePrice()));
                         countService++;
                     }
@@ -59,6 +63,7 @@ public class LoadOrderDetail extends HttpServlet {
             request.setAttribute("ORDER_DETAILS", details);
             request.setAttribute("PET_DETAILS", petInfo);
             request.setAttribute("ITEM_DETAILS", list);
+            request.setAttribute("SHOP_DETAILS", shop);
             request.setAttribute("TOTAL_PRODUCT", countProduct);
             request.setAttribute("TOTAL_SERVICE", countService);
             request.setAttribute("SERVICE_MAP", serviceMap);

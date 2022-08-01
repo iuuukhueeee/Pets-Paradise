@@ -79,4 +79,38 @@ public class ShopDAO {
         }
         return shopMap;
     }
+
+
+    public Map<String, ShopDTO> getByID(String ID) throws SQLException {
+        Map<String, ShopDTO> shopMap = new HashMap<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_SHOP_INFOMATION);
+                    ptm.setString(1, ID);
+                    rs = ptm.executeQuery();
+                    if (rs.next()) {
+                        String id = rs.getString("ShopID");
+                        String name = rs.getString("ShopName");
+                        String location = rs.getString("ShopLocation");
+                        ShopDTO shop = new ShopDTO(id, name, location);
+                        if (!shopMap.containsKey(id)) {
+                            shopMap.put(id, shop);
+                        }
+                    }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+
+        }
+        return shopMap;
+    }
 }
