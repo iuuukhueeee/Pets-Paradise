@@ -145,17 +145,19 @@
                                     ${i.getBlogDescription()}
                             </div>
                             <div class="col col-6" data-label="Action">
-                                <a href="./adminAddBlog.jsp" target="popup" style="text-decoration: none"
-                                   onclick="window.open('adminAddBlog.jsp','_blank','fullscreen=yes','true')">
-                                    <form method="POST" action="MainController">
-                                        <input type="hidden" id="blogID" name="ID" value="${i.getBlogID()}"
-                                               class="blogID"/>
-                                        <button name="action" value="DeleteBlog">
-                                            <i class="fa-solid fa-arrow-up" style="font-size: 24px;cursor: pointer;padding-right: 5px;color: black;"></i>
-                                        </button>
-                                    </form>
+                                <a href="AdminAddBlog?method=update&ID=${i.getBlogID()}" target="popup"
+                                   style="text-decoration: none"
+                                   onclick="window.open('AdminAddBlog?method=update&ID=${i.getBlogID()}','_blank','fullscreen=yes','true')">
+                                    <i class="fa-solid fa-arrow-up"
+                                       style="font-size: 24px;cursor: pointer;padding-right: 5px;color: black;"></i>
                                 </a>
-                                <i class="far fa-trash-alt" style="font-size: 24px; cursor: pointer"></i>
+                                <form method="POST" action="MainController">
+                                    <input type="hidden" id="blogID" name="ID" value="${i.getBlogID()}"
+                                           class="blogID"/>
+                                    <button name="action" value="DeleteBlog">
+                                        <i class="far fa-trash-alt" style="font-size: 24px; cursor: pointer"></i>
+                                    </button>
+                                </form>
                             </div>
                         </li>
                     </c:forEach>

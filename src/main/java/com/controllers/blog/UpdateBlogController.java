@@ -10,8 +10,8 @@ import javax.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "UploadBlogController", value = "/UploadBlogController")
-public class UploadBlogController extends HttpServlet {
+@WebServlet(name = "UpdateBlogController", value = "/UpdateBlogController")
+public class UpdateBlogController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
     private static final String SUCCESS = "AdminBlog";
@@ -42,9 +42,6 @@ public class UploadBlogController extends HttpServlet {
             BlogDAO blogDAO = new BlogDAO();
             if (validation && !"".equals(ID)) {
                 if (blogDAO.updateBlog(userDTO, ID, title, content, description)) url = SUCCESS;
-            }
-            else if (validation && "".equals(ID)) {
-                if (blogDAO.createBlog(userDTO, title, content, description)) url = SUCCESS;
             }
         } catch (Exception e) {
             log("Error at UploadBlogController: " + e.toString());
