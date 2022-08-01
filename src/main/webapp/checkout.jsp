@@ -36,7 +36,7 @@
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
                     <a
-                            href="./index.html"
+                            href="./index.jsp"
                             class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                     >
                         <svg
@@ -67,7 +67,7 @@
                             ></path>
                         </svg>
                         <a
-                                href="./shopping.html"
+                                href="shopping"
                                 class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
                         >Shopping</a
                         >

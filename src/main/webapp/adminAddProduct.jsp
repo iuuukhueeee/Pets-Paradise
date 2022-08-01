@@ -40,26 +40,25 @@
         </div>
     </div>
     <div>
-        <a href="./admin.html" class="collapsible ">DashBoard</a>
+        <a href="admin" class="collapsible ">DashBoard</a>
     </div>
     <div>
-        <a class="collapsible" href="./Order.html">Order</a>
+        <a class="collapsible" href="AdminOrder">Order</a>
     </div>
     <div>
-        <a href="#Product" class="collapsible active">Product</a>
+        <a href="AdminProduct" class="collapsible active">Product</a>
     </div>
     <div>
-        <a href="./Service.html" class="collapsible">Service</a>
+        <a href="AdminService" class="collapsible">Service</a>
     </div>
     <div>
-        <a href="./User.html" class="collapsible">User</a>
+        <a href="AdminUser" class="collapsible">User</a>
     </div>
     <div>
-        <a href="./Blog.html" class="collapsible">Blog</a>
+        <a href="AdminBlog" class="collapsible">Blog</a>
     </div>
 </div>
 <div class="content">
-
     <form action="">
         <div class="container tm-mt-big tm-mb-big ">
             <div class="row">

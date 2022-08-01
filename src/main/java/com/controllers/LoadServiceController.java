@@ -29,7 +29,9 @@ public class LoadServiceController extends HttpServlet {
             List<ServiceDTO> listService;
             ServiceDAO serviceDAO = new ServiceDAO();
             listService = serviceDAO.getServicePerPage(page);
+            int size = serviceDAO.getSize();
             if (listService != null) {
+                request.setAttribute("SIZE", size % 3);
                 request.setAttribute("LIST_SERVICE", listService);
                 url = SUCCESS;
             }

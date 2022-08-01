@@ -59,6 +59,10 @@
         <servlet-name>AdminChartController</servlet-name>
         <servlet-class>com.controllers.AdminChartController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadOrderDetail</servlet-name>
+        <servlet-class>com.controllers.LoadOrderDetail</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AdminLoadServiceController</servlet-name>
         <url-pattern>/AdminService</url-pattern>
@@ -114,6 +118,10 @@
     <servlet-mapping>
         <servlet-name>AdminChartController</servlet-name>
         <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadOrderDetail</servlet-name>
+        <url-pattern>/OrderDetail</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

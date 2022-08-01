@@ -7,6 +7,7 @@ public class OrderDTO {
     private Date orderDate;
     private String username;
     private String feedBackOrder;
+    private String shop;
     private float total;
 
     public OrderDTO(){
@@ -14,14 +15,16 @@ public class OrderDTO {
         this.orderDate = null;
         this.username = "";
         this.feedBackOrder = "";
+        this.shop = "";
         this.total = 0;
     }
 
-    public OrderDTO(String OrderID, Date OrderDate, String username, String feedBackOrder, float total){
+    public OrderDTO(String OrderID, Date OrderDate, String username, String feedBackOrder, String shop, float total){
         this.orderID = OrderID;
         this.orderDate = OrderDate;
         this.username = username;
         this.feedBackOrder = feedBackOrder;
+        this.shop = shop;
         this.total = total;
     }
 
@@ -63,6 +66,14 @@ public class OrderDTO {
 
     public void setTotal(float total) {
         this.total = total;
+    }
+
+    public String getShop() {
+        return shop;
+    }
+
+    public void setShop(String shop) {
+        this.shop = shop;
     }
 
     @Override

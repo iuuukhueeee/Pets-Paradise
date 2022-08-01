@@ -169,7 +169,6 @@ public class PetDAO {
                     int animalAge = rs.getInt("AnimalAge");
                     String animalPicture = rs.getString("AnimalPicture");
                     String animalDescription = rs.getString("AnimalDescription");
-
                     pet = new PetDTO(petID,"",animalID,animalName,animalAge,animalPicture,animalDescription);
                 }
             }

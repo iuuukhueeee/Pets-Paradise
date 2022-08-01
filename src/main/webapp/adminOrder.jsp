@@ -127,8 +127,9 @@
                     <div class="col col-3" data-label="User"><%=order.getUsername()%>
                     </div>
                     <div class="col col-4" data-label="Item">
-                        <a href="./adminOrderDetail.jsp" style="font-size: 16px; cursor: pointer; color: black;"><i
-                                class="fa-solid fa-eye"></i></a>
+                        <a href="OrderDetail?ID=<%=order.getOrderID()%>" target="popup"
+                           onclick="window.open('OrderDetail?ID=<%=order.getOrderID()%>','_blank','fullscreen=yes','true')" style="font-size: 16px; cursor: pointer; color: black;text-decoration: none">
+                            <i class="fa-solid fa-eye"></i></a>
                     </div>
                 </li>
                 <%

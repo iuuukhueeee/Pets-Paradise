@@ -2,6 +2,7 @@ package com.DAO;
 
 import com.DTO.CartDTO;
 import com.DTO.ProductDTO;
+import com.DTO.ServiceDTO;
 import com.utils.DButils;
 import java.sql.Connection;
 import java.sql.Date;
@@ -22,6 +23,9 @@ public class ProductDAO {
     private static final String GET_ALL = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE Status=1";
     private static final String UPDATE = "UPDATE Product SET ProductCategoryID=?, Name=?, Quantity=?, Image=?, Price=?, ImportDate=?, ExpiredDate=? WHERE ProductID=?";
     private static final String GET_BY_ID = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price, ImportDate, ExpiredDate FROM Product WHERE ProductID=?";
+    private static final String GET_SIZE_PRODUCT = "SELECT COUNT(ProductID) AS SIZE FROM Product WHERE Status=1";
+
+    private static final String GET_PRODUCT_PER_PAGE = "SELECT ProductID, ProductCategoryID, Name, Quantity, Image, Price FROM Product WHERE Status=1 LIMIT ?, 4";
 
     public boolean updateQuantity(String productID, int quantity) throws SQLException {
         boolean check = false;
@@ -308,4 +312,79 @@ public class ProductDAO {
         }
         return check;
     }
+
+    public int getSize() throws SQLException {
+        int size = 0;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_SIZE_PRODUCT);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    size = Integer.parseInt(rs.getString("SIZE"));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return size;
+    }
+
+
+    public List<ProductDTO> getProductPerPage(String page) throws SQLException {
+        List<ProductDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+        Integer pageNumber = (Integer.parseInt(page) - 1) * 4;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_PRODUCT_PER_PAGE);
+                ptm.setInt(1, pageNumber);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+
+                    String productID = rs.getString("ProductID");
+                    String productCategoryID = rs.getString("ProductCategoryID");
+                    String productName = rs.getString("Name");
+                    int quantity = Integer.parseInt(rs.getString("Quantity"));
+                    String image = rs.getString("Image");
+                    float price = Float.parseFloat(rs.getString("Price"));
+                    ProductDTO product = new ProductDTO(productID, productCategoryID, productName, quantity, image, price, null,
+                            null);
+                    list.add(product);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return list;
+    }
+
 }

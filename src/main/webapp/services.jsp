@@ -113,11 +113,18 @@
     <div class="container">
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+<%--                <li class="page-item disabled">--%>
+<%--                    <a class="page-link" href="services?page" tabindex="-1" aria-disabled="true">Previous</a>--%>
+<%--                </li>--%>
+                <%
+                    int size = (int) request.getAttribute("SIZE");
+                    for (int i = 1; i <= size; i++) {
+                %>
+                <li class="page-item"><a href="services?page=<%=i%>" class="page-link"><%=i%></a>
                 </li>
-                <li class="page-item"><a href="services?page=1" class="page-link">1</a>
-                    </a></li>
+                <%
+                    }
+                %>
             </ul>
         </nav>
     </div>

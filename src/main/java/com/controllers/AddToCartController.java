@@ -45,19 +45,10 @@ public class AddToCartController extends HttpServlet {
             String ID = request.getParameter("ID");
             String[] itemTypeID = ID.split("-");
 
-//            String ordered = (String) session.getAttribute("ORDERED");
-//            if (ordered == null) {
-//                order = orderDAO.createOrder(user.getUsername());
-//                session.setAttribute("ORDERED", order.getOrderID());
-//            } else {
-//                order = orderDAO.getByID(ordered);
-//            }
-//
-//
-
             order = orderDAO.getCartByUsername(user.getUsername());
             if (order == null) {
-                orderDAO.createOrder(user.getUsername());
+                String shop = request.getParameter("shopLocation");
+                orderDAO.createOrder(user.getUsername(), shop);
                 order = orderDAO.getCartByUsername(user.getUsername());
             }
 

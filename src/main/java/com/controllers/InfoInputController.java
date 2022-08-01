@@ -56,6 +56,7 @@ public class InfoInputController extends HttpServlet {
             Map<String, PetDTO> petInfo  = new HashMap<>();
             petInfo.put(ID, info);
             session.setAttribute("PET_INFO", petInfo);
+            session.setAttribute("SHOP", request.getAttribute("shop"));
 
         } catch (Exception e) {
             log("Error at InfoInputController: " + e.toString());

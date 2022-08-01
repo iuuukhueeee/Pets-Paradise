@@ -23,20 +23,20 @@ public class LoadProductController extends HttpServlet {
         String url = ERROR;
 
         try {
+            String page = request.getParameter("page");
+            if (page == null) {
+                page = "1";
+            }
+
             List<ProductDTO> listProduct;
             ProductDAO productDAO = new ProductDAO();
-            listProduct = productDAO.getAll();
+            listProduct = productDAO.getProductPerPage(page);
+            int size = productDAO.getSize();
             if (listProduct != null) {
+                request.setAttribute("SIZE", size % 4);
                 request.setAttribute("LIST_PRODUCT", listProduct);
                 url = SUCCESS;
             }
-//            if (request.getRequestURI().equals("/shopping")) {
-//                List<BlogDTO> listBlog;
-//                BlogDAO blogDAO = new BlogDAO();
-//                listBlog = blogDAO.loadListBlogTemplate();
-//                request.setAttribute("LIST_PRODUCT", listBlog);
-//                url = SUCCESS;
-//            }
         } catch (Exception e) {
             log("Error at LoadProductController: " + e.toString());
         } finally {
