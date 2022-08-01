@@ -247,11 +247,11 @@ public class UserDAO {
         return exist;
     }
 
-    public boolean createUserGoogle(GoogleDTO user) throws SQLException {
+    public boolean createUserGoogle(GoogleDTO user, String password) throws SQLException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement ptm = null;
-        String password = org.apache.commons.codec.digest.DigestUtils.sha256Hex(user.toString()).substring(0, 15);
+//        String password = org.apache.commons.codec.digest.DigestUtils.sha256Hex(user.toString()).substring(0, 15);
         try {
             conn = DButils.getConnection();
             if (conn != null) {

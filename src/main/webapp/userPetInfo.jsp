@@ -3,6 +3,8 @@
 <%@ page import="com.DTO.PetDTO" %>
 <%@ page import="com.DTO.AnimalDTO" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.HashMap" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +32,8 @@
 
     List<PetDTO> list = (List<PetDTO>) request.getAttribute("LIST_PET");
     Map<String, AnimalDTO> petType = (Map<String, AnimalDTO>) request.getAttribute("ANIMAL_TYPE");
+    if (list == null) list = new ArrayList<>();
+    if (petType == null) petType = new HashMap<>();
 %>
 
 <div class="sidebar">

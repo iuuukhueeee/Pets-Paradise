@@ -13,7 +13,7 @@ import java.util.List;
 public class AdminBlogLoadingController extends HttpServlet {
 
     private static final String ERROR = "error.jsp";
-    private static final String SUCCESS = "admin_blog_update.jsp";
+    private static final String SUCCESS = "AdminBlog";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;

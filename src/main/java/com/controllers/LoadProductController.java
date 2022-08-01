@@ -33,7 +33,7 @@ public class LoadProductController extends HttpServlet {
             listProduct = productDAO.getProductPerPage(page);
             int size = productDAO.getSize();
             if (listProduct != null) {
-                request.setAttribute("SIZE", size % 4);
+                request.setAttribute("SIZE", size / 4);
                 request.setAttribute("LIST_PRODUCT", listProduct);
                 url = SUCCESS;
             }

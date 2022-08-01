@@ -3,6 +3,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.DTO.OrderDetailDTO" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.HashMap" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,6 +62,9 @@
                     List<OrderDTO> listOrder = (List<OrderDTO>) request.getAttribute("USER_LIST_ORDER");
                     Map<String, List<OrderDetailDTO>> mapDetail = (Map<String, List<OrderDetailDTO>>) request.getAttribute("USER_MAP_ORDER_DETAIL");
                     Map<String, String> mapItemName = (Map<String, String>) request.getAttribute("ITEM_NAME");
+                    if (listOrder == null) listOrder = new ArrayList<>();
+                    if (mapDetail == null) mapDetail = new HashMap<>();
+                    if (mapItemName == null) mapItemName = new HashMap<>();
 
                     if (listOrder.size() > 0 && listOrder != null) {
                         int index = 0;
@@ -89,6 +94,7 @@
                         </li>
                         <%
                             List<OrderDetailDTO> list = mapDetail.get(order.getOrderID());
+                            if (list == null) list = new ArrayList<>();
                             for (OrderDetailDTO orderDetail : list) {
 
                         %>

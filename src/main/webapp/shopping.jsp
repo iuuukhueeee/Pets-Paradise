@@ -6,23 +6,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/shopping.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./css/shopping.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
-            rel="stylesheet" />
-    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg" />
+            rel="stylesheet"/>
+    <link rel="shortcut icon" type="img/png" href="/img/paw-solid.svg"/>
     <title>Shopping</title>
 </head>
 
@@ -233,7 +233,7 @@
                 <div class="relative w-full">
                     <input type="search" id="search-dropdown" name="SearchProduct"
                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-[#a5d0cc] rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-[#68A7AD] focus:border-[#68A7AD] dark:bg-transparent dark:border-l-[#68A7AD]  dark:border-[#68A7AD] dark:placeholder-gray-400 dark:text-dark dark:focus:border-[#68A7AD]"
-                           placeholder="Search " required="">
+                           placeholder="Search ">
                     <button type="submit" name="action" value="SearchProduct"
                             class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-[#68A7AD] dark:bg-[#68A7AD] dark:hover:bg-[#68A7AD]dark:focus:ring-[#68A7AD]">
                         <svg
@@ -301,36 +301,45 @@
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold text-gray-900 "><%=product.getPrice()%></span>
                             <form action="MainController" method="POST">
-                                <div class="container"
-                                <input type="hidden" name="ID" value="<%=product.getProductID()%>"/>
-                                <input type="hidden" name="quantity" value="1" min="0" placeholder="quantity">
-                                <button type="submit" name="action" value="AddToCart"
-                                        class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">
-                                    Add to cart
-                                </button>
+                                <div class="container">
+                                    <input type="hidden" name="ID" value="<%=product.getProductID()%>"/>
+                                    <input type="hidden" name="quantity" value="1" min="0" placeholder="quantity"/>
+                                    <button type="submit" name="action" value="AddToCart"
+                                            class="bg-[#68A7AD] hover:bg-[#51969c] text-white font-bold py-2 px-4 rounded">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%
-        }
-    %>
+        <%
+            }
+        %>
     </div>
 </section>
 <section class="pagination">
     <div class="container">
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                <%--                <li class="page-item disabled">--%>
+                <%--                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>--%>
+                <%--                </li>--%>
+
+                <%
+                    int size = (int) request.getAttribute("SIZE");
+                    for (int i = 1; i <= size; i++) {
+                %>
+                    <li class="page-item"><a href="shopping?page=<%=i%>" class="page-link"><%=i%></a>
                 </li>
-                <li class="page-item"><a href="services?page=1" class="page-link">1</a>
-                    </a></li>
-                <li class="page-item"><a href="services?page=2" class="page-link">2</a>
-                    </a></li>
+                <%
+                    }
+                %>
+
+                <%--                <li class="page-item"><a href="services?page=2" class="page-link">2</a>--%>
+                <%--                    </a></li>--%>
             </ul>
         </nav>
     </div>
@@ -413,7 +422,8 @@
 </section>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
-<script src="./js/shopping.js"></script>˝
+<script src="./js/shopping.js"></script>
+˝
 <script src="./js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

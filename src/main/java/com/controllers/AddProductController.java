@@ -13,8 +13,8 @@ import com.utils.*;
 @WebServlet(name = "AddProductController", value = "/AddProductController")
 public class AddProductController extends HttpServlet {
 
-    private static final String ERROR = "admin_product.jsp";
-    private static final String SUCCESS = "admin_product.jsp";
+    private static final String ERROR = "AdminProduct";
+    private static final String SUCCESS = "AdminProduct";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
