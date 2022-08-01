@@ -20,6 +20,7 @@ public class ServiceDAO {
     private static final String GET_BY_ID = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE ServiceID=? AND Status=1";
     private static final String DELETE = "UPDATE Service SET status=0 WHERE ServiceID=?";
     private static final String GET_SERVICE_PER_PAGE = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE Status=1 LIMIT ?, 3";
+    private static final String GET_INDEX_PAGE = "SELECT ServiceID, ServiceName, ServicePrice, ServiceDescription FROM Service WHERE Status=1 LIMIT 4";
 
 
     public ServiceDTO getByID(String ID) throws SQLException {
@@ -354,6 +355,41 @@ public class ServiceDAO {
             }
         }
         return size;
+    }
+
+    public List<ServiceDTO> getIndex() throws SQLException {
+        List<ServiceDTO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(GET_INDEX_PAGE);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    String id = rs.getString("ServiceID");
+                    String name = rs.getString("ServiceName");
+                    float price = rs.getFloat("ServicePrice");
+                    String description = rs.getString("ServiceDescription");
+                    list.add(new ServiceDTO(id, name, price, description));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return list;
     }
 
 }

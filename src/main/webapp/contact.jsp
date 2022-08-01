@@ -31,7 +31,7 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item " href="./index.jsp">Home</a></li>
+                            <li><a class="dropdown-item " href="index">Home</a></li>
                             <li><a class="dropdown-item" href="services">Services</a></li>
                             <li><a class="dropdown-item" href="blog">Blog</a></li>
                             <li><a class="dropdown-item" href="shopping">Shopping</a></li>
@@ -50,7 +50,7 @@
             <div class="h-100 w-100 d-flex justify-content-center align-items-center">
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="./index.jsp"
+                        <li class="breadcrumb-item"><a href="index"
                                 style="text-decoration:none ;color:black">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Contact</li>
                     </ol>

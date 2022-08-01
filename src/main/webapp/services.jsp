@@ -41,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="" href="./index.jsp">HOME</a>
+                        <a class="" href="index">HOME</a>
                         <a class="active" href="services">SERVICES</a>
                         <a class="" href="shopping">SHOPPING</a>
                         <a class="" href="blog">BLOG</a>
