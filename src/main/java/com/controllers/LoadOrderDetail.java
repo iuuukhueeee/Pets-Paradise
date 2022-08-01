@@ -52,7 +52,7 @@ public class LoadOrderDetail extends HttpServlet {
                         service = serviceDAO.getByID(itemID);
                         serviceMap.put(itemID, service);
                         String petID = details.get(i).getPetID();
-                        PetDTO pet = petDAO.getPetByID(petID);
+                        PetDTO pet = petDAO.getByID(petID);
                         petInfo.put(itemID, pet);
                         list.add(new ItemDetails("", service.getServiceName(), 1, service.getServicePrice()));
                         countService++;
