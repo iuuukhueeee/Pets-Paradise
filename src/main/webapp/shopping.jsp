@@ -125,7 +125,7 @@
     </div>
 </header>
 
-<section class="coming-soon absolute top-15 left-20 right-20 stic">
+<section class="coming-soon absolute top-15 left-20 right-20 ">
     <div class="week">
         <h1>Deal of the week</h1>
     </div>
@@ -210,7 +210,7 @@
 
 </section>
 
-<section class="product container mx-auto">
+<section class="product container mx-auto" style="margin-bottom: 3rem">
     <div class="feature text-center">
         <h1>Featured Products</h1>
     </div>
@@ -320,7 +320,21 @@
     %>
     </div>
 </section>
-
+<section class="pagination">
+    <div class="container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a href="services?page=1" class="page-link">1</a>
+                    </a></li>
+                <li class="page-item"><a href="services?page=2" class="page-link">2</a>
+                    </a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
 <footer>
     <div class="container">
         <div class="row w-100">
