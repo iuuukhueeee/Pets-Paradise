@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-xl-9 col-lg-10 col-md-10 col-sm-10">
-                        <form action="">
+                        <form action="MainController" method="post">
                             <div class="username row mb-4">
                                 <div class="col-md-3 d-flex align-items-center">
                                     Full Name
@@ -66,6 +66,7 @@
                                     <div class="form-outline">
                                         <input type="text" id="form3Example1cg" required=""
                                                class="custom-box form-control form-control-lg pt-1"
+                                               name="username"
                                                value="<%=user.getName()%>"/>
                                     </div>
                                 </div>
@@ -78,6 +79,7 @@
                                 <div class="col-md-9">
                                     <div class="form-outline">
                                         <input type="text" id="form3Example1cg" required=""
+                                               name="userName"
                                                class="custom-box form-control form-control-lg pt-1" value="<%=user.getUsername()%>"/>
                                     </div>
                                 </div>
@@ -89,6 +91,7 @@
                                     <div class="form-outline">
                                         <input type="email" id="form3Example1cg" required=""
                                                class="custom-box form-control form-control-lg pt-1"
+                                               name="email"
                                                value="<%=user.getEmail()%>"/>
                                     </div>
                                 </div>
@@ -100,6 +103,7 @@
                                     <div class="form-outline">
                                         <input type="text" id="form3Example1cg" required=""
                                                class="custom-box form-control form-control-lg pt-1"
+                                               name="phoneNumber"
                                                value="<%=user.getPhoneNumber()%>"/>
                                     </div>
                                 </div>
@@ -111,7 +115,8 @@
                                     <div class="form-outline">
                                         <input type="password" id="form3Example1cg" required=""
                                                class="custom-box form-control form-control-lg pt-1"
-                                               value="<%=user.getPhoneNumber()%>"/>
+                                               name="password"
+                                               value="<%=user.getPassword()%>"/>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +124,7 @@
                             <div class="row mb-4">
                                 <div class="col-md-3"></div>
                                 <div class="col-md-9">
-                                    <button class="button">Update</button>
+                                    <button type="submit" class="button" name="action" value="UpdateUser">Update</button>
                                 </div>
                             </div>
                         </form>
