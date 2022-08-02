@@ -122,10 +122,21 @@
                             <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5 item">
                                 <div class="flex w-2/5">
                                     <div class="w-20">
-                                        <img class="h-24" src="./img/cat_pic.jpg" alt="">
+                                        <%
+                                            if (key.get(details.getName()).split("-")[0].equals("PRODUCT")) {
+                                        %>
+                                        <img class="h-24" src=".<%=details.getImage()%>" alt="">
+                                        <%
+                                        } else {
+                                        %>
+                                            <img class="h-24" src="./img/cat1.jpeg" alt="">
+                                        <%
+                                            }
+                                        %>
+
                                     </div>
                                     <div class="flex flex-col justify-between ml-4 flex-grow">
-                                        <input type="hidden" name="ID" value="<%=key.get(details.getName())%>" />
+                                        <input type="hidden" name="ID" value="<%=key.get(details.getName())%>"/>
                                         <span class="font-bold text-sm"><%=details.getName()%></span>
                                         <a href="RemoveFromCartController?ID=<%=key.get(details.getName())%>"
                                            class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
@@ -133,12 +144,15 @@
                                 </div>
                                 <div class="flex justify-center w-1/5">
                                     <div class="qty">
-                                        <input type="number" class="qty" name="qty" id="qty" value="<%=details.getQuantity()%>" min="1"
+                                        <input type="number" class="qty" name="qty" id="qty"
+                                               value="<%=details.getQuantity()%>" min="1"
                                                style="width: 80px;height: 60px;border-radius: 12px;">
                                     </div>
                                 </div>
-                                <span class="text-center w-1/5 font-semibold text-sm" price><%=details.getPrice()%></span>
-                                <span class="text-center w-1/5 font-semibold text-sm" total><%=details.getQuantity() * details.getPrice()%></span>
+                                <span class="text-center w-1/5 font-semibold text-sm"
+                                      price><%=details.getPrice()%></span>
+                                <span class="text-center w-1/5 font-semibold text-sm"
+                                      total><%=details.getQuantity() * details.getPrice()%></span>
                             </div>
                             <%
                                     }
@@ -180,9 +194,12 @@
                 <div class="total">
 
                     <ul>
-                        <li>User Name: <%=user.getName()%></li>
-                        <li>Total Products: <%=request.getAttribute("COUNT_PRODUCT")%></li>
-                        <li>Total Services: <%=request.getAttribute("COUNT_SERVICE")%></li>
+                        <li>User Name: <%=user.getName()%>
+                        </li>
+                        <li>Total Products: <%=request.getAttribute("COUNT_PRODUCT")%>
+                        </li>
+                        <li>Total Services: <%=request.getAttribute("COUNT_SERVICE")%>
+                        </li>
                     </ul>
 
                 </div>
