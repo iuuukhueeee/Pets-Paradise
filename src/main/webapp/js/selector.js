@@ -15,11 +15,15 @@ let getSelector = () => {
   console.log(item)
   const price = item.querySelector("[price]");
   const total = item.querySelector("[total]");
-  const checkoutTotal = item.querySelector("[checkout--total]");
+  // const checkoutTotal = item.querySelector("[checkout--total]");
   item.querySelector("input#qty.qty").addEventListener("change", (e) => {
     const quantity = e.target.value;
     total.textContent = parseInt(price.textContent) * parseInt(quantity);
-    actualTotal -= parseFloat(total.textContent);
-    checkoutTotal.innerHTML = actualTotal;
+    // actualTotal -= parseFloat(total.textContent);
+    // checkoutTotal.innerHTML = actualTotal;
+    document.querySelector('.cost').querySelector('span:nth-child(2)').textContent = [...document.querySelectorAll('.items, .py-5')].reduce((acc, item) => {
+      const total = parseInt(item.querySelector('[total]').textContent)
+      return acc + total;
+    }, 0)
   });
 });
