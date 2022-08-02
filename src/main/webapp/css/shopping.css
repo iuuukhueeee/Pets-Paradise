@@ -120,7 +120,7 @@ html {
 }
 .deal .background {
   background-position: center;
-  background: url(./img/bg.png);
+  background: url(../img/bg.png);
   background-size: cover;
 }
 
@@ -300,9 +300,18 @@ footer {
 footer .row .col {
   padding: 32px;
 }
-footer .row .col .item img {
-  height: auto;
+footer .row .col .item {
+  height: 100%;
+}
+footer .row .col .item a {
+  height: 100%;
+}
+footer .row .col .item a img {
+  height: 400px;
   width: 100%;
+}
+footer .row .col .item a .items {
+  height: 650px;
 }
 footer .row .col .item li {
   margin-bottom: 16px;

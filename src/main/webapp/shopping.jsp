@@ -254,10 +254,10 @@
         %>
 
         <div class="col">
-            <div class="item">
-                <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="./<%=product.getImage()%>" alt="product image">
+            <div class="item" style="height: 100%">
+                <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 " style="height: 650px">
+                    <a href="#" style="height: 100%">
+                        <img class="p-8 rounded-t-lg" src="./<%=product.getImage()%>" alt="product image" style="height: 400px">
                     </a>
                     <div class="p-4">
                         <a href="#">
