@@ -127,7 +127,7 @@ html {
   }
   .background {
     background-position: center;
-    background: url(./img/bg.png);
+    background: url(../img/bg.png);
     background-size: cover;
   }
 }
@@ -296,9 +296,16 @@ footer {
     .col {
       padding: 32px;
       .item {
+        height: 100%;
+        a{
+          height: 100%;
         img {
-          height: auto;
+          height: 400px;
           width: 100%;
+        }
+          .items{
+            height: 650px;
+          }
         }
         li {
           margin-bottom: 16px;
