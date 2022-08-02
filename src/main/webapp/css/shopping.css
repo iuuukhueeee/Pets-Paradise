@@ -120,7 +120,7 @@ html {
 }
 .deal .background {
   background-position: center;
-  background: url(../img/bg.png);
+  background: url(./img/bg.png);
   background-size: cover;
 }
 

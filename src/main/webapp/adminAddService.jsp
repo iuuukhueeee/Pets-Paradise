@@ -13,7 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <link rel="stylesheet" href="./css/dropDownAdmin.css" />
-    <link rel="shortcut icon" type="img/png" href="../img/paw-solid.svg" />
+    <link rel="shortcut icon" type="img/png" href="./img/paw-solid.svg" />
     <link rel="stylesheet" href="./css/addService.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&family=Raleway:wght@100;500&family=Roboto+Mono:wght@300&display=swap"
@@ -37,7 +37,7 @@
     <body>
       <div class="sidebar">
         <div class="LOGO">
-          <img src="../img/paw-solid.svg" alt="" class="img-responsive" />
+          <img src="./img/paw-solid.svg" alt="" class="img-responsive" />
           <div
             style="
               font-size: 20px;
