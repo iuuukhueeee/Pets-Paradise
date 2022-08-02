@@ -28,6 +28,9 @@ public class CheckoutController extends HttpServlet {
         String url = ERROR;
 
         try {
+            String id[] = request.getParameterValues("ID");
+            String quantity[] = request.getParameterValues("qty");
+
             HttpSession session = request.getSession(false);
             ProductDAO productDAO = new ProductDAO();
             ServiceDAO serviceDAO = new ServiceDAO();
@@ -38,6 +41,9 @@ public class CheckoutController extends HttpServlet {
                 OrderDAO orderDAO = new OrderDAO();
                 OrderDTO order = orderDAO.getCartByUsername(user.getUsername());
                 OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
+                for (int i = 0; i < id.length; i++) {
+                    orderDetailDAO.overrideQuantity(id[i], order.getOrderID(), Integer.parseInt(quantity[i]));
+                }
                 List<OrderDetailDTO> list = orderDetailDAO.getByOrderID(order.getOrderID());
                 List<OrderDetailDTO> outOfStock = new ArrayList<>();
 

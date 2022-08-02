@@ -12,7 +12,9 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "LoadCartController", value = "/LoadCartController")
 public class LoadCartController extends HttpServlet {
@@ -37,6 +39,8 @@ public class LoadCartController extends HttpServlet {
                 ProductDTO product;
                 ServiceDTO service;
                 List<ItemDetails> list = new ArrayList<>();
+                int countProduct = 0, countService = 0;
+                Map<String, String> key = new HashMap<>();
 
                 OrderDAO orderDAO = new OrderDAO();
                 OrderDTO order = orderDAO.getCartByUsername(user.getUsername());
@@ -50,14 +54,25 @@ public class LoadCartController extends HttpServlet {
                             if ("PRODUCT".equals(itemTypeID)) {
                                 product = productDAO.getByID(itemID);
                                 list.add(new ItemDetails(product.getImage(), product.getName(), cart.get(i).getQuantity(), product.getPrice()));
+                                if (!key.containsKey(product.getName())) {
+                                    key.put(product.getName(), product.getProductID());
+                                }
+                                countProduct++;
                             } else if ("SERVICE".equals(itemTypeID)) {
                                 service = serviceDAO.getByID(itemID);
                                 list.add(new ItemDetails("", service.getServiceName(), 1, service.getServicePrice()));
+                                if (!key.containsKey(service.getServiceName())) {
+                                    key.put(service.getServiceName(), service.getServiceID());
+                                }
+                                countService++;
                             }
                         }
                     }
                 }
                 session.setAttribute("CART", list);
+                request.setAttribute("COUNT_PRODUCT", countProduct);
+                request.setAttribute("COUNT_SERVICE", countService);
+                request.setAttribute("KEY", key);
                 url = SUCCESS;
             }
         } catch (Exception e) {

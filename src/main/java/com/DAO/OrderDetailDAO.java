@@ -22,6 +22,7 @@ public class OrderDetailDAO {
     private static final String GET_DETAIL_ORDERED = "SELECT OrderDetailID, OrderDetailPrice, ItemID, Quantity, PetID, BookingTime FROM OrderDetail WHERE OrderID=? AND Status=1";
     private static final String CHECK_DUPLICATE = "SELECT COUNT(*) AS NUM FROM OrderDetail WHERE OrderID=? AND ItemID=? AND Status=2";
     private static final String UPDATE_QUANTITY = "UPDATE OrderDetail SET Quantity=Quantity + ? WHERE ItemID=? AND OrderID=? AND Status=2";
+    private static final String OVERRIDE_QUANTITY = "UPDATE OrderDetail SET Quantity=? WHERE ItemID=? AND OrderID=? AND Status=2";
     private static final String CHECKOUT = "UPDATE OrderDetail SET Status=1 WHERE OrderID=?";
     private static final String REMOVE_ITEM = "UPDATE OrderDetail SET Status=0 WHERE ItemID=? AND OrderID=?";
 
@@ -250,4 +251,28 @@ public class OrderDetailDAO {
         }
         return list;
     }
+
+    public boolean overrideQuantity(String itemID, String orderID, int quantity) throws SQLException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+
+        try {
+            conn = DButils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(OVERRIDE_QUANTITY);
+                ptm.setInt(1, quantity);
+                ptm.setString(2, itemID);
+                ptm.setString(3, orderID);
+                check = ptm.executeUpdate() > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) ptm.close();
+            if (conn != null) conn.close();
+        }
+        return check;
+    }
+
 }

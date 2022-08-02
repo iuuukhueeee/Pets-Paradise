@@ -1,6 +1,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.checkout.ItemDetails" %>
 <%@ page import="com.DTO.*" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +35,9 @@
         return;
     }
     List<ItemDetails> list = (List<ItemDetails>) session.getAttribute("CART");
+    Map<String, String> key = (Map<String, String>) request.getAttribute("KEY");
+    if (list == null) list = new ArrayList<>();
+    if (key == null) key = new HashMap<>();
     float total = 0;
 %>
 
@@ -119,8 +125,9 @@
                                         <img class="h-24" src="./img/cat_pic.jpg" alt="">
                                     </div>
                                     <div class="flex flex-col justify-between ml-4 flex-grow">
+                                        <input type="hidden" name="ID" value="<%=key.get(details.getName())%>" />
                                         <span class="font-bold text-sm"><%=details.getName()%></span>
-                                        <a href="#"
+                                        <a href="RemoveFromCartController?ID=<%=key.get(details.getName())%>"
                                            class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
                                     </div>
                                 </div>
@@ -149,7 +156,7 @@
                                 <div class="cost" style="margin-bottom: 2px;margin-top:2rem;">
                                     <span id="cost">Total: </span>
                                     <span
-                                            class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900"><%=total%></span>
+                                            class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900 checkout--total"><%=total%></span>
                                 </div>
 
                             </div>
@@ -174,8 +181,8 @@
 
                     <ul>
                         <li>User Name: <%=user.getName()%></li>
-                        <li>Total Items: 20</li>
-                        <li>Total Services: 5</li>
+                        <li>Total Products: <%=request.getAttribute("COUNT_PRODUCT")%></li>
+                        <li>Total Services: <%=request.getAttribute("COUNT_SERVICE")%></li>
                     </ul>
 
                 </div>

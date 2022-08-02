@@ -257,7 +257,7 @@
             <div class="item">
                 <div class="max-w-xs bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <img class="p-8 rounded-t-lg" src="./img/<%=product.getImage()%>" alt="product image">
+                        <img class="p-8 rounded-t-lg" src="./<%=product.getImage()%>" alt="product image">
                     </a>
                     <div class="p-4">
                         <a href="#">
